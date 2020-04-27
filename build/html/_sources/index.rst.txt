@@ -11,25 +11,11 @@ Vous trouverez ici la documentation relative à RaspiSMS, à la fois pour les ut
 
 Si vous souhaitez enrichir cette documentation vous pouvez faire une pull request sur `le projet GitHub de la documentation`_.
     
-Pour les utilisateurs
-======================
-
-Cette partie de la documentation est adaptée aux utilisateurs et propose principalement des guides concernant l'utilisation et les fonctionnalités de RaspiSMS.
-
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
+    :caption: Table des matières
 
-   users/adapters/overview
-
-Pour les développeurs
-======================
-
-Cette partie de la documentation est plus avancée et concerne les développeurs souhaitant participer au projet ou le modifier à leurs propres fins.
-
-.. toctree::
-   :maxdepth: 1
-
-   developpers/adapters/overview
-
+    users/overview
+    developpers/overview
 
 .. _le projet GitHub de la documentation: https://github.com/RaspbianFrance/RaspiSMS-doc

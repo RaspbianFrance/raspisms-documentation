@@ -11,7 +11,7 @@ Grâce à cette organisation il est facile d'ajouter le support de nouveaux four
 
 Si vous souhaitez ajouter un nouvel adaptateur vous devez donc implémenter l'interface ``adapters/AdapterInterface``, laquelle impose un certain nombre de méthodes que nous allons voir ci-dessous.
 
-Les méthodes de la classe ``AdapterInterface`` et leur rôle
+Les méthodes de la classe ``AdapterInterface`` et leurs rôles
 ==============================================================
 
 TODO

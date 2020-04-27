@@ -78,9 +78,4 @@ html_sidebars = {
         'util/searchbox.html',
         'util/sidetoc.html'
     ],
-    
-    'index': [
-        'util/searchbox.html',
-        'util/sidetoc-index.html'
-    ],
 }
