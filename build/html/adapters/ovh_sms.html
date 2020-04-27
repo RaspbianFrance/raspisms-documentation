@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Adaptateur OVH SMS</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+
+      
+      <script src="../_static/theme-vendors.js"></script>
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Recherche" href="../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <span class="site-name">RaspiSMS</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#welcome-to-raspisms-s-documentation">Contents:</a></span>
+      </p>
+      <ul class="">
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li>Adaptateur OVH SMS</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="adaptateur-ovh-sms">
+<h1>Adaptateur OVH SMS<a class="headerlink" href="#adaptateur-ovh-sms" title="Lien permanent vers ce titre">¶</a></h1>
+<p>L’adaptateur OVH SMS permet l’utilisation de l’offre SMS de OVH avec RaspiSMS en se basant sur l’utilisation de l’API SMS.</p>
+<div class="section" id="fonctionnalites-supportees">
+<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Fonctionnalité</p></th>
+<th class="head"><p>Support</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Envoi de SMS</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reception de SMS</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-even"><td><p>Suivi de l’envoi</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-odd"><td><p>SMS Flash</p></td>
+<td><p>Non</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configurer-l-adaptateur-ovh-sms">
+<h2>Configurer l’adaptateur OVH SMS<a class="headerlink" href="#configurer-l-adaptateur-ovh-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans cette partie nous allons voir comment configurer l’adaptateur OVH SMS pour lier RaspiSMS et OVH.</p>
+<div class="section" id="souscrire-a-une-offre-sms-chez-ovh">
+<h3>1. Souscrire à une offre SMS chez OVH<a class="headerlink" href="#souscrire-a-une-offre-sms-chez-ovh" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Actuellement l’API SMS de OVH est uniquement supportée avec l’utilisation d’un numéro virtuel. Nous allons donc devoir prendre un abonnement adapté chez OVH.</p>
+<p>Pour cela, rendez-vous sur <a class="reference external" href="https://www.ovhtelecom.fr/sms/reponse/numeros-virtuels.xml">L’offre numéro virtuel</a>, cliquez sur le bouton <cite>Commander</cite> et validez la procédure d’achat/inscription.</p>
+</div>
+<div class="section" id="ajouter-un-telephone-ovh-dans-raspisms">
+<h3>2. Ajouter un téléphone OVH dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-ovh-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Adaptateur logiciel du téléphone »</strong> choisissez <strong>« OVH SMS »</strong>.</p>
+</div>
+<div class="section" id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
+<h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelques informations qui se trouvent dans votre compte OVH.</p>
+<div class="section" id="trouver-le-numero-de-telephone-virtuel-ovh">
+<h4>3.1 Trouver le numéro de téléphone virtuel OVH<a class="headerlink" href="#trouver-le-numero-de-telephone-virtuel-ovh" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Commencez par vous connecter à votre compte client OVH et rendez-vous dans <a class="reference external" href="https://www.ovhtelecom.fr/manager/#/sms/">La partie SMS de votre manager OVH</a>, puis cliquez sur le nom de votre abonnement.</p>
+<p>Rendez-vous maitenant dans la partie <strong>« Expéditeurs »</strong>, vous devriez voir un votre numéro de téléphone virtuel chez OVH, recopiez ce numéro dans la partie <strong>« Numéro de téléphone »</strong> dans RaspiSMS.</p>
+</div>
+<div class="section" id="trouver-le-nom-de-votre-service-sms">
+<h4>3.2 Trouver le nom de votre service SMS<a class="headerlink" href="#trouver-le-nom-de-votre-service-sms" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Nous allons maintenant avoir besoin du Service Name de votre abonnement SMS chez OVH. Pour cela, restez dans la même interface que pour la partie précédente, le Service Name est écrit en haut à gauche. Recopiez-le dans la partie <strong>« Service Name »</strong> dans RaspiSMS.</p>
+</div>
+<div class="section" id="creer-et-recuperer-les-identifiants-api-ovh">
+<h4>3.3 Créer et récupérer les identifiants API OVH<a class="headerlink" href="#creer-et-recuperer-les-identifiants-api-ovh" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Dernière étape, nous allons créer et récupérer les identifiants API de OVH. Pour cela, rendez-vous sur <a class="reference external" href="https://eu.api.ovh.com/createToken/index.cgi?GET=/sms&amp;GET=/sms/*&amp;POST=/sms/*&amp;PUT=/sms/*&amp;DELETE=/sms/*&amp;">La page de création des identifiants API de OVH</a> et rentrez les informations suivantes :</p>
+<ul class="simple">
+<li><p><strong>Account ID or email address</strong> : Votre identifiant OVH</p></li>
+<li><p><strong>Password</strong> : Votre mot de passe OVH</p></li>
+<li><p><strong>Script name</strong> : RaspiSMS</p></li>
+<li><p><strong>Script description</strong> : RaspiSMS Application</p></li>
+<li><p><strong>Validity</strong> : Unlimited</p></li>
+</ul>
+<p>La partie <strong>« Rights »</strong> permet de définir les droits de l’application sur le compte OVH. Laissez la telle que définie lors de votre arrivée sur la page.</p>
+<p>Cliquez sur <strong>« Create keys »</strong> pour créer vos identifiants API OVH.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Si vous avez l’erreur <strong>« An application with that name already exists »</strong>, modifiez <strong>« Script Name »</strong>, vous pouvez y mettre la valeure de votre choix, c’est sans importance.</p>
+</div>
+<p>Vous arrivez alors sur une page vous affichant les identifiants API créés. Il vous suffit de recopier les valeures dans <strong>« Application Key »</strong>, <strong>« Application Secret »</strong> et <strong>« Consumer Key »</strong> dans les champs correspondant dans RaspiSMS.</p>
+</div>
+</div>
+<div class="section" id="activer-le-suivi-du-statut-des-sms">
+<h3>3.4 Activer le suivi du statut des SMS<a class="headerlink" href="#activer-le-suivi-du-statut-des-sms" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Au point ou nous en sommes nous aurions un téléphone OVH fonctionnel dans RaspiSMS, mais celui-ci n’est pas encore capable de suivre le statut des SMS envoyés. Pour cela, il faut que nous fournissions à OVH une adresse à appeler quand le statut d’un SMS évolu.</p>
+<p>Dans RaspiSMS un message d’information sur fond bleu est affiché vous indiquant <strong>« Adresse URL de callback de changement d’état »</strong> suivi d’une adresse. C’est cette adresse que OVH devra appeler lors du changement de statut d’un SMS. Copiez cette adresse et rendez-vous dans votre manager OVH, sur votre offre de SMS et dans la partie <strong>« Options »</strong>, <strong>« Options générales »</strong>. Cliquez sur le bouton <strong>« Modifier »</strong> et dans le champs <strong>« URL de callback changements d’état »</strong> collez l’adresse précédemment copiée et cliquez sur <strong>« Valider »</strong>.</p>
+<p>Retournez sur RaspiSMS et cliquez sur le bouton <strong>« Enregistrer le téléphone »</strong>.</p>
+<p>Et voilà, vous pouvez maintenant envoyez des SMS via OVH avec RaspiSMS !</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.navbar .logo {
+    height: 35px;
+    width: auto;
+    min-width: auto;
+}
+
+.sidebar .toctree-l1 a {
+    padding: .35rem 1rem .35rem 1.75rem;
+}
+
+.sidebar .toctree-l2 a {
+    padding: .35rem 1rem .35rem 2.5rem;
+}

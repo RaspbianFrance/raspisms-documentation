@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Les Adaptateurs</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="prev" title="Adaptateur Gammu" href="../../users/adapters/gammu.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="../../users/adapters/overview.html#objectif-des-adapateurs"
+         class="nav-link ">
+         Adaptateurs disponibles
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#pour-les-developpeurs"
+         class="nav-link  router-link-active">
+         pour les développeurs
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="../../users/adapters/overview.html#objectif-des-adapateurs"
+         class="nav-link ">
+         Adaptateurs disponibles
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#pour-les-developpeurs"
+         class="nav-link  router-link-active">
+         pour les développeurs
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../users/adapters/overview.html#objectif-des-adapateurs">Adaptateurs disponibles</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/ovh_virtual_number.html" class="reference internal ">Adaptateur OVH SMS Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/ovh_shortcode.html" class="reference internal ">Adaptateur OVH SMS Shortcode</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/twilio_virtual_number.html" class="reference internal ">Adaptateur Twilio Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/octopush_virtual_number.html" class="reference internal ">Adaptateur Octopush Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/octopush_shortcode.html" class="reference internal ">Adaptateur Octopush Shortcode</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../users/adapters/gammu.html" class="reference internal ">Adaptateur Gammu</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#pour-les-developpeurs">Pour les développeurs</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Les Adaptateurs</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#objectif-des-adapateurs" class="reference internal">Objectif des adapateurs</a></li>
+                
+                  <li class="toctree-l2"><a href="#les-methodes-de-la-classe-adapterinterface-et-leur-role" class="reference internal">Les méthodes de la classe AdapterInterface et leur rôle</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Les Adaptateurs</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../../users/adapters/gammu.html"
+       title="Chapitre précédent">← Adaptateur Gammu</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="les-adaptateurs">
+<h1>Les Adaptateurs<a class="headerlink" href="#les-adaptateurs" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="objectif-des-adapateurs">
+<h2>Objectif des adapateurs<a class="headerlink" href="#objectif-des-adapateurs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les adaptateurs ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS.
+Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre.</p>
+<p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
+<p>Si vous souhaitez ajouter un nouvel adaptateur vous devez donc implémenter l’interface <code class="docutils literal notranslate"><span class="pre">adapters/AdapterInterface</span></code>, laquelle impose un certain nombre de méthodes que nous allons voir ci-dessous.</p>
+</div>
+<div class="section" id="les-methodes-de-la-classe-adapterinterface-et-leur-role">
+<h2>Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leur rôle<a class="headerlink" href="#les-methodes-de-la-classe-adapterinterface-et-leur-role" title="Lien permanent vers ce titre">¶</a></h2>
+<p>TODO</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../../users/adapters/gammu.html"
+       title="Chapitre précédent">← Adaptateur Gammu</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

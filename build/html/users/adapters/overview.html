@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Les Adaptateurs</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Adaptateur OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" />
+  <link rel="prev" title="Bienvenu dans la documentation de RaspiSMS !" href="../../index.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="#objectif-des-adapateurs"
+         class="nav-link ">
+         Adaptateurs disponibles
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#pour-les-developpeurs"
+         class="nav-link ">
+         pour les développeurs
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="#objectif-des-adapateurs"
+         class="nav-link ">
+         Adaptateurs disponibles
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#pour-les-developpeurs"
+         class="nav-link ">
+         pour les développeurs
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#objectif-des-adapateurs">Adaptateurs disponibles</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="ovh_virtual_number.html" class="reference internal ">Adaptateur OVH SMS Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ovh_shortcode.html" class="reference internal ">Adaptateur OVH SMS Shortcode</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="twilio_virtual_number.html" class="reference internal ">Adaptateur Twilio Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="octopush_virtual_number.html" class="reference internal ">Adaptateur Octopush Numéro Virtuel</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="octopush_shortcode.html" class="reference internal ">Adaptateur Octopush Shortcode</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="gammu.html" class="reference internal ">Adaptateur Gammu</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#pour-les-developpeurs">Pour les développeurs</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../developpers/adapters/overview.html" class="reference internal ">Les Adaptateurs</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Les Adaptateurs</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../../index.html"
+       title="Chapitre précédent">← Bienvenu dans la documentation de RaspiSMS !</a>
+  </li>
+  <li class="next">
+    <a href="ovh_virtual_number.html"
+       title="Chapitre suivant">Adaptateur OVH SMS Numéro Virtuel →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="les-adaptateurs">
+<h1>Les Adaptateurs<a class="headerlink" href="#les-adaptateurs" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="objectif-des-adapateurs">
+<h2>Objectif des adapateurs<a class="headerlink" href="#objectif-des-adapateurs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les adaptateurs ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS.
+Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre.</p>
+<p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
+<p>Actuellement les adaptateurs disponibles sont les suivants :</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Adaptateurs disponibles</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twilio_virtual_number.html">Adaptateur Twilio Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../../index.html"
+       title="Chapitre précédent">← Bienvenu dans la documentation de RaspiSMS !</a>
+  </li>
+  <li class="next">
+    <a href="ovh_virtual_number.html"
+       title="Chapitre suivant">Adaptateur OVH SMS Numéro Virtuel →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
