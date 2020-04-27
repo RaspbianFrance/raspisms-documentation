@@ -100,7 +100,22 @@
     <div class="sidebar-group">
         <p class="caption"><span class="caption-text">Table des matières</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Les Adaptateurs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objectif-des-adapateurs">Objectif des adapateurs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adaptateurs-disponibles">Adaptateurs disponibles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Adaptateur Twilio Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
 </ul>
 
@@ -143,8 +158,10 @@
 Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre.</p>
 <p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
 <p>Actuellement les adaptateurs disponibles sont les suivants :</p>
+</div>
+<div class="section" id="adaptateurs-disponibles">
+<h2>Adaptateurs disponibles<a class="headerlink" href="#adaptateurs-disponibles" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Adaptateurs disponibles</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
