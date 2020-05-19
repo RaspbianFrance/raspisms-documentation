@@ -117,15 +117,15 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#le-constructeur-de-l-adaptateur">Le constructeur de l’adaptateur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#validation-des-donnees-de-configuration">Validation des données de configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-d-envoi-et-de-lecture">Les méthodes d’envoi et de lecture</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#envoi-d-un-sms">Envoi d’un SMS</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#lecture-d-un-sms">Lecture d’un SMS</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#la-methode-test">La méthode test.</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#les-methodes-de-callback">Les méthodes de callback</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#mise-a-jour-du-status-d-un-sms">Mise à jour du status d’un SMS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#reception-d-un-sms">Réception d’un SMS</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#les-methodes-de-callback">Les méthodes de callback</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-du-status-d-un-sms">Mise à jour du status d’un SMS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reception-d-un-sms">Réception d’un SMS</a></li>
 </ul>
 </li>
 </ul>
@@ -233,7 +233,16 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 </pre></div>
 </div>
 <p>La fonctions prend en argument une chaine de caractère <code class="docutils literal notranslate"><span class="pre">$datas</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiqués via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_datas_fields</span></code>.</p>
-<p>Àœ vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.</p>
+<p>À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.</p>
+</div>
+<div class="section" id="validation-des-donnees-de-configuration">
+<h3>Validation des données de configuration<a class="headerlink" href="#validation-des-donnees-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function test (): bool</span>
+</pre></div>
+</div>
+<p>Au moment ou un utilisateur valide la création d’un téléphone utilisant l’adaptateur, la classe est instanciée et la méthode <code class="docutils literal notranslate"><span class="pre">test()</span></code> est appelée.</p>
+<p>La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l’API.</p>
+<p>La méthode doit retournée <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas de succès et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> en cas d’échec, auquel cas l’utilisateur se verra indiqué que la configuration fournie n’est pas valide.</p>
 </div>
 <div class="section" id="les-methodes-d-envoi-et-de-lecture">
 <h3>Les méthodes d’envoi et de lecture<a class="headerlink" href="#les-methodes-d-envoi-et-de-lecture" title="Lien permanent vers ce titre">¶</a></h3>
@@ -281,19 +290,12 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 </dd>
 </dl>
 </div>
-<div class="section" id="la-methode-test">
-<h4>La méthode test.<a class="headerlink" href="#la-methode-test" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function test (): bool</span>
-</pre></div>
-</div>
-<p>Cette méthode est appelée au moment de la création d’un nouveau téléphone utilisant l’adaptateur pour vérifier que la configuration c’est passée comme prévue. La méthode devrait par exemple être utilisée pour vérifier que les identifiants API fournis sont valides.
-La méthode doit retournée <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas de succès et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> en cas d’échec, auquel cas l’utilisateur se verra indiqué que la configuration fournie n’est pas valide.</p>
 </div>
 <div class="section" id="les-methodes-de-callback">
-<h4>Les méthodes de callback<a class="headerlink" href="#les-methodes-de-callback" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Les méthodes de callback<a class="headerlink" href="#les-methodes-de-callback" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ces méthodes sont appelées par RaspiSMS lors de la réception d’une requête HTTP de callback concernant cet adaptateur.</p>
 <div class="section" id="mise-a-jour-du-status-d-un-sms">
-<h5>Mise à jour du status d’un SMS<a class="headerlink" href="#mise-a-jour-du-status-d-un-sms" title="Lien permanent vers ce titre">¶</a></h5>
+<h4>Mise à jour du status d’un SMS<a class="headerlink" href="#mise-a-jour-du-status-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function status_change_callback()</span>
 </pre></div>
 </div>
@@ -307,7 +309,7 @@ La méthode doit retournée <code class="docutils literal notranslate"><span cla
 </dl>
 </div>
 <div class="section" id="reception-d-un-sms">
-<h5>Réception d’un SMS<a class="headerlink" href="#reception-d-un-sms" title="Lien permanent vers ce titre">¶</a></h5>
+<h4>Réception d’un SMS<a class="headerlink" href="#reception-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function reception_callback() : array</span>
 </pre></div>
 </div>
@@ -328,7 +330,6 @@ La méthode doit retournée <code class="docutils literal notranslate"><span cla
 </ul>
 </dd>
 </dl>
-</div>
 </div>
 </div>
 </div>

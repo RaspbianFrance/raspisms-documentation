@@ -77,7 +77,20 @@ Le constructeur de l'adaptateur
 
 La fonctions prend en argument une chaine de caractère ``$datas`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiqués via les champs générés en utilisant ``meta_datas_fields``.
 
-Àœ vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.
+À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.
+
+
+Validation des données de configuration
+''''''''''''''''''''''''''''''''''''''''
+.. code-block::
+
+    public function test (): bool
+
+Au moment ou un utilisateur valide la création d'un téléphone utilisant l'adaptateur, la classe est instanciée et la méthode ``test()`` est appelée.
+
+La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l'API.
+
+La méthode doit retournée ``TRUE`` en cas de succès et ``FALSE`` en cas d'échec, auquel cas l'utilisateur se verra indiqué que la configuration fournie n'est pas valide.
 
 
 Les méthodes d'envoi et de lecture
@@ -119,21 +132,12 @@ La fonction retourne un tableau tel que suit :
     - ``origin`` Le numéro de l'émetteur du SMS, au format international (ex : +33612345678).
 
 
-La méthode test.
-"""""""""""""""""
-.. code-block::
-
-    public function test (): bool
-
-Cette méthode est appelée au moment de la création d'un nouveau téléphone utilisant l'adaptateur pour vérifier que la configuration c'est passée comme prévue. La méthode devrait par exemple être utilisée pour vérifier que les identifiants API fournis sont valides.
-La méthode doit retournée ``TRUE`` en cas de succès et ``FALSE`` en cas d'échec, auquel cas l'utilisateur se verra indiqué que la configuration fournie n'est pas valide.
-
 Les méthodes de callback
-""""""""""""""""""""""""
+'''''''''''''''''''''''''
 Ces méthodes sont appelées par RaspiSMS lors de la réception d'une requête HTTP de callback concernant cet adaptateur.
 
 Mise à jour du status d'un SMS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""
 .. code-block::
 
     public static function status_change_callback()
@@ -147,7 +151,7 @@ La méthode doit retournée ``FALSE`` si une erreure survient, ou un tableau en 
 
 
 Réception d'un SMS
-~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""
 .. code-block::
 
     public static function reception_callback() : array
