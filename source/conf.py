@@ -33,6 +33,9 @@ release = '3.0'
 extensions = [
 ]
 
+# Use PHP as default language
+highlight_language = 'php'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

@@ -9,9 +9,25 @@
 }
 
 .sidebar .toctree-l1 a {
-    padding: .35rem 1rem .35rem 1.75rem;
+    padding: .35rem 1rem .35rem 1rem;
 }
 
 .sidebar .toctree-l2 a {
+    padding: .35rem 1rem .35rem 1.75rem;
+}
+
+.sidebar .toctree-l3 a {
     padding: .35rem 1rem .35rem 2.5rem;
+}
+
+.sidebar .toctree-l4 a {
+    padding: .35rem 1rem .35rem 3rem;
+}
+
+.sidebar .toctree-l5 a {
+    padding: .35rem 1rem .35rem 3.5rem;
+}
+
+.sidebar .toctree-l6 a {
+    padding: .35rem 1rem .35rem 4rem;
 }

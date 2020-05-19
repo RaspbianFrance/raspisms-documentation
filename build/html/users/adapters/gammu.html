@@ -226,13 +226,13 @@
 <div class="section" id="exemple-de-fichier-de-configuration">
 <h4>1.2.2 Exemple de fichier de configuration<a class="headerlink" href="#exemple-de-fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Voici un exemple de fichier de configuration que vous pouvez utiliser comme base à adapter pour votre propre modem GSM</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">gammu</span><span class="p">]</span>
-<span class="n">device</span> <span class="o">=</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">Phone</span> <span class="n">on</span> <span class="n">USB</span> <span class="n">serial</span> <span class="n">port</span> <span class="n">HUAWEI_Technologies</span> <span class="n">HUAWEI_Mobile</span>
-<span class="n">connection</span> <span class="o">=</span> <span class="n">at</span>
-<span class="n">log_file</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">raspisms</span><span class="o">/</span><span class="n">gammu_uid</span><span class="o">.</span><span class="n">log</span>
-<span class="n">log_format</span> <span class="o">=</span> <span class="n">textalldate</span>
-<span class="n">gammu_coding</span> <span class="o">=</span> <span class="n">utf8</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">[gammu]</span>
+<span class="x">device = /dev/ttyUSB0</span>
+<span class="x">name = Phone on USB serial port HUAWEI_Technologies HUAWEI_Mobile</span>
+<span class="x">connection = at</span>
+<span class="x">log_file = /var/log/raspisms/gammu_uid.log</span>
+<span class="x">log_format = textalldate</span>
+<span class="x">gammu_coding = utf8</span>
 </pre></div>
 </div>
 </div>
