@@ -9,3 +9,4 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
     :caption: Table des matières
 
     adapters/overview
+    groups_and_contacts/overview

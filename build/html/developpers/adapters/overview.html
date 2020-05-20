@@ -104,18 +104,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Les Adaptateurs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#objectif-des-adapateurs">Objectif des adapateurs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles">Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#les-methodes-meta">Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#meta-classname">meta_classname</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-uid">meta_uid</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-name">meta_name</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-description">meta_description</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-datas-fields">meta_datas_fields</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-support-read">meta_support_read</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-support-reception">meta_support_reception</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-support-status-change">meta_support_status_change</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#meta-support-flash">meta_support_flash</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#les-methodes-meta">Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#le-constructeur-de-l-adaptateur">Le constructeur de l’adaptateur</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#validation-des-donnees-de-configuration">Validation des données de configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-d-envoi-et-de-lecture">Les méthodes d’envoi et de lecture</a><ul>
@@ -176,56 +165,38 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <h2>Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles<a class="headerlink" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="les-methodes-meta">
 <h3>Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code><a class="headerlink" href="#les-methodes-meta" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Les méthodes commençant par <code class="docutils literal notranslate"><span class="pre">meta_</span></code> permettent de définir les capacités et les informations relatives à l’adaptateur, tel que son nom, les champs supplémentaires permettant la configuration de l’adaptateur, ou encore les fonctionnalités disponibles.
-Pour cela ces fonctions doivent retourner des chaines de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simple propriétés et à ce titre sont toutes statiques. L’objectif est de forcer l’implémentation des méthodes par les classes implémentant l’interface, car PHP ne supporte pas les propriétés abstraites.</p>
-<div class="section" id="meta-classname">
-<h4>meta_classname<a class="headerlink" href="#meta-classname" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Nom de la classe de l’adaptateur, il devrait uniquement retourner <code class="docutils literal notranslate"><span class="pre">__CLASS__</span></code>.</p>
-</div>
-<div class="section" id="meta-uid">
-<h4>meta_uid<a class="headerlink" href="#meta-uid" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Le nom unique de l’adaptateur, en <strong>snake_case</strong>. Par exemple, si l’adaptateur s’appel <strong>« GammuAdapter »</strong>, un bon <code class="docutils literal notranslate"><span class="pre">meta_uid</span></code> est <strong>« gammu_adapter »</strong>.</p>
-</div>
-<div class="section" id="meta-name">
-<h4>meta_name<a class="headerlink" href="#meta-name" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Le nom de l’adaptateur tel qu’il sera affiché à l’utilisateur. Par exemple, si vous créez un adaptateur pour un service externe example-sms.com, vous pourriez utiliser « Example SMS ».</p>
-</div>
-<div class="section" id="meta-description">
-<h4>meta_description<a class="headerlink" href="#meta-description" title="Lien permanent vers ce titre">¶</a></h4>
-<p>La description de l’adaptateur et du service qu’il permet d’utiliser. Cette description sera affichée à l’utilisateur.</p>
-</div>
-<div class="section" id="meta-datas-fields">
-<h4>meta_datas_fields<a class="headerlink" href="#meta-datas-fields" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseigner les clefs API du service implémenté.</p>
+<p>Les méthodes commençant par <code class="docutils literal notranslate"><span class="pre">meta_</span></code> permettent de définir les capacités et les informations relatives à l’adaptateur, tel que son nom, les champs supplémentaires permettant la configuration de l’adaptateur, ou encore les fonctionnalités disponibles.</p>
+<p>Pour cela ces fonctions doivent retourner des chaines de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simple propriétés et à ce titre sont toutes statiques. L’objectif est de forcer l’implémentation des méthodes par les classes implémentant l’interface, car PHP ne supporte pas les propriétés abstraites.</p>
+<dl>
+<dt>meta_classname</dt><dd><p>Nom de la classe de l’adaptateur, il devrait uniquement retourner <code class="docutils literal notranslate"><span class="pre">__CLASS__</span></code>.</p>
+</dd>
+<dt>meta_uid</dt><dd><p>Le nom unique de l’adaptateur, en <strong>snake_case</strong>. Par exemple, si l’adaptateur s’appel <strong>« GammuAdapter »</strong>, un bon <code class="docutils literal notranslate"><span class="pre">meta_uid</span></code> est <strong>« gammu_adapter »</strong>.</p>
+</dd>
+<dt>meta_name</dt><dd><p>Le nom de l’adaptateur tel qu’il sera affiché à l’utilisateur. Par exemple, si vous créez un adaptateur pour un service externe example-sms.com, vous pourriez utiliser « Example SMS ».</p>
+</dd>
+<dt>meta_description</dt><dd><p>La description de l’adaptateur et du service qu’il permet d’utiliser. Cette description sera affichée à l’utilisateur.</p>
+</dd>
+<dt>meta_datas_fields</dt><dd><p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseigner les clefs API du service implémenté.</p>
 <p>La fonction retourne un tableau où chaque ligne correspond à un <code class="docutils literal notranslate"><span class="pre">input</span></code> qui devra être affiché sur la page de création du téléphone.</p>
-<dl class="simple">
-<dt>Chaque ligne est donc elle même un tableau avec les clefs suivantes:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> La clé qui sera utilisé pour accéder à la propriété. Il doit s’agir d’un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l’input HTML.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> Le titre qui sera affiché au dessus de l’input.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> La description qui sera affichée à l’utilisateur avant l’input. Cette description devrait permettre à l’utilisateur de comprendre l’utilité du réglage.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">required</span></code> Booléen permettant de définir si le champs est obligatoire. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> l’utilisateur devra obligatoirement remplir le champs pour pouvoir créer un téléphone avec cet adaptateur.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code> Booléen permettant de définir si le champs est un numéro de téléphone nécessitant l’utilisation d’un input dédié avec internationalisation des numéros. Par défaut <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<p>Chaque ligne est donc elle même un tableau avec les clefs suivantes :</p>
+<ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – La clé qui sera utilisé pour accéder à la propriété. Il doit s’agir d’un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l’input HTML.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) –  Le titre qui sera affiché au dessus de l’input.</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – La description qui sera affichée à l’utilisateur avant l’input. Cette description devrait permettre à l’utilisateur de comprendre l’utilité du réglage.</p></li>
+<li><p><strong>required</strong> (<em>bool</em>) – Défini si le champs est obligatoire. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> l’utilisateur devra obligatoirement remplir le champs pour pouvoir créer un téléphone avec cet adaptateur.</p></li>
+<li><p><strong>number</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">false</span></code> – Défini si le champs est un numéro de téléphone nécessitant l’utilisation d’un input dédié avec internationalisation des numéros.</p></li>
 </ul>
 </dd>
-</dl>
-</div>
-<div class="section" id="meta-support-read">
-<h4>meta_support_read<a class="headerlink" href="#meta-support-read" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Booléen définissant si l’adaptateur supporte la lecture directe des SMS reçus, par exemple via un appel à une API, par opposition à la lecture des SMS par appel d’une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_reception</span></code> doit obligatoirement être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
+<dt>meta_support_read</dt><dd><p>Booléen définissant si l’adaptateur supporte la lecture directe des SMS reçus, par exemple via un appel à une API, par opposition à la lecture des SMS par appel d’une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_reception</span></code> doit obligatoirement être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
 <p>À vous de choisir selon les capacités du service implémenté la solution la plus adaptée entre callback HTTP et lecture directe, les deux ayant leurs avantages et leurs inconvénients.</p>
-</div>
-<div class="section" id="meta-support-reception">
-<h4>meta_support_reception<a class="headerlink" href="#meta-support-reception" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Booléen définissant si l’adaptateur supporte la réception de SMS par appel à une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_read</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
-</div>
-<div class="section" id="meta-support-status-change">
-<h4>meta_support_status_change<a class="headerlink" href="#meta-support-status-change" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Booléen définissant si l’adaptateur supporte la mise à jour du status d’un SMS par l’appel à une callback HTTP.</p>
-</div>
-<div class="section" id="meta-support-flash">
-<h4>meta_support_flash<a class="headerlink" href="#meta-support-flash" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Booléen définissant si l’adaptateur supporte les SMS flash.</p>
-</div>
+</dd>
+<dt>meta_support_reception</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception de SMS par appel à une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_read</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
+</dd>
+<dt>meta_support_status_change</dt><dd><p>Booléen définissant si l’adaptateur supporte la mise à jour du status d’un SMS par l’appel à une callback HTTP.</p>
+</dd>
+<dt>meta_support_flash</dt><dd><p>Booléen définissant si l’adaptateur supporte les SMS flash.</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="le-constructeur-de-l-adaptateur">
 <h3>Le constructeur de l’adaptateur<a class="headerlink" href="#le-constructeur-de-l-adaptateur" title="Lien permanent vers ce titre">¶</a></h3>
@@ -254,15 +225,15 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 </div>
 <dl class="simple">
 <dt>La méthode est appelée à chaque SMS envoyé via l’adaptateur et prend trois arguments, détaillés ci-après :</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">$destination</span></code> Le numéro auquel envoyer le SMS.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$text</span></code> Le corps du SMS à envoyer.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$flash</span></code> Défini si le SMS envoyé doit être un SMS flash. Par défaut <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>$destination</strong> (<em>str</em>) – Le numéro auquel envoyer le SMS.</p></li>
+<li><p><strong>$text</strong> (<em>str</em>) – Le corps du SMS à envoyer.</p></li>
+<li><p><strong>$flash</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> – Défini si le SMS envoyé doit être un SMS flash.</p></li>
 </ul>
 </dd>
 <dt>La fonction doit retourner un tableau avec trois clés :</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> Un booléen à <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">error_message</span></code> Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">uid</span></code> L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du status d’un SMS.</p></li>
+<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
+<li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
+<li><p><strong>uid</strong> (<em>str | null</em>) – L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du status d’un SMS. Si une erreure est survenue <code class="docutils literal notranslate"><span class="pre">uid</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -275,16 +246,14 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 <p>La méthode appelée pour lire les SMS reçus. Cette méthode est appelée <strong>très</strong> souvent (environ 2 fois par seconde), à vous de vous assurez que cela n’entrainera pas de dépassement des capacité du service implémenté, et potentiellement de mettre en place des mécanisme de temporisation.</p>
 <dl class="simple">
 <dt>La fonction retourne un tableau tel que suit :</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> Un booléen à <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">error_message</span></code> Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">smss</span></code> Un tableau avec les SMS reçus. Chaque ligne est un SMS représenté lui même par un tableau avec les clés suivantes :</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">at</span></code> La date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> Le corps du SMS.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">origin</span></code> Le numéro de l’émetteur du SMS, au format international (ex : +33612345678).</p></li>
+<li><p><strong>error</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
+<li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
+<li><p><strong>smss</strong> (<em>array</em>) – Un tableau avec les SMS reçus, ou un tableau vide en cas d’erreur. Chaque ligne est un SMS représenté lui même par un tableau avec les clés suivantes :</p>
+<ul>
+<li><p><strong>at</strong> (<em>str</em>) – La date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – Le corps du SMS.</p></li>
+<li><p><strong>origin</strong> (<em>str</em>) – Le numéro de l’émetteur du SMS, au format international (ex : +33612345678).</p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </dd>
@@ -302,8 +271,8 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 <p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la mise à jour du status d’un SMS.</p>
 <dl class="simple">
 <dt>La méthode doit retournée <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> si une erreure survient, ou un tableau en cas de succès avec:</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">uid</span></code> L’identifiant unique du SMS au sein de la plateforme implémentée.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> Le nouveau status du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un status inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçus par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS à échoué.</p></li>
+<li><p><strong>uid</strong> (<em>str</em>) – L’identifiant unique du SMS au sein de la plateforme implémentée.</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – Le nouveau status du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un status inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçus par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS à échoué.</p></li>
 </ul>
 </dd>
 </dl>
@@ -316,16 +285,14 @@ Pour cela ces fonctions doivent retourner des chaines de caractères ou des tabl
 <p>La méthode est appelée lors e la réception d’un appel HTTP indiquant la réception d’un SMS.</p>
 <dl class="simple">
 <dt>La méthode doit transformé les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">error_message</span></code> Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">sms</span></code> Un tableau représentant le SMS reçu</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">at</span></code> Date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> Le corps du SMS</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">origin</span></code> Le numéro de l’expéditeur au format international</p></li>
+<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>error_message</strong> (<em>str | null</em>) – Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>sms</strong> (<em>array</em>) – Un tableau représentant le SMS reçu, ou un tableau vide en cas d’erreur</p>
+<ul>
+<li><p><strong>at</strong> (<em>str</em>) – Date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code></p></li>
+<li><p><strong>text</strong> (<em>str</em>) – Le corps du SMS</p></li>
+<li><p><strong>origin</strong> (<em>str</em>) – Le numéro de l’expéditeur au format international</p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </dd>

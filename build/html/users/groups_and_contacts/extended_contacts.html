@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Les contacts enrichis</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Pour les développeurs" href="../../developpers/overview.html" />
+  <link rel="prev" title="Groupes et contacts" href="overview.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Groupes et contacts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#objectif-des-groupes-et-des-contacts">Objectif des groupes et des contacts</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html#les-contacts">Les contacts</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Les contacts enrichis</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#comment-ca-fonctionne">Comment ça fonctionne ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#format-des-donnees">Format des données</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#utiliser-les-donnees-des-contacts-enrichis">Utiliser les données des contacts enrichis</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#les-groupes">Les groupes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../overview.html">Pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Groupes et contacts</a> &raquo;</li>
+    
+    <li>Les contacts enrichis</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="overview.html"
+       title="Chapitre précédent">← Groupes et contacts</a>
+  </li>
+  <li class="next">
+    <a href="../../developpers/overview.html"
+       title="Chapitre suivant">Pour les développeurs →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="les-contacts-enrichis">
+<h1>Les contacts enrichis<a class="headerlink" href="#les-contacts-enrichis" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les contacts enrichis permettent d’associer des données à un contact allant au delà du nom et du numéro de téléphone.</p>
+<p>Ces données peuvent ensuite être utilisées pour générer des listes de diffusions basées sur ces données, ou encore personnaliser des SMS standards en insérant ces données au sein du message.</p>
+</div>
+<div class="section" id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de la création du contact vous renseigner les données supplémentaires dans la partie <strong>« Données du contact »</strong>. Pour chaque donnée deux champs sont disponibles, le premier permet de renseigner le nom de la donnée, qui sera utilisé pour y accéder, le second contient la valeure de la données.</p>
+</div>
+<div class="section" id="format-des-donnees">
+<h2>Format des données<a class="headerlink" href="#format-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les données sont toutes stockées sous forme de chaînes de caractères.</p>
+<p>Il n’y a pas de format particulier à respecter pour les données, mais il est conseillé de choisir des noms de données simples, totalement en minuscule. En effet, les noms de données sont sensibles à la casse, c’est à dire que le nom <code class="docutils literal notranslate"><span class="pre">Nom</span></code> est différent de <code class="docutils literal notranslate"><span class="pre">nom</span></code> ou de <code class="docutils literal notranslate"><span class="pre">NOM</span></code>. Pour plus de simplicité lors de l’utilisation future des données et afin d’éviter de commettre des erreures d’inattention, l’adoption d’un format uniforme est donc conseillé.</p>
+<p>De la même façon, afin de tirer pleinement parti de la puissance des données enrichies vous devriez essayer de standardiser au maximum les données enrichies des contacts. Concrétement, cela signifie que vous devriez tenter d’utiliser toujours les mêmes noms et le même format pour des données similaires.</p>
+<blockquote>
+<div><p><strong>Exemple:</strong></p>
+<p>Si vous stocker la date de naissance de vos contacts, évitez d’avoir une date avec le nom <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">de</span> <span class="pre">naissance</span></code> au format <code class="docutils literal notranslate"><span class="pre">jour/mois/année</span></code> et une autre au format <code class="docutils literal notranslate"><span class="pre">jour</span> <span class="pre">mois</span> <span class="pre">année</span></code> avec le nom <code class="docutils literal notranslate"><span class="pre">birthdate</span></code>.</p>
+<p>À la place, choisissez un seul et unique nom et un seul et unique format, par exemple <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> et <code class="docutils literal notranslate"><span class="pre">jour/mois/année</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="utiliser-les-donnees-des-contacts-enrichis">
+<h2>Utiliser les données des contacts enrichis<a class="headerlink" href="#utiliser-les-donnees-des-contacts-enrichis" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour en savoir plus sur l’utilisation des données des contacts enrichis, reportez-vous aux pages ci-dessous.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="overview.html"
+       title="Chapitre précédent">← Groupes et contacts</a>
+  </li>
+  <li class="next">
+    <a href="../../developpers/overview.html"
+       title="Chapitre suivant">Pour les développeurs →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

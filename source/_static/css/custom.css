@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'RobotoMonoRegular';
+    src: url('../font/RobotoMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('../font/RobotoMono-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../font/inconsolata.ttf');
+}
+
 .sidebar-group .caption-text {
     color: #3eaf7c;
 }
@@ -30,4 +45,17 @@
 
 .sidebar .toctree-l6 a {
     padding: .35rem 1rem .35rem 4rem;
+}
+
+
+dt {
+    margin-top: 1.7em;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+.footnote-reference, .label, dt, p
+{
+    margin-top: 0;
+    padding-top: 0;
 }
