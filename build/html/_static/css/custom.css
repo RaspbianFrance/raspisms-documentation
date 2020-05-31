@@ -59,3 +59,17 @@ dt {
     margin-top: 0;
     padding-top: 0;
 }
+
+.admonition .admonition-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+caption {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+    color: #888;
+}

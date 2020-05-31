@@ -10,3 +10,4 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
 
     adapters/overview
     groups_and_contacts/overview
+    templating/overview

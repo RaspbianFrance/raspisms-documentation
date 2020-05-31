@@ -1,0 +1,7 @@
+{% if contact.gender == 'male' %}
+Bonjour M. {{contact.firstname}} {{contact.lastname}}, comment allez-vous aujourd'hui ?
+{% elseif contact.gender == 'female' %}
+Bonjour Mme. {{contact.firstname}} {{contact.lastname}}, comment allez-vous aujourd'hui ?
+{% else %}
+Bonjour M./Mme. {{contact.firstname}} {{contact.lastname}}, comment allez-vous aujourd'hui ?
+{% endif %}

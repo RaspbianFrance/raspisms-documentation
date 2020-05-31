@@ -1,0 +1,1 @@
+{% apply upper %}Bonjour {% if contact.gender == 'male' %}M.{% elseif contact.gender == 'female' %}Mme.{% else %}M./Mme.{% endif %} {{contact.firstname}} {{contact.lastname}}, comment allez-vous aujourd'hui ?{% endapply %}

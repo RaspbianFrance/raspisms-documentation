@@ -1,0 +1,3 @@
+{% if contact.gender is defined and contact.firstname is defined and contact.lastname is defined %}
+Bonjour {% if contact.gender == 'male' %}M.{% elseif contact.gender == 'female' %}Mme.{% else %}M./Mme.{% endif %} {{contact.firstname}} {{contact.lastname}}, comment allez-vous aujourd'hui ?
+{% endif %}
