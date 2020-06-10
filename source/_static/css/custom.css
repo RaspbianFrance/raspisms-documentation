@@ -73,3 +73,7 @@ caption {
     font-style: italic;
     color: #888;
 }
+
+.content .highlighted {
+    padding: 0 0;
+}
