@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Groupes conditionnels</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="SMS dynamiques et templating" href="../templating/overview.html" />
+  <link rel="prev" title="Les contacts enrichis" href="extended_contacts.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Groupes et contacts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#objectif-des-groupes-et-des-contacts">Objectif des groupes et des contacts</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="overview.html#les-contacts">Les contacts</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html#les-groupes">Les groupes</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Groupes conditionnels</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#les-groupes-conditionnels-c-est-quoi">Les groupes conditionnels c’est quoi ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#activer-desactiver-le-support-des-groupes-conditionnels">Activer/désactiver le support des groupes conditionnels</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#comment-ca-fonctionne">Comment ça fonctionne ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#les-bases-des-regles">Les bases des règles</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#nos-contacts-d-exemple">Nos contacts d’exemple</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#notre-premiere-regle">Notre première règle</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#utiliser-les-donnees-des-contacts">Utiliser les données des contacts</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#faire-un-groupe-avec-tous-les-contacts-femmes">Faire un groupe avec tous les contacts femmes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#utiliser-d-autres-operateurs-et-combiner-des-conditions">Utiliser d’autres opérateurs et combiner des conditions</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#les-operateurs-de-comparaison-et-mathematiques">Les opérateurs de comparaison et mathématiques</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#combiner-plusieurs-conditions">Combiner plusieurs conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#aller-plus-loin-avec-les-groupes-conditionnels">Aller plus loin avec les groupes conditionnels</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#utiliser-des-fonctions">Utiliser des fonctions</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#liste-des-fonctions-disponibles">Liste des fonctions disponibles</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#verifier-si-les-donnees-du-contact-existent">Vérifier si les données du contact existent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../overview.html">Pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Groupes et contacts</a> &raquo;</li>
+    
+    <li>Groupes conditionnels</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="extended_contacts.html"
+       title="Chapitre précédent">← Les contacts enrichis</a>
+  </li>
+  <li class="next">
+    <a href="../templating/overview.html"
+       title="Chapitre suivant">SMS dynamiques et templating →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="groupes-conditionnels">
+<span id="conditionnals-groups"></span><h1>Groupes conditionnels<a class="headerlink" href="#groupes-conditionnels" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="les-groupes-conditionnels-c-est-quoi">
+<h2>Les groupes conditionnels c’est quoi ?<a class="headerlink" href="#les-groupes-conditionnels-c-est-quoi" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les groupes conditionnels sont un moyen de créer de regrouper des contacts en utilisant <a class="reference internal" href="extended_contacts.html#extended-contacts"><span class="std std-ref">les données des contacts enrichis</span></a>. C’est donc un moyen de créer des groupes dont la liste des membres n’est pas fixe mais calculée dynamiquement selon les critères de votre choix. C’est un excellent moyen de faire des listes de diffusions dynamiques.</p>
+<p>Lors de l’envoi d’un SMS les groupes conditionnels s’utilisent de la même façon que les groupes classiques.</p>
+</div>
+<div class="section" id="activer-desactiver-le-support-des-groupes-conditionnels">
+<h2>Activer/désactiver le support des groupes conditionnels<a class="headerlink" href="#activer-desactiver-le-support-des-groupes-conditionnels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le support des groupes conditionnels peut être activé/désactivé. Pour cela, rendez-vous dans la partie « Réglages » de RaspiSMS, modifiez la valeure dans le champs « Support des groupes conditionnels » et cliquez sur « Mettre à jour les données ».</p>
+</div>
+<div class="section" id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de la création d’un groupe conditionnel, au lieu d’écrire la liste des contacts faisant parti du groupe, vous écrivez une règle qui sera évaluée pour chaque contact avec les données de celui-ci. Si la règle est évaluée comme <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code>, alors le contact est inclus dans le groupe, s’il elle est évaluée comme <code class="docutils literal notranslate"><span class="pre">FAUSSE</span></code>, le groupe n’est pas inclus.</p>
+<p>Au moment de l’envoi d’un SMS ayant parmis ses cibles un groupe conditionnel, la liste de tous les contacts est récupérée et la règle du groupe conditionnelle est évaluée pour chacun.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lors de la création d’un groupe conditionnel vous pouvez prévisualiser la liste des membres du groupes à l’instant T en cliquant sur le bouton « Prévisualiser les contacts » en bas à droite.</p>
+</div>
+</div>
+<div class="section" id="les-bases-des-regles">
+<h2>Les bases des règles<a class="headerlink" href="#les-bases-des-regles" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>N’hésitez pas à tester vous même les exemplees qui suivent pour pleinement prendre en main les groupes conditionnels. Utilisez la fonctionnalitée de prévisualisation pour voir la liste des contacts dans votre groupe.</p>
+</div>
+<p>Le système de règle utilisé par les groupes conditionnel est une sorte de langage de programmation, assez proche dans l’idée <a class="reference internal" href="../templating/overview.html#templating"><span class="std std-ref">du système de templating</span></a>. Il s’agit en fait d’une « expression booléenne », comme lors de l’utilisation d’un <code class="docutils literal notranslate"><span class="pre">IF</span></code> en programmation.</p>
+<div class="section" id="nos-contacts-d-exemple">
+<h3>Nos contacts d’exemple<a class="headerlink" href="#nos-contacts-d-exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour la suite de ce tutoriel nous allons considérer que nous possédons deux contact, « John Doe » et « Jane Doe » avec les données enrichies suivantes :</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Données de John Doe</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>John</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1990-10-22</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>male</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Données de Jane Doe</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>Jane</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1992-08-15</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>female</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="notre-premiere-regle">
+<h3>Notre première règle<a class="headerlink" href="#notre-premiere-regle" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour commencer, nous allons créer une règle très simple qui sera toujours <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code>. À quoi une telle règle peut bien servir ? Et bien par exemple à faire un groupe qui contient <strong>tous</strong> vos contacts. En effet, puisque la règle sera toujours <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code>, à chaque contact testé celui-ci sera considéré comme devant faire parti du groupe. C’est donc un moyen simple d’envoyer un message à tous vos contacts sans avoir à mettre le groupe à jour à chaque ajout d’un nouveau contact.</p>
+<p>Pour écrire une règle, on fait en fait une comparaison entre deux « opérandes » et un « opérateur », selon la forme suivante <code class="docutils literal notranslate"><span class="pre">opérateur_gauche</span> <span class="pre">opérateur</span> <span class="pre">opérande_droite</span></code>. Il existe plusieurs opérateurs que nous verrons plus tard, mais pour commencer regardons l’opérateur d’égalité, celui-ci s’écrit <code class="docutils literal notranslate"><span class="pre">==</span></code> et reviens à dire <code class="docutils literal notranslate"><span class="pre">EST</span> <span class="pre">ÉGAL</span> <span class="pre">À</span></code>.</p>
+<p>Par conséquent, nous pouvons écrire une règle (ou « condition ») qui sera <strong>toujours</strong> <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code> comme ceci :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">1 == 1</span>
+</pre></div>
+</div>
+<p>Si vous cliquez sur la fonctionnalité de pré-visualisation vous verrez que tous nos contacts sont inclus dans le groupe.</p>
+</div>
+<div class="section" id="utiliser-les-donnees-des-contacts">
+<h3>Utiliser les données des contacts<a class="headerlink" href="#utiliser-les-donnees-des-contacts" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C’est bien gentil tout ça, mais comment peut-on utiliser ces règles pour modifier le comportement en fonction des données d’un contact ? Et bien tout simplement en comparant non pas deux opérateurs fixes comme précédemment, mais un opérateur fixe et une variable contenant la donnée du contact qui nous intéresse.</p>
+<p>Pour accéder à une donnée d’un contact il nous suffit d’utiliser la notation <code class="docutils literal notranslate"><span class="pre">contact.nom_de_la_donnée</span></code>. Si nous prenons nos contact d’exemple, nous pouvons par exemple accéder à leur sexe en utilisant la notation <code class="docutils literal notranslate"><span class="pre">contact.gender</span></code>.</p>
+<div class="section" id="faire-un-groupe-avec-tous-les-contacts-femmes">
+<h4>Faire un groupe avec tous les contacts femmes<a class="headerlink" href="#faire-un-groupe-avec-tous-les-contacts-femmes" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Nous allons créer un groupe qui contiendra tous les contacts dont la donnée <code class="docutils literal notranslate"><span class="pre">gender</span></code> est égale à <code class="docutils literal notranslate"><span class="pre">female</span></code>. Pour cela il y a encore une chose que vous devez apprendre, la comparaison avec des chaînes de caractères. En effet, jusqu’à présent nous avons comparé des chiffres (<code class="docutils literal notranslate"><span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">1</span></code> entre eux), mais les données d’un contact sont <strong>toujours</strong> des chaînes de caractères.</p>
+<p>Pour faire une comparaison avec du texte, vous devrez entourer celui-ci avec des guillemets simples (<code class="docutils literal notranslate"><span class="pre">'</span></code>), ou doubles (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). On parle alors d’une chaîne de caractère. Sans cela, le moteur de règle ne pourrais pas savoir si vous parlez d’une variable (par exemple <code class="docutils literal notranslate"><span class="pre">contact.gender</span></code>) ou d’un texte !</p>
+<p>Dans notre cas, nous allons vouloir comparer le sexe de notre contact avec la chaîne <code class="docutils literal notranslate"><span class="pre">'female'</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Attention, les chaînes de caractères sont « sensibles à la casse », donc <code class="docutils literal notranslate"><span class="pre">'female'</span></code> est différent de <code class="docutils literal notranslate"><span class="pre">'FEMALE'</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Et si vous devez écrire un guillemet simple, par exemple pour faire une apostrophe, au milieu d’une chaîne délimitée par des guillemets simples, comment faire ? Et bien il vous suffit de <strong>« l’échapper »</strong>, c’est à dire indiquer qu’il s’agit d’un simple caractère et pas d’un caractère spéciale. Pour cela il vous suffit d’écrire un <code class="docutils literal notranslate"><span class="pre">\</span></code> devant le <code class="docutils literal notranslate"><span class="pre">'</span></code>. Par example, pour écrire <code class="docutils literal notranslate"><span class="pre">aujourd'hui</span></code>, vous écrirez <code class="docutils literal notranslate"><span class="pre">'aujourd\'hui'</span></code>.</p>
+<p>Le fonctionnement est le même pour les guillemets doubles.</p>
+<p>Vous devrez d’ailleurs faire pareil pour écrire un <code class="docutils literal notranslate"><span class="pre">\</span></code>, vous devrez alors écrire <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+</div>
+<p>Pour créer un groupe avec tous les contacts femmes, nous pouvons donc écrire.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">contact.gender == &#39;female&#39;</span>
+</pre></div>
+</div>
+<p>Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, cette fois seule « Jane Doe » est dans le groupe.</p>
+</div>
+</div>
+</div>
+<div class="section" id="utiliser-d-autres-operateurs-et-combiner-des-conditions">
+<h2>Utiliser d’autres opérateurs et combiner des conditions<a class="headerlink" href="#utiliser-d-autres-operateurs-et-combiner-des-conditions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Jusqu’à présent nous avons seulement vu l’opérateur d’égalité, mais ce n’est pas le seul. En effet, non seulement il existe d’autres opérateurs de comparaison, mais il existe aussi des opérateurs « logiques » qui permettent de combiner plusieurs conditions.</p>
+<div class="section" id="les-operateurs-de-comparaison-et-mathematiques">
+<h3>Les opérateurs de comparaison et mathématiques<a class="headerlink" href="#les-operateurs-de-comparaison-et-mathematiques" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En plus de l’opérateur d’égalité, des opérateurs d’inégalité, d’infériorité, etc. sont utilisables, ainsi que des opérateurs mathématiques.</p>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Les opérateurs de comparaison</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Opérateur</p></th>
+<th class="head"><p>Effets</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>Vrai si les deux opérandes ont la même valeure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Vrai si les deux opérandes n’ont pas la même valeure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>Vrai si la valeure de l’opérande gauche est plus petite que celle de l’opérande droite.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>Vrai si la valeure de l’opérande gauche est plus grande que celle de l’opérande droite.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>Vrai si la valeure de l’opérande gauche est plus petite ou égale à celle de l’opérande droite.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>Vrai si la valeure de l’opérande gauche est plus grande ou égale que celle de l’opérande droite.</p></td>
+</tr>
+</tbody>
+</table>
+<p>En voyons ces opérateurs, on se rend par exemple compte que l’on aurait pu écrire d’autres forme de notre première règle toujours vraie, comme <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">10</span></code> ou encore <code class="docutils literal notranslate"><span class="pre">'vraie'</span> <span class="pre">!=</span> <span class="pre">'faux'</span></code>.</p>
+<p>En plus des opérateurs de comparaison, les opérateurs mathématiques classiques sont aussi utilisables.</p>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-text">Les opérateurs mathématiques</span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Opérateur</p></th>
+<th class="head"><p>Effets</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Addition.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>Soustraction.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Multiplication.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>Division.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p>Puissance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p>Modulo.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Avec ces opérateurs on pourrait encore reprendre la règle précédente comme suit, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">5*2</span></code> ou <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">==</span> <span class="pre">2*2</span></code>.</p>
+</div>
+<div class="section" id="combiner-plusieurs-conditions">
+<h3>Combiner plusieurs conditions<a class="headerlink" href="#combiner-plusieurs-conditions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour aller plus loin que la simple comparaison, vous pouvez combiner plusieurs conditions en utilisant les opérateurs logiques, en faisant <code class="docutils literal notranslate"><span class="pre">condition</span> <span class="pre">opérateur</span> <span class="pre">condition</span></code>.</p>
+<table class="colwidths-given docutils align-default" id="id5">
+<caption><span class="caption-text">Les opérateurs logiques</span><a class="headerlink" href="#id5" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Opérateur</p></th>
+<th class="head"><p>Effets</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></p></td>
+<td><p>Vrai si les deux opérations sont vraies</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">||</span></code></p></td>
+<td><p>Vrai si au moins une des deux opérations est vraie</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!</span></code></p></td>
+<td><p>Cas particulier, elle s’utilise avec une seule condition et devant, par exemple <code class="docutils literal notranslate"><span class="pre">!(1==1)</span></code>. Inverse la condition, si vrai -&gt; faux, si faux -&gt; vrai.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Comme vous le voyez avec le dernier cas, on peux aussi utiliser les parenthèses, <code class="docutils literal notranslate"><span class="pre">(</span></code> et <code class="docutils literal notranslate"><span class="pre">)</span></code>, comme en mathématique, pour regrouper des expressions.</p>
+</div>
+<p>Nous pourrions donc choisir de faire un groupe avec seulement les femmes qui sont VIP (ce groupe sera vide puisque « Jane Doe » n’est pas VIP).</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">contact.gender == &#39;female&#39; &amp;&amp; contact.vip == 1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour la suite de ce tutoriel, nous n’incluerons pas cette vérification à chaque fois pour des raisons de lisibilité, mais nous vous encourageons vivement à l’utiliser systématiquement !</p>
+</div>
+</div>
+</div>
+<div class="section" id="aller-plus-loin-avec-les-groupes-conditionnels">
+<h2>Aller plus loin avec les groupes conditionnels<a class="headerlink" href="#aller-plus-loin-avec-les-groupes-conditionnels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le moteur est un outil très puissant et il s’agit techniquement d’un véritable petit langage de programmation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour proposer autant de fonctionnalité, RaspiSMS utilise le moteur règle « ExpressionLanguage » du projet Symfony (version 5.x). Si vous souhaitez aller encore plus loin avec le moteur de règle, nous vous invitons à vous reporter à <a class="reference external" href="https://symfony.com/doc/current/components/expression_language.html">la documentation du composant ExpressionLanguage de Symfony</a>. Vous y trouverez de nombreuses informations.</p>
+</div>
+<div class="section" id="utiliser-des-fonctions">
+<h3>Utiliser des fonctions<a class="headerlink" href="#utiliser-des-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En plus des opérateurs de base, certaines fonctionnalités supplémentaires sont accessibles à travers les « fonctions ». Pour utiliser une fonction on utilise la notation <code class="docutils literal notranslate"><span class="pre">nom_fonction(parametre1,</span> <span class="pre">parametre2...)</span></code>. Les fonctions peuvent retourner des chaînes de caractères, des chiffres ou même <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code> ou <code class="docutils literal notranslate"><span class="pre">FAUX</span></code>.</p>
+<p>Nous pourrions par exemple utiliser la fonction <code class="docutils literal notranslate"><span class="pre">upper</span></code> sur la donnée <code class="docutils literal notranslate"><span class="pre">lastname</span></code> de notre contact pour la mettre en majuscule, afin de supprimer les risques d’erreures liées à la casse.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">upper(contact.lastname) == &#39;DOE&#39;</span>
+</pre></div>
+</div>
+<p>Vous pouvez tentez de modifier la casse de <code class="docutils literal notranslate"><span class="pre">'DOE'</span></code>, par exemple en <code class="docutils literal notranslate"><span class="pre">'DoE'</span></code> et constater qu’après modification des contacts ne sont pas inclus. À l’inverse, modifier la casse de la donnée <code class="docutils literal notranslate"><span class="pre">lastname</span></code> d’un des contacts n’aura aucun effet. C’est un bon moyen de vous prémunir contre les erreures de casse lors de la saisie des données.</p>
+<div class="section" id="liste-des-fonctions-disponibles">
+<h4>Liste des fonctions disponibles<a class="headerlink" href="#liste-des-fonctions-disponibles" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Seules les fonctions suivantes sont disponibles au sein de RaspiSMS.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Liste des fonctions disponibles dans RaspiSMS</span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom dans RaspiSMS</p></th>
+<th class="head"><p>Équivalent PHP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exists</p></td>
+<td><p>!is_null</p></td>
+</tr>
+<tr class="row-odd"><td><p>lower</p></td>
+<td><p>mb_strtolower</p></td>
+</tr>
+<tr class="row-even"><td><p>upper</p></td>
+<td><p>mb_strtoupper</p></td>
+</tr>
+<tr class="row-odd"><td><p>substr</p></td>
+<td><p>mb_substr</p></td>
+</tr>
+<tr class="row-even"><td><p>strlen</p></td>
+<td><p>mb_strlen</p></td>
+</tr>
+<tr class="row-odd"><td><p>abs</p></td>
+<td><p>abs</p></td>
+</tr>
+<tr class="row-even"><td><p>date</p></td>
+<td><p>strtotime</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pour en apprendre plus sur chacun de ces fonctions, consultez <a class="reference external" href="https://www.php.net/manual/fr/intro-whatis.php">la page correspondante sur la documentation PHP</a>.</p>
+</div>
+</div>
+<div class="section" id="verifier-si-les-donnees-du-contact-existent">
+<h3>Vérifier si les données du contact existent<a class="headerlink" href="#verifier-si-les-donnees-du-contact-existent" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Comme les données du contact sont entièrement définies par l’utilisateur et ne sont pas obligatoires, elles peuvent varier d’un utilisateur à l’autre. Cela peut parfois créer des comportement imprévu, pour cette raison nous vous conseillons de toujours vérifier si les données que vous utilisez sont disponibles. Pour cela, il vous suffit de commencer votre condition par une conditon de la forme <code class="docutils literal notranslate"><span class="pre">(exists(contact.var1)</span> <span class="pre">&amp;&amp;</span> <span class="pre">exists(contact.var2))</span> <span class="pre">&amp;&amp;</span> <span class="pre">(votre_vraie_condition)</span></code>.</p>
+<p>Dans notre cas, nous devrions donc modifier notre dernier exemple comme ceci.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">(exists(contact.lastname)) &amp;&amp; (upper(contact.lastname) == &#39;DOE&#39;)</span>
+</pre></div>
+</div>
+<p>Si une variable n’est pas définie, alors la condition retournera <code class="docutils literal notranslate"><span class="pre">FAUX</span></code> et le contact ne sera pas inclus.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour des raisons de lisibilité nous n’avons pas inclus cette vérification dans tous nos exemples, mais vous êtes fortement encouragés à toujours vérifier la présence des données.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="extended_contacts.html"
+       title="Chapitre précédent">← Les contacts enrichis</a>
+  </li>
+  <li class="next">
+    <a href="../templating/overview.html"
+       title="Chapitre suivant">SMS dynamiques et templating →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

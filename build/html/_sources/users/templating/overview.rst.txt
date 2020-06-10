@@ -1,3 +1,5 @@
+.. _templating:
+
 ============================================
 SMS dynamiques et templating
 ============================================
@@ -6,7 +8,7 @@ Les SMS dynamiques c'est quoi ?
 =================================
 Les SMS dynamiques vous permettent d'écrire un SMS dont le contenu sera adapté à chaque contact en fonction de ses données. Cela peut être exploité dans le cadre d'une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.
 
-Les SMS dynamiques exploitent les données des contacts enrichis, voir :doc:`la documentation des contacts enrichis </users/groups_and_contacts/extended_contacts.rst>`.
+Les SMS dynamiques exploitent les données des contacts enrichis, voir :ref:`la documentation des contacts enrichis <extended_contacts>`.
 
 .. warning::
     Seul les contacts et les groupes peuvent êtres utilisés avec les SMS dynamiques. L'envoi d'un SMS dynamique à un numéro direct fonctionne, mais aucune donnée ne sera insérée, ce qui risque de créer des messages imprévisibles.

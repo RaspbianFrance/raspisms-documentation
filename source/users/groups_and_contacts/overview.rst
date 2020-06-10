@@ -26,3 +26,4 @@ Il est possibles de créer des groupes statiques en rentrant les contacts du gro
 .. toctree::
     :maxdepth: 1
 
+    conditionnals_groups
