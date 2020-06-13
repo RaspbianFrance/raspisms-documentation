@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Importer et exporter des contacts</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Groupes conditionnels" href="conditionnals_groups.html" />
+  <link rel="prev" title="Les contacts enrichis" href="extended_contacts.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Groupes et contacts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#objectif-des-groupes-et-des-contacts">Objectif des groupes et des contacts</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html#les-contacts">Les contacts</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="extended_contacts.html">Les contacts enrichis</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Importer et exporter des contacts</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#exporter-des-contacts">Exporter des contacts</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#importer-des-contacts">Importer des contacts</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#format-des-donnees">Format des données</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#importer-un-fichier-csv">Importer un fichier CSV</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#exemple-de-fichier-csv">Exemple de fichier CSV</a></li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="#importer-un-fichier-json">Importer un fichier JSON</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#exemple-de-fichier-json">Exemple de fichier JSON</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#les-groupes">Les groupes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../overview.html">Pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Groupes et contacts</a> &raquo;</li>
+    
+    <li>Importer et exporter des contacts</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="extended_contacts.html"
+       title="Chapitre précédent">← Les contacts enrichis</a>
+  </li>
+  <li class="next">
+    <a href="conditionnals_groups.html"
+       title="Chapitre suivant">Groupes conditionnels →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="importer-et-exporter-des-contacts">
+<span id="import-contacts"></span><h1>Importer et exporter des contacts<a class="headerlink" href="#importer-et-exporter-des-contacts" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’import et l’export de contacts vous permettent de facilement créer de nombreux contacts ainsi que de sauvegarder votre répertoire, par exemple pour le transférer sur une nouvelle instance de RaspiSMS.</p>
+<p>Il s’agit aussi d’un moyen simple d’importer une base de donnée de contacts déjà existante au sein de RaspiSMS.</p>
+</div>
+<div class="section" id="exporter-des-contacts">
+<h2>Exporter des contacts<a class="headerlink" href="#exporter-des-contacts" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour exporter vos contacts, rien de plus simple, il vous suffit de vous rendre sur la page de gestion de vos contacts et de cliquer sur le bouton « Exporter la liste des contacts » en haut à droite. Une fenêtre apparait alors pour vous demander le format à employer, actuellement les format « JSON » et « CSV » sont supportés.</p>
+</div>
+<div class="section" id="importer-des-contacts">
+<h2>Importer des contacts<a class="headerlink" href="#importer-des-contacts" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Importer des contacts n’est pas beaucoup plus compliqué, mais cela demande en revanche de préter une certaine attention au format des données afin de créer des contacts valides.</p>
+<p>Pour importer des contacts, vous devrez donc créer un fichier selon les règles indiquées ci-dessous, puis cliquer sur le bouton « Importer une liste des contacts » en haut à droite dans la partie dédiée à la gestion des contacts, cliquer sur « Choisir le fichier » dans la popup ouverte, séléctionner le fichier précédemment créé et enfin cliquer sur « Valider ».</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lors de l’import d’un contact, si un contact avec un nom similaire existe déjà le nouveau contact ne sera pas importé.</p>
+</div>
+<div class="section" id="format-des-donnees">
+<h3>Format des données<a class="headerlink" href="#format-des-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Afin de pouvoir importer des contacts, il important de respecter un format précis, lequel varie selon que vous souhaitez importer des contacts via un fichier « JSON » ou « CSV ».</p>
+<p>Pour la partie qui suit nous prendrons en exemple la création par importation des deux contacts suivants :</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Le contact nommé « John Doe », numéro de téléphone « +33 6 12 34 56 78 »</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>John</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1990-10-22</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>male</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Le contact nommé « Jane Doe », numéro de téléphone « +33 6 12 34 56 79 »</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>Jane</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1992-08-15</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>female</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="importer-un-fichier-csv">
+<h4>Importer un fichier CSV<a class="headerlink" href="#importer-un-fichier-csv" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le format CSV (Comma-Separrated Value) est très utilisé pour le transfert de données avec des logiciels tableur. Dans un fichier CSV, chaque ligne du fichier correspond à une nouvelle entrée, et les valeures de chaque entrée, c’est à dire les colonnes du tabelau, sont séparées par des virgules. La première ligne quand à elle sert généralement à indiquer le nom de chaque colonne.</p>
+<p>Dans notre cas la première ligne servira donc à indiquer les colonnes, et les lignes suivantes seront les contacts à importer.</p>
+<p>Il est très important de respecter un certain ordre quand aux colonnes. En effet, les deux premières colonnes doivent contenir dans l’ordre, le nom du contact à créer, puis son numéro de téléphone (au format international, <code class="docutils literal notranslate"><span class="pre">+33XXXXXXXXX</span></code>). Les colonnes suivantes contiendront les données enrichies du contacts (voir <a class="reference internal" href="extended_contacts.html#extended-contacts"><span class="std std-ref">contacts enrichies</span></a>).</p>
+<p>Le nom donné aux deux premières colonnes est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien les nommées « 0 » et « 1 », seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ce noms seront utilisé comme clé de la donnée enrichie correspondante du contact.</p>
+<div class="section" id="exemple-de-fichier-csv">
+<h5>Exemple de fichier CSV<a class="headerlink" href="#exemple-de-fichier-csv" title="Lien permanent vers ce titre">¶</a></h5>
+<p>Pour rendre cela plus clair, rien ne vaut au bon exemple. Voici donc un fichier CSV valide permettant d’importer les deux contacts d’exemples.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0,1,lastname,firstname,birthdate,gender,vip
+&quot;John Doe&quot;,+33612345678,Doe,John,1990-10-22,male,1
+&quot;Jane Doe&quot;,+33612345679,Doe,Jane,1992-08-15,female,0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous noterez que les caractères utilisés pour la séparation sont la virgule <code class="docutils literal notranslate"><span class="pre">,</span></code>, pour l’encadrement les doubles guillemets <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, et que ces derniers ne sont nécessaires que sur les chaînes comportant des espaces.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Attention, lors de la lecture d’un fichier CSV avec des logiciels tableur ceux-ci ont tendance à faire disparaitre le « + » au début des numéros, lequel est requis !</p>
+</div>
+</div>
+</div>
+<div class="section" id="importer-un-fichier-json">
+<h4>Importer un fichier JSON<a class="headerlink" href="#importer-un-fichier-json" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le format JSON (JavaScript Object Notation) est un format plus récent d’avantage utilisé par les API et les systèmes informatiques. Les fichiers JSON peuvent représenter des collections ou des tableaux avec des clés nommées. Plus complexes à lire pour les humains, ils sont en revanche plus simple à analyser pour des machines et peuvent donc êtres utilisés pour facilement exporter des données de systèmes informatiques plus récents et/ou complexes que de simples tableurs ou bases de données.</p>
+<p>Pour importer des contacts via un fichier JSON, vous devrez créer une collection de tableaux avec des clés nommées. Chaque tableau de la collection sera un contact.</p>
+<p>Les tableaux doivent posséder les clés « name » et « number », qui contiendrons le nom à donné au contact et son numéro, toujours au format international.</p>
+<p>Pour définir les données étendues du contact il faudra créer une clé supplémentaire nommée « datas ». Cette clé sera associée à un tableau dans lequel chaque donnée enrichie sera renseignée avec en clé son nom (là aussi la clé devrait-être uniquement composé de caractères alphanumériques, tirets et underscore), et en valeure associée la valeure souhaitée pour la donnée.</p>
+<div class="section" id="exemple-de-fichier-json">
+<h5>Exemple de fichier JSON<a class="headerlink" href="#exemple-de-fichier-json" title="Lien permanent vers ce titre">¶</a></h5>
+<p>Comme pour le CSV, voici un fichier JSON valide permettant d’importer les deux contacts d’exemples.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345679&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;datas&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;lastname&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;firstname&quot;</span><span class="p">:</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;birthdate&quot;</span><span class="p">:</span><span class="s2">&quot;1992-08-15&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="s2">&quot;female&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;vip&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345678&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;datas&quot;</span><span class="p">:{</span>
+         <span class="nt">&quot;lastname&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;firstname&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;birthdate&quot;</span><span class="p">:</span><span class="s2">&quot;1990-10-22&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="s2">&quot;male&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;vip&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour des raisons de lisibilités des espaces et indentations ont été ajoutés, mais ils ne sont pas nécessaires.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="extended_contacts.html"
+       title="Chapitre précédent">← Les contacts enrichis</a>
+  </li>
+  <li class="next">
+    <a href="conditionnals_groups.html"
+       title="Chapitre suivant">Groupes conditionnels →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

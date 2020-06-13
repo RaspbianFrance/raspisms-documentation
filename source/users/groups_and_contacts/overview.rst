@@ -16,6 +16,7 @@ Vous pouvez également enrichir les contacts avec des données supplémentaires 
     :maxdepth: 1
 
     extended_contacts
+    import
 
 Les groupes
 '''''''''''

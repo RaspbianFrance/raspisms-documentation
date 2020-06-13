@@ -31,6 +31,7 @@ release = '3.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinx_copybutton",
 ]
 
 # Use PHP as default language

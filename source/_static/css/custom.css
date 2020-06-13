@@ -77,3 +77,10 @@ caption {
 .content .highlighted {
     padding: 0 0;
 }
+
+a.copybtn {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+
