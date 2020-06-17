@@ -8,5 +8,6 @@ Cette partie de la documentation est destinée aux développeurs souhaitant part
     :maxdepth: 1
     :caption: Table des matières
 
+    api/overview
     adapters/overview
     webhooks/overview
