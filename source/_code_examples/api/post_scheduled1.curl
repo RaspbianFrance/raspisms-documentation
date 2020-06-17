@@ -1,0 +1,1 @@
+curl -X POST https://app.raspisms.fr/api/scheduled/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d' -d 'text=Mon%20SMS%20d%27exemple' -d 'numbers=%2B33612345678'

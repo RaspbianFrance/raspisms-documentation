@@ -1,0 +1,1 @@
+curl -X POST https://app.raspisms.fr/api/scheduled/ -H 'X-Api-Key: ac122e8'contacts[]=11' -d 'contacts[]=12' -d 'id_phone=3' -d 'at=2020-06-17 17:30:25'

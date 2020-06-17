@@ -102,7 +102,7 @@ Vous pouvez trouver votre clé API dans la partie "Mon profil" de RaspiSMS, dans
 
 Transmettre la clé API
 ######################
-Vous devez transmettre votre clé API avec chaque requête sans quoi celle-ci sera rejetée. Pour cela il vous suffit de renseigner votre clé API sous la forme d'un paramètre de ``GET`` ou ``POST`` nommé ``api_key``.
+Vous devez transmettre votre clé API avec chaque requête sans quoi celle-ci sera rejetée. Pour cela il vous suffit de renseigner votre clé API sous la forme d'un paramètre de ``GET`` ou ``POST`` nommé ``api_key``, ou bien d'un header HTTP nommé ``X-Api-Key``.
 
 
 Lister des ressources -- ``GET``
@@ -149,9 +149,6 @@ HTTP Code :
     - Success : ``204``
     - Error : ``400``
 
-Exemple de requête CURL :
-    .. literalinclude:: /_code_examples/api/delete.curl
-        :language: curl
      
 Exemple de requête CURL
 ##################################
@@ -159,9 +156,6 @@ On va supprimer le SMS programmé avec l'id ``13``.
 
 .. literalinclude:: /_code_examples/api/delete.curl
     :language: curl
-
-.. literalinclude:: /_code_examples/api/delete_response.json
-    :language: json
 
 
 Créer un SMS programmé -- ``POST``
@@ -197,19 +191,23 @@ HTTP Code :
 Exemple de requêtes CURL
 ##################################
 
+Exemple 1
+~~~~~~~~~
 Création d'un SMS **"Mon SMS d'exemple"** envoyé immédiatement au numéro **"+33612345678"**.
 
 .. literalinclude:: /_code_examples/api/post_scheduled1.curl
     :language: curl
 
-.. literalinclude:: /_code_examples/api/post_scheduled1.json
+.. literalinclude:: /_code_examples/api/post_scheduled1_response.json
     :language: json
 
 
+Exemple 2
+~~~~~~~~~
 Création d'un SMS **"Mon SMS d'exemple"** à envoyé le **"Jeudi 17 juin 2020 à 15 heure, 30 minutes, 25 secondes"**, aux contacts avec l'ID ``11`` et ``12``, avec le téléphone avec l'ID ``3``.
 
 .. literalinclude:: /_code_examples/api/post_scheduled2.curl
     :language: curl
 
-.. literalinclude:: /_code_examples/api/post_scheduled2.json
+.. literalinclude:: /_code_examples/api/post_scheduled2_response.json
     :language: json

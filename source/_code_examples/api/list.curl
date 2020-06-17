@@ -1,0 +1,1 @@
+curl https://app.raspisms.fr/api/list/contact/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d'
