@@ -1,3 +1,5 @@
+.. _adapters:
+
 ===============
 Les Adaptateurs
 ===============

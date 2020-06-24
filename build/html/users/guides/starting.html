@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Commencer à utiliser RaspiSMS</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Table des matières</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Commencer à utiliser RaspiSMS</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="commencer-a-utiliser-raspisms">
+<span id="starting-guide"></span><h1>Commencer à utiliser RaspiSMS<a class="headerlink" href="#commencer-a-utiliser-raspisms" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Ce guide a pour objectif de vous aider lors de votre première prise en main de RaspiSMS et de vous guider à travers les différentes étapes.</p>
+<div class="section" id="connectez-vous-a-votre-compte-raspisms">
+<h2>1. Connectez-vous à votre compte RaspiSMS<a class="headerlink" href="#connectez-vous-a-votre-compte-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Rendez-vous sur <a class="reference external" href="https://app.raspisms.fr/">la page de connection de RaspiSMS</a> et connectez-vous avec les identifiants que vous avez fournis lors de votre inscription en mode SaaS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En auto-hébergement rendez-vous sur <a class="reference external" href="https://127.0.0.1/raspisms">la page de connection</a>, les identifiants ont été générés lors de l’installation et sont disponible dans le fichier <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/.credentials</span></code>.</p>
+</div>
+</div>
+<div class="section" id="creez-un-premier-telephone">
+<h2>2. Créez un premier téléphone<a class="headerlink" href="#creez-un-premier-telephone" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Afin de pouvoir recevoir et envoyer des SMS depuis l’application vous devez dans un premier temps créer un téléphone qui sera utilisé pour envoyer et recevoir des messages. Pour cela vous pouvez utiliser différents fournisseurs de services (<span class="xref std std-ref">voir Les Adaptateurs</span>), mais nous vous recommandons l’utilisation <a class="reference internal" href="../adapters/ovh_virtual_number.html#users-adapters-ovh-virtual-number"><span class="std std-ref">d’OVH avec un numéro virtuel</span></a> qui à notre sens fourni le service le plus accessible et éfficace.</p>
+</div>
+<div class="section" id="envoyer-un-premier-sms">
+<h2>3. Envoyer un premier SMS<a class="headerlink" href="#envoyer-un-premier-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Maintenant que vous avez créé un premier téléphone, il ne vous reste plus qu’à envoyer votre premier SMS. Pour cela, rendez-vous dans la partie « SMS », « Nouveau SMS » et cliquez sur le bouton « Créer un nouveau SMS ».</p>
+<p>Tapez le texte du SMS que vous souhaitez envoyer dans la partie <strong>« Texte du SMS »</strong>.</p>
+<p>Laissez la date d’envoi inchangée pour envoyer le SMS immédiatement.</p>
+<p>Dans le champs <strong>« Numéros cibles »</strong>, renseignez le numéro auquel vous souhaitez envoyer le SMS. Il est possible d’ajouter d’autres numéros en cliquant sur le « + » en dessous du champs.</p>
+<p>Enfin, dans le champs <strong>« Numéro à employer »</strong>, séléctionnez le nom du téléphone que vous venez de créer. Si vous laisser le champs à sa valeure par défaut « N’importe lequel », un téléphone sera choisi au hasard parmis ceux que vous avez créé (avec un seul téléphone cela n’as donc pas d’importance).</p>
+<p>Il ne vous reste plus qu’à cliquez sur le bouton <strong>« Enregistrer le SMS »</strong>.</p>
+</div>
+<div class="section" id="verifier-le-status-du-sms">
+<h2>4. Vérifier le status du SMS<a class="headerlink" href="#verifier-le-status-du-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez maintenant vérifier si le SMS a bien été envoyés, et éventuellement reçu, en vous rendant dans la partie <strong>« SMS »</strong>, <strong>« SMS Envoyés »</strong>.</p>
+<p>En cliquant sur le numéro de téléphone du contact cible vous pourrez également accéder à tous les échanges avec ce numéro via l’interface de discussion.</p>
+</div>
+<div class="section" id="aller-plus-loin">
+<h2>5. Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers ce titre">¶</a></h2>
+<p>RaspiSMS propose de nombreuses fonctionnalités, pour en savoir plus, reportez-vous à <a class="reference internal" href="../overview.html#users"><span class="std std-ref">la documentation utilisateur</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

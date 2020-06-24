@@ -1,3 +1,5 @@
+.. _users_adapters_ovh_virtual_number:
+
 ==================================
 Adaptateur OVH SMS Numéro Virtuel
 ==================================
