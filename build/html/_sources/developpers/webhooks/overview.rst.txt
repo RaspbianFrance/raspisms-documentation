@@ -42,8 +42,8 @@ Lors du déclenchement d'un webhook, la requête HTTP contient certains paramèt
      - Date de réception/envoi du SMS, format ``Y-m-d h:i:s``
 
    * - origin
-     - Numéro de téléphone depuis lequel le SMS a été envoyé (format international)
+     - Numéro de téléphone (si `received_sms`) ou ID du téléphone (si `send_sms`) depuis lequel le SMS a été envoyé (format international)
 
    * - destination
-     - Numéro de téléphone auquel le SMS a été envoyé (format international)
+     - Numéro de téléphone (si `send_sms`) ou ID du téléphone (si `received_sms`) auquel le SMS a été envoyé (format international)
    
