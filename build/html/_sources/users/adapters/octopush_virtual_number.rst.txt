@@ -2,11 +2,11 @@
 Adaptateur Octopush Numéro Virtuel
 ===================================
 .. warning::
-    Actuellement l'offre d'Octopush nous semble moins aboutie que celle d'autres fournisseurs comme OVH ou Twilio, nous vous recommandons donc de privilégier ces fournisseurs.
+    Actuellement l'offre d'Octopush nous semble moins aboutie que celles d'autres fournisseurs comme OVH ou Twilio, nous vous recommandons donc de privilégier ces derniers.
 
 L'adaptateur Octopush Numéro Virtuel permet l'utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l'utilisation de l'API avec un numéro virtuel.
 
-L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contactés auparavant.
+L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous-même contactés auparavant.
 
 Fonctionnalités supportées
 --------------------------
@@ -14,7 +14,7 @@ Fonctionnalités supportées
  Fonctionnalité   Support
 ================ =========
 Envoi de SMS     Oui
-Reception de SMS Oui
+Réception de SMS Oui
 Suivi de l'envoi Oui
 SMS Flash        Non
 ================ =========
@@ -43,30 +43,30 @@ Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelque
 
 3.1 Le nom du téléphone
 #######################
-Dans le champs **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparait que pour vous, jamais pour les destinataires du message.
+Dans le champ **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparaît que pour vous, jamais pour les destinataires du message.
 
 3.2 Récupérer les identifiants API Octopush
 ##############################################
 Rendez-vous sur `le site d'octopush`_, connectez-vous à votre compte et rendez-vous dans la partie `identifiants API`_ d'Octopush.
-Copiez la valeure dans le cadre "Login" dans le champs **"Octopush Login"** de RaspiSMS, et la valeure dans le cadre "Clé API" dans le champs **"API Key"** de RaspiSMS.
+Copiez la valeur dans le cadre "Login" dans le champ **"Octopush Login"** de RaspiSMS, et la valeur dans le cadre "Clé API" dans le champ **"API Key"** de RaspiSMS.
 
 3.3 Définir le numéro de téléphone virtuel
 ###############################################
-Dernière étape, rentrez votre numéro de téléphone virtuel Octopush dans le champs "Numéro de téléphone virtuel" de RaspiSMS.
+Dernière étape, entrez votre numéro de téléphone virtuel Octopush dans le champ "Numéro de téléphone virtuel" de RaspiSMS.
 
 4. Activer la réception de messages et le suivi du statut des SMS
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Au point ou nous en sommes nous avons un téléphone Octopush capable d'envoyer des SMS depuis RaspiSMS, mais celui-ci n'est pas encore capable de suivre le statut des SMS envoyés ou de recevoir des messages.
-Pour activer le suivi de status d'un SMS et la réception de messages vous devez transmettre à Octopush les adresses URL que leurs serveurs devront contacter pour transmettre l'information à RaspiSMS.
+Au point où nous en sommes nous avons un téléphone Octopush capable d'envoyer des SMS depuis RaspiSMS, mais celui-ci n'est pas encore capable de suivre le statut des SMS envoyés ou de recevoir des messages.
+Pour activer le suivi de statut d'un SMS et la réception de messages vous devez transmettre à Octopush les adresses URL que leurs serveurs devront contacter pour transmettre l'information à RaspiSMS.
 
-Pour cela, vous devez envoyer un mail à Octopush en leur transmettant ces addresses dites de `callback`. Vous pouvez trouver ces adresses en vous rendant sur la liste de vos téléphone dans RaspiSMS, vous devriez voir celui que vous venez de créer. Copiez l'adresse URL affichée sous le label **"Changement de status d'un SMS"** dans la colonne **"Callbacks"** correspondant au téléphone que vous venez de créer.
+Pour cela, vous devez envoyer un mail à Octopush en leur transmettant ces adresses dites de `callback`. Vous pouvez trouver ces adresses en vous rendant sur la liste de vos téléphone dans RaspiSMS ; vous devriez voir celui que vous venez de créer. Copiez l'adresse URL affichée sous le label **"Changement de statut d'un SMS"** dans la colonne **"Callbacks"** correspondant au téléphone que vous venez de créer.
 
 
-Le suivi du status d'un SMS se fait par une `callback`, c'est-à-dire une adresse URL qui sera appelé par le fournisseur (dans notre cas OVH) quand le statut d'un SMS évolu.
+Le suivi du statut d'un SMS se fait par une `callback`, c'est-à-dire une adresse URL qui sera appelée par le fournisseur (dans notre cas Octopush) quand le statut d'un SMS évolue.
 
-En vous rendant sur la liste de vos téléphone dans RaspiSMS, vous devriez voir celui que vous venez de créer. Dans la colonne **"Callbacks"** vous trouverez les deux adresses à transmettre à Octopush.
+En vous rendant sur la liste de vos téléphones dans RaspiSMS, vous devriez voir celui que vous venez de créer. Dans la colonne **"Callbacks"** vous trouverez les deux adresses à transmettre à Octopush.
 
-Et voilà, vous pouvez maintenant envoyez et recevoir des SMS via Octopush avec RaspiSMS !
+Et voilà, vous pouvez maintenant envoyer et recevoir des SMS via Octopush avec RaspiSMS !
 
 
 

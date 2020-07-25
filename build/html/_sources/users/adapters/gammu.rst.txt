@@ -14,7 +14,7 @@ Fonctionnalités supportées
  Fonctionnalité   Support
 ================ =========
 Envoi de SMS     Oui
-Reception de SMS Oui
+Réception de SMS Oui
 Suivi de l'envoi Non
 SMS Flash        Non
 ================ =========
@@ -33,15 +33,15 @@ Nous vous conseillons d'utiliser directement `un modem SIM800L`_, plus simple à
 
 1.2 Configurer gammu pour utiliser le modem GSM
 ''''''''''''''''''''''''''''''''''''''''''''''''
-Une fois que vous avez relié votre modem GSM au serveur vous devez encore configurer Gammu pour utiliser ce GSM. Pour cela vous devez créer un fichier de configuration que vous renseignerez par la suite dans RaspiSMS. Pour créer ce fichier de configuration repportez-vous à `la documentation de gammu`_.
+Une fois que vous avez relié votre modem GSM au serveur vous devez encore configurer Gammu pour utiliser ce GSM. Pour cela vous devez créer un fichier de configuration que vous renseignerez par la suite dans RaspiSMS. Pour créer ce fichier de configuration reportez-vous à `la documentation de gammu`_.
 
-Pour générer le fichier de configuration vous pouvez utiliser les commandes ``gammu-config`` et ``gammu-detect``, la encore reportez-vous à la documentation de gammu sur `gammu-detect`_ et `gammu-config`.
+Pour générer le fichier de configuration vous pouvez utiliser les commandes ``gammu-config`` et ``gammu-detect``, là encore reportez-vous à la documentation de gammu sur `gammu-detect`_ et `gammu-config`.
 
 1.2.1 Quel fichier de configuration utiliser ?
 """""""""""""""""""""""""""""""""""""""""""""""
-Généralement, gammu utilise le fichier ``/etc/gammu.rc`` pour stocker la configuration. Dans notre cas nous avons plutôt intéret à créer un fichier de configuration à part pour chaque téléphone. Le chemin de ce fichier sera ensuite renseigné dans RaspiSMS afin d'être utilisé lors de l'appel interne à Gammu.
+Généralement, gammu utilise le fichier ``/etc/gammu.rc`` pour stocker la configuration. Dans notre cas nous avons plutôt intérêt à créer un fichier de configuration à part pour chaque téléphone. Le chemin de ce fichier sera ensuite renseigné dans RaspiSMS afin d'être utilisé lors de l'appel interne à Gammu.
 
-Créer donc un nouveau fichier avec un nom au format ``/etc/gammu_<id_unique>.rc``.
+Créez donc un nouveau fichier avec un nom au format ``/etc/gammu_<id_unique>.rc``.
 
 1.2.2 Exemple de fichier de configuration
 """"""""""""""""""""""""""""""""""""""""""""
@@ -62,22 +62,22 @@ Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un tél
 
 2.1 Le nom du téléphone
 ''''''''''''''''''''''''
-Dans le champs **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparait que pour vous, jamais pour les destinataires du message.
+Dans le champ **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparaît que pour vous, jamais pour les destinataires du message.
 
 2.2 Renseigner le fichier de configuration
 ''''''''''''''''''''''''''''''''''''''''''''''
 Il est possible d'utiliser plusieurs téléphones gammu en même temps. Pour cela, RaspiSMS doit savoir exactement quel fichier de configuration utiliser pour chaque téléphone.
-Copiez donc le chemin du fichier de configuration que vous venez des créer (``/etc/gammu_<id_unique>.rc``), et collez-le dans le champs **"Fichier de configuration"**.
+Copiez donc le chemin du fichier de configuration que vous venez de créer (``/etc/gammu_<id_unique>.rc``), et collez-le dans le champ **"Fichier de configuration"**.
 
 2.3 Utiliser un code PIN
 '''''''''''''''''''''''''''''
 .. warning::
-    Laissez ce champs vide si votre carte SIM n'utilise pas de code PIN.
+    Laissez ce champ vide si votre carte SIM n'utilise pas de code PIN.
 
-Si votre carte SIM utilise un code PIN vous devez rentrer ce code PIN dans le champs **"Code Pin"** dans RaspiSMS. 
+Si votre carte SIM utilise un code PIN vous devez entrer ce code PIN dans le champ **"Code Pin"** dans RaspiSMS. 
 
 
-Et voilà, vous pouvez maintenant envoyez et recevoir des SMS avec Gammu et RaspiSMS !
+Et voilà, vous pouvez maintenant envoyer et recevoir des SMS avec Gammu et RaspiSMS !
 
 
 .. _un modem SIM800L: https://geni.us/sim800 

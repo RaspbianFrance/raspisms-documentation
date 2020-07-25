@@ -28,7 +28,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="prev" title="Pour les développeurs" href="../overview.html" /> 
+  <link rel="next" title="Les Webhooks" href="../webhooks/overview.html" />
+  <link rel="prev" title="Utiliser l’API HTTP" href="../api/overview.html" /> 
   </head>
 
   <body>
@@ -104,6 +105,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les développeurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../api/overview.html">Utiliser l’API HTTP</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Les Adaptateurs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#objectif-des-adapateurs">Objectif des adapateurs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles">Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles</a><ul>
@@ -124,6 +126,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../webhooks/overview.html">Les Webhooks</a></li>
 </ul>
 </li>
 </ul>
@@ -146,8 +149,12 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../overview.html"
-       title="Chapitre précédent">← Pour les développeurs</a>
+    <a href="../api/overview.html"
+       title="Chapitre précédent">← Utiliser l’API HTTP</a>
+  </li>
+  <li class="next">
+    <a href="../webhooks/overview.html"
+       title="Chapitre suivant">Les Webhooks →</a>
   </li>
 </ul>
   
@@ -169,7 +176,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="section" id="les-methodes-meta">
 <h3>Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code><a class="headerlink" href="#les-methodes-meta" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les méthodes commençant par <code class="docutils literal notranslate"><span class="pre">meta_</span></code> permettent de définir les capacités et les informations relatives à l’adaptateur, tel que son nom, les champs supplémentaires permettant la configuration de l’adaptateur, ou encore les fonctionnalités disponibles.</p>
-<p>Pour cela ces fonctions doivent retourner des chaines de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simple propriétés et à ce titre sont toutes statiques. L’objectif est de forcer l’implémentation des méthodes par les classes implémentant l’interface, car PHP ne supporte pas les propriétés abstraites.</p>
+<p>Pour cela ces fonctions doivent retourner des chaînes de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simples propriétés et à ce titre sont toutes statiques. L’objectif est de forcer l’implémentation des méthodes par les classes implémentant l’interface, car PHP ne supporte pas les propriétés abstraites.</p>
 <dl>
 <dt>meta_classname</dt><dd><p>Nom de la classe de l’adaptateur, il devrait uniquement retourner <code class="docutils literal notranslate"><span class="pre">__CLASS__</span></code>.</p>
 </dd>
@@ -179,14 +186,14 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </dd>
 <dt>meta_description</dt><dd><p>La description de l’adaptateur et du service qu’il permet d’utiliser. Cette description sera affichée à l’utilisateur.</p>
 </dd>
-<dt>meta_datas_fields</dt><dd><p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseigner les clefs API du service implémenté.</p>
+<dt>meta_datas_fields</dt><dd><p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseignez les clefs API du service implémenté.</p>
 <p>La fonction retourne un tableau où chaque ligne correspond à un <code class="docutils literal notranslate"><span class="pre">input</span></code> qui devra être affiché sur la page de création du téléphone.</p>
-<p>Chaque ligne est donc elle même un tableau avec les clefs suivantes :</p>
+<p>Chaque ligne est donc elle-même un tableau avec les clefs suivantes :</p>
 <ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – La clé qui sera utilisé pour accéder à la propriété. Il doit s’agir d’un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l’input HTML.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) –  Le titre qui sera affiché au dessus de l’input.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – La clé qui sera utilisée pour accéder à la propriété. Il doit s’agir d’un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l’input HTML.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) –  Le titre qui sera affiché au-dessus de l’input.</p></li>
 <li><p><strong>description</strong> (<em>str</em>) – La description qui sera affichée à l’utilisateur avant l’input. Cette description devrait permettre à l’utilisateur de comprendre l’utilité du réglage.</p></li>
-<li><p><strong>required</strong> (<em>bool</em>) – Défini si le champs est obligatoire. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> l’utilisateur devra obligatoirement remplir le champs pour pouvoir créer un téléphone avec cet adaptateur.</p></li>
+<li><p><strong>required</strong> (<em>bool</em>) – Défini si le champs est obligatoire. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> l’utilisateur devra obligatoirement remplir le champ pour pouvoir créer un téléphone avec cet adaptateur.</p></li>
 <li><p><strong>number</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">false</span></code> – Défini si le champs est un numéro de téléphone nécessitant l’utilisation d’un input dédié avec internationalisation des numéros.</p></li>
 </ul>
 </dd>
@@ -195,7 +202,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </dd>
 <dt>meta_support_reception</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception de SMS par appel à une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_read</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
 </dd>
-<dt>meta_support_status_change</dt><dd><p>Booléen définissant si l’adaptateur supporte la mise à jour du status d’un SMS par l’appel à une callback HTTP.</p>
+<dt>meta_support_status_change</dt><dd><p>Booléen définissant si l’adaptateur supporte la mise à jour du statut d’un SMS par l’appel à une callback HTTP.</p>
 </dd>
 <dt>meta_support_flash</dt><dd><p>Booléen définissant si l’adaptateur supporte les SMS flash.</p>
 </dd>
@@ -206,7 +213,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(stringdatas)</span>
 </pre></div>
 </div>
-<p>La fonctions prend en argument une chaine de caractère <code class="docutils literal notranslate"><span class="pre">$datas</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiqués via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_datas_fields</span></code>.</p>
+<p>La fonctions prend en argument une chaine de caractères <code class="docutils literal notranslate"><span class="pre">$datas</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiquées via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_datas_fields</span></code>.</p>
 <p>À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.</p>
 </div>
 <div class="section" id="validation-des-donnees-de-configuration">
@@ -214,9 +221,9 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function test (): bool</span>
 </pre></div>
 </div>
-<p>Au moment ou un utilisateur valide la création d’un téléphone utilisant l’adaptateur, la classe est instanciée et la méthode <code class="docutils literal notranslate"><span class="pre">test()</span></code> est appelée.</p>
+<p>Au moment où un utilisateur valide la création d’un téléphone utilisant l’adaptateur, la classe est instanciée et la méthode <code class="docutils literal notranslate"><span class="pre">test()</span></code> est appelée.</p>
 <p>La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l’API.</p>
-<p>La méthode doit retournée <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas de succès et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> en cas d’échec, auquel cas l’utilisateur se verra indiqué que la configuration fournie n’est pas valide.</p>
+<p>La méthode doit retourner <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas de succès et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> en cas d’échec, auquel cas l’utilisateur se verra indiqué que la configuration fournie n’est pas valide.</p>
 </div>
 <div class="section" id="les-methodes-d-envoi-et-de-lecture">
 <h3>Les méthodes d’envoi et de lecture<a class="headerlink" href="#les-methodes-d-envoi-et-de-lecture" title="Lien permanent vers ce titre">¶</a></h3>
@@ -234,9 +241,9 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </ul>
 </dd>
 <dt>La fonction doit retourner un tableau avec trois clés :</dt><dd><ul class="simple">
-<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
+<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreur est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
-<li><p><strong>uid</strong> (<em>str | null</em>) – L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du status d’un SMS. Si une erreure est survenue <code class="docutils literal notranslate"><span class="pre">uid</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>uid</strong> (<em>str | null</em>) – L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du status d’un SMS. Si une erreur est survenue <code class="docutils literal notranslate"><span class="pre">uid</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -246,12 +253,12 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function read (): array</span>
 </pre></div>
 </div>
-<p>La méthode appelée pour lire les SMS reçus. Cette méthode est appelée <strong>très</strong> souvent (environ 2 fois par seconde), à vous de vous assurez que cela n’entrainera pas de dépassement des capacité du service implémenté, et potentiellement de mettre en place des mécanisme de temporisation.</p>
+<p>La méthode appelée pour lire les SMS reçus. Cette méthode est appelée <strong>très</strong> souvent (environ 2 fois par seconde), à vous de vous assurez que cela n’entrainera pas de dépassement des capacités du service implémenté, et potentiellement de mettre en place des mécanismes de temporisation.</p>
 <dl class="simple">
 <dt>La fonction retourne un tableau tel que suit :</dt><dd><ul class="simple">
-<li><p><strong>error</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreure est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
+<li><p><strong>error</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreur est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
-<li><p><strong>smss</strong> (<em>array</em>) – Un tableau avec les SMS reçus, ou un tableau vide en cas d’erreur. Chaque ligne est un SMS représenté lui même par un tableau avec les clés suivantes :</p>
+<li><p><strong>smss</strong> (<em>array</em>) – Un tableau avec les SMS reçus, ou un tableau vide en cas d’erreur. Chaque ligne est un SMS représenté lui-même par un tableau avec les clés suivantes :</p>
 <ul>
 <li><p><strong>at</strong> (<em>str</em>) – La date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
 <li><p><strong>text</strong> (<em>str</em>) – Le corps du SMS.</p></li>
@@ -271,11 +278,11 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function status_change_callback()</span>
 </pre></div>
 </div>
-<p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la mise à jour du status d’un SMS.</p>
+<p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la mise à jour du statut d’un SMS.</p>
 <dl class="simple">
-<dt>La méthode doit retournée <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> si une erreure survient, ou un tableau en cas de succès avec:</dt><dd><ul class="simple">
+<dt>La méthode doit retourner <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> si une erreur survient, ou un tableau en cas de succès avec:</dt><dd><ul class="simple">
 <li><p><strong>uid</strong> (<em>str</em>) – L’identifiant unique du SMS au sein de la plateforme implémentée.</p></li>
-<li><p><strong>status</strong> (<em>str</em>) – Le nouveau status du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un status inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçus par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS à échoué.</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – Le nouveau status du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un status inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçu par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS a échoué.</p></li>
 </ul>
 </dd>
 </dl>
@@ -285,9 +292,9 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function reception_callback() : array</span>
 </pre></div>
 </div>
-<p>La méthode est appelée lors e la réception d’un appel HTTP indiquant la réception d’un SMS.</p>
+<p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la réception d’un SMS.</p>
 <dl class="simple">
-<dt>La méthode doit transformé les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
+<dt>La méthode doit transformer les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
 <li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 <li><p><strong>sms</strong> (<em>array</em>) – Un tableau représentant le SMS reçu, ou un tableau vide en cas d’erreur</p>
@@ -310,8 +317,12 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../overview.html"
-       title="Chapitre précédent">← Pour les développeurs</a>
+    <a href="../api/overview.html"
+       title="Chapitre précédent">← Utiliser l’API HTTP</a>
+  </li>
+  <li class="next">
+    <a href="../webhooks/overview.html"
+       title="Chapitre suivant">Les Webhooks →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.

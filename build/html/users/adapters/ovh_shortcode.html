@@ -138,6 +138,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
@@ -196,7 +198,7 @@
 <tr class="row-even"><td><p>Envoi de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td><p>Reception de SMS</p></td>
+<tr class="row-odd"><td><p>Réception de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Suivi de l’envoi</p></td>
@@ -221,7 +223,7 @@
 <p class="admonition-title">Avertissement</p>
 <p>Si vous ne souhaitez pas utiliser un nom personnalisé, vous pouvez passer cette partie.</p>
 </div>
-<p>Si vous le souhaitez il est possible d’utiliser un nom d’expéditeur qui sera affiché à la place du numéro de téléphone. Pour cela, OVH exige que vous fassiez vérifier le nom de cet expéditeur pour éviter les usurpations d’identité (par exemple qu’une personne envoi un message en se faisant passer pour une entreprise connue).</p>
+<p>Si vous le souhaitez il est possible d’utiliser un nom d’expéditeur qui sera affiché à la place du numéro de téléphone. Pour cela, OVH exige que vous fassiez vérifier le nom de cet expéditeur pour éviter les usurpations d’identité (par exemple qu’une personne envoie un message en se faisant passer pour une entreprise connue).</p>
 <p>Pour cela, vous devez vous rendre dans <a class="reference external" href="https://www.ovhtelecom.fr/manager/#/sms/">La partie SMS de votre manager OVH</a>, puis cliquer sur le nom de votre abonnement. Rendez-vous dans la partie <strong>« Expéditeurs »</strong>, cliquez sur le bouton <strong>« Action »</strong> au dessus de la liste des expéditeurs et ajoutez un nouvel expéditeur. Remplissez la demande selon vos besoin et validez. Votre demande de nom fera alors l’objet d’une validation manuelle. Une fois le nom validé vous pourrez commencer à l’utiiser pour envoyer des messages. Vous devrez attendre la validation du nom pour passer à la suite de ce guide.</p>
 </div>
 </div>
@@ -234,21 +236,21 @@
 <p>Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelques informations qui se trouvent dans votre compte OVH.</p>
 <div class="section" id="le-nom-du-telephone">
 <h4>3.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Dans le champs <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparait que pour vous, jamais pour les destinataires du message.</p>
+<p>Dans le champ <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparaît que pour vous, jamais pour les destinataires du message.</p>
 </div>
 <div class="section" id="trouver-le-nom-de-votre-service-sms">
 <h4>3.2 Trouver le nom de votre service SMS<a class="headerlink" href="#trouver-le-nom-de-votre-service-sms" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Commencez par vous connecter à votre compte client OVH et rendez-vous dans <a class="reference external" href="https://www.ovhtelecom.fr/manager/#/sms/">La partie SMS de votre manager OVH</a>, puis cliquez sur le nom de votre abonnement.
-Copier la valeure présente dans la colonne <strong>« Nom »</strong> de la liste de vos services et copiez la dans le champs <strong>« Service Name »</strong> de RaspiSMS.</p>
+Copiez la valeur présente dans la colonne <strong>« Nom »</strong> de la liste de vos services et copiez-la dans le champ <strong>« Service Name »</strong> de RaspiSMS.</p>
 </div>
 <div class="section" id="utiliser-un-nom-d-expediteur">
 <h4>3.3 Utiliser un nom d’expéditeur<a class="headerlink" href="#utiliser-un-nom-d-expediteur" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Si vous souhaitez utiliser un nom alphanumérique à la place du shortcode vous devrais l’indiquer dans le champs <strong>« Nom de l’expéditeur »</strong>. Ce nom doit au préalable avoir été validé par OVH.</p>
+<p>Si vous souhaitez utiliser un nom alphanumérique à la place du shortcode vous devrez l’indiquer dans le champ <strong>« Nom de l’expéditeur »</strong>. Ce nom doit au préalable avoir été validé par OVH.</p>
 <p>Si vous ne souhaitez pas utiliser de nom à la place du shortcode, laissez ce champ vide.</p>
 </div>
 <div class="section" id="creer-et-recuperer-les-identifiants-api-ovh">
 <h4>3.4 Créer et récupérer les identifiants API OVH<a class="headerlink" href="#creer-et-recuperer-les-identifiants-api-ovh" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Dernière étape, nous allons créer et récupérer les identifiants API de OVH. Pour cela, rendez-vous sur <a class="reference external" href="https://eu.api.ovh.com/createToken/index.cgi?GET=/sms&amp;GET=/sms/*&amp;POST=/sms/*&amp;PUT=/sms/*&amp;DELETE=/sms/*&amp;">La page de création des identifiants API de OVH</a> et rentrez les informations suivantes :</p>
+<p>Dernière étape, nous allons créer et récupérer les identifiants API de OVH. Pour cela, rendez-vous sur <a class="reference external" href="https://eu.api.ovh.com/createToken/index.cgi?GET=/sms&amp;GET=/sms/*&amp;POST=/sms/*&amp;PUT=/sms/*&amp;DELETE=/sms/*&amp;">La page de création des identifiants API de OVH</a> et entrez les informations suivantes :</p>
 <ul class="simple">
 <li><p><strong>Account ID or email address</strong> : Votre identifiant OVH</p></li>
 <li><p><strong>Password</strong> : Votre mot de passe OVH</p></li>
@@ -256,23 +258,23 @@ Copier la valeure présente dans la colonne <strong>« Nom »</strong> de la l
 <li><p><strong>Script description</strong> : RaspiSMS Application</p></li>
 <li><p><strong>Validity</strong> : Unlimited</p></li>
 </ul>
-<p>La partie <strong>« Rights »</strong> permet de définir les droits de l’application sur le compte OVH. Laissez la telle que définie lors de votre arrivée sur la page.</p>
+<p>La partie <strong>« Rights »</strong> permet de définir les droits de l’application sur le compte OVH. Laissez-la telle que définie lors de votre arrivée sur la page.</p>
 <p>Cliquez sur <strong>« Create keys »</strong> pour créer vos identifiants API OVH.</p>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
-<p>Si vous avez l’erreur <strong>« An application with that name already exists »</strong>, modifiez <strong>« Script Name »</strong>, vous pouvez y mettre la valeure de votre choix, c’est sans importance.</p>
+<p>Si vous avez l’erreur <strong>« An application with that name already exists »</strong>, modifiez <strong>« Script Name »</strong>, vous pouvez y mettre la valeur de votre choix, c’est sans importance.</p>
 </div>
-<p>Vous arrivez alors sur une page vous affichant les identifiants API créés. Il vous suffit de recopier les valeures dans <strong>« Application Key »</strong>, <strong>« Application Secret »</strong> et <strong>« Consumer Key »</strong> dans les champs correspondant dans RaspiSMS.</p>
+<p>Vous arrivez alors sur une page vous affichant les identifiants API créés. Il vous suffit de recopier les valeurs dans <strong>« Application Key »</strong>, <strong>« Application Secret »</strong> et <strong>« Consumer Key »</strong> dans les champs correspondant dans RaspiSMS.</p>
 <p>Retournez sur RaspiSMS et cliquez sur le bouton <strong>« Enregistrer le téléphone »</strong>.</p>
 </div>
 </div>
 <div class="section" id="activer-le-suivi-du-statut-des-sms">
 <h3>4. Activer le suivi du statut des SMS<a class="headerlink" href="#activer-le-suivi-du-statut-des-sms" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Au point ou nous en sommes nous avons un téléphone OVH fonctionnel dans RaspiSMS, mais celui-ci n’est pas encore capable de suivre le statut des SMS envoyés.
-Le suivi du status d’un SMS se fait par une <cite>callback</cite>, c’est-à-dire une adresse URL qui sera appelé par le fournisseur (dans notre cas OVH) quand le statut d’un SMS évolu.</p>
-<p>En vous rendant sur la liste de vos téléphone dans RaspiSMS, vous devriez voir celui que vous venez de créer. Copiez l’adresse URL affichée sous le label <strong>« Changement de status d’un SMS »</strong> dans la colonne <strong>« Callbacks »</strong> correspondant au téléphone que vous venez de créer.</p>
-<p>Rendez-vous dans votre manager OVH, sur votre offre de SMS et dans la partie <strong>« Options »</strong>, <strong>« Options générales »</strong>. Cliquez sur le bouton <strong>« Modifier »</strong> et dans le champs <strong>« URL de callback changements d’état »</strong> collez l’adresse précédemment copiée et cliquez sur <strong>« Valider »</strong>.</p>
-<p>Et voilà, vous pouvez maintenant envoyez des SMS via OVH avec RaspiSMS !</p>
+Le suivi du statut d’un SMS se fait par une <cite>callback</cite>, c’est-à-dire une adresse URL qui sera appelée par le fournisseur (dans notre cas OVH) quand le statut d’un SMS évolue.</p>
+<p>En vous rendant sur la liste de vos téléphones dans RaspiSMS, vous devriez voir celui que vous venez de créer. Copiez l’adresse URL affichée sous le label <strong>« Changement de statut d’un SMS »</strong> dans la colonne <strong>« Callbacks »</strong> correspondant au téléphone que vous venez de créer.</p>
+<p>Rendez-vous dans votre manager OVH, sur votre offre de SMS et dans la partie <strong>« Options »</strong>, <strong>« Options générales »</strong>. Cliquez sur le bouton <strong>« Modifier »</strong> et dans le champ <strong>« URL de callback changements d’état »</strong> collez l’adresse précédemment copiée et cliquez sur <strong>« Valider »</strong>.</p>
+<p>Et voilà, vous pouvez maintenant envoyer des SMS via OVH avec RaspiSMS !</p>
 </div>
 </div>
 </div>

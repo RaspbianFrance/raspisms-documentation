@@ -137,6 +137,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
@@ -199,7 +201,7 @@
 <tr class="row-even"><td><p>Envoi de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td><p>Reception de SMS</p></td>
+<tr class="row-odd"><td><p>Réception de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Suivi de l’envoi</p></td>
@@ -221,12 +223,12 @@
 </div>
 <div class="section" id="configurer-gammu-pour-utiliser-le-modem-gsm">
 <h3>1.2 Configurer gammu pour utiliser le modem GSM<a class="headerlink" href="#configurer-gammu-pour-utiliser-le-modem-gsm" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une fois que vous avez relié votre modem GSM au serveur vous devez encore configurer Gammu pour utiliser ce GSM. Pour cela vous devez créer un fichier de configuration que vous renseignerez par la suite dans RaspiSMS. Pour créer ce fichier de configuration repportez-vous à <a class="reference external" href="https://wammu.eu/docs/manual/config/index.html">la documentation de gammu</a>.</p>
-<p>Pour générer le fichier de configuration vous pouvez utiliser les commandes <code class="docutils literal notranslate"><span class="pre">gammu-config</span></code> et <code class="docutils literal notranslate"><span class="pre">gammu-detect</span></code>, la encore reportez-vous à la documentation de gammu sur <a class="reference external" href="https://wammu.eu/docs/manual/utils/gammu-detect.html">gammu-detect</a> et <cite>gammu-config</cite>.</p>
+<p>Une fois que vous avez relié votre modem GSM au serveur vous devez encore configurer Gammu pour utiliser ce GSM. Pour cela vous devez créer un fichier de configuration que vous renseignerez par la suite dans RaspiSMS. Pour créer ce fichier de configuration reportez-vous à <a class="reference external" href="https://wammu.eu/docs/manual/config/index.html">la documentation de gammu</a>.</p>
+<p>Pour générer le fichier de configuration vous pouvez utiliser les commandes <code class="docutils literal notranslate"><span class="pre">gammu-config</span></code> et <code class="docutils literal notranslate"><span class="pre">gammu-detect</span></code>, là encore reportez-vous à la documentation de gammu sur <a class="reference external" href="https://wammu.eu/docs/manual/utils/gammu-detect.html">gammu-detect</a> et <cite>gammu-config</cite>.</p>
 <div class="section" id="quel-fichier-de-configuration-utiliser">
 <h4>1.2.1 Quel fichier de configuration utiliser ?<a class="headerlink" href="#quel-fichier-de-configuration-utiliser" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Généralement, gammu utilise le fichier <code class="docutils literal notranslate"><span class="pre">/etc/gammu.rc</span></code> pour stocker la configuration. Dans notre cas nous avons plutôt intéret à créer un fichier de configuration à part pour chaque téléphone. Le chemin de ce fichier sera ensuite renseigné dans RaspiSMS afin d’être utilisé lors de l’appel interne à Gammu.</p>
-<p>Créer donc un nouveau fichier avec un nom au format <code class="docutils literal notranslate"><span class="pre">/etc/gammu_&lt;id_unique&gt;.rc</span></code>.</p>
+<p>Généralement, gammu utilise le fichier <code class="docutils literal notranslate"><span class="pre">/etc/gammu.rc</span></code> pour stocker la configuration. Dans notre cas nous avons plutôt intérêt à créer un fichier de configuration à part pour chaque téléphone. Le chemin de ce fichier sera ensuite renseigné dans RaspiSMS afin d’être utilisé lors de l’appel interne à Gammu.</p>
+<p>Créez donc un nouveau fichier avec un nom au format <code class="docutils literal notranslate"><span class="pre">/etc/gammu_&lt;id_unique&gt;.rc</span></code>.</p>
 </div>
 <div class="section" id="exemple-de-fichier-de-configuration">
 <h4>1.2.2 Exemple de fichier de configuration<a class="headerlink" href="#exemple-de-fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h4>
@@ -248,21 +250,21 @@
 <p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Adaptateur logiciel du téléphone »</strong> choisissez <strong>« Gammu »</strong>.</p>
 <div class="section" id="le-nom-du-telephone">
 <h3>2.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Dans le champs <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparait que pour vous, jamais pour les destinataires du message.</p>
+<p>Dans le champ <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparaît que pour vous, jamais pour les destinataires du message.</p>
 </div>
 <div class="section" id="renseigner-le-fichier-de-configuration">
 <h3>2.2 Renseigner le fichier de configuration<a class="headerlink" href="#renseigner-le-fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il est possible d’utiliser plusieurs téléphones gammu en même temps. Pour cela, RaspiSMS doit savoir exactement quel fichier de configuration utiliser pour chaque téléphone.
-Copiez donc le chemin du fichier de configuration que vous venez des créer (<code class="docutils literal notranslate"><span class="pre">/etc/gammu_&lt;id_unique&gt;.rc</span></code>), et collez-le dans le champs <strong>« Fichier de configuration »</strong>.</p>
+Copiez donc le chemin du fichier de configuration que vous venez de créer (<code class="docutils literal notranslate"><span class="pre">/etc/gammu_&lt;id_unique&gt;.rc</span></code>), et collez-le dans le champ <strong>« Fichier de configuration »</strong>.</p>
 </div>
 <div class="section" id="utiliser-un-code-pin">
 <h3>2.3 Utiliser un code PIN<a class="headerlink" href="#utiliser-un-code-pin" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
-<p>Laissez ce champs vide si votre carte SIM n’utilise pas de code PIN.</p>
+<p>Laissez ce champ vide si votre carte SIM n’utilise pas de code PIN.</p>
 </div>
-<p>Si votre carte SIM utilise un code PIN vous devez rentrer ce code PIN dans le champs <strong>« Code Pin »</strong> dans RaspiSMS.</p>
-<p>Et voilà, vous pouvez maintenant envoyez et recevoir des SMS avec Gammu et RaspiSMS !</p>
+<p>Si votre carte SIM utilise un code PIN vous devez entrer ce code PIN dans le champ <strong>« Code Pin »</strong> dans RaspiSMS.</p>
+<p>Et voilà, vous pouvez maintenant envoyer et recevoir des SMS avec Gammu et RaspiSMS !</p>
 </div>
 </div>
 </div>

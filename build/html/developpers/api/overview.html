@@ -186,9 +186,9 @@
 <h2>Organisation de l’API<a class="headerlink" href="#organisation-de-l-api" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="fonctionnalites">
 <h3>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien permanent vers ce titre">¶</a></h3>
-<p>L’API de RaspiSMS est découpée en trois principales fonctionnalitées, chacune d’entre elle correspondant à un verbe HTTP dédié :</p>
+<p>L’API de RaspiSMS est découpée en trois principales fonctionnalités, chacune d’entre elle correspondant à un verbe HTTP dédié :</p>
 <ul class="simple">
-<li><p>Lister des ressources (sms envoyés, reçus et programmées, contacts, etc.), verbe HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
+<li><p>Lister des ressources (sms envoyés, reçus et programmés, contacts, etc.), verbe HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
 <li><p>Créer une ressource (sms programmé), verbe HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p></li>
 <li><p>Supprimer une ressource (sms programmé), verbe HTTP <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p></li>
 </ul>
@@ -222,7 +222,7 @@
 <td><p>Réponse de la requête, différent pour chaque requête.</p></td>
 </tr>
 <tr class="row-odd"><td><p>next</p></td>
-<td><p>Lien vers la page suivante si il reste des résultats à affichées pour la requête. Sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
+<td><p>Lien vers la page suivante s’il reste des résultats à affichées pour la requête. Sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p>prev</p></td>
 <td><p>Lien vers la page précédente si la requête actuelle utilise la pagination. Sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
@@ -257,7 +257,7 @@
 <td><p>Un paramètre manquant n’a pas été fourni.</p></td>
 </tr>
 <tr class="row-even"><td><p>8</p></td>
-<td><p>Impossible créer la ressource demandée.</p></td>
+<td><p>Impossible de créer la ressource demandée.</p></td>
 </tr>
 <tr class="row-odd"><td><p>16</p></td>
 <td><p>Le compte lié à la clé API est suspendu.</p></td>
@@ -270,7 +270,7 @@
 </div>
 <div class="section" id="pagination">
 <h4>Pagination<a class="headerlink" href="#pagination" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Pour les requêtes susceptibles d’employer de la pagination (c’est-à-dire les requêtes de type liste), les résultats sont renvoyés par groupe de 25. Si des résultats supplémentaires sont disponibles un champ <code class="docutils literal notranslate"><span class="pre">next</span></code> avec l’URL à intérroger pour obtenir les résultats suivants est indiqué dans la réponse. Sinon le champs est défini à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<p>Pour les requêtes susceptibles d’employer de la pagination (c’est-à-dire les requêtes de type liste), les résultats sont renvoyés par groupe de 25. Si des résultats supplémentaires sont disponibles un champ <code class="docutils literal notranslate"><span class="pre">next</span></code> avec l’URL à intérroger pour obtenir les résultats suivants est indiqué dans la réponse. Sinon le champ est défini à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 </div>
 </div>
 </div>
@@ -280,7 +280,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Votre clé API est un identifiant à part entière, vous ne devez en aucun cas la rendre publique !</p>
-<p>Si cette clé a été rendu publique vous devriez l’invalider et en générer une nouvelle via le bouton « Générer une nouvelle clef API » dans la partie « Mon profil » de RaspiSMS.</p>
+<p>Si cette clé a été rendue publique vous devriez l’invalider et en générer une nouvelle via le bouton « Générer une nouvelle clef API » dans la partie « Mon profil » de RaspiSMS.</p>
 </div>
 <div class="section" id="trouver-la-cle-api">
 <h3>Trouver la clé API<a class="headerlink" href="#trouver-la-cle-api" title="Lien permanent vers ce titre">¶</a></h3>
@@ -300,11 +300,11 @@
 </ul>
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
-<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code> ou <code class="docutils literal notranslate"><span class="pre">phone</span></code>).</p></li>
+<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code> ou <code class="docutils literal notranslate"><span class="pre">phone</span></code>).</p></li>
 <li><p><strong>page</strong> (<em>int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Numéro de page à utiliser, si non défini <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ul>
 </dd>
-<dt>Réponse :</dt><dd><p>Une collection JSON des ressources demandée.</p>
+<dt>Réponse :</dt><dd><p>Une collection JSON des ressources demandées.</p>
 </dd>
 <dt>HTTP Code :</dt><dd><ul class="simple">
 <li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
@@ -380,18 +380,18 @@
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
 <li><p><strong>text</strong> (<em>int</em>) – Le texte du SMS à envoyer.</p></li>
-<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéro.</p></li>
+<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros.</p></li>
 <li><p><strong>contacts</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du contact auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>conditional_groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe conditionnel auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>at</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Date à laquelle envoyer le SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si non défini utilise la date actuelle.</p></li>
-<li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du SMS avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.</p></li>
+<li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.</p></li>
 <li><p><strong>flash</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Défini s’il s’agit d’un SMS flash. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Les arguments <code class="docutils literal notranslate"><span class="pre">numbers</span></code>, <code class="docutils literal notranslate"><span class="pre">contacts</span></code>, <code class="docutils literal notranslate"><span class="pre">groups</span></code> et <code class="docutils literal notranslate"><span class="pre">conditional_groups</span></code> sont tous optionnels individuellement, mais vous devez nécessairement renseigner <strong>au moins</strong> un de ces arguments.</p>
-<p>Tous ces arguments peuvent êtres transmis avec une seule valeure ou comme un tableau de valeures.</p>
+<p>Tous ces arguments peuvent être transmis avec une seule valeur ou comme un tableau de valeurs.</p>
 </div>
 </dd>
 <dt>Réponse :</dt><dd><p>L’ID du SMS programmé créé.</p>
@@ -422,7 +422,7 @@
 </div>
 <div class="section" id="exemple-2">
 <h4>Exemple 2<a class="headerlink" href="#exemple-2" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> à envoyé le <strong>« Jeudi 17 juin 2020 à 15 heure, 30 minutes, 25 secondes »</strong>, aux contacts avec l’ID <code class="docutils literal notranslate"><span class="pre">11</span></code> et <code class="docutils literal notranslate"><span class="pre">12</span></code>, avec le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> à envoyer le <strong>« Jeudi 17 juin 2020 à 15 heures, 30 minutes, 25 secondes »</strong>, aux contacts avec l’ID <code class="docutils literal notranslate"><span class="pre">11</span></code> et <code class="docutils literal notranslate"><span class="pre">12</span></code>, avec le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8&#39;contacts[]=11&#39; -d &#39;contacts[]=12&#39; -d &#39;id_phone=3&#39; -d &#39;at=2020-06-17 17:30:25&#39;
 </pre></div>
 </div>

@@ -126,6 +126,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
@@ -173,16 +175,16 @@
 </div>
 <div class="section" id="comment-ca-fonctionne">
 <h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Lors de la création du contact vous renseigner les données supplémentaires dans la partie <strong>« Données du contact »</strong>. Pour chaque donnée deux champs sont disponibles, le premier permet de renseigner le nom de la donnée, qui sera utilisé pour y accéder, le second contient la valeure de la données.</p>
+<p>Lors de la création du contact vous renseignez les données supplémentaires dans la partie <strong>« Données du contact »</strong>. Pour chaque donnée deux champs sont disponibles, le premier permet de renseigner le nom de la donnée, qui sera utilisé pour y accéder, le second contient la valeur de la donnée.</p>
 </div>
 <div class="section" id="format-des-donnees">
 <h2>Format des données<a class="headerlink" href="#format-des-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les données sont toutes stockées sous forme de chaînes de caractères.</p>
-<p>Il n’y a pas de format particulier à respecter pour les données, mais il est conseillé de choisir des noms de données simples, totalement en minuscule. En effet, les noms de données sont sensibles à la casse, c’est à dire que le nom <code class="docutils literal notranslate"><span class="pre">Nom</span></code> est différent de <code class="docutils literal notranslate"><span class="pre">nom</span></code> ou de <code class="docutils literal notranslate"><span class="pre">NOM</span></code>. Pour plus de simplicité lors de l’utilisation future des données et afin d’éviter de commettre des erreures d’inattention, l’adoption d’un format uniforme est donc conseillé.</p>
-<p>De la même façon, afin de tirer pleinement parti de la puissance des données enrichies vous devriez essayer de standardiser au maximum les données enrichies des contacts. Concrétement, cela signifie que vous devriez tenter d’utiliser toujours les mêmes noms et le même format pour des données similaires.</p>
+<p>Il n’y a pas de format particulier à respecter pour les données, mais il est conseillé de choisir des noms de données simples, totalement en minuscule. En effet, les noms de données sont sensibles à la casse, c’est-à-dire que le nom <code class="docutils literal notranslate"><span class="pre">Nom</span></code> est différent de <code class="docutils literal notranslate"><span class="pre">nom</span></code> ou de <code class="docutils literal notranslate"><span class="pre">NOM</span></code>. Pour plus de simplicité lors de l’utilisation future des données et afin d’éviter de commettre des erreurs d’inattention, l’adoption d’un format uniforme est donc conseillé.</p>
+<p>De la même façon, afin de tirer pleinement parti de la puissance des données enrichies vous devriez essayer de standardiser au maximum les données enrichies des contacts. Concrètement, cela signifie que vous devriez tenter d’utiliser toujours les mêmes noms et le même format pour des données similaires.</p>
 <blockquote>
 <div><p><strong>Exemple:</strong></p>
-<p>Si vous stocker la date de naissance de vos contacts, évitez d’avoir une date avec le nom <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">de</span> <span class="pre">naissance</span></code> au format <code class="docutils literal notranslate"><span class="pre">jour/mois/année</span></code> et une autre au format <code class="docutils literal notranslate"><span class="pre">jour</span> <span class="pre">mois</span> <span class="pre">année</span></code> avec le nom <code class="docutils literal notranslate"><span class="pre">birthdate</span></code>.</p>
+<p>Si vous stockez la date de naissance de vos contacts, évitez d’avoir une date avec le nom <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">de</span> <span class="pre">naissance</span></code> au format <code class="docutils literal notranslate"><span class="pre">jour/mois/année</span></code> et une autre au format <code class="docutils literal notranslate"><span class="pre">jour</span> <span class="pre">mois</span> <span class="pre">année</span></code> avec le nom <code class="docutils literal notranslate"><span class="pre">birthdate</span></code>.</p>
 <p>À la place, choisissez un seul et unique nom et un seul et unique format, par exemple <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> et <code class="docutils literal notranslate"><span class="pre">jour/mois/année</span></code>.</p>
 </div></blockquote>
 </div>

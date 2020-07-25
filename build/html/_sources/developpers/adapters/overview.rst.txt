@@ -19,7 +19,7 @@ Les méthodes ``meta_*``
 '''''''''''''''''''''''
 Les méthodes commençant par ``meta_`` permettent de définir les capacités et les informations relatives à l'adaptateur, tel que son nom, les champs supplémentaires permettant la configuration de l'adaptateur, ou encore les fonctionnalités disponibles.
 
-Pour cela ces fonctions doivent retourner des chaines de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simple propriétés et à ce titre sont toutes statiques. L'objectif est de forcer l'implémentation des méthodes par les classes implémentant l'interface, car PHP ne supporte pas les propriétés abstraites.
+Pour cela ces fonctions doivent retourner des chaînes de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simples propriétés et à ce titre sont toutes statiques. L'objectif est de forcer l'implémentation des méthodes par les classes implémentant l'interface, car PHP ne supporte pas les propriétés abstraites.
 
 
 meta_classname
@@ -39,16 +39,16 @@ meta_description
 
 
 meta_datas_fields
-    Les champs à afficher lors de la création du téléphone et permettant de configurer l'adaptateur, par exemple renseigner les clefs API du service implémenté.
+    Les champs à afficher lors de la création du téléphone et permettant de configurer l'adaptateur, par exemple renseignez les clefs API du service implémenté.
 
     La fonction retourne un tableau où chaque ligne correspond à un ``input`` qui devra être affiché sur la page de création du téléphone.
 
-    Chaque ligne est donc elle même un tableau avec les clefs suivantes :
+    Chaque ligne est donc elle-même un tableau avec les clefs suivantes :
 
-    - **name** (*str*) -- La clé qui sera utilisé pour accéder à la propriété. Il doit s'agir d'un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l'input HTML.
-    - **title** (*str*) --  Le titre qui sera affiché au dessus de l'input.
+    - **name** (*str*) -- La clé qui sera utilisée pour accéder à la propriété. Il doit s'agir d'un nom valide pouvant servir de clé à un tableau PHP. Le nom sera aussi utilisé comme nom de l'input HTML.
+    - **title** (*str*) --  Le titre qui sera affiché au-dessus de l'input.
     - **description** (*str*) -- La description qui sera affichée à l'utilisateur avant l'input. Cette description devrait permettre à l'utilisateur de comprendre l'utilité du réglage.
-    - **required** (*bool*) -- Défini si le champs est obligatoire. Si ``TRUE`` l'utilisateur devra obligatoirement remplir le champs pour pouvoir créer un téléphone avec cet adaptateur.
+    - **required** (*bool*) -- Défini si le champs est obligatoire. Si ``TRUE`` l'utilisateur devra obligatoirement remplir le champ pour pouvoir créer un téléphone avec cet adaptateur.
     - **number** (*bool*), ``false`` -- Défini si le champs est un numéro de téléphone nécessitant l'utilisation d'un input dédié avec internationalisation des numéros.
 
 
@@ -63,7 +63,7 @@ meta_support_reception
 
 
 meta_support_status_change
-    Booléen définissant si l'adaptateur supporte la mise à jour du status d'un SMS par l'appel à une callback HTTP.
+    Booléen définissant si l'adaptateur supporte la mise à jour du statut d'un SMS par l'appel à une callback HTTP.
 
 
 meta_support_flash
@@ -77,7 +77,7 @@ Le constructeur de l'adaptateur
 
     public function __construct(stringdatas)
 
-La fonctions prend en argument une chaine de caractère ``$datas`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiqués via les champs générés en utilisant ``meta_datas_fields``.
+La fonctions prend en argument une chaine de caractères ``$datas`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiquées via les champs générés en utilisant ``meta_datas_fields``.
 
 À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.
 
@@ -88,11 +88,11 @@ Validation des données de configuration
 
     public function test (): bool
 
-Au moment ou un utilisateur valide la création d'un téléphone utilisant l'adaptateur, la classe est instanciée et la méthode ``test()`` est appelée.
+Au moment où un utilisateur valide la création d'un téléphone utilisant l'adaptateur, la classe est instanciée et la méthode ``test()`` est appelée.
 
 La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l'API.
 
-La méthode doit retournée ``TRUE`` en cas de succès et ``FALSE`` en cas d'échec, auquel cas l'utilisateur se verra indiqué que la configuration fournie n'est pas valide.
+La méthode doit retourner ``TRUE`` en cas de succès et ``FALSE`` en cas d'échec, auquel cas l'utilisateur se verra indiqué que la configuration fournie n'est pas valide.
 
 
 Les méthodes d'envoi et de lecture
@@ -112,9 +112,9 @@ La méthode est appelée à chaque SMS envoyé via l'adaptateur et prend trois a
 
 
 La fonction doit retourner un tableau avec trois clés :
- - **error** (*bool*) -- ``TRUE`` si une erreure est survenue et ``FALSE`` sinon.
+ - **error** (*bool*) -- ``TRUE`` si une erreur est survenue et ``FALSE`` sinon.
  - **error_message** (*str | null*) -- Le message d'erreur en cas d'echec, ou ``NULL`` en cas de succés.
- - **uid** (*str | null*) -- L'identifiant unique du SMS envoyé au sein de la plateforme implémentée par l'adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d'un appel HTTP de callback indiquant la mise à jour du status d'un SMS. Si une erreure est survenue ``uid`` doit être à ``NULL``.
+ - **uid** (*str | null*) -- L'identifiant unique du SMS envoyé au sein de la plateforme implémentée par l'adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d'un appel HTTP de callback indiquant la mise à jour du status d'un SMS. Si une erreur est survenue ``uid`` doit être à ``NULL``.
 
 
 Lecture d'un SMS
@@ -123,12 +123,12 @@ Lecture d'un SMS
 
     public function read (): array
 
-La méthode appelée pour lire les SMS reçus. Cette méthode est appelée **très** souvent (environ 2 fois par seconde), à vous de vous assurez que cela n'entrainera pas de dépassement des capacité du service implémenté, et potentiellement de mettre en place des mécanisme de temporisation.
+La méthode appelée pour lire les SMS reçus. Cette méthode est appelée **très** souvent (environ 2 fois par seconde), à vous de vous assurez que cela n'entrainera pas de dépassement des capacités du service implémenté, et potentiellement de mettre en place des mécanismes de temporisation.
 
 La fonction retourne un tableau tel que suit :
- - **error** (*bool*), ``TRUE`` -- ``TRUE`` si une erreure est survenue et ``FALSE`` sinon.
+ - **error** (*bool*), ``TRUE`` -- ``TRUE`` si une erreur est survenue et ``FALSE`` sinon.
  - **error_message** (*str | null*) -- Le message d'erreur en cas d'echec, ou ``NULL`` en cas de succés.
- - **smss** (*array*) -- Un tableau avec les SMS reçus, ou un tableau vide en cas d'erreur. Chaque ligne est un SMS représenté lui même par un tableau avec les clés suivantes :
+ - **smss** (*array*) -- Un tableau avec les SMS reçus, ou un tableau vide en cas d'erreur. Chaque ligne est un SMS représenté lui-même par un tableau avec les clés suivantes :
 
    - **at** (*str*) -- La date de réception du SMS au format ``Y-m-d H:i:s``.
    - **text** (*str*) -- Le corps du SMS.
@@ -145,11 +145,11 @@ Mise à jour du status d'un SMS
 
     public static function status_change_callback()
 
-La méthode est appelée lors de la réception d'un appel HTTP indiquant la mise à jour du status d'un SMS.
+La méthode est appelée lors de la réception d'un appel HTTP indiquant la mise à jour du statut d'un SMS.
 
-La méthode doit retournée ``FALSE`` si une erreure survient, ou un tableau en cas de succès avec:
+La méthode doit retourner ``FALSE`` si une erreur survient, ou un tableau en cas de succès avec:
  - **uid** (*str*) -- L'identifiant unique du SMS au sein de la plateforme implémentée.
- - **status** (*str*) -- Le nouveau status du SMS, soit ``\models\Sended::STATUS_UNKNOWN`` pour un status inconnu, ``\models\Sended::STATUS_DELIVERED`` pour un SMS reçus par le destinataire, ou ``\models\Sended::STATUS_FAILED`` si l'envoi du SMS à échoué.
+ - **status** (*str*) -- Le nouveau status du SMS, soit ``\models\Sended::STATUS_UNKNOWN`` pour un status inconnu, ``\models\Sended::STATUS_DELIVERED`` pour un SMS reçu par le destinataire, ou ``\models\Sended::STATUS_FAILED`` si l'envoi du SMS a échoué.
 
 
 
@@ -159,9 +159,9 @@ Réception d'un SMS
 
     public static function reception_callback() : array
 
-La méthode est appelée lors e la réception d'un appel HTTP indiquant la réception d'un SMS.
+La méthode est appelée lors de la réception d'un appel HTTP indiquant la réception d'un SMS.
 
-La méthode doit transformé les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :
+La méthode doit transformer les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :
  - **error** (*bool*) -- ``TRUE`` en cas d'erreur, sinon ``FALSE``.
  - **error_message** (*str | null*) -- Un message d'erreur en cas d'erreur, sinon ``NULL``.
  - **sms** (*array*) -- Un tableau représentant le SMS reçu, ou un tableau vide en cas d'erreur

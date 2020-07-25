@@ -60,25 +60,25 @@ Exemple de commande
 
 Pour mieux comprendre la syntaxe d'un SMS de commande, voici un exemple concret d'utilisation.
 
-Dans cette exemple, nous allons envoyer un SMS à RaspiSMS afin de commander l'allumage ou l'extinction d'une lumière.
+Dans cet exemple, nous allons envoyer un SMS à RaspiSMS afin de commander l'allumage ou l'extinction d'une lumière.
 
-La gestion de la lampte se fait à travers le script ``allumerEteindreLampe.sh``, lequel est identifié dans RaspiSMS par la commande ``lampe``. Ce script peut être appelé sans paramètre, auquel cas il se contentera d'inverser la position de la lampe, ou avec un paramètre, ``--on`` ou ``--off``, permettant de définir si l'on souhaite allumer ou éteindre la lampe.
+La gestion de la lampe se fait à travers le script ``allumerEteindreLampe.sh``, lequel est identifié dans RaspiSMS par la commande ``lampe``. Ce script peut être appelé sans paramètre, auquel cas il se contentera d'inverser la position de la lampe, ou avec un paramètre, ``--on`` ou ``--off``, permettant de définir si l'on souhaite allumer ou éteindre la lampe.
 
 Dans cet exemple, nous allons utiliser le compte RaspiSMS ``documentation@raspisms.fr`` dont le mot de passe est ``p4ssw0rd``.
 
 Commande avec argument
 ######################
-Afin d'allumer la lampe via les commandes RaspiSMS, vous devrez donc envoyer le SMS suivant.
+Afin d'allumer la lampe via les commandes RaspiSMS, vous devrez donc envoyer le SMS suivant :
 
 .. literalinclude:: /_code_examples/commands/argument.json
     :language: json
 
 .. note::
-     Les paramètres supplémentaires passés à la commande sont échappés via la fonction ``escapeshellcmd()`` de php. Vous pouvez donc utiliser ces paramètres pour passer des arguments comme ``-t "du texte" -l 10``. Mais pas pour exécuter des opérations comme par exemple ``&& reboot``. 
+     Les paramètres supplémentaires passés à la commande sont échappés via la fonction ``escapeshellcmd()`` de php. Vous pouvez donc utiliser ces paramètres pour passer des arguments comme ``-t "du texte" -l 10``, mais pas pour exécuter des opérations comme par exemple ``&& reboot``. 
 
 Commande sans argument
 ######################
-Afin de simplement inverser la position de la lampe (l'allumée si elle est éteinte, l'éteindre si elle est allumée), vous devrez envoyer le SMS suivant.
+Afin de simplement inverser la position de la lampe (l'allumer si elle est éteinte, l'éteindre si elle est allumée), vous devrez envoyer le SMS suivant.
 
 .. literalinclude:: /_code_examples/commands/no_argument.json
     :language: json

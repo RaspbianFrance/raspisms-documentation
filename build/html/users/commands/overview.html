@@ -28,7 +28,7 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Pour les développeurs" href="../../developpers/overview.html" />
+  <link rel="next" title="Commencer à utiliser RaspiSMS" href="../guides/starting.html" />
   <link rel="prev" title="SMS dynamiques et templating" href="../templating/overview.html" /> 
   </head>
 
@@ -118,6 +118,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
@@ -145,8 +146,8 @@
        title="Chapitre précédent">← SMS dynamiques et templating</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Pour les développeurs →</a>
+    <a href="../guides/starting.html"
+       title="Chapitre suivant">Commencer à utiliser RaspiSMS →</a>
   </li>
 </ul>
   
@@ -214,23 +215,23 @@
 <p>Pour des raisons de sécurité, votre mot de passe sera supprimé du SMS reçu lors de son enregistrement en base de données. Vous devriez cependant penser à supprimer le SMS envoyé de votre téléphone.</p>
 </div>
 <p>Pour mieux comprendre la syntaxe d’un SMS de commande, voici un exemple concret d’utilisation.</p>
-<p>Dans cette exemple, nous allons envoyer un SMS à RaspiSMS afin de commander l’allumage ou l’extinction d’une lumière.</p>
-<p>La gestion de la lampte se fait à travers le script <code class="docutils literal notranslate"><span class="pre">allumerEteindreLampe.sh</span></code>, lequel est identifié dans RaspiSMS par la commande <code class="docutils literal notranslate"><span class="pre">lampe</span></code>. Ce script peut être appelé sans paramètre, auquel cas il se contentera d’inverser la position de la lampe, ou avec un paramètre, <code class="docutils literal notranslate"><span class="pre">--on</span></code> ou <code class="docutils literal notranslate"><span class="pre">--off</span></code>, permettant de définir si l’on souhaite allumer ou éteindre la lampe.</p>
+<p>Dans cet exemple, nous allons envoyer un SMS à RaspiSMS afin de commander l’allumage ou l’extinction d’une lumière.</p>
+<p>La gestion de la lampe se fait à travers le script <code class="docutils literal notranslate"><span class="pre">allumerEteindreLampe.sh</span></code>, lequel est identifié dans RaspiSMS par la commande <code class="docutils literal notranslate"><span class="pre">lampe</span></code>. Ce script peut être appelé sans paramètre, auquel cas il se contentera d’inverser la position de la lampe, ou avec un paramètre, <code class="docutils literal notranslate"><span class="pre">--on</span></code> ou <code class="docutils literal notranslate"><span class="pre">--off</span></code>, permettant de définir si l’on souhaite allumer ou éteindre la lampe.</p>
 <p>Dans cet exemple, nous allons utiliser le compte RaspiSMS <code class="docutils literal notranslate"><span class="pre">documentation&#64;raspisms.fr</span></code> dont le mot de passe est <code class="docutils literal notranslate"><span class="pre">p4ssw0rd</span></code>.</p>
 <div class="section" id="commande-avec-argument">
 <h3>Commande avec argument<a class="headerlink" href="#commande-avec-argument" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Afin d’allumer la lampe via les commandes RaspiSMS, vous devrez donc envoyer le SMS suivant.</p>
+<p>Afin d’allumer la lampe via les commandes RaspiSMS, vous devrez donc envoyer le SMS suivant :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;login&quot;</span><span class="p">:</span><span class="s2">&quot;documentation@raspisms.fr&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;p4ssw0rd&quot;</span><span class="p">,</span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="s2">&quot;lampe&quot;</span><span class="p">,</span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="s2">&quot;--on&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Les paramètres supplémentaires passés à la commande sont échappés via la fonction <code class="docutils literal notranslate"><span class="pre">escapeshellcmd()</span></code> de php. Vous pouvez donc utiliser ces paramètres pour passer des arguments comme <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&quot;du</span> <span class="pre">texte&quot;</span> <span class="pre">-l</span> <span class="pre">10</span></code>. Mais pas pour exécuter des opérations comme par exemple <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span> <span class="pre">reboot</span></code>.</p>
+<p>Les paramètres supplémentaires passés à la commande sont échappés via la fonction <code class="docutils literal notranslate"><span class="pre">escapeshellcmd()</span></code> de php. Vous pouvez donc utiliser ces paramètres pour passer des arguments comme <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&quot;du</span> <span class="pre">texte&quot;</span> <span class="pre">-l</span> <span class="pre">10</span></code>, mais pas pour exécuter des opérations comme par exemple <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span> <span class="pre">reboot</span></code>.</p>
 </div>
 </div>
 <div class="section" id="commande-sans-argument">
 <h3>Commande sans argument<a class="headerlink" href="#commande-sans-argument" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Afin de simplement inverser la position de la lampe (l’allumée si elle est éteinte, l’éteindre si elle est allumée), vous devrez envoyer le SMS suivant.</p>
+<p>Afin de simplement inverser la position de la lampe (l’allumer si elle est éteinte, l’éteindre si elle est allumée), vous devrez envoyer le SMS suivant.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;login&quot;</span><span class="p">:</span><span class="s2">&quot;documentation@raspisms.fr&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;p4ssw0rd&quot;</span><span class="p">,</span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="s2">&quot;lampe&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -247,8 +248,8 @@
        title="Chapitre précédent">← SMS dynamiques et templating</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Pour les développeurs →</a>
+    <a href="../guides/starting.html"
+       title="Chapitre suivant">Commencer à utiliser RaspiSMS →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.
