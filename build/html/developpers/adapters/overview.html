@@ -210,7 +210,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </div>
 <div class="section" id="le-constructeur-de-l-adaptateur">
 <h3>Le constructeur de l’adaptateur<a class="headerlink" href="#le-constructeur-de-l-adaptateur" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(stringdatas)</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(string $datas)</span>
 </pre></div>
 </div>
 <p>La fonctions prend en argument une chaine de caractères <code class="docutils literal notranslate"><span class="pre">$datas</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiquées via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_datas_fields</span></code>.</p>
@@ -230,7 +230,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <p>Ces méthodes permettent l’envoi de SMS et la lecture des SMS reçus.</p>
 <div class="section" id="envoi-d-un-sms">
 <h4>Envoi d’un SMS<a class="headerlink" href="#envoi-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function send (stringdestination, stringtext, boolflash = false)</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function send (string $destination, string $text, bool $flash = false)</span>
 </pre></div>
 </div>
 <dl class="simple">

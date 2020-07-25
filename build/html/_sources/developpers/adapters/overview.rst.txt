@@ -75,7 +75,7 @@ Le constructeur de l'adaptateur
 ''''''''''''''''''''''''''''''''
 .. code-block::
 
-    public function __construct(stringdatas)
+    public function __construct(string $datas)
 
 La fonctions prend en argument une chaine de caractères ``$datas`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiquées via les champs générés en utilisant ``meta_datas_fields``.
 
@@ -103,7 +103,7 @@ Envoi d'un SMS
 """"""""""""""
 .. code-block::
 
-    public function send (stringdestination, stringtext, boolflash = false)
+    public function send (string $destination, string $text, bool $flash = false)
 
 La méthode est appelée à chaque SMS envoyé via l'adaptateur et prend trois arguments, détaillés ci-après :
  - **$destination** (*str*) -- Le numéro auquel envoyer le SMS.
