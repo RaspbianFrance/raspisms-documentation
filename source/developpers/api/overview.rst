@@ -172,7 +172,7 @@ Arguments :
     - **conditional_groups** (*array | int*), ``optional`` -- L'ID du groupe conditionnel auquel envoyer le SMS ou un tableau d'IDs.
     - **at** (*str*), ``optional`` -- Date à laquelle envoyer le SMS au format ``Y-m-d H:i:s``. Si non défini utilise la date actuelle.
     - **id_phone** (*str*), ``optional`` -- Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.
-    - **flash** (*bool*), ``optional`` -- Défini s'il s'agit d'un SMS flash. Si non défini ``FALSE``.
+    - **flash** (*bool*), ``optional`` -- ``TRUE`` s'il s'agit d'un SMS flash. Si non défini ``FALSE``.
 
     .. note::
         Les arguments ``numbers``, ``contacts``, ``groups`` et ``conditional_groups`` sont tous optionnels individuellement, mais vous devez nécessairement renseigner **au moins** un de ces arguments.

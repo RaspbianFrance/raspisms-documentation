@@ -114,7 +114,7 @@ La méthode est appelée à chaque SMS envoyé via l'adaptateur et prend trois a
 La fonction doit retourner un tableau avec trois clés :
  - **error** (*bool*) -- ``TRUE`` si une erreur est survenue et ``FALSE`` sinon.
  - **error_message** (*str | null*) -- Le message d'erreur en cas d'echec, ou ``NULL`` en cas de succés.
- - **uid** (*str | null*) -- L'identifiant unique du SMS envoyé au sein de la plateforme implémentée par l'adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d'un appel HTTP de callback indiquant la mise à jour du status d'un SMS. Si une erreur est survenue ``uid`` doit être à ``NULL``.
+ - **uid** (*str | null*) -- L'identifiant unique du SMS envoyé au sein de la plateforme implémentée par l'adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d'un appel HTTP de callback indiquant la mise à jour du statut d'un SMS. Si une erreur est survenue ``uid`` doit être à ``NULL``.
 
 
 Lecture d'un SMS
@@ -139,7 +139,7 @@ Les méthodes de callback
 '''''''''''''''''''''''''
 Ces méthodes sont appelées par RaspiSMS lors de la réception d'une requête HTTP de callback concernant cet adaptateur.
 
-Mise à jour du status d'un SMS
+Mise à jour du statut d'un SMS
 """"""""""""""""""""""""""""""
 .. code-block::
 
@@ -149,7 +149,7 @@ La méthode est appelée lors de la réception d'un appel HTTP indiquant la mise
 
 La méthode doit retourner ``FALSE`` si une erreur survient, ou un tableau en cas de succès avec:
  - **uid** (*str*) -- L'identifiant unique du SMS au sein de la plateforme implémentée.
- - **status** (*str*) -- Le nouveau status du SMS, soit ``\models\Sended::STATUS_UNKNOWN`` pour un status inconnu, ``\models\Sended::STATUS_DELIVERED`` pour un SMS reçu par le destinataire, ou ``\models\Sended::STATUS_FAILED`` si l'envoi du SMS a échoué.
+ - **status** (*str*) -- Le nouveau statut du SMS, soit ``\models\Sended::STATUS_UNKNOWN`` pour un statut inconnu, ``\models\Sended::STATUS_DELIVERED`` pour un SMS reçu par le destinataire, ou ``\models\Sended::STATUS_FAILED`` si l'envoi du SMS a échoué.
 
 
 

@@ -118,7 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-de-callback">Les méthodes de callback</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-du-status-d-un-sms">Mise à jour du status d’un SMS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-du-statut-d-un-sms">Mise à jour du statut d’un SMS</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#reception-d-un-sms">Réception d’un SMS</a></li>
 </ul>
 </li>
@@ -243,7 +243,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <dt>La fonction doit retourner un tableau avec trois clés :</dt><dd><ul class="simple">
 <li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreur est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
-<li><p><strong>uid</strong> (<em>str | null</em>) – L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du status d’un SMS. Si une erreur est survenue <code class="docutils literal notranslate"><span class="pre">uid</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>uid</strong> (<em>str | null</em>) – L’identifiant unique du SMS envoyé au sein de la plateforme implémentée par l’adaptateur. Cet identifiant doit permettre de retrouver le SMS sur la plateforme, par exemple lors de la réception d’un appel HTTP de callback indiquant la mise à jour du statut d’un SMS. Si une erreur est survenue <code class="docutils literal notranslate"><span class="pre">uid</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -273,8 +273,8 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <div class="section" id="les-methodes-de-callback">
 <h3>Les méthodes de callback<a class="headerlink" href="#les-methodes-de-callback" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ces méthodes sont appelées par RaspiSMS lors de la réception d’une requête HTTP de callback concernant cet adaptateur.</p>
-<div class="section" id="mise-a-jour-du-status-d-un-sms">
-<h4>Mise à jour du status d’un SMS<a class="headerlink" href="#mise-a-jour-du-status-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="section" id="mise-a-jour-du-statut-d-un-sms">
+<h4>Mise à jour du statut d’un SMS<a class="headerlink" href="#mise-a-jour-du-statut-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function status_change_callback()</span>
 </pre></div>
 </div>
@@ -282,7 +282,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 <dl class="simple">
 <dt>La méthode doit retourner <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> si une erreur survient, ou un tableau en cas de succès avec:</dt><dd><ul class="simple">
 <li><p><strong>uid</strong> (<em>str</em>) – L’identifiant unique du SMS au sein de la plateforme implémentée.</p></li>
-<li><p><strong>status</strong> (<em>str</em>) – Le nouveau status du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un status inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçu par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS a échoué.</p></li>
+<li><p><strong>status</strong> (<em>str</em>) – Le nouveau statut du SMS, soit <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_UNKNOWN</span></code> pour un statut inconnu, <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_DELIVERED</span></code> pour un SMS reçu par le destinataire, ou <code class="docutils literal notranslate"><span class="pre">\models\Sended::STATUS_FAILED</span></code> si l’envoi du SMS a échoué.</p></li>
 </ul>
 </dd>
 </dl>

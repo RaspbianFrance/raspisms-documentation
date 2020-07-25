@@ -34,7 +34,7 @@ Enfin, dans le champs **"Numéro à employer"**, séléctionnez le nom du télé
 
 Il ne vous reste plus qu'à cliquer sur le bouton **"Enregistrer le SMS"**.
 
-4. Vérifier le status du SMS
+4. Vérifier le statut du SMS
 ============================
 
 Vous pouvez maintenant vérifier si le SMS a bien été envoyé et éventuellement reçu, en vous rendant dans la partie **"SMS"**, **"SMS Envoyés"**.
