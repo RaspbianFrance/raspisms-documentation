@@ -3,7 +3,7 @@ Adaptateur Twilio Numéro Virtuel
 ================================
 L'adaptateur Twilio Numéro Virtuel permet l'utilisation de l'offre SMS de Twilio avec RaspiSMS en se basant sur l'utilisation de l'API SMS avec un numéro virtuel.
 
-L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contacté auparavant.
+L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contactés auparavant.
 
 Fonctionnalités supportées
 --------------------------
@@ -11,7 +11,7 @@ Fonctionnalités supportées
  Fonctionnalité   Support
 ================ =========
 Envoi de SMS     Oui
-Reception de SMS Oui
+Réception de SMS Oui
 Suivi de l'envoi Oui
 SMS Flash        Non
 ================ =========
@@ -39,13 +39,13 @@ Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelque
 
 3.1 Le nom du téléphone
 #######################
-Dans le champs **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparait que pour vous, jamais pour les destinataires du message.
+Dans le champ **"Nom"** donnez un nom unique au téléphone que vous allez créer. Ce nom n'apparaît que pour vous, jamais pour les destinataires du message.
 
 3.2 Récupérer les identifiants API Twilio
 ###############################################
 Pour commencer nous allons récupérer les identifiants API de Twilio. Pour cela, rendez-vous sur `L'accueil de la console Twilio`_ vos identifiants API sont indiqués en bas de la partie "Project Info".
 
-Copiez la valeur sous **"Account SID"** dans le champs du même nom dans RaspiSMS, et cliquez sur **"Show"** sous **"Auth Token"** pour afficher la valeure, et recopiez la dans le champs du même nom dans RaspiSMS.
+Copiez la valeur sous **"Account SID"** dans le champ du même nom dans RaspiSMS, et cliquez sur **"Show"** sous **"Auth Token"** pour afficher la valeur, et recopiez-la dans le champ du même nom dans RaspiSMS.
 
 3.3 Trouver le numéro de téléphone virtuel
 ############################################
@@ -53,9 +53,9 @@ Commencez par vous connecter à votre compte Twilio et rendez-vous dans `La part
 
 Vous devrez attendre que le numéro soit validé pour pouvoir passer à la suite de ce guide.
 
-Une fois le numéro de téléphone virtuel créé, rendez-vous de nouveau dans `La partie numéro de téléphone de la console Twilio`_, le numéro apparait dans la colonne **"Number"**. Recopiez ce numéro dans le champs **"Numéro de téléphone virtuel"** de RaspiSMS.
+Une fois le numéro de téléphone virtuel créé, rendez-vous de nouveau dans `La partie numéro de téléphone de la console Twilio`_, le numéro apparaît dans la colonne **"Number"**. Recopiez ce numéro dans le champ **"Numéro de téléphone virtuel"** de RaspiSMS.
 
-Sur RaspiSMS, laissez le champs **"Callback de changement de status"** tel quel pour que Twilio envoie un requête à RaspiSMS lors du changement de status d'un message.
+Sur RaspiSMS, laissez le champ **"Callback de changement de statut"** tel quel pour que Twilio envoie un requête à RaspiSMS lors du changement de statut d'un message.
 
 Enfin, cliquez sur le bouton **"Enregistrer le téléphone"**.
 

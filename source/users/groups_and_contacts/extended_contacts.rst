@@ -13,19 +13,19 @@ Ces données peuvent ensuite être utilisées pour générer des listes de diffu
 
 Comment ça fonctionne ?
 ========================
-Lors de la création du contact vous renseigner les données supplémentaires dans la partie **"Données du contact"**. Pour chaque donnée deux champs sont disponibles, le premier permet de renseigner le nom de la donnée, qui sera utilisé pour y accéder, le second contient la valeure de la données.
+Lors de la création du contact vous renseignez les données supplémentaires dans la partie **"Données du contact"**. Pour chaque donnée deux champs sont disponibles, le premier permet de renseigner le nom de la donnée, qui sera utilisé pour y accéder, le second contient la valeur de la donnée.
 
 Format des données
 ==================
 Les données sont toutes stockées sous forme de chaînes de caractères.
 
-Il n'y a pas de format particulier à respecter pour les données, mais il est conseillé de choisir des noms de données simples, totalement en minuscule. En effet, les noms de données sont sensibles à la casse, c'est à dire que le nom ``Nom`` est différent de ``nom`` ou de ``NOM``. Pour plus de simplicité lors de l'utilisation future des données et afin d'éviter de commettre des erreures d'inattention, l'adoption d'un format uniforme est donc conseillé.
+Il n'y a pas de format particulier à respecter pour les données, mais il est conseillé de choisir des noms de données simples, totalement en minuscule. En effet, les noms de données sont sensibles à la casse, c'est-à-dire que le nom ``Nom`` est différent de ``nom`` ou de ``NOM``. Pour plus de simplicité lors de l'utilisation future des données et afin d'éviter de commettre des erreurs d'inattention, l'adoption d'un format uniforme est donc conseillé.
 
-De la même façon, afin de tirer pleinement parti de la puissance des données enrichies vous devriez essayer de standardiser au maximum les données enrichies des contacts. Concrétement, cela signifie que vous devriez tenter d'utiliser toujours les mêmes noms et le même format pour des données similaires.
+De la même façon, afin de tirer pleinement parti de la puissance des données enrichies vous devriez essayer de standardiser au maximum les données enrichies des contacts. Concrètement, cela signifie que vous devriez tenter d'utiliser toujours les mêmes noms et le même format pour des données similaires.
 
   **Exemple:**
 
-  Si vous stocker la date de naissance de vos contacts, évitez d'avoir une date avec le nom ``date de naissance`` au format ``jour/mois/année`` et une autre au format ``jour mois année`` avec le nom ``birthdate``.
+  Si vous stockez la date de naissance de vos contacts, évitez d'avoir une date avec le nom ``date de naissance`` au format ``jour/mois/année`` et une autre au format ``jour mois année`` avec le nom ``birthdate``.
 
   À la place, choisissez un seul et unique nom et un seul et unique format, par exemple ``birthdate`` et ``jour/mois/année``.
 

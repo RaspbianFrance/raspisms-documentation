@@ -7,9 +7,9 @@ Les Webhooks
 
 À quoi ça sert ?
 =================================
-Les webhooks sont un moyen de signaler un évènement à une application tierce sans que celle-ci ai besoin d'intérroger l'application qui emet l'évènement.
+Les webhooks sont un moyen de signaler un évènement à une application tierce sans que celle-ci ait besoin d'intérroger l'application qui émet l'évènement.
 
-Pour cela, lorsqu'un évènement donné se produit, l'application émetrice emet une requête HTTP vers une URL définie et appartenant à l'application réceptrice, laquelle peut alors analyser la requête reçue et adapter son comportement en conséquence.
+Pour cela, lorsqu'un évènement donné se produit, l'application émetrice émet une requête HTTP vers une URL définie et appartenant à l'application réceptrice, laquelle peut alors analyser la requête reçue et adapter son comportement en conséquence.
 
 Créer un Webhook
 ========================

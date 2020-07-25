@@ -15,9 +15,9 @@ Organisation de l'API
 
 Fonctionnalités
 ###############
-L'API de RaspiSMS est découpée en trois principales fonctionnalitées, chacune d'entre elle correspondant à un verbe HTTP dédié :
+L'API de RaspiSMS est découpée en trois principales fonctionnalités, chacune d'entre elle correspondant à un verbe HTTP dédié :
 
-- Lister des ressources (sms envoyés, reçus et programmées, contacts, etc.), verbe HTTP ``GET``.
+- Lister des ressources (sms envoyés, reçus et programmés, contacts, etc.), verbe HTTP ``GET``.
 - Créer une ressource (sms programmé), verbe HTTP ``POST``.
 - Supprimer une ressource (sms programmé), verbe HTTP ``DELETE``.
 
@@ -45,7 +45,7 @@ Toutes les réponses des API sont un tableau associatif au format JSON. Les rép
      - Réponse de la requête, différent pour chaque requête.
        
    * - next
-     - Lien vers la page suivante si il reste des résultats à affichées pour la requête. Sinon ``NULL``.
+     - Lien vers la page suivante s'il reste des résultats à affichées pour la requête. Sinon ``NULL``.
        
    * - prev
      - Lien vers la page précédente si la requête actuelle utilise la pagination. Sinon ``NULL``.
@@ -73,7 +73,7 @@ L'API utilise les codes d'erreurs suivants.
      - Un paramètre manquant n'a pas été fourni.
        
    * - 8
-     - Impossible créer la ressource demandée.
+     - Impossible de créer la ressource demandée.
 
    * - 16
      - Le compte lié à la clé API est suspendu.
@@ -84,7 +84,7 @@ L'API utilise les codes d'erreurs suivants.
 
 Pagination
 ~~~~~~~~~~
-Pour les requêtes susceptibles d'employer de la pagination (c'est-à-dire les requêtes de type liste), les résultats sont renvoyés par groupe de 25. Si des résultats supplémentaires sont disponibles un champ ``next`` avec l'URL à intérroger pour obtenir les résultats suivants est indiqué dans la réponse. Sinon le champs est défini à ``NULL``.
+Pour les requêtes susceptibles d'employer de la pagination (c'est-à-dire les requêtes de type liste), les résultats sont renvoyés par groupe de 25. Si des résultats supplémentaires sont disponibles un champ ``next`` avec l'URL à intérroger pour obtenir les résultats suivants est indiqué dans la réponse. Sinon le champ est défini à ``NULL``.
 
 
 Obtenir et utiliser une clé API
@@ -94,7 +94,7 @@ Pour effectuer une requête sur l'API, vous devez fournir une clé unique permet
 .. warning::
     Votre clé API est un identifiant à part entière, vous ne devez en aucun cas la rendre publique !
 
-    Si cette clé a été rendu publique vous devriez l'invalider et en générer une nouvelle via le bouton "Générer une nouvelle clef API" dans la partie "Mon profil" de RaspiSMS.
+    Si cette clé a été rendue publique vous devriez l'invalider et en générer une nouvelle via le bouton "Générer une nouvelle clef API" dans la partie "Mon profil" de RaspiSMS.
 
 Trouver la clé API
 ##################
@@ -113,11 +113,11 @@ Endpoints :
     - ``/api/list/{entry_type}/{page}/``
 
 Arguments :
-    - **entry_type** (*str*) -- Le type de de ressource à lister (``sended``, ``received``, ``scheduled``, ``contact``, ``group``, ``conditional_group`` ou ``phone``).
+    - **entry_type** (*str*) -- Le type de ressource à lister (``sended``, ``received``, ``scheduled``, ``contact``, ``group``, ``conditional_group`` ou ``phone``).
     - **page** (*int*), ``optional`` -- Numéro de page à utiliser, si non défini ``0``.
 
 Réponse :
-    Une collection JSON des ressources demandée.
+    Une collection JSON des ressources demandées.
 
 HTTP Code :
     - Success : ``200``
@@ -166,18 +166,18 @@ Endpoints :
 
 Arguments :
     - **text** (*int*) -- Le texte du SMS à envoyer.
-    - **numbers** (*array | str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéro.
+    - **numbers** (*array | str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros.
     - **contacts** (*array | int*), ``optional`` -- L'ID du contact auquel envoyer le SMS ou un tableau d'IDs.
     - **groups** (*array | int*), ``optional`` -- L'ID du groupe auquel envoyer le SMS ou un tableau d'IDs.
     - **conditional_groups** (*array | int*), ``optional`` -- L'ID du groupe conditionnel auquel envoyer le SMS ou un tableau d'IDs.
     - **at** (*str*), ``optional`` -- Date à laquelle envoyer le SMS au format ``Y-m-d H:i:s``. Si non défini utilise la date actuelle.
-    - **id_phone** (*str*), ``optional`` -- Identifiant du SMS avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.
+    - **id_phone** (*str*), ``optional`` -- Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.
     - **flash** (*bool*), ``optional`` -- Défini s'il s'agit d'un SMS flash. Si non défini ``FALSE``.
 
     .. note::
         Les arguments ``numbers``, ``contacts``, ``groups`` et ``conditional_groups`` sont tous optionnels individuellement, mais vous devez nécessairement renseigner **au moins** un de ces arguments.
 
-        Tous ces arguments peuvent êtres transmis avec une seule valeure ou comme un tableau de valeures.
+        Tous ces arguments peuvent être transmis avec une seule valeur ou comme un tableau de valeurs.
 
 
 Réponse :
@@ -204,7 +204,7 @@ Création d'un SMS **"Mon SMS d'exemple"** envoyé immédiatement au numéro **"
 
 Exemple 2
 ~~~~~~~~~
-Création d'un SMS **"Mon SMS d'exemple"** à envoyé le **"Jeudi 17 juin 2020 à 15 heure, 30 minutes, 25 secondes"**, aux contacts avec l'ID ``11`` et ``12``, avec le téléphone avec l'ID ``3``.
+Création d'un SMS **"Mon SMS d'exemple"** à envoyer le **"Jeudi 17 juin 2020 à 15 heures, 30 minutes, 25 secondes"**, aux contacts avec l'ID ``11`` et ``12``, avec le téléphone avec l'ID ``3``.
 
 .. literalinclude:: /_code_examples/api/post_scheduled2.curl
     :language: curl
