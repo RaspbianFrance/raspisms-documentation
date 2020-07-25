@@ -83,4 +83,6 @@ a.copybtn {
     transition: opacity 0.2s;
 }
 
-
+table p {
+    margin-bottom: 0px;
+}
