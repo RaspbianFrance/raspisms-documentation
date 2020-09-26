@@ -80,6 +80,8 @@ Si nous voulons écrire le message précedemment vu, nous devrons donc écrire l
 
 Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables ``{{contact.firstname}}`` et ``{{contact.lastname}}`` ont été remplacées par ``John`` et ``Doe``.
 
+Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``{{contact_metas.name}}`` et ``{{contact_metas.number}}``.
+
 Modifier le contenu en utilisant des conditions
 ''''''''''''''''''''''''''''''''''''''''''''''''
 Pour l'instant nous avons vu comment insérer des données à l'intérieur d'un message, mais il est possible d'aller plus loin. Par exemple, imaginons que nous voulions écrire ``M.`` ou ``Mme`` avant le prénom du contact, selon qu'il s'agit d'un homme ou d'une femme. Dans notre exemple le sexe du contact est stocké dans la donnée ``gender``. Seulement, elle stocke ``male`` ou ``female`` plutôt que la civilité. Il nous faudrait donc un moyen de modifier le contenu du message **selon** la valeur d'une donnée plutôt que de simplement afficher cette donnée.
