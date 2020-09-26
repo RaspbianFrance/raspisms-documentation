@@ -98,7 +98,9 @@ Utiliser les données des contacts
 ''''''''''''''''''''''''''''''''''
 C'est bien gentil tout ça, mais comment peut-on utiliser ces règles pour modifier le comportement en fonction des données d'un contact ? Eh bien tout simplement en comparant non pas deux opérateurs fixes comme précédemment, mais un opérateur fixe et une variable contenant la donnée du contact qui nous intéresse.
 
-Pour accéder à une donnée d'un contact il nous suffit d'utiliser la notation ``contact.nom_de_la_donnée``. Si nous prenons nos contacts d'exemple, nous pouvons accéder à leur sexe en utilisant la notation ``contact.gender``. Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``contact_metas.name`` et ``contact_metas.number``.
+Pour accéder à une donnée d'un contact il nous suffit d'utiliser la notation ``contact.nom_de_la_donnée``. Si nous prenons nos contacts d'exemple, nous pouvons accéder à leur sexe en utilisant la notation ``contact.gender``.
+
+Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``contact_metas.name`` et ``contact_metas.number``.
 
 Faire un groupe avec tous les contacts femmes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
