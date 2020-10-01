@@ -8,16 +8,16 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
 
 .. toctree::
     :maxdepth: 1
+    :caption: Nos guides
+
+    guides/starting
+
+.. toctree::
+    :maxdepth: 1
     :caption: Table des matières
 
     adapters/overview
     groups_and_contacts/overview
     templating/overview
     commands/overview
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Nos guides
-
-    guides/starting
 
