@@ -31,6 +31,9 @@ Pour commencez vous aurez besoin d'un modem GSM compatible avec Gammu, pour cela
 
 Nous vous conseillons d'utiliser directement `un modem SIM800L`_, plus simple à trouver, moins cher et totalement compatible avec Gammu.
 
+.. note::
+    Voir `ce tutoriel sur l'utilisation du modem SIM800L avec un Raspberry Pi`_.
+
 1.2 Configurer gammu pour utiliser le modem GSM
 ''''''''''''''''''''''''''''''''''''''''''''''''
 Une fois que vous avez relié votre modem GSM au serveur vous devez encore configurer Gammu pour utiliser ce GSM. Pour cela vous devez créer un fichier de configuration que vous renseignerez par la suite dans RaspiSMS. Pour créer ce fichier de configuration reportez-vous à `la documentation de gammu`_.
@@ -85,3 +88,4 @@ Et voilà, vous pouvez maintenant envoyer et recevoir des SMS avec Gammu et Rasp
 .. _gammu-config: https://wammu.eu/docs/manual/utils/gammu-config.html
 .. _la liste des modems supportés par gammu: https://fr.wammu.eu/phones/
 .. _la documentation de gammu: https://wammu.eu/docs/manual/config/index.html
+.. _ce tutoriel sur l'utilisation du modem SIM800L avec un Raspberry Pi: https://raspberry-pi.fr/sim800l-gsm-gps-raspberry/
