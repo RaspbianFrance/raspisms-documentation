@@ -1,20 +1,21 @@
 .. _users:
 
-=====================
-Pour les utilisateurs
-=====================
+===================================
+Documentation pour les utilisateurs
+===================================
 
 Cette partie de la documentation est destinée aux utilisateurs et propose principalement des guides concernant l’utilisation et les fonctionnalités de RaspiSMS.
 
 .. toctree::
     :maxdepth: 1
-    :caption: Nos guides
+    :caption: Les guides pour débuter
 
     guides/starting
 
+
 .. toctree::
     :maxdepth: 1
-    :caption: Table des matières
+    :caption: Les guides avancés
 
     adapters/overview
     groups_and_contacts/overview

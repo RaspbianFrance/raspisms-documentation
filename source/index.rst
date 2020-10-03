@@ -13,7 +13,7 @@ Si vous souhaitez enrichir cette documentation vous pouvez faire une pull reques
     
 .. toctree::
     :maxdepth: 1
-    :caption: Table des matières
+    :caption: Quelle partie de la documentation vous intéresse ?
 
     users/overview
     developpers/overview

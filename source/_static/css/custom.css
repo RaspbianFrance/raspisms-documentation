@@ -86,3 +86,7 @@ a.copybtn {
 table p {
     margin-bottom: 0px;
 }
+
+.toctree-wrapper {
+    margin-top: 40px;
+}

@@ -1,6 +1,6 @@
-=====================
-Pour les développeurs
-=====================
+===================================
+Documentation pour les développeurs
+===================================
 
 Cette partie de la documentation est destinée aux développeurs souhaitant participer au projet ou le modifier à leurs propres fins.
 

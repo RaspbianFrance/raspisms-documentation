@@ -37,4 +37,5 @@ Pour en savoir plus sur l'utilisation des données des contacts enrichis, report
 .. toctree::
     :maxdepth: 1
 
-    
+    conditionnals_groups
+    ../templating/overview
