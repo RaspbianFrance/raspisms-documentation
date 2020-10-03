@@ -28,8 +28,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Pour les développeurs" href="../../developpers/overview.html" />
-  <link rel="prev" title="Commandes par SMS" href="../commands/overview.html" /> 
+  <link rel="next" title="Les Adaptateurs" href="../adapters/overview.html" />
+  <link rel="prev" title="Pour les utilisateurs" href="../overview.html" /> 
   </head>
 
   <body>
@@ -104,10 +104,6 @@
         <p class="caption"><span class="caption-text">Table des matières</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les utilisateurs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commencer à utiliser RaspiSMS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#connectez-vous-a-votre-compte-raspisms">1. Connectez-vous à votre compte RaspiSMS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creez-un-premier-telephone">2. Créez un premier téléphone</a></li>
@@ -116,6 +112,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#aller-plus-loin">5. Aller plus loin</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Pour les développeurs</a></li>
@@ -139,12 +139,12 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../commands/overview.html"
-       title="Chapitre précédent">← Commandes par SMS</a>
+    <a href="../overview.html"
+       title="Chapitre précédent">← Pour les utilisateurs</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Pour les développeurs →</a>
+    <a href="../adapters/overview.html"
+       title="Chapitre suivant">Les Adaptateurs →</a>
   </li>
 </ul>
   
@@ -157,6 +157,9 @@
 <p>Ce guide a pour objectif de vous aider lors de votre première prise en main de RaspiSMS et de vous guider à travers les différentes étapes.</p>
 <div class="section" id="connectez-vous-a-votre-compte-raspisms">
 <h2>1. Connectez-vous à votre compte RaspiSMS<a class="headerlink" href="#connectez-vous-a-votre-compte-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BflHtTckpHg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 <p>Rendez-vous sur <a class="reference external" href="https://app.raspisms.fr/">la page de connection de RaspiSMS</a> et connectez-vous avec les identifiants que vous avez fournis lors de votre inscription en mode SaaS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -165,10 +168,16 @@
 </div>
 <div class="section" id="creez-un-premier-telephone">
 <h2>2. Créez un premier téléphone<a class="headerlink" href="#creez-un-premier-telephone" title="Lien permanent vers ce titre">¶</a></h2>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dVX23bGIaYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 <p>Afin de pouvoir recevoir et envoyer des SMS depuis l’application vous devez dans un premier temps créer un téléphone qui sera utilisé pour envoyer et recevoir des messages. Pour cela vous pouvez utiliser différents fournisseurs de services (<a class="reference internal" href="../adapters/overview.html#adapters"><span class="std std-ref">voir Les Adaptateurs</span></a>), mais nous vous recommandons l’utilisation <a class="reference internal" href="../adapters/ovh_virtual_number.html#users-adapters-ovh-virtual-number"><span class="std std-ref">d’OVH avec un numéro virtuel</span></a> qui, à notre sens, fournit le service le plus accessible et efficace.</p>
 </div>
 <div class="section" id="envoyer-un-premier-sms">
 <h2>3. Envoyer un premier SMS<a class="headerlink" href="#envoyer-un-premier-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5zrbt0ZKTlU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 <p>Maintenant que vous avez créé un premier téléphone, il ne vous reste plus qu’à envoyer votre premier SMS. Pour cela, rendez-vous dans la partie « SMS », « Nouveau SMS » et cliquez sur le bouton « Créer un nouveau SMS ».</p>
 <p>Tapez le texte du SMS que vous souhaitez envoyer dans la partie <strong>« Texte du SMS »</strong>.</p>
 <p>Laissez la date d’envoi inchangée pour envoyer le SMS immédiatement.</p>
@@ -192,12 +201,12 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../commands/overview.html"
-       title="Chapitre précédent">← Commandes par SMS</a>
+    <a href="../overview.html"
+       title="Chapitre précédent">← Pour les utilisateurs</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Pour les développeurs →</a>
+    <a href="../adapters/overview.html"
+       title="Chapitre suivant">Les Adaptateurs →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.

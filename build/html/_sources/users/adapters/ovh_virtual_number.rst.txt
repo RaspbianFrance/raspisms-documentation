@@ -7,6 +7,9 @@ L'adaptateur OVH SMS permet l'utilisation de l'offre SMS de OVH avec RaspiSMS en
 
 L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous-même contactés auparavant.
 
+.. raw:: html
+    :file: ../../_videos/phone_ovh_virtual.html
+
 Fonctionnalités supportées
 --------------------------
 ================ =========
@@ -17,7 +20,6 @@ Réception de SMS Oui
 Suivi de l'envoi Oui
 SMS Flash        Non
 ================ =========
-
 
 
 Configurer l'adaptateur OVH SMS

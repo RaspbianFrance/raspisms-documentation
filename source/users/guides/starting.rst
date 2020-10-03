@@ -9,6 +9,9 @@ Ce guide a pour objectif de vous aider lors de votre première prise en main de 
 1. Connectez-vous à votre compte RaspiSMS
 =========================================
 
+.. raw:: html
+    :file: ../../_videos/connect.html
+
 Rendez-vous sur `la page de connection de RaspiSMS <https://app.raspisms.fr/>`_ et connectez-vous avec les identifiants que vous avez fournis lors de votre inscription en mode SaaS.
 
 .. note::
@@ -17,10 +20,16 @@ Rendez-vous sur `la page de connection de RaspiSMS <https://app.raspisms.fr/>`_ 
 2. Créez un premier téléphone
 ==============================
 
+.. raw:: html
+    :file: ../../_videos/phone_ovh_virtual.html
+
 Afin de pouvoir recevoir et envoyer des SMS depuis l'application vous devez dans un premier temps créer un téléphone qui sera utilisé pour envoyer et recevoir des messages. Pour cela vous pouvez utiliser différents fournisseurs de services (:ref:`voir Les Adaptateurs <adapters>`), mais nous vous recommandons l'utilisation :ref:`d'OVH avec un numéro virtuel <users_adapters_ovh_virtual_number>` qui, à notre sens, fournit le service le plus accessible et efficace.
 
 3. Envoyer un premier SMS
 =========================
+
+.. raw:: html
+    :file: ../../_videos/send_sms.html
 
 Maintenant que vous avez créé un premier téléphone, il ne vous reste plus qu'à envoyer votre premier SMS. Pour cela, rendez-vous dans la partie "SMS", "Nouveau SMS" et cliquez sur le bouton "Créer un nouveau SMS".
 
