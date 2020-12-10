@@ -29,7 +29,7 @@
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Les Adaptateurs" href="../adapters/overview.html" />
-  <link rel="prev" title="Pour les développeurs" href="../overview.html" /> 
+  <link rel="prev" title="Documentation pour les développeurs" href="../overview.html" /> 
   </head>
 
   <body>
@@ -101,10 +101,10 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Table des matières</span></p>
+        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Pour les utilisateurs</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Pour les développeurs</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Utiliser l’API HTTP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#organisation-de-l-api">Organisation de l’API</a><ul>
@@ -155,7 +155,7 @@
   <ul class="breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
     
-      <li><a href="../overview.html">Pour les développeurs</a> &raquo;</li>
+      <li><a href="../overview.html">Documentation pour les développeurs</a> &raquo;</li>
     
     <li>Utiliser l’API HTTP</li>
   </ul>
@@ -164,7 +164,7 @@
   <ul class="page-nav">
   <li class="prev">
     <a href="../overview.html"
-       title="Chapitre précédent">← Pour les développeurs</a>
+       title="Chapitre précédent">← Documentation pour les développeurs</a>
   </li>
   <li class="next">
     <a href="../adapters/overview.html"
@@ -423,7 +423,7 @@
 <div class="section" id="exemple-2">
 <h4>Exemple 2<a class="headerlink" href="#exemple-2" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> à envoyer le <strong>« Jeudi 17 juin 2020 à 15 heures, 30 minutes, 25 secondes »</strong>, aux contacts avec l’ID <code class="docutils literal notranslate"><span class="pre">11</span></code> et <code class="docutils literal notranslate"><span class="pre">12</span></code>, avec le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
-<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8&#39;contacts[]=11&#39; -d &#39;contacts[]=12&#39; -d &#39;id_phone=3&#39; -d &#39;at=2020-06-17 17:30:25&#39;
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Mon%20SMS%20d%27exemple&#39; -d contacts[]=11&#39; -d &#39;contacts[]=12&#39; -d &#39;id_phone=3&#39; -d &#39;at=2020-06-17 17:30:25&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -446,7 +446,7 @@
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="../overview.html"
-       title="Chapitre précédent">← Pour les développeurs</a>
+       title="Chapitre précédent">← Documentation pour les développeurs</a>
   </li>
   <li class="next">
     <a href="../adapters/overview.html"
