@@ -1,3 +1,5 @@
+.. _users_adapters_octopush_shortcode:
+
 ===================================
 Adaptateur Octopush Shortcode
 ===================================

@@ -1,0 +1,1 @@
+curl -X POST http://127.0.0.1/raspisms/api/phone/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d' -d 'name=My Octopush Phone' -d 'adapter=adapters\OctopushShortcodeAdapter' -d 'adapter_datas[login]=mail@example.com' -d 'adapter_datas[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F'

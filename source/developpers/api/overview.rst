@@ -18,8 +18,8 @@ Fonctionnalités
 L'API de RaspiSMS est découpée en trois principales fonctionnalités, chacune d'entre elle correspondant à un verbe HTTP dédié :
 
 - Lister des ressources (sms envoyés, reçus et programmés, contacts, etc.), verbe HTTP ``GET``.
-- Créer une ressource (sms programmé), verbe HTTP ``POST``.
-- Supprimer une ressource (sms programmé), verbe HTTP ``DELETE``.
+- Créer une ressource (sms programmé, téléphone), verbe HTTP ``POST``.
+- Supprimer une ressource (sms programmé, téléphone), verbe HTTP ``DELETE``.
 
 .. note::
     Actuellement seul les SMS programmés peuvent être créés et supprimés.
@@ -154,7 +154,7 @@ Exemple de requête CURL
 ##################################
 On va supprimer le SMS programmé avec l'id ``13``.
 
-.. literalinclude:: /_code_examples/api/delete.curl
+.. literalinclude:: /_code_examples/api/delete_scheduled.curl
     :language: curl
 
 
@@ -184,7 +184,7 @@ Réponse :
     L'ID du SMS programmé créé.
 
 HTTP Code :
-    - Success : ``204``
+    - Success : ``200``
     - Error : ``400``
 
 
@@ -210,4 +210,77 @@ Création d'un SMS **"Mon SMS d'exemple"** à envoyer le **"Jeudi 17 juin 2020 �
     :language: curl
 
 .. literalinclude:: /_code_examples/api/post_scheduled2_response.json
+    :language: json
+
+
+Supprimer un téléphone -- ``DELETE``
+============================================
+Endpoints :
+    - ``/api/phone/{id}/``
+
+Arguments :
+    - **id** (*str*) -- L'identifiant unique du téléphone à supprimer.
+
+Réponse :
+    ``True`` on success.    
+
+HTTP Code :
+    - Success : ``204``
+    - Error : ``400``
+
+     
+Exemple de requête CURL
+##################################
+On va supprimer le téléphone avec l'id ``42``.
+
+.. literalinclude:: /_code_examples/api/delete_phone.curl
+    :language: curl
+
+
+Créer un téléphone -- ``POST``
+============================================
+
+Endpoints :
+    - ``/api/phone/``
+
+Arguments :
+    - **name** (*str*) -- Le nom du téléphone (doit être unique).
+    - **adapter** (*str*) -- Le nom de l'adaptateur logiciel du téléphone. C'est la classe PHP de l'adaptateur, avec son espace de nom.
+    - **adapters_datas** (*array*), ``optional`` -- Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l'adaptateur logiciel du téléphone (voir `la fonction meta_data_fields <developpers_adapters_overview>`).
+
+    .. note::
+        Pour voir les données **adapters_datas** à fournir, le plus simple est de lire le code de la méthode ``meta_data_fields`` de l'adaptateur logiciel pour lequel vous souhaitez créer un téléphone.
+
+
+
+Réponse :
+    L'ID du téléphone créé.
+
+HTTP Code :
+    - Success : ``200``
+    - Error : ``400``
+
+
+Exemple de requêtes CURL
+##################################
+
+Exemple 1
+~~~~~~~~~
+Création d'un téléphone **"Test phone"** avec l'adaptateur **Test**. Aucune configuration supplémentaire n'est nécessaire pour ce type d'adaptateur.
+
+.. literalinclude:: /_code_examples/api/post_phone1.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/post_phone1_response.json
+    :language: json
+
+
+Exemple 2
+~~~~~~~~~
+Création d'un téléphone **"My Octopush Phone""** avec l'adaptateur **"`Octopush Shortcode <users_adapters_octopush_shortcode>`"**. Cet adaptateur nécessite de configurer le ``login`` et l'``api_key`` du compte Octopush à utiliser.
+
+.. literalinclude:: /_code_examples/api/post_phone2.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/post_phone2_response.json
     :language: json
