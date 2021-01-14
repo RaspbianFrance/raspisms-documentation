@@ -1,3 +1,5 @@
+.. _developpers_adapters_overview:
+
 ===============
 Les Adaptateurs
 ===============

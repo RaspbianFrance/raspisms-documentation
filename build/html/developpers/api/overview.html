@@ -17,7 +17,6 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -137,6 +136,18 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#supprimer-un-telephone-delete">Supprimer un téléphone – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Exemple de requête CURL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creer-un-telephone-post">Créer un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Exemple de requêtes CURL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id4">Exemple 1</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id5">Exemple 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les Adaptateurs</a></li>
@@ -189,8 +200,8 @@
 <p>L’API de RaspiSMS est découpée en trois principales fonctionnalités, chacune d’entre elle correspondant à un verbe HTTP dédié :</p>
 <ul class="simple">
 <li><p>Lister des ressources (sms envoyés, reçus et programmés, contacts, etc.), verbe HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
-<li><p>Créer une ressource (sms programmé), verbe HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p></li>
-<li><p>Supprimer une ressource (sms programmé), verbe HTTP <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p></li>
+<li><p>Créer une ressource (sms programmé, téléphone), verbe HTTP <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p></li>
+<li><p>Supprimer une ressource (sms programmé, téléphone), verbe HTTP <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -200,8 +211,8 @@
 <div class="section" id="format-des-reponses">
 <h3>Format des réponses<a class="headerlink" href="#format-des-reponses" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Toutes les réponses des API sont un tableau associatif au format JSON. Les réponses respectent toutes le format ci-dessous.</p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -232,8 +243,8 @@
 <div class="section" id="codes-d-erreurs">
 <h4>Codes d’erreurs<a class="headerlink" href="#codes-d-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
 <p>L’API utilise les codes d’erreurs suivants.</p>
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -397,7 +408,7 @@
 <dt>Réponse :</dt><dd><p>L’ID du SMS programmé créé.</p>
 </dd>
 <dt>HTTP Code :</dt><dd><ul class="simple">
-<li><p>Success : <code class="docutils literal notranslate"><span class="pre">204</span></code></p></li>
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
 <li><p>Error : <code class="docutils literal notranslate"><span class="pre">400</span></code></p></li>
 </ul>
 </dd>
@@ -438,6 +449,94 @@
 </div>
 </div>
 </div>
+<div class="section" id="supprimer-un-telephone-delete">
+<h2>Supprimer un téléphone – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code><a class="headerlink" href="#supprimer-un-telephone-delete" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="simple">
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/phone/{id}/</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – L’identifiant unique du téléphone à supprimer.</p></li>
+</ul>
+</dd>
+<dt>Réponse :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> on success.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">204</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">400</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="id2">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On va supprimer le téléphone avec l’id <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X DELETE https://app.raspisms.fr/api/phone/42 -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="creer-un-telephone-post">
+<h2>Créer un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#creer-un-telephone-post" title="Lien permanent vers ce titre">¶</a></h2>
+<dl>
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/phone/</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Le nom du téléphone (doit être unique).</p></li>
+<li><p><strong>adapter</strong> (<em>str</em>) – Le nom de l’adaptateur logiciel du téléphone. C’est la classe PHP de l’adaptateur, avec son espace de nom.</p></li>
+<li><p><strong>adapters_datas</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l’adaptateur logiciel du téléphone (voir <cite>la fonction meta_data_fields &lt;developpers_adapters_overview&gt;</cite>).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour voir les données <strong>adapters_datas</strong> à fournir, le plus simple est de lire le code de la méthode <code class="docutils literal notranslate"><span class="pre">meta_data_fields</span></code> de l’adaptateur logiciel pour lequel vous souhaitez créer un téléphone.</p>
+</div>
+</dd>
+<dt>Réponse :</dt><dd><p>L’ID du téléphone créé.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">400</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="id3">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id4">
+<h4>Exemple 1<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Création d’un téléphone <strong>« Test phone »</strong> avec l’adaptateur <strong>Test</strong>. Aucune configuration supplémentaire n’est nécessaire pour ce type d’adaptateur.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=Test phone&#39; -d &#39;adapter=adapters\TestAdapter&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span>
+   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Exemple 2<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Création d’un téléphone <strong>« My Octopush Phone » »</strong> avec l’adaptateur <strong>« `Octopush Shortcode &lt;users_adapters_octopush_shortcode&gt;` »</strong>. Cet adaptateur nécessite de configurer le <code class="docutils literal notranslate"><span class="pre">login</span></code> et l”<code class="docutils literal notranslate"><span class="pre">api_key</span></code> du compte Octopush à utiliser.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST http://127.0.0.1/raspisms/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=My Octopush Phone&#39; -d &#39;adapter=adapters\OctopushShortcodeAdapter&#39; -d &#39;adapter_datas[login]=mail@example.com&#39; -d &#39;adapter_datas[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -455,7 +554,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
