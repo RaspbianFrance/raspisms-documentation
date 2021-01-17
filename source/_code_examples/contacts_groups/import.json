@@ -2,7 +2,7 @@
    {
       "name":"Jane Doe",
       "number":"+33612345679",
-      "datas":{
+      "data":{
          "lastname":"Doe",
          "firstname":"Jane",
          "birthdate":"1992-08-15",
@@ -13,7 +13,7 @@
    {
       "name":"John Doe",
       "number":"+33612345678",
-      "datas":{
+      "data":{
          "lastname":"Doe",
          "firstname":"John",
          "birthdate":"1990-10-22",

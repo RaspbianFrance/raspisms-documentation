@@ -105,7 +105,7 @@ Pour importer des contacts via un fichier JSON, vous devrez créer une collectio
 
 Les tableaux doivent posséder les clés "name" et "number", qui contiendrons le nom à donné au contact et son numéro, toujours au format international.
 
-Pour définir les données étendues du contact il faudra créer une clé supplémentaire nommée "datas". Cette clé sera associée à un tableau dans lequel chaque donnée enrichie sera renseignée avec en clé son nom (là aussi la clé devrait-être uniquement composé de caractères alphanumériques, tirets et underscore), et en valeure associée la valeure souhaitée pour la donnée.
+Pour définir les données étendues du contact il faudra créer une clé supplémentaire nommée "data". Cette clé sera associée à un tableau dans lequel chaque donnée enrichie sera renseignée avec en clé son nom (là aussi la clé devrait-être uniquement composé de caractères alphanumériques, tirets et underscore), et en valeure associée la valeure souhaitée pour la donnée.
 
 Exemple de fichier JSON
 '''''''''''''''''''''''

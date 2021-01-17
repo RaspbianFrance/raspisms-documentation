@@ -7,14 +7,14 @@
          "id_user":"3",
          "name":"Jane Doe",
          "number":"+33612345679",
-         "datas":"{\"lastname\":\"Doe\",\"firstname\":\"Jane\",\"birthdate\":\"1992-08-15\",\"gender\":\"female\",\"vip\":\"0\"}"
+         "data":"{\"lastname\":\"Doe\",\"firstname\":\"Jane\",\"birthdate\":\"1992-08-15\",\"gender\":\"female\",\"vip\":\"0\"}"
       },
       {
          "id":"12",
          "id_user":"3",
          "name":"John Doe",
          "number":"+33612345678",
-         "datas":"{\"lastname\":\"Doe\",\"firstname\":\"John\",\"birthdate\":\"1990-10-22\",\"gender\":\"male\",\"vip\":\"1\"}"
+         "data":"{\"lastname\":\"Doe\",\"firstname\":\"John\",\"birthdate\":\"1990-10-22\",\"gender\":\"male\",\"vip\":\"1\"}"
       }
    ],
    "next":null,

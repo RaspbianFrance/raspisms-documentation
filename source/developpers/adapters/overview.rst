@@ -40,7 +40,7 @@ meta_description
     La description de l'adaptateur et du service qu'il permet d'utiliser. Cette description sera affichée à l'utilisateur.
 
 
-meta_datas_fields
+meta_data_fields
     Les champs à afficher lors de la création du téléphone et permettant de configurer l'adaptateur, par exemple renseignez les clefs API du service implémenté.
 
     La fonction retourne un tableau où chaque ligne correspond à un ``input`` qui devra être affiché sur la page de création du téléphone.
@@ -77,9 +77,9 @@ Le constructeur de l'adaptateur
 ''''''''''''''''''''''''''''''''
 .. code-block::
 
-    public function __construct(string $datas)
+    public function __construct(string $data)
 
-La fonctions prend en argument une chaine de caractères ``$datas`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiquées via les champs générés en utilisant ``meta_datas_fields``.
+La fonctions prend en argument une chaine de caractères ``$data`` qui est une chaîne JSON contenant les données de configuration de l'adaptateur. Il s'agit des données indiquées via les champs générés en utilisant ``meta_data_fields``.
 
 À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.
 
