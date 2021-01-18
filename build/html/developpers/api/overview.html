@@ -338,14 +338,14 @@
          <span class="nt">&quot;id_user&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
          <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span>
          <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345679&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;datas&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;Jane\&quot;,\&quot;birthdate\&quot;:\&quot;1992-08-15\&quot;,\&quot;gender\&quot;:\&quot;female\&quot;,\&quot;vip\&quot;:\&quot;0\&quot;}&quot;</span>
+         <span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;Jane\&quot;,\&quot;birthdate\&quot;:\&quot;1992-08-15\&quot;,\&quot;gender\&quot;:\&quot;female\&quot;,\&quot;vip\&quot;:\&quot;0\&quot;}&quot;</span>
       <span class="p">},</span>
       <span class="p">{</span>
          <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
          <span class="nt">&quot;id_user&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
          <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
          <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345678&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;datas&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;John\&quot;,\&quot;birthdate\&quot;:\&quot;1990-10-22\&quot;,\&quot;gender\&quot;:\&quot;male\&quot;,\&quot;vip\&quot;:\&quot;1\&quot;}&quot;</span>
+         <span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;John\&quot;,\&quot;birthdate\&quot;:\&quot;1990-10-22\&quot;,\&quot;gender\&quot;:\&quot;male\&quot;,\&quot;vip\&quot;:\&quot;1\&quot;}&quot;</span>
       <span class="p">}</span>
    <span class="p">],</span>
    <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
@@ -486,11 +486,11 @@
 <dt>Arguments :</dt><dd><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Le nom du téléphone (doit être unique).</p></li>
 <li><p><strong>adapter</strong> (<em>str</em>) – Le nom de l’adaptateur logiciel du téléphone. C’est la classe PHP de l’adaptateur, avec son espace de nom.</p></li>
-<li><p><strong>adapters_datas</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l’adaptateur logiciel du téléphone (voir <cite>la fonction meta_data_fields &lt;developpers_adapters_overview&gt;</cite>).</p></li>
+<li><p><strong>adapter_data</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l’adaptateur logiciel du téléphone (voir <cite>la fonction meta_data_fields &lt;developpers_adapters_overview&gt;</cite>).</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Pour voir les données <strong>adapters_datas</strong> à fournir, le plus simple est de lire le code de la méthode <code class="docutils literal notranslate"><span class="pre">meta_data_fields</span></code> de l’adaptateur logiciel pour lequel vous souhaitez créer un téléphone.</p>
+<p>Pour voir les données <strong>adapter_data</strong> à fournir, le plus simple est de lire le code de la méthode <code class="docutils literal notranslate"><span class="pre">meta_data_fields</span></code> de l’adaptateur logiciel pour lequel vous souhaitez créer un téléphone.</p>
 </div>
 </dd>
 <dt>Réponse :</dt><dd><p>L’ID du téléphone créé.</p>
@@ -522,7 +522,7 @@
 <div class="section" id="id5">
 <h4>Exemple 2<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Création d’un téléphone <strong>« My Octopush Phone » »</strong> avec l’adaptateur <strong>« `Octopush Shortcode &lt;users_adapters_octopush_shortcode&gt;` »</strong>. Cet adaptateur nécessite de configurer le <code class="docutils literal notranslate"><span class="pre">login</span></code> et l”<code class="docutils literal notranslate"><span class="pre">api_key</span></code> du compte Octopush à utiliser.</p>
-<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST http://127.0.0.1/raspisms/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=My Octopush Phone&#39; -d &#39;adapter=adapters\OctopushShortcodeAdapter&#39; -d &#39;adapter_datas[login]=mail@example.com&#39; -d &#39;adapter_datas[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F&#39;
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST http://127.0.0.1/raspisms/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=My Octopush Phone&#39; -d &#39;adapter=adapters\OctopushShortcodeAdapter&#39; -d &#39;adapter_data[login]=mail@example.com&#39; -d &#39;adapter_data[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>

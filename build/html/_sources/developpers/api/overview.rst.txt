@@ -246,10 +246,10 @@ Endpoints :
 Arguments :
     - **name** (*str*) -- Le nom du téléphone (doit être unique).
     - **adapter** (*str*) -- Le nom de l'adaptateur logiciel du téléphone. C'est la classe PHP de l'adaptateur, avec son espace de nom.
-    - **adapters_datas** (*array*), ``optional`` -- Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l'adaptateur logiciel du téléphone (voir `la fonction meta_data_fields <developpers_adapters_overview>`).
+    - **adapter_data** (*array*), ``optional`` -- Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l'adaptateur logiciel du téléphone (voir `la fonction meta_data_fields <developpers_adapters_overview>`).
 
     .. note::
-        Pour voir les données **adapters_datas** à fournir, le plus simple est de lire le code de la méthode ``meta_data_fields`` de l'adaptateur logiciel pour lequel vous souhaitez créer un téléphone.
+        Pour voir les données **adapter_data** à fournir, le plus simple est de lire le code de la méthode ``meta_data_fields`` de l'adaptateur logiciel pour lequel vous souhaitez créer un téléphone.
 
 
 

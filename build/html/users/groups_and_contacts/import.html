@@ -285,7 +285,7 @@
 <p>Le format JSON (JavaScript Object Notation) est un format plus récent d’avantage utilisé par les API et les systèmes informatiques. Les fichiers JSON peuvent représenter des collections ou des tableaux avec des clés nommées. Plus complexes à lire pour les humains, ils sont en revanche plus simple à analyser pour des machines et peuvent donc êtres utilisés pour facilement exporter des données de systèmes informatiques plus récents et/ou complexes que de simples tableurs ou bases de données.</p>
 <p>Pour importer des contacts via un fichier JSON, vous devrez créer une collection de tableaux avec des clés nommées. Chaque tableau de la collection sera un contact.</p>
 <p>Les tableaux doivent posséder les clés « name » et « number », qui contiendrons le nom à donné au contact et son numéro, toujours au format international.</p>
-<p>Pour définir les données étendues du contact il faudra créer une clé supplémentaire nommée « datas ». Cette clé sera associée à un tableau dans lequel chaque donnée enrichie sera renseignée avec en clé son nom (là aussi la clé devrait-être uniquement composé de caractères alphanumériques, tirets et underscore), et en valeure associée la valeure souhaitée pour la donnée.</p>
+<p>Pour définir les données étendues du contact il faudra créer une clé supplémentaire nommée « data ». Cette clé sera associée à un tableau dans lequel chaque donnée enrichie sera renseignée avec en clé son nom (là aussi la clé devrait-être uniquement composé de caractères alphanumériques, tirets et underscore), et en valeure associée la valeure souhaitée pour la donnée.</p>
 <div class="section" id="exemple-de-fichier-json">
 <h5>Exemple de fichier JSON<a class="headerlink" href="#exemple-de-fichier-json" title="Lien permanent vers ce titre">¶</a></h5>
 <p>Comme pour le CSV, voici un fichier JSON valide permettant d’importer les deux contacts d’exemples.</p>
@@ -293,7 +293,7 @@
    <span class="p">{</span>
       <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span>
       <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345679&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;datas&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;data&quot;</span><span class="p">:{</span>
          <span class="nt">&quot;lastname&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
          <span class="nt">&quot;firstname&quot;</span><span class="p">:</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span>
          <span class="nt">&quot;birthdate&quot;</span><span class="p">:</span><span class="s2">&quot;1992-08-15&quot;</span><span class="p">,</span>
@@ -304,7 +304,7 @@
    <span class="p">{</span>
       <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
       <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345678&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;datas&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;data&quot;</span><span class="p">:{</span>
          <span class="nt">&quot;lastname&quot;</span><span class="p">:</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
          <span class="nt">&quot;firstname&quot;</span><span class="p">:</span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
          <span class="nt">&quot;birthdate&quot;</span><span class="p">:</span><span class="s2">&quot;1990-10-22&quot;</span><span class="p">,</span>

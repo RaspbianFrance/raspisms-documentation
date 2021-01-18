@@ -185,7 +185,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </dd>
 <dt>meta_description</dt><dd><p>La description de l’adaptateur et du service qu’il permet d’utiliser. Cette description sera affichée à l’utilisateur.</p>
 </dd>
-<dt>meta_datas_fields</dt><dd><p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseignez les clefs API du service implémenté.</p>
+<dt>meta_data_fields</dt><dd><p>Les champs à afficher lors de la création du téléphone et permettant de configurer l’adaptateur, par exemple renseignez les clefs API du service implémenté.</p>
 <p>La fonction retourne un tableau où chaque ligne correspond à un <code class="docutils literal notranslate"><span class="pre">input</span></code> qui devra être affiché sur la page de création du téléphone.</p>
 <p>Chaque ligne est donc elle-même un tableau avec les clefs suivantes :</p>
 <ul class="simple">
@@ -209,10 +209,10 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
 </div>
 <div class="section" id="le-constructeur-de-l-adaptateur">
 <h3>Le constructeur de l’adaptateur<a class="headerlink" href="#le-constructeur-de-l-adaptateur" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(string $datas)</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(string $data)</span>
 </pre></div>
 </div>
-<p>La fonctions prend en argument une chaine de caractères <code class="docutils literal notranslate"><span class="pre">$datas</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiquées via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_datas_fields</span></code>.</p>
+<p>La fonctions prend en argument une chaine de caractères <code class="docutils literal notranslate"><span class="pre">$data</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiquées via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_data_fields</span></code>.</p>
 <p>À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.</p>
 </div>
 <div class="section" id="validation-des-donnees-de-configuration">
