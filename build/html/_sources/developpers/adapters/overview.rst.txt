@@ -33,7 +33,7 @@ meta_uid
 
 
 meta_hidden
-    Défini si l'adaptateur doit être caché dans l'interface de création d'un téléphone. Si ``true`` il ne sera possible de créer un téléphone avec cet adaptateur autrement que via un appel API.
+    Défini si l'adaptateur doit être caché dans l'interface de création d'un téléphone. Si ``true`` il ne sera possible de créer un téléphone avec cet adaptateur que via un appel API.
 
 
 meta_name
