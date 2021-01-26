@@ -32,6 +32,10 @@ meta_uid
     Le nom unique de l'adaptateur, en **snake_case**. Par exemple, si l'adaptateur s'appel **"GammuAdapter"**, un bon ``meta_uid`` est **"gammu_adapter"**.
 
 
+meta_hidden
+    Défini si l'adaptateur doit être caché dans l'interface de création d'un téléphone. Si ``true`` il ne sera possible de créer un téléphone avec cet adaptateur autrement que via un appel API.
+
+
 meta_name
     Le nom de l'adaptateur tel qu'il sera affiché à l'utilisateur. Par exemple, si vous créez un adaptateur pour un service externe example-sms.com, vous pourriez utiliser "Example SMS".
 
