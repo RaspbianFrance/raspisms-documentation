@@ -32,6 +32,15 @@ Lors du déclenchement d'un webhook, la requête HTTP contient certains paramèt
    * - Nom du paramètre
      - Description
 
+   * - webhook_timestamp
+     - Timestamp auquel le webhook a été généré, vous pouvez vous en servir pour ignorer les webhook trop anciens
+   
+   * - webhook_random_id
+     - Identifiant aléatoire du webhook, basé sur le timestamp et une chaine aléatoire. L'unicité de l'identifiant n'est pas garantie mais très hautement probable. Vous pouvez vous en servir sans risque pour identifier un webhook de façon unique.
+
+   * - webhook_signature
+     - Signature du webhook. Il s'agit d'une signature ``HMAC SHA-256`` du ``webhook_random_id``, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l'authenticité du webhook reçu.
+
    * - webhook_type
      - Type de webhook, ``receive_sms`` ou ``send_sms``
 

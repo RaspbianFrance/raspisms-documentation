@@ -181,19 +181,28 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>webhook_type</p></td>
+<tr class="row-even"><td><p>webhook_timestamp</p></td>
+<td><p>Timestamp auquel le webhook a été généré, vous pouvez vous en servir pour ignorer les webhook trop anciens</p></td>
+</tr>
+<tr class="row-odd"><td><p>webhook_random_id</p></td>
+<td><p>Identifiant aléatoire du webhook, basé sur le timestamp et une chaine aléatoire. L’unicité de l’identifiant n’est pas garantie mais très hautement probable. Vous pouvez vous en servir sans risque pour identifier un webhook de façon unique.</p></td>
+</tr>
+<tr class="row-even"><td><p>webhook_signature</p></td>
+<td><p>Signature du webhook. Il s’agit d’une signature <code class="docutils literal notranslate"><span class="pre">HMAC</span> <span class="pre">SHA-256</span></code> du <code class="docutils literal notranslate"><span class="pre">webhook_random_id</span></code>, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l’authenticité du webhook reçu.</p></td>
+</tr>
+<tr class="row-odd"><td><p>webhook_type</p></td>
 <td><p>Type de webhook, <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code> ou <code class="docutils literal notranslate"><span class="pre">send_sms</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>id</p></td>
+<tr class="row-even"><td><p>id</p></td>
 <td><p>Identifiant unique du SMS</p></td>
 </tr>
-<tr class="row-even"><td><p>at</p></td>
+<tr class="row-odd"><td><p>at</p></td>
 <td><p>Date de réception/envoi du SMS, format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>origin</p></td>
+<tr class="row-even"><td><p>origin</p></td>
 <td><p>Numéro de téléphone (si <cite>received_sms</cite>) ou ID du téléphone (si <cite>send_sms</cite>) depuis lequel le SMS a été envoyé (format international)</p></td>
 </tr>
-<tr class="row-even"><td><p>destination</p></td>
+<tr class="row-odd"><td><p>destination</p></td>
 <td><p>Numéro de téléphone (si <cite>send_sms</cite>) ou ID du téléphone (si <cite>received_sms</cite>) auquel le SMS a été envoyé (format international)</p></td>
 </tr>
 </tbody>
