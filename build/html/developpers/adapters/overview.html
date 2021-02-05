@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Les Adaptateurs</title>
+      <title>Les types de téléphones</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -105,8 +105,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../api/overview.html">Utiliser l’API HTTP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les Adaptateurs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#objectif-des-adapateurs">Objectif des adapateurs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Les types de téléphones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objectif-des-differents-types-de-telephones">Objectif des différents types de téléphones</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles">Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-meta">Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#le-constructeur-de-l-adaptateur">Le constructeur de l’adaptateur</a></li>
@@ -142,7 +142,7 @@
     
       <li><a href="../overview.html">Documentation pour les développeurs</a> &raquo;</li>
     
-    <li>Les Adaptateurs</li>
+    <li>Les types de téléphones</li>
   </ul>
   
 
@@ -161,12 +161,13 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="les-adaptateurs">
-<span id="developpers-adapters-overview"></span><h1>Les Adaptateurs<a class="headerlink" href="#les-adaptateurs" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="objectif-des-adapateurs">
-<h2>Objectif des adapateurs<a class="headerlink" href="#objectif-des-adapateurs" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les adaptateurs ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS.
-Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre.</p>
+  <div class="section" id="les-types-de-telephones">
+<span id="developpers-adapters-overview"></span><h1>Les types de téléphones<a class="headerlink" href="#les-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="objectif-des-differents-types-de-telephones">
+<h2>Objectif des différents types de téléphones<a class="headerlink" href="#objectif-des-differents-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d’envoi.
+Pour cela, les types de téléphones offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre, à l’aide d’une mécanique appelée les « adaptateurs ».</p>
+<p>En tant qu’utilisateur, le support de différents types de téléphones, et donc de différents fournisseurs de SMS vous permet d’utiliser RaspiSMS avec l’offre commerciale la plus adaptée à vos besoins. Par ailleurs, l’intégration unifiée au sein de RaspiSMS vous permet de ne pas être prisonnier d’un seul vendeur de SMS, et de pouvoir changer facilement sans avoir à modifier vos habitudes ou votre système d’information.</p>
 <p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
 <p>Si vous souhaitez ajouter un nouvel adaptateur vous devez donc implémenter l’interface <code class="docutils literal notranslate"><span class="pre">adapters/AdapterInterface</span></code>, laquelle impose un certain nombre de méthodes que nous allons voir ci-dessous.</p>
 </div>

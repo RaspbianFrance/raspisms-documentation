@@ -1,7 +1,7 @@
 =============================
-Adaptateur OVH SMS Shortcode
+Téléphone OVH SMS Shortcode
 =============================
-L'adaptateur OVH SMS Shortcode permet l'utilisation de l'offre SMS de OVH avec RaspiSMS en se basant sur l'utilisation de l'API SMS en utilisant des numéros courts, ou un nom alphanumérique affiché à la place du numéro réel.
+Le téléphone OVH SMS Shortcode permet l'utilisation de l'offre SMS de OVH avec RaspiSMS en se basant sur l'utilisation de l'API SMS en utilisant des numéros courts, ou un nom alphanumérique affiché à la place du numéro réel.
 
 L'utilisation d'un numéro court vous permet de recevoir des réponses aux messages envoyés, mais uniquement pendant 48 heures. L'utilisation d'un nom alphanumérique ne permet pas de recevoir des réponses. Ces solutions sont plus adaptées à l'envoi de SMS commerciaux ou techniques.
 
@@ -18,13 +18,13 @@ SMS Flash        Non
 
 
 
-Configurer l'adaptateur OVH SMS
+Configurer un téléphone OVH SMS
 -------------------------------
-Dans cette partie nous allons voir comment configurer l'adaptateur OVH SMS pour lier RaspiSMS et OVH.
+Dans cette partie nous allons voir comment configurer un téléphone OVH SMS pour lier RaspiSMS et OVH.
 
 1. Souscrire à une offre SMS chez OVH
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Pour utiliser l'adaptateur OVH avec un Shortcode vous devez prendre un abonnement adapté chez OVH.
+Pour utiliser un téléphone OVH avec un Shortcode vous devez prendre un abonnement adapté chez OVH.
 
 Pour cela, rendez-vous sur `L'offre SMS OVH`_, cliquez sur le bouton **"Commander"** et validez la procédure d'achat/inscription.
 
@@ -39,7 +39,7 @@ Pour cela, vous devez vous rendre dans `La partie SMS de votre manager OVH`_, pu
 
 2. Ajouter un téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"OVH SMS Shortcode"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"OVH SMS Shortcode"**.
 
 3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

@@ -23,7 +23,7 @@ Rendez-vous sur `la page de connection de RaspiSMS <https://app.raspisms.fr/>`_ 
 .. raw:: html
     :file: ../../_videos/phone_ovh_virtual.html
 
-Afin de pouvoir recevoir et envoyer des SMS depuis l'application vous devez dans un premier temps créer un téléphone qui sera utilisé pour envoyer et recevoir des messages. Pour cela vous pouvez utiliser différents fournisseurs de services (:ref:`voir Les Adaptateurs <adapters>`), mais nous vous recommandons l'utilisation :ref:`d'OVH avec un numéro virtuel <users_adapters_ovh_virtual_number>` qui, à notre sens, fournit le service le plus accessible et efficace.
+Afin de pouvoir recevoir et envoyer des SMS depuis l'application vous devez dans un premier temps créer un téléphone qui sera utilisé pour envoyer et recevoir des messages. Pour cela vous pouvez utiliser différents fournisseurs de services (:ref:`voir Les types de téléphones <adapters>`), mais nous vous recommandons l'utilisation :ref:`d'OVH avec un numéro virtuel <users_adapters_ovh_virtual_number>` qui, à notre sens, fournit le service le plus accessible et efficace.
 
 3. Envoyer un premier SMS
 =========================

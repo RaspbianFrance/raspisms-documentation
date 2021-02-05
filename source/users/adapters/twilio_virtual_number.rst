@@ -1,7 +1,7 @@
 ================================
-Adaptateur Twilio Numéro Virtuel
+Téléphone Twilio Numéro Virtuel
 ================================
-L'adaptateur Twilio Numéro Virtuel permet l'utilisation de l'offre SMS de Twilio avec RaspiSMS en se basant sur l'utilisation de l'API SMS avec un numéro virtuel.
+Le téléphone Twilio Numéro Virtuel permet l'utilisation de l'offre SMS de Twilio avec RaspiSMS en se basant sur l'utilisation de l'API SMS avec un numéro virtuel.
 
 L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contactés auparavant.
 
@@ -18,20 +18,20 @@ SMS Flash        Non
 
 
 
-Configurer l'adaptateur Twilio
-------------------------------
-Dans cette partie nous allons voir comment configurer l'adaptateur Twilio pour lier RaspiSMS et Twilio.
+Configurer un téléphone Twilio
+---------------------------------
+Dans cette partie nous allons voir comment configurer un téléphone Twilio pour lier RaspiSMS et Twilio.
 
 1. Souscrire à une offre SMS avec numéro virtuel chez Twilio
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Pour utiliser l'adaptateur Twilio avec numéro virtuel vous devez prendre un abonnement adapté chez Twilio.
+Pour utiliser un téléphone Twilio avec numéro virtuel vous devez prendre un abonnement adapté chez Twilio.
 
 Pour cela, rendez-vous sur `L'inscription de Twilio`_ et validez la procédure d'inscription.
 
 
 2. Ajouter un téléphone OVH dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"Twilio Shortcode"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"Twilio Numéro Virtuel"**
 
 3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

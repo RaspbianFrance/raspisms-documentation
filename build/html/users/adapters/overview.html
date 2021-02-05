@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Les Adaptateurs</title>
+      <title>Les types de téléphones</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -27,7 +27,7 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Adaptateur OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" />
+  <link rel="next" title="Téléphone OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" />
   <link rel="prev" title="Commencer à utiliser RaspiSMS" href="../guides/starting.html" /> 
   </head>
 
@@ -104,15 +104,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les Adaptateurs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#objectif-des-adapateurs">Objectif des adapateurs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adaptateurs-disponibles">Adaptateurs disponibles</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Adaptateur Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Les types de téléphones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +137,7 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
-    <li>Les Adaptateurs</li>
+    <li>Les types de téléphones</li>
   </ul>
   
 
@@ -148,7 +148,7 @@
   </li>
   <li class="next">
     <a href="ovh_virtual_number.html"
-       title="Chapitre suivant">Adaptateur OVH SMS Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone OVH SMS Numéro Virtuel →</a>
   </li>
 </ul>
   
@@ -156,25 +156,26 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="les-adaptateurs">
-<span id="adapters"></span><h1>Les Adaptateurs<a class="headerlink" href="#les-adaptateurs" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="objectif-des-adapateurs">
-<h2>Objectif des adapateurs<a class="headerlink" href="#objectif-des-adapateurs" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les adaptateurs ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS.
-Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre.</p>
-<p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
-<p>Actuellement les adaptateurs disponibles sont les suivants :</p>
+  <div class="section" id="les-types-de-telephones">
+<span id="adapters"></span><h1>Les types de téléphones<a class="headerlink" href="#les-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="pourquoi-plusieurs-types-de-telephones">
+<h2>Pourquoi plusieurs types de téléphones ?<a class="headerlink" href="#pourquoi-plusieurs-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d’envoi.</p>
+<p>En tant qu’utilisateur, le support de différents types de téléphones, et donc de différents fournisseurs de SMS vous permet d’utiliser RaspiSMS avec l’offre commerciale la plus adaptée à vos besoins.</p>
+<p>Par ailleurs, en proposant une intégration unifiée au sein de l’application de différents fournisseurs de SMS, RaspiSMS vous permet de ne pas être dépendant d’un seul vendeur de SMS et de pouvoir changer de solution d’envoi facilement, sans avoir à modifier vos habitudes ou votre système d’information.</p>
+<p>Si vous êtes développeur, vous pouvez trouvez plus d’information sur la mise en place d’un nouveau type dé téléphone dans <a class="reference external" href="developpers_adapters_overview">la partie la partie « Les adaptateurs »</a>.</p>
+<p>Actuellement les types de téléphones disponibles sont les suivants :</p>
 </div>
-<div class="section" id="adaptateurs-disponibles">
-<h2>Adaptateurs disponibles<a class="headerlink" href="#adaptateurs-disponibles" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="types-de-telephones-disponibles">
+<h2>Types de téléphones disponibles<a class="headerlink" href="#types-de-telephones-disponibles" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="twilio_virtual_number.html">Adaptateur Twilio Numéro Virtuel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
 </ul>
 </div>
 </div>
@@ -190,7 +191,7 @@ Pour cela, les adaptateurs offrent une interface standardisée entre le code de 
   </li>
   <li class="next">
     <a href="ovh_virtual_number.html"
-       title="Chapitre suivant">Adaptateur OVH SMS Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone OVH SMS Numéro Virtuel →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.

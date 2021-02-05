@@ -1,10 +1,10 @@
 ===================================
-Adaptateur Octopush Numéro Virtuel
+Téléphone Octopush Numéro Virtuel
 ===================================
 .. warning::
     Actuellement l'offre d'Octopush nous semble moins aboutie que celles d'autres fournisseurs comme OVH ou Twilio, nous vous recommandons donc de privilégier ces derniers.
 
-L'adaptateur Octopush Numéro Virtuel permet l'utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l'utilisation de l'API avec un numéro virtuel.
+Le téléphone Octopush Numéro Virtuel permet l'utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l'utilisation de l'API avec un numéro virtuel.
 
 L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous-même contactés auparavant.
 
@@ -21,13 +21,13 @@ SMS Flash        Non
 
 
 
-Configurer l'adaptateur Octopush SMS
--------------------------------------
-Dans cette partie nous allons voir comment configurer l'adaptateur Octopush Numéro Virtuel pour lier RaspiSMS et Octopush.
+Configurer un téléphone Octopush Numéro Virtuel
+-----------------------------------------------
+Dans cette partie nous allons voir comment configurer un téléphone Octopush Numéro Virtuel pour lier RaspiSMS et Octopush.
 
 1. Souscrire à une offre SMS avec numéro virtuel chez Octopush
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Pour utiliser l'adaptateur Octopush avec numéro virtuel vous devez prendre un abonnement adapté chez Octopush.
+Pour utiliser un téléphone Octopush avec numéro virtuel vous devez prendre un abonnement adapté chez Octopush.
 
 Pour cela, rendez-vous sur `Le site d'octopush`_, souscrivez à une offre chez eux et passez par la page de contact pour demander un devis afin d'obtenir un numéro virtuel.
 
@@ -35,7 +35,7 @@ Vous devez attendre d'avoir obtenu votre numéro pour pouvoir passer à la suite
 
 2. Ajouter le téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"Octopush Numéro Virtuel"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"Octopush Numéro Virtuel"**.
 
 3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

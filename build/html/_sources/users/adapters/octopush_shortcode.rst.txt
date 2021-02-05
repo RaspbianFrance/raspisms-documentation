@@ -1,12 +1,12 @@
 .. _users_adapters_octopush_shortcode:
 
 ===================================
-Adaptateur Octopush Shortcode
+Téléphone Octopush Shortcode
 ===================================
 .. warning::
     Actuellement l'offre d'Octopush nous semble moins aboutie que celles d'autres fournisseurs comme OVH ou Twilio, nous vous recommandons donc de privilégier ces derniers.
 
-L'adaptateur Octopush Shortcode permet l'utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l'utilisation de l'API et un numéro court aléatoire.
+Le téléphone Octopush Shortcode permet l'utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l'utilisation de l'API et un numéro court aléatoire.
 
 L'utilisation d'un numéro court aléatoire vous permet d'envoyer un message à vos utilisateurs mais pas de recevoir des réponses. Vous pouvez aussi utiliser un nom alphanumérique à la place du numéro.
 
@@ -23,19 +23,19 @@ SMS Flash        Non
 
 
 
-Configurer l'adaptateur Octopush SMS
--------------------------------------
-Dans cette partie nous allons voir comment configurer l'adaptateur Octopush Shortcode pour lier RaspiSMS et Octopush.
+Configurer un téléphone Octopush Shortcode
+------------------------------------------
+Dans cette partie nous allons voir comment configurer un téléphone Octopush Shortcode pour lier RaspiSMS et Octopush.
 
 1. Souscrire à une offre chez Octopush
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Pour utiliser l'adaptateur Octopush vous devez prendre un abonnement adapté chez Octopush.
+Pour utiliser un téléphone Octopush vous devez prendre un abonnement adapté chez Octopush.
 
 Pour cela, rendez-vous sur `Le site d'octopush`_.
 
 2. Ajouter le téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"Octopush Shortcode"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"Octopush Shortcode"**.
 
 3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

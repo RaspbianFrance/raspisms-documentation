@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Adaptateur Twilio Numéro Virtuel</title>
+      <title>Téléphone Twilio Numéro Virtuel</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -27,8 +27,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Adaptateur Octopush Numéro Virtuel" href="octopush_virtual_number.html" />
-  <link rel="prev" title="Adaptateur OVH SMS Shortcode" href="ovh_shortcode.html" /> 
+  <link rel="next" title="Téléphone Octopush Numéro Virtuel" href="octopush_virtual_number.html" />
+  <link rel="prev" title="Téléphone OVH SMS Shortcode" href="ovh_shortcode.html" /> 
   </head>
 
   <body>
@@ -104,14 +104,14 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les Adaptateurs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html#objectif-des-adapateurs">Objectif des adapateurs</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="overview.html#adaptateurs-disponibles">Adaptateurs disponibles</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Adaptateur OVH SMS Shortcode</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Adaptateur Twilio Numéro Virtuel</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Twilio Numéro Virtuel</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-l-adaptateur-twilio">Configurer l’adaptateur Twilio</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-twilio">Configurer un téléphone Twilio</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="#souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio">1. Souscrire à une offre SMS avec numéro virtuel chez Twilio</a></li>
 <li class="toctree-l6"><a class="reference internal" href="#ajouter-un-telephone-ovh-dans-raspisms">2. Ajouter un téléphone OVH dans RaspiSMS</a></li>
 <li class="toctree-l6"><a class="reference internal" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS</a><ul>
@@ -124,9 +124,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
 </ul>
 </li>
 </ul>
@@ -151,20 +151,20 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
-      <li><a href="overview.html">Les Adaptateurs</a> &raquo;</li>
+      <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
-    <li>Adaptateur Twilio Numéro Virtuel</li>
+    <li>Téléphone Twilio Numéro Virtuel</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
     <a href="ovh_shortcode.html"
-       title="Chapitre précédent">← Adaptateur OVH SMS Shortcode</a>
+       title="Chapitre précédent">← Téléphone OVH SMS Shortcode</a>
   </li>
   <li class="next">
     <a href="octopush_virtual_number.html"
-       title="Chapitre suivant">Adaptateur Octopush Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone Octopush Numéro Virtuel →</a>
   </li>
 </ul>
   
@@ -172,9 +172,9 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="adaptateur-twilio-numero-virtuel">
-<h1>Adaptateur Twilio Numéro Virtuel<a class="headerlink" href="#adaptateur-twilio-numero-virtuel" title="Lien permanent vers ce titre">¶</a></h1>
-<p>L’adaptateur Twilio Numéro Virtuel permet l’utilisation de l’offre SMS de Twilio avec RaspiSMS en se basant sur l’utilisation de l’API SMS avec un numéro virtuel.</p>
+  <div class="section" id="telephone-twilio-numero-virtuel">
+<h1>Téléphone Twilio Numéro Virtuel<a class="headerlink" href="#telephone-twilio-numero-virtuel" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le téléphone Twilio Numéro Virtuel permet l’utilisation de l’offre SMS de Twilio avec RaspiSMS en se basant sur l’utilisation de l’API SMS avec un numéro virtuel.</p>
 <p>L’utilisation d’un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu’ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contactés auparavant.</p>
 <div class="section" id="fonctionnalites-supportees">
 <h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
@@ -204,17 +204,17 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="configurer-l-adaptateur-twilio">
-<h2>Configurer l’adaptateur Twilio<a class="headerlink" href="#configurer-l-adaptateur-twilio" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans cette partie nous allons voir comment configurer l’adaptateur Twilio pour lier RaspiSMS et Twilio.</p>
+<div class="section" id="configurer-un-telephone-twilio">
+<h2>Configurer un téléphone Twilio<a class="headerlink" href="#configurer-un-telephone-twilio" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans cette partie nous allons voir comment configurer un téléphone Twilio pour lier RaspiSMS et Twilio.</p>
 <div class="section" id="souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio">
 <h3>1. Souscrire à une offre SMS avec numéro virtuel chez Twilio<a class="headerlink" href="#souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour utiliser l’adaptateur Twilio avec numéro virtuel vous devez prendre un abonnement adapté chez Twilio.</p>
+<p>Pour utiliser un téléphone Twilio avec numéro virtuel vous devez prendre un abonnement adapté chez Twilio.</p>
 <p>Pour cela, rendez-vous sur <a class="reference external" href="https://www.twilio.com/try-twilio">L’inscription de Twilio</a> et validez la procédure d’inscription.</p>
 </div>
 <div class="section" id="ajouter-un-telephone-ovh-dans-raspisms">
 <h3>2. Ajouter un téléphone OVH dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-ovh-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Adaptateur logiciel du téléphone »</strong> choisissez <strong>« Twilio Shortcode »</strong>.</p>
+<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Type de téléphone »</strong> choisissez <strong>« Twilio Numéro Virtuel »</strong></p>
 </div>
 <div class="section" id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
 <h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
@@ -247,11 +247,11 @@
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="ovh_shortcode.html"
-       title="Chapitre précédent">← Adaptateur OVH SMS Shortcode</a>
+       title="Chapitre précédent">← Téléphone OVH SMS Shortcode</a>
   </li>
   <li class="next">
     <a href="octopush_virtual_number.html"
-       title="Chapitre suivant">Adaptateur Octopush Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone Octopush Numéro Virtuel →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.

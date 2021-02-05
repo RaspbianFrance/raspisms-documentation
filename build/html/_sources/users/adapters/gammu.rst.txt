@@ -1,10 +1,10 @@
 =============================
-Adaptateur Gammu
+Téléphone Gammu
 =============================
 .. warning::
-    L'adaptateur Gammu n'est disponible qu'en mode auto-hébergement car il nécessite un équipement physique relié à la machine.
+    Le téléphone Gammu n'est disponible qu'en mode auto-hébergement car il nécessite un équipement physique relié à la machine.
 
-L'adaptateur Gammu permet l'utilisation d'un modem GSM et d'une carte SIM branchée physiquement au serveur hébergeant RaspiSMS, en se basant sur l'utilisation du logiciel Gammu.
+Le téléphone Gammu permet l'utilisation d'un modem GSM et d'une carte SIM branchée physiquement au serveur hébergeant RaspiSMS, en se basant sur l'utilisation du logiciel Gammu.
 
 Cette méthode permet d'utiliser un forfait téléphonique classique avec RaspiSMS et vous permet d'envoyer et de recevoir des messages.
 
@@ -23,7 +23,7 @@ SMS Flash        Non
 
 1. Configurer Gammu
 -------------------------------
-Pour pouvoir utiliser l'adaptateur Gammu, les logiciels ``gammu`` et ``python3-gammu`` doivent êtres installés sur le serveur. Vous devrez également avoir un modem GSM avec une carte SIM reliée au serveur.
+Pour pouvoir utiliser un téléphone Gammu, les logiciels ``gammu`` et ``python3-gammu`` doivent êtres installés sur le serveur. Vous devrez également avoir un modem GSM avec une carte SIM reliée au serveur.
 
 1.1 Trouver un modem GSM compatible
 '''''''''''''''''''''''''''''''''''
@@ -61,7 +61,7 @@ Voici un exemple de fichier de configuration que vous pouvez utiliser comme base
 
 2. Ajouter un téléphone dans RaspiSMS
 ----------------------------------------
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"Gammu"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"Gammu"**.
 
 2.1 Le nom du téléphone
 ''''''''''''''''''''''''

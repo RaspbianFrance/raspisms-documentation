@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Adaptateur OVH SMS Shortcode</title>
+      <title>Téléphone OVH SMS Shortcode</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -27,8 +27,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Adaptateur Twilio Numéro Virtuel" href="twilio_virtual_number.html" />
-  <link rel="prev" title="Adaptateur OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" /> 
+  <link rel="next" title="Téléphone Twilio Numéro Virtuel" href="twilio_virtual_number.html" />
+  <link rel="prev" title="Téléphone OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" /> 
   </head>
 
   <body>
@@ -104,13 +104,13 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting.html">Commencer à utiliser RaspiSMS</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les Adaptateurs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html#objectif-des-adapateurs">Objectif des adapateurs</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="overview.html#adaptateurs-disponibles">Adaptateurs disponibles</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Adaptateur OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Adaptateur OVH SMS Shortcode</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone OVH SMS Shortcode</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-l-adaptateur-ovh-sms">Configurer l’adaptateur OVH SMS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-ovh-sms">Configurer un téléphone OVH SMS</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="#souscrire-a-une-offre-sms-chez-ovh">1. Souscrire à une offre SMS chez OVH</a><ul>
 <li class="toctree-l7"><a class="reference internal" href="#utiliser-un-nom-personnalise">1.2 Utiliser un nom personnalisé</a></li>
 </ul>
@@ -128,10 +128,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Adaptateur Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Adaptateur Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Adaptateur Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Adaptateur Gammu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
 </ul>
 </li>
 </ul>
@@ -156,20 +156,20 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
-      <li><a href="overview.html">Les Adaptateurs</a> &raquo;</li>
+      <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
-    <li>Adaptateur OVH SMS Shortcode</li>
+    <li>Téléphone OVH SMS Shortcode</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
     <a href="ovh_virtual_number.html"
-       title="Chapitre précédent">← Adaptateur OVH SMS Numéro Virtuel</a>
+       title="Chapitre précédent">← Téléphone OVH SMS Numéro Virtuel</a>
   </li>
   <li class="next">
     <a href="twilio_virtual_number.html"
-       title="Chapitre suivant">Adaptateur Twilio Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone Twilio Numéro Virtuel →</a>
   </li>
 </ul>
   
@@ -177,9 +177,9 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="adaptateur-ovh-sms-shortcode">
-<h1>Adaptateur OVH SMS Shortcode<a class="headerlink" href="#adaptateur-ovh-sms-shortcode" title="Lien permanent vers ce titre">¶</a></h1>
-<p>L’adaptateur OVH SMS Shortcode permet l’utilisation de l’offre SMS de OVH avec RaspiSMS en se basant sur l’utilisation de l’API SMS en utilisant des numéros courts, ou un nom alphanumérique affiché à la place du numéro réel.</p>
+  <div class="section" id="telephone-ovh-sms-shortcode">
+<h1>Téléphone OVH SMS Shortcode<a class="headerlink" href="#telephone-ovh-sms-shortcode" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le téléphone OVH SMS Shortcode permet l’utilisation de l’offre SMS de OVH avec RaspiSMS en se basant sur l’utilisation de l’API SMS en utilisant des numéros courts, ou un nom alphanumérique affiché à la place du numéro réel.</p>
 <p>L’utilisation d’un numéro court vous permet de recevoir des réponses aux messages envoyés, mais uniquement pendant 48 heures. L’utilisation d’un nom alphanumérique ne permet pas de recevoir des réponses. Ces solutions sont plus adaptées à l’envoi de SMS commerciaux ou techniques.</p>
 <div class="section" id="fonctionnalites-supportees">
 <h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
@@ -209,12 +209,12 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="configurer-l-adaptateur-ovh-sms">
-<h2>Configurer l’adaptateur OVH SMS<a class="headerlink" href="#configurer-l-adaptateur-ovh-sms" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans cette partie nous allons voir comment configurer l’adaptateur OVH SMS pour lier RaspiSMS et OVH.</p>
+<div class="section" id="configurer-un-telephone-ovh-sms">
+<h2>Configurer un téléphone OVH SMS<a class="headerlink" href="#configurer-un-telephone-ovh-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans cette partie nous allons voir comment configurer un téléphone OVH SMS pour lier RaspiSMS et OVH.</p>
 <div class="section" id="souscrire-a-une-offre-sms-chez-ovh">
 <h3>1. Souscrire à une offre SMS chez OVH<a class="headerlink" href="#souscrire-a-une-offre-sms-chez-ovh" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour utiliser l’adaptateur OVH avec un Shortcode vous devez prendre un abonnement adapté chez OVH.</p>
+<p>Pour utiliser un téléphone OVH avec un Shortcode vous devez prendre un abonnement adapté chez OVH.</p>
 <p>Pour cela, rendez-vous sur <a class="reference external" href="https://www.ovhtelecom.fr/sms/#order-SMS">L’offre SMS OVH</a>, cliquez sur le bouton <strong>« Commander »</strong> et validez la procédure d’achat/inscription.</p>
 <div class="section" id="utiliser-un-nom-personnalise">
 <h4>1.2 Utiliser un nom personnalisé<a class="headerlink" href="#utiliser-un-nom-personnalise" title="Lien permanent vers ce titre">¶</a></h4>
@@ -228,7 +228,7 @@
 </div>
 <div class="section" id="ajouter-un-telephone-dans-raspisms">
 <h3>2. Ajouter un téléphone dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Adaptateur logiciel du téléphone »</strong> choisissez <strong>« OVH SMS Shortcode »</strong>.</p>
+<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Type de téléphone »</strong> choisissez <strong>« OVH SMS Shortcode »</strong>.</p>
 </div>
 <div class="section" id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
 <h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
@@ -284,11 +284,11 @@ Le suivi du statut d’un SMS se fait par une <cite>callback</cite>, c’est-à-
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="ovh_virtual_number.html"
-       title="Chapitre précédent">← Adaptateur OVH SMS Numéro Virtuel</a>
+       title="Chapitre précédent">← Téléphone OVH SMS Numéro Virtuel</a>
   </li>
   <li class="next">
     <a href="twilio_virtual_number.html"
-       title="Chapitre suivant">Adaptateur Twilio Numéro Virtuel →</a>
+       title="Chapitre suivant">Téléphone Twilio Numéro Virtuel →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, OsaAjani.

@@ -1,20 +1,23 @@
 .. _adapters:
 
-===============
-Les Adaptateurs
-===============
-
-Objectif des adapateurs
 =======================
-Les adaptateurs ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS.
-Pour cela, les adaptateurs offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d'un fournisseur à un autre.
-
-Grâce à cette organisation il est facile d'ajouter le support de nouveaux fournisseurs de SMS, puisqu'il suffit de créer un nouvel adaptateur et qu'il n'est pas nécessaire de toucher aux autres parties de RaspiSMS.
-
-Actuellement les adaptateurs disponibles sont les suivants :
-
-Adaptateurs disponibles
+Les types de téléphones
 =======================
+
+Pourquoi plusieurs types de téléphones ?
+========================================
+Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d'envoi.
+
+En tant qu'utilisateur, le support de différents types de téléphones, et donc de différents fournisseurs de SMS vous permet d'utiliser RaspiSMS avec l'offre commerciale la plus adaptée à vos besoins.
+
+Par ailleurs, en proposant une intégration unifiée au sein de l'application de différents fournisseurs de SMS, RaspiSMS vous permet de ne pas être dépendant d'un seul vendeur de SMS et de pouvoir changer de solution d'envoi facilement, sans avoir à modifier vos habitudes ou votre système d'information.
+
+Si vous êtes développeur, vous pouvez trouvez plus d'information sur la mise en place d'un nouveau type dé téléphone dans `la partie la partie "Les adaptateurs" <developpers_adapters_overview>`_.
+
+Actuellement les types de téléphones disponibles sont les suivants :
+
+Types de téléphones disponibles
+===============================
 .. toctree::
     :maxdepth: 1
 

@@ -1,9 +1,9 @@
 .. _users_adapters_ovh_virtual_number:
 
 ==================================
-Adaptateur OVH SMS Numéro Virtuel
+Téléphone OVH SMS Numéro Virtuel
 ==================================
-L'adaptateur OVH SMS permet l'utilisation de l'offre SMS de OVH avec RaspiSMS en se basant sur l'utilisation de l'API SMS avec un numéro virtuel.
+Le téléphone OVH SMS permet l'utilisation de l'offre SMS de OVH avec RaspiSMS en se basant sur l'utilisation de l'API SMS avec un numéro virtuel.
 
 L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu'ils puissent vous envoyer des messages, même si vous ne les avez pas vous-même contactés auparavant.
 
@@ -22,20 +22,20 @@ SMS Flash        Non
 ================ =========
 
 
-Configurer l'adaptateur OVH SMS
+Configurer un téléphone OVH SMS
 -------------------------------
-Dans cette partie nous allons voir comment configurer l'adaptateur OVH SMS pour lier RaspiSMS et OVH.
+Dans cette partie nous allons voir comment configurer un téléphone OVH SMS pour lier RaspiSMS et OVH.
 
 1. Souscrire à une offre SMS avec numéro virtuel chez OVH
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-Pour utiliser l'adaptateur OVH avec numéro virtuel vous devez prendre un abonnement adapté chez OVH.
+Pour utiliser un téléphone OVH avec numéro virtuel vous devez prendre un abonnement adapté chez OVH.
 
 Pour cela, rendez-vous sur `L'offre numéro virtuel`_, cliquez sur le bouton **"Commander"** et validez la procédure d'achat/inscription.
 
 
 2. Ajouter un téléphone OVH dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''
-Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Adaptateur logiciel du téléphone"** choisissez **"OVH SMS Numéro Virtuel"**.
+Dans RaspiSMS, rendez-vous dans la partie **"Téléphones"**, **"Ajouter un téléphone"** et dans la liste **"Type de téléphone"** choisissez **"OVH SMS Numéro Virtuel"**.
 
 3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
