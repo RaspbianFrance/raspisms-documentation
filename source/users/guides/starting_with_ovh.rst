@@ -1,10 +1,10 @@
-.. _starting_guide:
+.. _starting_with_ovh_guide:
 
 ============================================
-Commencer à utiliser RaspiSMS
+Commencer à utiliser RaspiSMS avec OVH
 ============================================
 
-Ce guide a pour objectif de vous aider lors de votre première prise en main de RaspiSMS et de vous guider à travers les différentes étapes.
+Ce guide a pour objectif de vous aider lors de votre première prise en main de RaspiSMS avec un téléphone OVH et de vous guider à travers les différentes étapes.
 
 1. Connectez-vous à votre compte RaspiSMS
 =========================================
