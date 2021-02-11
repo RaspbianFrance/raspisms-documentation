@@ -26,7 +26,7 @@ L'application web RaspiSMS vous permet de créer vos SMS en ligne en profitant d
 2. Installez l'application RaspiSMS Relay sur votre téléphone.
 ================================================================
 
-Rendez-vous sur `la page playstore de l'application RaspiSMS Relay <#>`_ et téléchargez l'application.
+Rendez-vous sur `la page playstore de l'application RaspiSMS Relay <https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay>`_ et téléchargez l'application.
 
 
 3. Configurez le relais RaspiSMS.
