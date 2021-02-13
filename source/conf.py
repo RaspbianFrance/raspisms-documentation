@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'RaspiSMS'
-copyright = '2020, OsaAjani'
+copyright = '2021, OsaAjani'
 author = 'OsaAjani'
 
 # The full version, including alpha/beta/rc tags
@@ -72,6 +72,7 @@ html_logo = '_static/logo.png'
 html_css_files = ["css/custom.css"]
 html_theme_options = {
   "external_links": [
+      ("Ancienne documentation", "_static/documentation_before_3_0.html"),
       ("Site du projet", "https://raspisms.fr"),
       ("Github", "https://github.com/RaspbianFrance/RaspiSMS"),
   ]
