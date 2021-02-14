@@ -84,3 +84,5 @@ html_sidebars = {
         'util/sidetoc.html'
     ],
 }
+
+html_favicon = 'favicon.png'
