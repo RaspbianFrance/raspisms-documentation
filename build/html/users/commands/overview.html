@@ -125,6 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commandes par SMS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#les-commandes-par-sms-c-est-quoi">Les commandes par SMS c’est quoi ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activer-desactiver-le-support-des-commandes-par-sms">Activer/désactiver le support des commandes par SMS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creer-une-commande-par-sms">Créer une commande par SMS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#declencher-une-commande">Déclencher une commande</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#exemple-de-commande">Exemple de commande</a><ul>
@@ -180,6 +181,11 @@
 <h2>Les commandes par SMS c’est quoi ?<a class="headerlink" href="#les-commandes-par-sms-c-est-quoi" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les commandes par SMS sont un moyen de déclencher l’execution de commandes système par SMS.</p>
 <p>Cette fonctionnalité peut être utilisée par exemple pour contrôler une machine distante n’ayant pas d’accès à internet.</p>
+</div>
+<div class="section" id="activer-desactiver-le-support-des-commandes-par-sms">
+<h2>Activer/désactiver le support des commandes par SMS<a class="headerlink" href="#activer-desactiver-le-support-des-commandes-par-sms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le support des commandes par SMS peut être activé/désactivé en modifiant le fichier d’environnement global de l’application (par défaut <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/env.php</span></code>).</p>
+<p>Dans le fichier de configuration, passez <code class="docutils literal notranslate"><span class="pre">ENABLE_COMMAND</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code> pour activer les commandes, ou à <code class="docutils literal notranslate"><span class="pre">false</span></code> pour les désactiver (réglage par défaut). Une fois la modification effectuée, redémarrez les démons RaspiSMS avec la commande <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">raspisms</span> <span class="pre">restart</span></code>.</p>
 </div>
 <div class="section" id="creer-une-commande-par-sms">
 <h2>Créer une commande par SMS<a class="headerlink" href="#creer-une-commande-par-sms" title="Lien permanent vers ce titre">¶</a></h2>

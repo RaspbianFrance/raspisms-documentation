@@ -13,6 +13,12 @@ Les commandes par SMS sont un moyen de déclencher l'execution de commandes syst
 
 Cette fonctionnalité peut être utilisée par exemple pour contrôler une machine distante n'ayant pas d'accès à internet.
 
+Activer/désactiver le support des commandes par SMS
+===================================================
+Le support des commandes par SMS peut être activé/désactivé en modifiant le fichier d'environnement global de l'application (par défaut ``/usr/share/raspisms/env.php``).
+
+Dans le fichier de configuration, passez ``ENABLE_COMMAND`` à ``true`` pour activer les commandes, ou à ``false`` pour les désactiver (réglage par défaut). Une fois la modification effectuée, redémarrez les démons RaspiSMS avec la commande ``service raspisms restart``.
+
 Créer une commande par SMS
 ============================================
 Pour créer une commande executable par SMS vous devez dans un premier temps créer le script qui devra être lancé à la réception de la commande et le placer dans le dossier des scripts de RaspiSMS (par défaut ``/usr/share/raspisms/scripts/``).
