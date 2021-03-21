@@ -111,13 +111,17 @@ Envoi d'un SMS
 """"""""""""""
 .. code-block::
 
-    public function send (string $destination, string $text, bool $flash = false)
+    public function send (string $destination, string $text, bool $flash = false, bool $mms = false, array $medias = [])
 
 La méthode est appelée à chaque SMS envoyé via l'adaptateur et prend trois arguments, détaillés ci-après :
  - **$destination** (*str*) -- Le numéro auquel envoyer le SMS.
  - **$text** (*str*) -- Le corps du SMS à envoyer.
  - **$flash** (*str*), ``FALSE`` -- Défini si le SMS envoyé doit être un SMS flash.
-
+ - **mms** (*bool*), ``FALSE`` -- Défini si le SMS est un MMS.
+ - **medias** (*array*), ``[]`` -- Un tableau de tableaux représentants les médias à envoyer avec le MMS.
+   
+   - **http_url** (*string*) -- L'URL publique permettant d'accéder au média.
+   - **local_uri** (*string*) -- L'URI locale du fichier média, utilisable par exemple pour envoyer le fichier via CURL.
 
 La fonction doit retourner un tableau avec trois clés :
  - **error** (*bool*) -- ``TRUE`` si une erreur est survenue et ``FALSE`` sinon.
@@ -133,7 +137,7 @@ Lecture d'un SMS
 
 La méthode appelée pour lire les SMS reçus. Cette méthode est appelée **très** souvent (environ 2 fois par seconde), à vous de vous assurez que cela n'entrainera pas de dépassement des capacités du service implémenté, et potentiellement de mettre en place des mécanismes de temporisation.
 
-La fonction retourne un tableau tel que suit :
+La fonction doit retourner un tableau tel que suit :
  - **error** (*bool*), ``TRUE`` -- ``TRUE`` si une erreur est survenue et ``FALSE`` sinon.
  - **error_message** (*str | null*) -- Le message d'erreur en cas d'echec, ou ``NULL`` en cas de succés.
  - **smss** (*array*) -- Un tableau avec les SMS reçus, ou un tableau vide en cas d'erreur. Chaque ligne est un SMS représenté lui-même par un tableau avec les clés suivantes :
@@ -141,6 +145,15 @@ La fonction retourne un tableau tel que suit :
    - **at** (*str*) -- La date de réception du SMS au format ``Y-m-d H:i:s``.
    - **text** (*str*) -- Le corps du SMS.
    - **origin** (*str*) -- Le numéro de l'émetteur du SMS, au format international (ex : +33612345678).
+   - **mms** (*bool*), ``optional`` -- ``TRUE`` le SMS est un MMS. Si non spécifié considéré comme ``FALSE``
+   - **medias** (*array*), ``optional`` -- Un tableau de tableaux représentants les médias à lier au MMS reçu. Si non spécifié aucun média ne sera associé au MMS.
+
+     - **filepath** (*str*) -- Chemin d'un fichier local lisible (par exemple créée avec la fonction ``tempnam`` de PHP) contenant une copie du fichier média.
+     - **extension** (*str*), ``optional`` -- L'extension du média reçu, utilisé pour définir l'extension du fichier interne.
+     - **mimetype** (*str*), ``optional`` -- Le mimetype du média reçu, utilisé pour définir l'extension du fichier interne si le paramètre **extension** n'as pas été fournis.
+
+     .. note::
+        Si ni **extension** ni **mimetype** ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.
 
 
 Les méthodes de callback
@@ -177,4 +190,15 @@ La méthode doit transformer les données transmises par la plateforme implémen
    - **at** (*str*) -- Date de réception du SMS au format ``Y-m-d H:i:s``
    - **text** (*str*) -- Le corps du SMS
    - **origin** (*str*) -- Le numéro de l'expéditeur au format international
+   - **mms** (*bool*), ``optional`` -- ``TRUE`` le SMS est un MMS. Si non spécifié considéré comme ``FALSE``
+   - **medias** (*array*), ``optional`` -- Un tableau de tableaux représentants les médias à lier au MMS reçu. Si non spécifié aucun média ne sera associé au MMS.
+
+     - **filepath** (*str*) -- Chemin d'un fichier local lisible (par exemple créée avec la fonction ``tempnam`` de PHP) contenant une copie du fichier média.
+     - **extension** (*str*), ``optional`` -- L'extension du média reçu, utilisé pour définir l'extension du fichier interne.
+     - **mimetype** (*str*), ``optional`` -- Le mimetype du média reçu, utilisé pour définir l'extension du fichier interne si le paramètre **extension** n'as pas été fournis.
+
+     .. note::
+        Si ni **extension** ni **mimetype** ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.
+
+
 

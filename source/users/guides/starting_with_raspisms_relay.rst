@@ -81,7 +81,14 @@ Depuis le téléphone équipé de l'application, vous pouvez également voir le 
 
 La page principale affiche le statut du relais ainsi que les derniers messages relayés (depuis le cloud vers un destinataire et depuis un mobile vers le cloud) et leur statut.
 
-Vous pouvez fermer l'application RaspiSMS Relay sans risques, les messages continuerons d'êtres relayés. Le seul pré-requis est qu'un réseau mobile soit disponible pour envoyer et recevoir les messages, et qu'un réseau internet soit disponible pour synchroniser les données avec le serveur centrale de RaspiSMS.
+Vous pouvez quitter l'application RaspiSMS Relay sans risques, les messages continuerons d'êtres relayés. Le seul pré-requis est qu'un réseau mobile soit disponible pour envoyer et recevoir les messages, et qu'un réseau internet soit disponible pour synchroniser les données avec le serveur centrale de RaspiSMS.
+
+.. warning::
+    Sur certains téléphones ajoutant des surcouches à Android, fermer une application dans la liste des applications ouvertes déclenche abusivement une fermeture forcée de l'application. L'application est totalement arrêtée, et les tâches de fond de ces applications (par exemple recevoir ou envoyer des SMS) peuvent êtres stoppées.
+
+    Nous vous recommandons donc de ne pas fermer totalement l'application dans la liste des applications ouvertes.
+
+    Pour plus d'informations : `<https://dontkillmyapp.com/>`_
 
 En cas de perte de réseau, les messages à envoyer sont mis en attente. En cas d'echec lors des tentatives d'envoi ou de synchronisation, jusqu'à cinq tentatives seront effectuées, à des intervales de plus en plus grands. En cas d'echec définitif, le statut du message est mis à jour localement et sur le serveur dès que possible.
 

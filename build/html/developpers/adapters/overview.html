@@ -247,7 +247,7 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <p>Ces méthodes permettent l’envoi de SMS et la lecture des SMS reçus.</p>
 <div class="section" id="envoi-d-un-sms">
 <h4>Envoi d’un SMS<a class="headerlink" href="#envoi-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function send (string $destination, string $text, bool $flash = false)</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function send (string $destination, string $text, bool $flash = false, bool $mms = false, array $medias = [])</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -255,6 +255,13 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <li><p><strong>$destination</strong> (<em>str</em>) – Le numéro auquel envoyer le SMS.</p></li>
 <li><p><strong>$text</strong> (<em>str</em>) – Le corps du SMS à envoyer.</p></li>
 <li><p><strong>$flash</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> – Défini si le SMS envoyé doit être un SMS flash.</p></li>
+<li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> – Défini si le SMS est un MMS.</p></li>
+<li><p><strong>medias</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">[]</span></code> – Un tableau de tableaux représentants les médias à envoyer avec le MMS.</p>
+<ul>
+<li><p><strong>http_url</strong> (<em>string</em>) – L’URL publique permettant d’accéder au média.</p></li>
+<li><p><strong>local_uri</strong> (<em>string</em>) – L’URI locale du fichier média, utilisable par exemple pour envoyer le fichier via CURL.</p></li>
+</ul>
+</li>
 </ul>
 </dd>
 <dt>La fonction doit retourner un tableau avec trois clés :</dt><dd><ul class="simple">
@@ -271,8 +278,8 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </pre></div>
 </div>
 <p>La méthode appelée pour lire les SMS reçus. Cette méthode est appelée <strong>très</strong> souvent (environ 2 fois par seconde), à vous de vous assurez que cela n’entrainera pas de dépassement des capacités du service implémenté, et potentiellement de mettre en place des mécanismes de temporisation.</p>
-<dl class="simple">
-<dt>La fonction retourne un tableau tel que suit :</dt><dd><ul class="simple">
+<dl>
+<dt>La fonction doit retourner un tableau tel que suit :</dt><dd><ul>
 <li><p><strong>error</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si une erreur est survenue et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> sinon.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Le message d’erreur en cas d’echec, ou <code class="docutils literal notranslate"><span class="pre">NULL</span></code> en cas de succés.</p></li>
 <li><p><strong>smss</strong> (<em>array</em>) – Un tableau avec les SMS reçus, ou un tableau vide en cas d’erreur. Chaque ligne est un SMS représenté lui-même par un tableau avec les clés suivantes :</p>
@@ -280,6 +287,18 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <li><p><strong>at</strong> (<em>str</em>) – La date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
 <li><p><strong>text</strong> (<em>str</em>) – Le corps du SMS.</p></li>
 <li><p><strong>origin</strong> (<em>str</em>) – Le numéro de l’émetteur du SMS, au format international (ex : +33612345678).</p></li>
+<li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> le SMS est un MMS. Si non spécifié considéré comme <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+<li><p><strong>medias</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un tableau de tableaux représentants les médias à lier au MMS reçu. Si non spécifié aucun média ne sera associé au MMS.</p>
+<ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Chemin d’un fichier local lisible (par exemple créée avec la fonction <code class="docutils literal notranslate"><span class="pre">tempnam</span></code> de PHP) contenant une copie du fichier média.</p></li>
+<li><p><strong>extension</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’extension du média reçu, utilisé pour définir l’extension du fichier interne.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Le mimetype du média reçu, utilisé pour définir l’extension du fichier interne si le paramètre <strong>extension</strong> n’as pas été fournis.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si ni <strong>extension</strong> ni <strong>mimetype</strong> ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.</p>
+</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -310,8 +329,8 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </pre></div>
 </div>
 <p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la réception d’un SMS.</p>
-<dl class="simple">
-<dt>La méthode doit transformer les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
+<dl>
+<dt>La méthode doit transformer les données transmises par la plateforme implémentée en un SMS dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul>
 <li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 <li><p><strong>error_message</strong> (<em>str | null</em>) – Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 <li><p><strong>sms</strong> (<em>array</em>) – Un tableau représentant le SMS reçu, ou un tableau vide en cas d’erreur</p>
@@ -319,6 +338,18 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <li><p><strong>at</strong> (<em>str</em>) – Date de réception du SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code></p></li>
 <li><p><strong>text</strong> (<em>str</em>) – Le corps du SMS</p></li>
 <li><p><strong>origin</strong> (<em>str</em>) – Le numéro de l’expéditeur au format international</p></li>
+<li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> le SMS est un MMS. Si non spécifié considéré comme <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+<li><p><strong>medias</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un tableau de tableaux représentants les médias à lier au MMS reçu. Si non spécifié aucun média ne sera associé au MMS.</p>
+<ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Chemin d’un fichier local lisible (par exemple créée avec la fonction <code class="docutils literal notranslate"><span class="pre">tempnam</span></code> de PHP) contenant une copie du fichier média.</p></li>
+<li><p><strong>extension</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’extension du média reçu, utilisé pour définir l’extension du fichier interne.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Le mimetype du média reçu, utilisé pour définir l’extension du fichier interne si le paramètre <strong>extension</strong> n’as pas été fournis.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si ni <strong>extension</strong> ni <strong>mimetype</strong> ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.</p>
+</div>
+</li>
 </ul>
 </li>
 </ul>
