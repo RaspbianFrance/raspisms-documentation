@@ -22,7 +22,7 @@ L'API de RaspiSMS est découpée en trois principales fonctionnalités, chacune 
 - Supprimer une ressource (sms programmé, téléphone), verbe HTTP ``DELETE``.
 
 .. note::
-    Actuellement seul les SMS programmés peuvent être créés et supprimés.
+    Actuellement seul les SMS programmés et les téléphones peuvent être créés et supprimés via l'API.
 
 
 Format des réponses
