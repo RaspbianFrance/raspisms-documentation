@@ -113,7 +113,7 @@ Endpoints :
     - ``/api/list/{entry_type}/{page}/``
 
 Arguments :
-    - **entry_type** (*str*) -- Le type de ressource à lister (``sended``, ``received``, ``scheduled``, ``contact``, ``group``, ``conditional_group`` ou ``phone``).
+    - **entry_type** (*str*) -- Le type de ressource à lister (``sended``, ``received``, ``scheduled``, ``contact``, ``group``, ``conditional_group``, ``phone`` ou ``media``).
     - **page** (*int*), ``optional`` -- Numéro de page à utiliser, si non défini ``0``.
 
 Réponse :
@@ -173,11 +173,14 @@ Arguments :
     - **at** (*str*), ``optional`` -- Date à laquelle envoyer le SMS au format ``Y-m-d H:i:s``. Si non défini utilise la date actuelle.
     - **id_phone** (*str*), ``optional`` -- Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.
     - **flash** (*bool*), ``optional`` -- ``TRUE`` s'il s'agit d'un SMS flash. Si non défini ``FALSE``.
+    - **mms** (*bool*), ``optional`` -- ``TRUE`` si le message est un MMS. Si non défini ``FALSE``.
+    - **medias** (*multipart-form file array | multipart-form file*) ``optional`` -- Un ou plusieurs fichiers à inclure dans le MMS. Toute requête contenant des medias doit être au format ``multipart/form-data``. Les medias ne seront utilisés que si le paramètre **mms** est défini à ``TRUE``. Pour envoyer plusieurs fichiers, utilisez une série de paramètres ``medias[]``.
 
     .. note::
         Les arguments ``numbers``, ``contacts``, ``groups`` et ``conditional_groups`` sont tous optionnels individuellement, mais vous devez nécessairement renseigner **au moins** un de ces arguments.
 
         Tous ces arguments peuvent être transmis avec une seule valeur ou comme un tableau de valeurs.
+
 
 
 Réponse :
@@ -210,6 +213,16 @@ Création d'un SMS **"Mon SMS d'exemple"** à envoyer le **"Jeudi 17 juin 2020 �
     :language: curl
 
 .. literalinclude:: /_code_examples/api/post_scheduled2_response.json
+    :language: json
+
+Exemple 3
+~~~~~~~~~
+Création d'un MMS **"Mon MMS d'exemple"** à envoyer immédiatement au **"+33612345678"** avec les fichiers **"example1.png"** et **"example2.png"**.
+
+.. literalinclude:: /_code_examples/api/post_scheduled3.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/post_scheduled3_response.json
     :language: json
 
 

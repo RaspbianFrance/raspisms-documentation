@@ -147,6 +147,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#exemple-de-requetes-curl">Exemple de requêtes CURL</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-1">Exemple 1</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-2">Exemple 2</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exemple-3">Exemple 3</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +327,7 @@
 </ul>
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
-<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code> ou <code class="docutils literal notranslate"><span class="pre">phone</span></code>).</p></li>
+<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code> ou <code class="docutils literal notranslate"><span class="pre">media</span></code>).</p></li>
 <li><p><strong>page</strong> (<em>int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Numéro de page à utiliser, si non défini <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ul>
 </dd>
@@ -413,6 +414,8 @@
 <li><p><strong>at</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Date à laquelle envoyer le SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si non défini utilise la date actuelle.</p></li>
 <li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.</p></li>
 <li><p><strong>flash</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> s’il s’agit d’un SMS flash. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si le message est un MMS. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>medias</strong> (<em>multipart-form file array | multipart-form file</em>) <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un ou plusieurs fichiers à inclure dans le MMS. Toute requête contenant des medias doit être au format <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code>. Les medias ne seront utilisés que si le paramètre <strong>mms</strong> est défini à <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>. Pour envoyer plusieurs fichiers, utilisez une série de paramètres <code class="docutils literal notranslate"><span class="pre">medias[]</span></code>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -458,6 +461,22 @@
    <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span>
    <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-3">
+<h4>Exemple 3<a class="headerlink" href="#exemple-3" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Création d’un MMS <strong>« Mon MMS d’exemple »</strong> à envoyer immédiatement au <strong>« +33612345678 »</strong> avec les fichiers <strong>« example1.png »</strong> et <strong>« example2.png »</strong>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -F &quot;text=Mon SMS d&#39;exemple&quot; -F &#39;numbers=+33612345678&#39; -F &#39;mms=1&#39; -F &#39;medias[]=@example1.png&#39; -F &#39;medias[]=@example2.png&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">39</span>
 <span class="p">}</span>
 </pre></div>
 </div>

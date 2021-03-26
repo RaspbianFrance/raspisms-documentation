@@ -123,7 +123,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Les Webhooks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creer-un-webhook">Créer un Webhook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#contenu-de-la-requete">Contenu de la requête</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contenu-de-la-requete">Contenu de la requête</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#corps-des-webhooks">Corps des webhooks</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -206,22 +209,150 @@
 <td><p>Signature du webhook. Il s’agit d’une signature <code class="docutils literal notranslate"><span class="pre">HMAC</span> <span class="pre">SHA-256</span></code> du <code class="docutils literal notranslate"><span class="pre">webhook_random_id</span></code>, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l’authenticité du webhook reçu.</p></td>
 </tr>
 <tr class="row-odd"><td><p>webhook_type</p></td>
-<td><p>Type de webhook, <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code> ou <code class="docutils literal notranslate"><span class="pre">send_sms</span></code></p></td>
+<td><p>Type de webhook, <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code> ou <code class="docutils literal notranslate"><span class="pre">send_sms</span></code>, <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>id</p></td>
-<td><p>Identifiant unique du SMS</p></td>
-</tr>
-<tr class="row-odd"><td><p>at</p></td>
-<td><p>Date de réception/envoi du SMS, format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>origin</p></td>
-<td><p>Numéro de téléphone (si <cite>received_sms</cite>) ou ID du téléphone (si <cite>send_sms</cite>) depuis lequel le SMS a été envoyé (format international)</p></td>
-</tr>
-<tr class="row-odd"><td><p>destination</p></td>
-<td><p>Numéro de téléphone (si <cite>send_sms</cite>) ou ID du téléphone (si <cite>received_sms</cite>) auquel le SMS a été envoyé (format international)</p></td>
+<tr class="row-even"><td><p>body</p></td>
+<td><p>Le corps du webhook, un objet JSON qui dépendra du type de webhook, voir <a class="reference internal" href="#corps-des-webhooks">Corps des webhooks</a>.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="corps-des-webhooks">
+<h3>Corps des webhooks<a class="headerlink" href="#corps-des-webhooks" title="Lien permanent vers ce titre">¶</a></h3>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code></span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Identifiant unique du SMS</p></td>
+</tr>
+<tr class="row-even"><td><p>at</p></td>
+<td><p>Date de réception du SMS, format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>origin</p></td>
+<td><p>Numéro de téléphone depuis lequel le SMS a été envoyé (format international)</p></td>
+</tr>
+<tr class="row-even"><td><p>destination</p></td>
+<td><p>ID du téléphone auquel le SMS a été envoyé</p></td>
+</tr>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>Texte du SMS</p></td>
+</tr>
+<tr class="row-even"><td><p>mms</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> si le SMS est un MMS, <code class="docutils literal notranslate"><span class="pre">0</span></code> sinon.</p></td>
+</tr>
+<tr class="row-odd"><td><p>medias <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Id du média</p></td>
+</tr>
+<tr class="row-even"><td><p>id_user</p></td>
+<td><p>Id de l’utilisateur auquel appartient le média</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>Chemin relatif du média depuis le dossier <code class="docutils literal notranslate"><span class="pre">PWD_DATA</span></code> de RaspiSMS (par défaut <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/data/</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">send_sms</span></code></span><a class="headerlink" href="#id5" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Identifiant unique du SMS</p></td>
+</tr>
+<tr class="row-even"><td><p>at</p></td>
+<td><p>Date d’envoi du SMS, format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>origin</p></td>
+<td><p>ID du téléphone depuis lequel le SMS a été envoyé</p></td>
+</tr>
+<tr class="row-even"><td><p>destination</p></td>
+<td><p>Numéro de téléphone auquel le SMS a été envoyé (format international)</p></td>
+</tr>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>Texte du SMS</p></td>
+</tr>
+<tr class="row-even"><td><p>mms</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> si le SMS est un MMS, <code class="docutils literal notranslate"><span class="pre">0</span></code> sinon.</p></td>
+</tr>
+<tr class="row-odd"><td><p>medias <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Id du média</p></td>
+</tr>
+<tr class="row-even"><td><p>id_user</p></td>
+<td><p>Id de l’utilisateur auquel appartient le média</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>Chemin relatif du média depuis le dossier <code class="docutils literal notranslate"><span class="pre">PWD_DATA</span></code> de RaspiSMS (par défaut <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/data/</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Identifiant unique de l’appel.</p></td>
+</tr>
+<tr class="row-even"><td><p>id_user</p></td>
+<td><p>Identifiant unique de l’utilisateur qui a passé ou reçu l’appel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>id_phone</p></td>
+<td><p>Identifiant unique du téléphone qui a passé ou reçu l’appel.</p></td>
+</tr>
+<tr class="row-even"><td><p>uid</p></td>
+<td><p>Identifiant unique de l’appel sur la plateforme de l’opérateur. Utilisé notamment pour mettre à jour un appel lors de la réception d’un signal de fin.</p></td>
+</tr>
+<tr class="row-odd"><td><p>direction</p></td>
+<td><p>Direction de l’appel, <code class="docutils literal notranslate"><span class="pre">inbound</span></code> si c’est un appel entrant, ou <code class="docutils literal notranslate"><span class="pre">outbound</span></code> si c’est un appel sortant.</p></td>
+</tr>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>Date de début de l’appel, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>end <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<td><p>Date de fin de l’appel, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code>. Disponible uniquement si on connais la date de fin de l’appel, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>origin <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<td><p>Numéro de téléphone qui a passé l’appel si c’est un appel entrant, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>destination <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<td><p>Numéro de téléphone qui a reçu l’appel si c’est un appel sortant, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 

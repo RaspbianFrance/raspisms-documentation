@@ -42,17 +42,111 @@ Lors du déclenchement d'un webhook, la requête HTTP contient certains paramèt
      - Signature du webhook. Il s'agit d'une signature ``HMAC SHA-256`` du ``webhook_random_id``, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l'authenticité du webhook reçu.
 
    * - webhook_type
-     - Type de webhook, ``receive_sms`` ou ``send_sms``
+     - Type de webhook, ``receive_sms`` ou ``send_sms``, ``inbound_call``
+
+   * - body
+     - Le corps du webhook, un objet JSON qui dépendra du type de webhook, voir `Corps des webhooks`_.
+
+
+Corps des webhooks
+------------------
+
+.. list-table:: Body des webhook ``receive_sms``
 
    * - id
      - Identifiant unique du SMS
 
    * - at
-     - Date de réception/envoi du SMS, format ``Y-m-d h:i:s``
+     - Date de réception du SMS, format ``Y-m-d h:i:s``
 
    * - origin
-     - Numéro de téléphone (si `received_sms`) ou ID du téléphone (si `send_sms`) depuis lequel le SMS a été envoyé (format international)
+     - Numéro de téléphone depuis lequel le SMS a été envoyé (format international)
 
    * - destination
-     - Numéro de téléphone (si `send_sms`) ou ID du téléphone (si `received_sms`) auquel le SMS a été envoyé (format international)
+     - ID du téléphone auquel le SMS a été envoyé
+
+   * - text
+     - Texte du SMS
+
+   * - mms
+     - ``1`` si le SMS est un MMS, ``0`` sinon.
+
+   * - medias ``optional``
+     - Un tableau des médias liés au message, si aucun média n'est lié, le paramètre n'existe pas.
+
+       .. list-table:: ``Contenu d'un média``
+
+          * - id
+            - Id du média
+
+          * - id_user
+            - Id de l'utilisateur auquel appartient le média
+          
+          * - path
+            - Chemin relatif du média depuis le dossier ``PWD_DATA`` de RaspiSMS (par défaut ``/usr/share/raspisms/data/``).
    
+.. list-table:: Body des webhook ``send_sms``
+
+   * - id
+     - Identifiant unique du SMS
+
+   * - at
+     - Date d'envoi du SMS, format ``Y-m-d h:i:s``
+
+   * - origin
+     - ID du téléphone depuis lequel le SMS a été envoyé
+
+   * - destination
+     - Numéro de téléphone auquel le SMS a été envoyé (format international)
+
+   * - text
+     - Texte du SMS
+
+   * - mms
+     - ``1`` si le SMS est un MMS, ``0`` sinon.
+
+   * - medias ``optional``
+     - Un tableau des médias liés au message, si aucun média n'est lié, le paramètre n'existe pas.
+
+       .. list-table:: ``Contenu d'un média``
+
+          * - id
+            - Id du média
+
+          * - id_user
+            - Id de l'utilisateur auquel appartient le média
+          
+          * - path
+            - Chemin relatif du média depuis le dossier ``PWD_DATA`` de RaspiSMS (par défaut ``/usr/share/raspisms/data/``).
+   
+
+.. list-table:: Body des webhook ``inbound_call``
+
+   * - id
+     - Identifiant unique de l'appel.
+   
+   * - id_user
+     - Identifiant unique de l'utilisateur qui a passé ou reçu l'appel.
+   
+   * - id_phone
+     - Identifiant unique du téléphone qui a passé ou reçu l'appel.
+   
+   * - uid
+     - Identifiant unique de l'appel sur la plateforme de l'opérateur. Utilisé notamment pour mettre à jour un appel lors de la réception d'un signal de fin.
+   
+   * - direction
+     - Direction de l'appel, ``inbound`` si c'est un appel entrant, ou ``outbound`` si c'est un appel sortant.
+
+   * - start
+     - Date de début de l'appel, au format ``Y-m-d h:i:s``.
+   
+   * - end ``optional``
+     - Date de fin de l'appel, au format ``Y-m-d h:i:s``. Disponible uniquement si on connais la date de fin de l'appel, sinon ``NULL``.
+
+   * - origin ``optional``
+     - Numéro de téléphone qui a passé l'appel si c'est un appel entrant, sinon ``NULL``.
+
+   * - destination ``optional``
+     - Numéro de téléphone qui a reçu l'appel si c'est un appel sortant, sinon ``NULL``.
+
+

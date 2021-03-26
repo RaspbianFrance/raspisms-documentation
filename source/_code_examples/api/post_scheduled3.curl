@@ -1,0 +1,1 @@
+curl https://app.raspisms.fr/api/scheduled/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d' -F "text=Mon SMS d'exemple" -F 'numbers=+33612345678' -F 'mms=1' -F 'medias[]=@example1.png' -F 'medias[]=@example2.png'

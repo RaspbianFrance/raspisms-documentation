@@ -134,6 +134,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-de-callback">Les méthodes de callback</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-du-statut-d-un-sms">Mise à jour du statut d’un SMS</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#reception-d-un-sms">Réception d’un SMS</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reception-d-un-appel-telephonique">Réception d’un appel téléphonique</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#fin-d-un-appel-telephonique">Fin d’un appel téléphonique</a></li>
 </ul>
 </li>
 </ul>
@@ -350,6 +352,48 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <p>Si ni <strong>extension</strong> ni <strong>mimetype</strong> ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.</p>
 </div>
 </li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="reception-d-un-appel-telephonique">
+<h4>Réception d’un appel téléphonique<a class="headerlink" href="#reception-d-un-appel-telephonique" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function inbound_call_callback() : array</span>
+</pre></div>
+</div>
+<p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la réception d’un appel téléphonique.</p>
+<dl class="simple">
+<dt>La méthode doit transformer les données transmises par la plateforme implémentée en un appel dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
+<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>error_message</strong> (<em>str | null</em>) – Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>call</strong> (<em>array</em>) – Un tableau représentant l’appel reçu, ou un tableau vide en cas d’erreur.</p>
+<ul>
+<li><p><strong>uid</strong> (<em>str</em>) – L’identifiant unique de l’appel au sein de la plateforme implémentée. Cet uid est utilisé pour retrouver l’appel si on doit recevoir une callback de fin d’appel.</p></li>
+<li><p><strong>start</strong> (<em>str</em>) – Date de début de l’appel au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
+<li><p><strong>end</strong> (<em>null | str</em>) – Date de fin de l’appel au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si la date de fin est inconnue, retourner <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>origin</strong> (<em>str</em>) – Le numéro de l’émetteur de l’appel au format international.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="fin-d-un-appel-telephonique">
+<h4>Fin d’un appel téléphonique<a class="headerlink" href="#fin-d-un-appel-telephonique" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function end_call_callback() : array</span>
+</pre></div>
+</div>
+<p>La méthode est appelée lors de la réception d’un appel HTTP indiquant la fin d’un appel téléphonique.</p>
+<dl class="simple">
+<dt>La méthode doit transformer les données transmises par la plateforme implémentée en un appel dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :</dt><dd><ul class="simple">
+<li><p><strong>error</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>error_message</strong> (<em>str | null</em>) – Un message d’erreur en cas d’erreur, sinon <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p><strong>call</strong> (<em>array</em>) – Un tableau représentant l’appel reçu, ou un tableau vide en cas d’erreur.</p>
+<ul>
+<li><p><strong>uid</strong> (<em>str</em>) – L’identifiant unique de l’appel au sein de la plateforme implémentée. Cet uid est utilisé pour retrouver l’appel à mettre à jour.</p></li>
+<li><p><strong>end</strong> (<em>str</em>) – Date de fin de l’appel au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>.</p></li>
 </ul>
 </li>
 </ul>

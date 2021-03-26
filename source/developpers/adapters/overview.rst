@@ -201,4 +201,36 @@ La méthode doit transformer les données transmises par la plateforme implémen
         Si ni **extension** ni **mimetype** ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.
 
 
+Réception d'un appel téléphonique
+"""""""""""""""""""""""""""""""""
+.. code-block::
 
+    public static function inbound_call_callback() : array
+
+La méthode est appelée lors de la réception d'un appel HTTP indiquant la réception d'un appel téléphonique.
+
+La méthode doit transformer les données transmises par la plateforme implémentée en un appel dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :
+ - **error** (*bool*) -- ``TRUE`` en cas d'erreur, sinon ``FALSE``.
+ - **error_message** (*str | null*) -- Un message d'erreur en cas d'erreur, sinon ``NULL``.
+ - **call** (*array*) -- Un tableau représentant l'appel reçu, ou un tableau vide en cas d'erreur.
+    
+   - **uid** (*str*) -- L'identifiant unique de l'appel au sein de la plateforme implémentée. Cet uid est utilisé pour retrouver l'appel si on doit recevoir une callback de fin d'appel.
+   - **start** (*str*) -- Date de début de l'appel au format ``Y-m-d H:i:s``.
+   - **end** (*null | str*) -- Date de fin de l'appel au format ``Y-m-d H:i:s``. Si la date de fin est inconnue, retourner ``NULL``.
+   - **origin** (*str*) -- Le numéro de l'émetteur de l'appel au format international.
+
+Fin d'un appel téléphonique
+"""""""""""""""""""""""""""""""""""""""""""
+.. code-block::
+
+    public static function end_call_callback() : array
+
+La méthode est appelée lors de la réception d'un appel HTTP indiquant la fin d'un appel téléphonique.
+
+La méthode doit transformer les données transmises par la plateforme implémentée en un appel dans un format adapté à RaspiSMS. Pour cela elle doit retourner un tableau avec :
+ - **error** (*bool*) -- ``TRUE`` en cas d'erreur, sinon ``FALSE``.
+ - **error_message** (*str | null*) -- Un message d'erreur en cas d'erreur, sinon ``NULL``.
+ - **call** (*array*) -- Un tableau représentant l'appel reçu, ou un tableau vide en cas d'erreur.
+    
+   - **uid** (*str*) -- L'identifiant unique de l'appel au sein de la plateforme implémentée. Cet uid est utilisé pour retrouver l'appel à mettre à jour.
+   - **end** (*str*) -- Date de fin de l'appel au format ``Y-m-d H:i:s``.
