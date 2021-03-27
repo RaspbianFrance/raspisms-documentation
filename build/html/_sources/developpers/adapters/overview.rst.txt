@@ -150,7 +150,6 @@ La fonction doit retourner un tableau tel que suit :
 
      - **filepath** (*str*) -- Chemin d'un fichier local lisible (par exemple créée avec la fonction ``tempnam`` de PHP) contenant une copie du fichier média.
      - **extension** (*str*), ``optional`` -- L'extension du média reçu, utilisé pour définir l'extension du fichier interne.
-     - **mimetype** (*str*), ``optional`` -- Le mimetype du média reçu, utilisé pour définir l'extension du fichier interne si le paramètre **extension** n'as pas été fournis.
 
      .. note::
         Si **extension** est ``NULL`` le serveur essaiera de la déterminer en utilisant le mimetype de la copie locale du fichier.
