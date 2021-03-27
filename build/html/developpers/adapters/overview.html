@@ -143,6 +143,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../webhooks/overview.html">Les Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filesystem/overview.html">Système de fichier de RaspiSMS</a></li>
 </ul>
 </li>
 </ul>
@@ -298,7 +299,7 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Si ni <strong>extension</strong> ni <strong>mimetype</strong> ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.</p>
+<p>Si <strong>extension</strong> est <code class="docutils literal notranslate"><span class="pre">NULL</span></code> le serveur essaiera de la déterminer en utilisant le mimetype de la copie locale du fichier.</p>
 </div>
 </li>
 </ul>
@@ -345,11 +346,10 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <ul class="simple">
 <li><p><strong>filepath</strong> (<em>str</em>) – Chemin d’un fichier local lisible (par exemple créée avec la fonction <code class="docutils literal notranslate"><span class="pre">tempnam</span></code> de PHP) contenant une copie du fichier média.</p></li>
 <li><p><strong>extension</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’extension du média reçu, utilisé pour définir l’extension du fichier interne.</p></li>
-<li><p><strong>mimetype</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Le mimetype du média reçu, utilisé pour définir l’extension du fichier interne si le paramètre <strong>extension</strong> n’as pas été fournis.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Si ni <strong>extension</strong> ni <strong>mimetype</strong> ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.</p>
+<p>Si <strong>extension</strong> est <code class="docutils literal notranslate"><span class="pre">NULL</span></code> le serveur essaiera de la déterminer en utilisant le mimetype de la copie locale du fichier.</p>
 </div>
 </li>
 </ul>

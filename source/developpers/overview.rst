@@ -11,3 +11,4 @@ Cette partie de la documentation est destinée aux développeurs souhaitant part
     api/overview
     adapters/overview
     webhooks/overview
+    filesystem/overview

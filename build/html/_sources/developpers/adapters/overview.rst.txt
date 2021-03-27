@@ -153,7 +153,7 @@ La fonction doit retourner un tableau tel que suit :
      - **mimetype** (*str*), ``optional`` -- Le mimetype du média reçu, utilisé pour définir l'extension du fichier interne si le paramètre **extension** n'as pas été fournis.
 
      .. note::
-        Si ni **extension** ni **mimetype** ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.
+        Si **extension** est ``NULL`` le serveur essaiera de la déterminer en utilisant le mimetype de la copie locale du fichier.
 
 
 Les méthodes de callback
@@ -195,10 +195,9 @@ La méthode doit transformer les données transmises par la plateforme implémen
 
      - **filepath** (*str*) -- Chemin d'un fichier local lisible (par exemple créée avec la fonction ``tempnam`` de PHP) contenant une copie du fichier média.
      - **extension** (*str*), ``optional`` -- L'extension du média reçu, utilisé pour définir l'extension du fichier interne.
-     - **mimetype** (*str*), ``optional`` -- Le mimetype du média reçu, utilisé pour définir l'extension du fichier interne si le paramètre **extension** n'as pas été fournis.
 
      .. note::
-        Si ni **extension** ni **mimetype** ne sont renseignés, le serveur essaiera de déterminer le mimetype en utilisant la copie locale du fichier.
+        Si **extension** est ``NULL`` le serveur essaiera de la déterminer en utilisant le mimetype de la copie locale du fichier.
 
 
 Réception d'un appel téléphonique
