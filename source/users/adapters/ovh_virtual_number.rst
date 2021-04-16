@@ -12,14 +12,18 @@ L'utilisation d'un numéro virtuel vous permet de communiquer ce numéro à vos 
 
 Fonctionnalités supportées
 --------------------------
-================ =========
- Fonctionnalité   Support
-================ =========
-Envoi de SMS     Oui
-Réception de SMS Oui
-Suivi de l'envoi Oui
-SMS Flash        Non
-================ =========
+=============================== =========
+ Fonctionnalité                 Support
+=============================== =========
+Envoi de SMS                    Oui
+Réception de SMS                Oui
+Envoi de MMS                    Non
+Réception de MMS                Non
+Suivi de l'envoi                Oui
+SMS Flash                       Non
+Alerte sur réception d'un appel Non
+Alerte sur fin d'un appel       Non
+=============================== =========
 
 
 Configurer un téléphone OVH SMS

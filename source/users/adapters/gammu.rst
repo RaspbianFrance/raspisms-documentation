@@ -10,14 +10,18 @@ Cette méthode permet d'utiliser un forfait téléphonique classique avec RaspiS
 
 Fonctionnalités supportées
 --------------------------
-================ =========
- Fonctionnalité   Support
-================ =========
-Envoi de SMS     Oui
-Réception de SMS Oui
-Suivi de l'envoi Non
-SMS Flash        Non
-================ =========
+=============================== =========
+ Fonctionnalité                 Support
+=============================== =========
+Envoi de SMS                    Oui
+Réception de SMS                Oui
+Envoi de MMS                    Non
+Réception de MMS                Non
+Suivi de l'envoi                Non
+SMS Flash                       Non
+Alerte sur réception d'un appel Non
+Alerte sur fin d'un appel       Non
+=============================== =========
 
 
 

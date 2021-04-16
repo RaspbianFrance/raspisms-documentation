@@ -1,8 +1,8 @@
 .. _developpers_adapters_overview:
 
-=======================
-Les types de téléphones
-=======================
+==================================
+Créer un nouveau type de téléphone
+==================================
 
 Objectif des différents types de téléphones
 ===========================================
@@ -76,6 +76,22 @@ meta_support_status_change
 
 meta_support_flash
     Booléen définissant si l'adaptateur supporte les SMS flash.
+
+
+meta_support_mms_reception
+    Booléen définissant si l'adaptateur supporte la réception des MMS.
+
+
+meta_support_mms_sending
+    Booléen définissant si l'adaptateur supporte l'envoi des MMS.
+
+
+meta_support_inbound_call_callback
+    Booléen définissant si l'adaptateur supporte la réception via une callback d'un avertissement lors d'un appel entrant.
+
+
+meta_support_end_call_callback
+    Booléen définissant si l'adaptateur supporte la réception via une callback d'un avertissement lors de la fin d'un appel.
 
 
 

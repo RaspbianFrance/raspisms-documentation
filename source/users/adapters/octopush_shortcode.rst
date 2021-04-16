@@ -12,14 +12,18 @@ L'utilisation d'un numéro court aléatoire vous permet d'envoyer un message à 
 
 Fonctionnalités supportées
 --------------------------
-================ =========
- Fonctionnalité   Support
-================ =========
-Envoi de SMS     Oui
-Réception de SMS Oui
-Suivi de l'envoi Oui
-SMS Flash        Non
-================ =========
+=============================== =========
+ Fonctionnalité                 Support
+=============================== =========
+Envoi de SMS                    Oui
+Réception de SMS                Non
+Envoi de MMS                    Non
+Réception de MMS                Non
+Suivi de l'envoi                Oui
+SMS Flash                       Non
+Alerte sur réception d'un appel Non
+Alerte sur fin d'un appel       Non
+=============================== =========
 
 
 

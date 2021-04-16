@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Les types de téléphones</title>
+      <title>Créer un nouveau type de téléphone</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../api/overview.html">Utiliser l’API HTTP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les types de téléphones</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Créer un nouveau type de téléphone</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#objectif-des-differents-types-de-telephones">Objectif des différents types de téléphones</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles">Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-meta">Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code></a></li>
@@ -160,7 +160,7 @@
     
       <li><a href="../overview.html">Documentation pour les développeurs</a> &raquo;</li>
     
-    <li>Les types de téléphones</li>
+    <li>Créer un nouveau type de téléphone</li>
   </ul>
   
 
@@ -179,8 +179,8 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="les-types-de-telephones">
-<span id="developpers-adapters-overview"></span><h1>Les types de téléphones<a class="headerlink" href="#les-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="creer-un-nouveau-type-de-telephone">
+<span id="developpers-adapters-overview"></span><h1>Créer un nouveau type de téléphone<a class="headerlink" href="#creer-un-nouveau-type-de-telephone" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="objectif-des-differents-types-de-telephones">
 <h2>Objectif des différents types de téléphones<a class="headerlink" href="#objectif-des-differents-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d’envoi.
@@ -225,6 +225,14 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <dt>meta_support_status_change</dt><dd><p>Booléen définissant si l’adaptateur supporte la mise à jour du statut d’un SMS par l’appel à une callback HTTP.</p>
 </dd>
 <dt>meta_support_flash</dt><dd><p>Booléen définissant si l’adaptateur supporte les SMS flash.</p>
+</dd>
+<dt>meta_support_mms_reception</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception des MMS.</p>
+</dd>
+<dt>meta_support_mms_sending</dt><dd><p>Booléen définissant si l’adaptateur supporte l’envoi des MMS.</p>
+</dd>
+<dt>meta_support_inbound_call_callback</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception via une callback d’un avertissement lors d’un appel entrant.</p>
+</dd>
+<dt>meta_support_end_call_callback</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception via une callback d’un avertissement lors de la fin d’un appel.</p>
 </dd>
 </dl>
 </div>

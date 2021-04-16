@@ -119,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../api/overview.html">Utiliser l’API HTTP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Créer un nouveau type de téléphone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../webhooks/overview.html">Les Webhooks</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Système de fichier de RaspiSMS</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#les-fichiers-de-logs">Les fichiers de logs</a></li>
@@ -257,7 +257,7 @@ Ce fichier est utilisé pour définir des constantes nécessaires à RaspiSMS ma
 <td><p>Dossier des données générées par l’application.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">./data/public</span></code></p></td>
-<td><p>Dossier des données publiques générées par l’application. Pour des raisons de sécurité ce dossier doit <strong>absolument</strong> être servi directement par le serveur web, sans être interprété <strong>et sans être listable</strong>.</p></td>
+<td><p>Dossier des données publiques générées par l’application. Pour des raisons de sécurité ce dossier doit <strong>absolument</strong> être servi directement par le serveur web, <strong>sans être interprété et sans être listable</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">./index.php</span></code></p></td>
 <td><p>Fichier d’entrée pour toute l’application. Toutes les requêtes qui ne pointent pas vers <code class="docutils literal notranslate"><span class="pre">./assets/*</span></code> ou <code class="docutils literal notranslate"><span class="pre">./data/public/*</span></code> doivent renvoyer vers <code class="docutils literal notranslate"><span class="pre">index.php</span></code>.</p></td>

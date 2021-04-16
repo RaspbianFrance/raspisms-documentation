@@ -22,4 +22,5 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
     groups_and_contacts/overview
     templating/overview
     commands/overview
+    mms/overview
 

@@ -86,7 +86,7 @@ Nous ne reviendrons que sur les dossiers les plus importants.
      - Dossier des données générées par l'application.
 
    * - ``./data/public``
-     - Dossier des données publiques générées par l'application. Pour des raisons de sécurité ce dossier doit **absolument** être servi directement par le serveur web, sans être interprété **et sans être listable**.
+     - Dossier des données publiques générées par l'application. Pour des raisons de sécurité ce dossier doit **absolument** être servi directement par le serveur web, **sans être interprété et sans être listable**.
 
    * - ``./index.php``
      - Fichier d'entrée pour toute l'application. Toutes les requêtes qui ne pointent pas vers ``./assets/*`` ou ``./data/public/*`` doivent renvoyer vers ``index.php``.

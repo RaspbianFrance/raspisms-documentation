@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Téléphone Twilio Numéro Virtuel</title>
+      <title>Téléphone Android</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -28,8 +28,8 @@
       <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Téléphone Octopush Numéro Virtuel" href="octopush_virtual_number.html" />
-  <link rel="prev" title="Téléphone OVH SMS Shortcode" href="ovh_shortcode.html" /> 
+  <link rel="next" title="Téléphone OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" />
+  <link rel="prev" title="Les types de téléphones" href="overview.html" /> 
   </head>
 
   <body>
@@ -123,23 +123,14 @@
 <li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Android</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-android-comme-relais-raspisms">1. Configurer un téléphone Android comme relais RaspiSMS</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Twilio Numéro Virtuel</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-twilio">Configurer un téléphone Twilio</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio">1. Souscrire à une offre SMS avec numéro virtuel chez Twilio</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#ajouter-un-telephone-ovh-dans-raspisms">2. Ajouter un téléphone OVH dans RaspiSMS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#le-nom-du-telephone">3.1 Le nom du téléphone</a></li>
-<li class="toctree-l7"><a class="reference internal" href="#recuperer-les-identifiants-api-twilio">3.2 Récupérer les identifiants API Twilio</a></li>
-<li class="toctree-l7"><a class="reference internal" href="#trouver-le-numero-de-telephone-virtuel">3.3 Trouver le numéro de téléphone virtuel</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
@@ -150,6 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -169,18 +161,18 @@
     
       <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
-    <li>Téléphone Twilio Numéro Virtuel</li>
+    <li>Téléphone Android</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="ovh_shortcode.html"
-       title="Chapitre précédent">← Téléphone OVH SMS Shortcode</a>
+    <a href="overview.html"
+       title="Chapitre précédent">← Les types de téléphones</a>
   </li>
   <li class="next">
-    <a href="octopush_virtual_number.html"
-       title="Chapitre suivant">Téléphone Octopush Numéro Virtuel →</a>
+    <a href="ovh_virtual_number.html"
+       title="Chapitre suivant">Téléphone OVH SMS Numéro Virtuel →</a>
   </li>
 </ul>
   
@@ -188,10 +180,15 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="telephone-twilio-numero-virtuel">
-<h1>Téléphone Twilio Numéro Virtuel<a class="headerlink" href="#telephone-twilio-numero-virtuel" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Le téléphone Twilio Numéro Virtuel permet l’utilisation de l’offre SMS de Twilio avec RaspiSMS en se basant sur l’utilisation de l’API SMS avec un numéro virtuel.</p>
-<p>L’utilisation d’un numéro virtuel vous permet de communiquer ce numéro à vos utilisateurs pour qu’ils puissent vous envoyer des messages, même si vous ne les avez pas vous même contactés auparavant.</p>
+  <div class="section" id="telephone-android">
+<h1>Téléphone Android<a class="headerlink" href="#telephone-android" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>L’utilisation d’un téléphone Android comme gateway entre RaspiSMS et votre opérateur n’est disponible qu’en mode SaaS.</p>
+</div>
+<p>Il est possible d’utiliser <a class="reference external" href="https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay">l’application RaspiSMS Relay</a> pour tranformer votre téléphone Android en une passerelle (gateway) qui sera utilisé par RaspiSMS pour envoyer et recevoir des messages.</p>
+<p>Cette méthode permet d’utiliser un forfait téléphonique classique avec RaspiSMS afin d’envoyer et de recevoir des messages, sans avoir à installer et maintenir une version locale de RaspiSMS et sans gérer des équipements compliqués comme des modem GSM USB, etc.</p>
+<p>C’est une solution idéale pour la mise en place simple et rapide d’un système dédié à l’envoi de petits volumes de messages, de messages transactionnels (non commerciaux) ou le prototypage.</p>
 <div class="section" id="fonctionnalites-supportees">
 <h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
 <table class="docutils align-default">
@@ -212,10 +209,10 @@
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Envoi de MMS</p></td>
-<td><p>Non</p></td>
+<td><p>Oui</p></td>
 </tr>
 <tr class="row-odd"><td><p>Réception de MMS</p></td>
-<td><p>Non</p></td>
+<td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Suivi de l’envoi</p></td>
 <td><p>Oui</p></td>
@@ -224,7 +221,7 @@
 <td><p>Non</p></td>
 </tr>
 <tr class="row-even"><td><p>Alerte sur réception d’un appel</p></td>
-<td><p>Non</p></td>
+<td><p>Oui</p></td>
 </tr>
 <tr class="row-odd"><td><p>Alerte sur fin d’un appel</p></td>
 <td><p>Non</p></td>
@@ -232,40 +229,9 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="configurer-un-telephone-twilio">
-<h2>Configurer un téléphone Twilio<a class="headerlink" href="#configurer-un-telephone-twilio" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans cette partie nous allons voir comment configurer un téléphone Twilio pour lier RaspiSMS et Twilio.</p>
-<div class="section" id="souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio">
-<h3>1. Souscrire à une offre SMS avec numéro virtuel chez Twilio<a class="headerlink" href="#souscrire-a-une-offre-sms-avec-numero-virtuel-chez-twilio" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour utiliser un téléphone Twilio avec numéro virtuel vous devez prendre un abonnement adapté chez Twilio.</p>
-<p>Pour cela, rendez-vous sur <a class="reference external" href="https://www.twilio.com/try-twilio">L’inscription de Twilio</a> et validez la procédure d’inscription.</p>
-</div>
-<div class="section" id="ajouter-un-telephone-ovh-dans-raspisms">
-<h3>2. Ajouter un téléphone OVH dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-ovh-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Type de téléphone »</strong> choisissez <strong>« Twilio Numéro Virtuel »</strong></p>
-</div>
-<div class="section" id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
-<h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelques informations qui se trouvent dans votre compte Twilio.</p>
-<div class="section" id="le-nom-du-telephone">
-<h4>3.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Dans le champ <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparaît que pour vous, jamais pour les destinataires du message.</p>
-</div>
-<div class="section" id="recuperer-les-identifiants-api-twilio">
-<h4>3.2 Récupérer les identifiants API Twilio<a class="headerlink" href="#recuperer-les-identifiants-api-twilio" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Pour commencer nous allons récupérer les identifiants API de Twilio. Pour cela, rendez-vous sur <a class="reference external" href="https://www.twilio.com/console">L’accueil de la console Twilio</a> vos identifiants API sont indiqués en bas de la partie « Project Info ».</p>
-<p>Copiez la valeur sous <strong>« Account SID »</strong> dans le champ du même nom dans RaspiSMS, et cliquez sur <strong>« Show »</strong> sous <strong>« Auth Token »</strong> pour afficher la valeur, et recopiez-la dans le champ du même nom dans RaspiSMS.</p>
-</div>
-<div class="section" id="trouver-le-numero-de-telephone-virtuel">
-<h4>3.3 Trouver le numéro de téléphone virtuel<a class="headerlink" href="#trouver-le-numero-de-telephone-virtuel" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Commencez par vous connecter à votre compte Twilio et rendez-vous dans <a class="reference external" href="https://www.twilio.com/console/phone-numbers/incoming">La partie numéro de téléphone de la console Twilio</a>, puis créez un nouveau numéro de téléphone. Cette opération peut prendre un peu de temps car il peut y avoir une validation manuelle dans certains cas.</p>
-<p>Vous devrez attendre que le numéro soit validé pour pouvoir passer à la suite de ce guide.</p>
-<p>Une fois le numéro de téléphone virtuel créé, rendez-vous de nouveau dans <a class="reference external" href="https://www.twilio.com/console/phone-numbers/incoming">La partie numéro de téléphone de la console Twilio</a>, le numéro apparaît dans la colonne <strong>« Number »</strong>. Recopiez ce numéro dans le champ <strong>« Numéro de téléphone virtuel »</strong> de RaspiSMS.</p>
-<p>Sur RaspiSMS, laissez le champ <strong>« Callback de changement de statut »</strong> tel quel pour que Twilio envoie un requête à RaspiSMS lors du changement de statut d’un message.</p>
-<p>Enfin, cliquez sur le bouton <strong>« Enregistrer le téléphone »</strong>.</p>
-<p>Et voilà, vous pouvez maintenant envoyez des SMS via Twilio avec RaspiSMS !</p>
-</div>
-</div>
+<div class="section" id="configurer-un-telephone-android-comme-relais-raspisms">
+<h2>1. Configurer un téléphone Android comme relais RaspiSMS<a class="headerlink" href="#configurer-un-telephone-android-comme-relais-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour savoir comment configurer un téléphone Android pour pouvoir l’utiliser au sein de RaspiSMS pour envoyer et recevoir des messages, reportez-vous au guide <a class="reference internal" href="../guides/starting_with_raspisms_relay.html#starting-with-raspisms-relay-guide"><span class="std std-ref">Commencer à utiliser RaspiSMS avec un téléphone Android.</span></a>.</p>
 </div>
 </div>
 
@@ -274,12 +240,12 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="ovh_shortcode.html"
-       title="Chapitre précédent">← Téléphone OVH SMS Shortcode</a>
+    <a href="overview.html"
+       title="Chapitre précédent">← Les types de téléphones</a>
   </li>
   <li class="next">
-    <a href="octopush_virtual_number.html"
-       title="Chapitre suivant">Téléphone Octopush Numéro Virtuel →</a>
+    <a href="ovh_virtual_number.html"
+       title="Chapitre suivant">Téléphone OVH SMS Numéro Virtuel →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
