@@ -17,6 +17,7 @@ Vous pouvez également enrichir les contacts avec des données supplémentaires 
 
     extended_contacts
     import
+    conditional_delete
 
 Les groupes
 '''''''''''

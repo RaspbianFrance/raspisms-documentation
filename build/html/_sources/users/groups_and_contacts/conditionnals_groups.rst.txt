@@ -100,7 +100,7 @@ C'est bien gentil tout ça, mais comment peut-on utiliser ces règles pour modif
 
 Pour accéder à une donnée d'un contact il nous suffit d'utiliser la notation ``contact.nom_de_la_donnée``. Si nous prenons nos contacts d'exemple, nous pouvons accéder à leur sexe en utilisant la notation ``contact.gender``.
 
-Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``contact_metas.name`` et ``contact_metas.number``.
+Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, son numéro de téléphone, sa date de création ou sa date de mise à jour avec la syntaxe ``contact_metas.name``, ``contact_metas.number``, ``contact_metas.created_at`` et ``contact_metas.updated_at``.
 
 Faire un groupe avec tous les contacts femmes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Supprimer une liste dynamique de contacts</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+      <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Supprimer une liste dynamique de contacts</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="supprimer-une-liste-dynamique-de-contacts">
+<span id="contacts-conditional-delete"></span><h1>Supprimer une liste dynamique de contacts<a class="headerlink" href="#supprimer-une-liste-dynamique-de-contacts" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La suppression d’une liste dynamique de contacts vous permet de facilement supprimer de nombreux contacts en fonction <a class="reference internal" href="extended_contacts.html#extended-contacts"><span class="std std-ref">des données enrichis des contacts</span></a>.</p>
+</div>
+<div class="section" id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de la suppression d’une liste dynamique de contacts, au lieu de sélectionner une liste fixe de contact à supprimer, vous écrivez une règle qui sera évaluée pour chaque contact avec les données de celui-ci. Si la règle est évaluée comme <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code>, alors le contact est supprimé, sinon il est ignoré.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avant de valider la suppression d’une liste dynamique de contact, vous pouvez prévisualiser la liste des contacts qui seront supprimés en cliquant sur le bouton « Prévisualiser les contacts qui seront supprimés ».</p>
+</div>
+</div>
+<div class="section" id="comment-ecrire-une-regle-pour-supprimer-des-contacts">
+<h2>Comment écrire une règle pour supprimer des contacts ?<a class="headerlink" href="#comment-ecrire-une-regle-pour-supprimer-des-contacts" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le système de règles pour supprimer des contacts est le même que pour la création de groupes conditionnels. Pour plus d’information sur l’écriture de ces règles, repportez vous à <a class="reference internal" href="conditionnals_groups.html#conditionnals-groups"><span class="std std-ref">la documention sur les groupes conditionnels.</span></a></p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
