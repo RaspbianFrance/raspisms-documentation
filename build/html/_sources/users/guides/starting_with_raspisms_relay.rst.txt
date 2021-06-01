@@ -93,7 +93,20 @@ Vous pouvez quitter l'application RaspiSMS Relay sans risques, les messages cont
 En cas de perte de réseau, les messages à envoyer sont mis en attente. En cas d'echec lors des tentatives d'envoi ou de synchronisation, jusqu'à cinq tentatives seront effectuées, à des intervales de plus en plus grands. En cas d'echec définitif, le statut du message est mis à jour localement et sur le serveur dès que possible.
 
 
-7. Aller plus loin
+7. Désactiver les limites de SMS sur Android.
+================================================
+
+Android intègre nativement une limitation du nombre de SMS qu'une application peut envoyer sur une période donnée. Par défaut cette limite est fixée à 30 SMS sur une période de 30 minutes. Selon le constructeur et le modèle du téléphone, cette limite peut varier.
+
+Si vous devez envoyer plus de 30 SMS en 30 minutes, vous devez donc désactiver cette limite. Certains constructeurs peuvent intégrer une option dans les réglages générals du téléphone pour vous permettre de désactiver ou modifier cette limite, mais cela reste rare. En l'absence d'une telle option la seule solution est alors d'activer `le déboggage USB du téléphone <https://developer.android.com/studio/debug/dev-options>`_, de le connecter à un ordinateur équipé du logiciel `Android Debug Bridge <https://developer.android.com/studio/command-line/adb>`_ et de lancer la ligne de commande ci-dessous :
+
+.. literalinclude:: /_code_examples/adb/disable_sms_limit.sh
+    :language: bash
+
+Cette commande va modifier la limite de SMS envoyés à 1000000 toutes les 30 minutes.
+
+
+8. Aller plus loin
 ==================
 
 RaspiSMS propose de nombreuses fonctionnalités, pour en savoir plus, reportez-vous à :ref:`la documentation utilisateur<users>`.

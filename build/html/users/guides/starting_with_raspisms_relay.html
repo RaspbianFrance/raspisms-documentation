@@ -130,7 +130,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#envoyez-votre-premier-sms-depuis-raspisms">4. Envoyez votre premier SMS depuis RaspiSMS.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#verifier-le-statut-du-sms">5. Vérifier le statut du SMS.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#verifier-le-statut-du-relais">6. Vérifier le statut du relais.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aller-plus-loin">7. Aller plus loin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desactiver-les-limites-de-sms-sur-android">7. Désactiver les limites de SMS sur Android.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aller-plus-loin">8. Aller plus loin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
@@ -138,6 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -238,8 +240,17 @@
 </div>
 <p>En cas de perte de réseau, les messages à envoyer sont mis en attente. En cas d’echec lors des tentatives d’envoi ou de synchronisation, jusqu’à cinq tentatives seront effectuées, à des intervales de plus en plus grands. En cas d’echec définitif, le statut du message est mis à jour localement et sur le serveur dès que possible.</p>
 </div>
+<div class="section" id="desactiver-les-limites-de-sms-sur-android">
+<h2>7. Désactiver les limites de SMS sur Android.<a class="headerlink" href="#desactiver-les-limites-de-sms-sur-android" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Android intègre nativement une limitation du nombre de SMS qu’une application peut envoyer sur une période donnée. Par défaut cette limite est fixée à 30 SMS sur une période de 30 minutes. Selon le constructeur et le modèle du téléphone, cette limite peut varier.</p>
+<p>Si vous devez envoyer plus de 30 SMS en 30 minutes, vous devez donc désactiver cette limite. Certains constructeurs peuvent intégrer une option dans les réglages générals du téléphone pour vous permettre de désactiver ou modifier cette limite, mais cela reste rare. En l’absence d’une telle option la seule solution est alors d’activer <a class="reference external" href="https://developer.android.com/studio/debug/dev-options">le déboggage USB du téléphone</a>, de le connecter à un ordinateur équipé du logiciel <a class="reference external" href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge</a> et de lancer la ligne de commande ci-dessous :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb shell settings put global sms_outgoing_check_max_count <span class="m">100000</span>
+</pre></div>
+</div>
+<p>Cette commande va modifier la limite de SMS envoyés à 1000000 toutes les 30 minutes.</p>
+</div>
 <div class="section" id="aller-plus-loin">
-<h2>7. Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>8. Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers ce titre">¶</a></h2>
 <p>RaspiSMS propose de nombreuses fonctionnalités, pour en savoir plus, reportez-vous à <a class="reference internal" href="../overview.html#users"><span class="std std-ref">la documentation utilisateur</span></a>.</p>
 </div>
 </div>
