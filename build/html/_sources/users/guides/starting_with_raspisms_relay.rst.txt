@@ -105,6 +105,8 @@ Si vous devez envoyer plus de 30 SMS en 30 minutes, vous devez donc désactiver 
 
 Cette commande va modifier la limite de SMS envoyés à 1000000 toutes les 30 minutes.
 
+En cas d'erreur, assurez-vous que l'option "Débogage USB (Paramètres de sécurité)" est bien activée.
+
 
 8. Aller plus loin
 ==================
