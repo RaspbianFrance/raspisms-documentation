@@ -165,7 +165,7 @@ Endpoints :
     - ``/api/scheduled/``
 
 Arguments :
-    - **text** (*int*) -- Le texte du SMS à envoyer.
+    - **text** (*str*) -- Le texte du SMS à envoyer.
     - **numbers** (*array | str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros.
     - **contacts** (*array | int*), ``optional`` -- L'ID du contact auquel envoyer le SMS ou un tableau d'IDs.
     - **groups** (*array | int*), ``optional`` -- L'ID du groupe auquel envoyer le SMS ou un tableau d'IDs.
