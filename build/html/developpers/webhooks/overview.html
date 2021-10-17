@@ -28,7 +28,8 @@
       <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="prev" title="Les types de téléphones" href="../adapters/overview.html" /> 
+  <link rel="next" title="Système de fichier de RaspiSMS" href="../filesystem/overview.html" />
+  <link rel="prev" title="Créer un nouveau type de téléphone" href="../adapters/overview.html" /> 
   </head>
 
   <body>
@@ -119,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../api/overview.html">Utiliser l’API HTTP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Créer un nouveau type de téléphone</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Les Webhooks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creer-un-webhook">Créer un Webhook</a></li>
@@ -129,6 +130,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../filesystem/overview.html">Système de fichier de RaspiSMS</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +154,11 @@
   <ul class="page-nav">
   <li class="prev">
     <a href="../adapters/overview.html"
-       title="Chapitre précédent">← Les types de téléphones</a>
+       title="Chapitre précédent">← Créer un nouveau type de téléphone</a>
+  </li>
+  <li class="next">
+    <a href="../filesystem/overview.html"
+       title="Chapitre suivant">Système de fichier de RaspiSMS →</a>
   </li>
 </ul>
   
@@ -280,19 +286,25 @@
 <tr class="row-even"><td><p>at</p></td>
 <td><p>Date d’envoi du SMS, format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">h:i:s</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>origin</p></td>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>Statut d’envoi du SMS, <code class="docutils literal notranslate"><span class="pre">failed</span></code> si l’envoi a échoué, <code class="docutils literal notranslate"><span class="pre">unknown</span></code> sinon. En raison de la nature asynchrone du protocole SMS, on ne sait pas au moment de l’envoi si le SMS a été reçu ou non.</p>
+<p>Par conséquent, dans un webhook <code class="docutils literal notranslate"><span class="pre">send_sms</span></code>, un statut <code class="docutils literal notranslate"><span class="pre">failed</span></code> indique uniquement que le serveur RaspiSMS n’a pas pu contacter le service fournisseur de SMS (API, modem, etc.), ou que celui-ci a refusé la demande d’envoi.</p>
+<p>Le statut <code class="docutils literal notranslate"><span class="pre">unknown</span></code> indique uniquement que la demande d’envoi a bien été transmise et acceptée. Il ne dit <strong>rien</strong> du fait que le SMS ai, été reçu ou non par le destinataire.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>origin</p></td>
 <td><p>ID du téléphone depuis lequel le SMS a été envoyé</p></td>
 </tr>
-<tr class="row-even"><td><p>destination</p></td>
+<tr class="row-odd"><td><p>destination</p></td>
 <td><p>Numéro de téléphone auquel le SMS a été envoyé (format international)</p></td>
 </tr>
-<tr class="row-odd"><td><p>text</p></td>
+<tr class="row-even"><td><p>text</p></td>
 <td><p>Texte du SMS</p></td>
 </tr>
-<tr class="row-even"><td><p>mms</p></td>
+<tr class="row-odd"><td><p>mms</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> si le SMS est un MMS, <code class="docutils literal notranslate"><span class="pre">0</span></code> sinon.</p></td>
 </tr>
-<tr class="row-odd"><td><p>medias <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
+<tr class="row-even"><td><p>medias <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
 <td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas.</p>
 <table class="docutils align-default" id="id6">
 <caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
@@ -362,7 +374,11 @@
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="../adapters/overview.html"
-       title="Chapitre précédent">← Les types de téléphones</a>
+       title="Chapitre précédent">← Créer un nouveau type de téléphone</a>
+  </li>
+  <li class="next">
+    <a href="../filesystem/overview.html"
+       title="Chapitre suivant">Système de fichier de RaspiSMS →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.

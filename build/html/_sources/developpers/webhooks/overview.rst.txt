@@ -92,6 +92,13 @@ Corps des webhooks
 
    * - at
      - Date d'envoi du SMS, format ``Y-m-d h:i:s``
+   
+   * - status
+     - Statut d'envoi du SMS, ``failed`` si l'envoi a échoué, ``unknown`` sinon. En raison de la nature asynchrone du protocole SMS, on ne sait pas au moment de l'envoi si le SMS a été reçu ou non.
+       
+       Par conséquent, dans un webhook ``send_sms``, un statut ``failed`` indique uniquement que le serveur RaspiSMS n'a pas pu contacter le service fournisseur de SMS (API, modem, etc.), ou que celui-ci a refusé la demande d'envoi.
+
+       Le statut ``unknown`` indique uniquement que la demande d'envoi a bien été transmise et acceptée. Il ne dit **rien** du fait que le SMS ai, été reçu ou non par le destinataire.
 
    * - origin
      - ID du téléphone depuis lequel le SMS a été envoyé
