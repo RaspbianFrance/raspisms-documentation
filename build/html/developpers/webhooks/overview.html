@@ -215,7 +215,7 @@
 <td><p>Signature du webhook. Il s’agit d’une signature <code class="docutils literal notranslate"><span class="pre">HMAC</span> <span class="pre">SHA-256</span></code> du <code class="docutils literal notranslate"><span class="pre">webhook_random_id</span></code>, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l’authenticité du webhook reçu.</p></td>
 </tr>
 <tr class="row-odd"><td><p>webhook_type</p></td>
-<td><p>Type de webhook, <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code> ou <code class="docutils literal notranslate"><span class="pre">send_sms</span></code>, <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></p></td>
+<td><p>Type de webhook, <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code> ou <code class="docutils literal notranslate"><span class="pre">send_sms</span></code>, <code class="docutils literal notranslate"><span class="pre">send_sms_status_change</span></code>, <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>body</p></td>
 <td><p>Le corps du webhook, un objet JSON qui dépendra du type de webhook, voir <a class="reference internal" href="#corps-des-webhooks">Corps des webhooks</a>.</p></td>
@@ -305,7 +305,7 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> si le SMS est un MMS, <code class="docutils literal notranslate"><span class="pre">0</span></code> sinon.</p></td>
 </tr>
 <tr class="row-even"><td><p>medias <code class="docutils literal notranslate"><span class="pre">optional</span></code></p></td>
-<td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas.</p>
+<td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas ou contient un tableau vide.</p>
 <table class="docutils align-default" id="id6">
 <caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
@@ -326,10 +326,47 @@
 </table>
 </td>
 </tr>
+<tr class="row-even"><td><p>originating_scheduled</p></td>
+<td><p>Identifiant unique du SMS programmé à l’origine de l’envoi. À noter qu’il est très probable que la ressource <code class="docutils literal notranslate"><span class="pre">scheduled</span></code> associée ait été détruite avant la réception du webhook.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">send_sms_status_change</span></code></span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>Identifiant unique du SMS</p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Nouveau statut du SMS. Le statut est une chaine parmis les suivantes :</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Types</span> <span class="pre">de</span> <span class="pre">statuts</span></code></span><a class="headerlink" href="#id8" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">failed</span></code></p></td>
+<td><p>L’envoi du SMS a échoué. Soit RaspiSMS n’a pas pu transmettre la demande d’envoi au fournisseur télécom. Soit celui-ci à refusé l’envoi. Soit il n’a pas été possible de transmettre le message à l’utilisateur (numéro non attribué, réseau télécom indisponible, etc.).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p>Le SMS a bien été reçu par le destinataire. Cela ne signifie pas forcément que le SMS a été lu, mais au minimum qu’il a été reçu par le mobile. Pour qu’un statut <code class="docutils literal notranslate"><span class="pre">success</span></code> soit possible, il faut que le téléphone utilisé pour envoyer le SMS supporte le suivi d’envoi (voir la partie « Fonctionnalités supportées » de <a class="reference internal" href="../../users/adapters/overview.html#adapters"><span class="std std-ref">la documentation sur les types de téléphones</span></a>.).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p>RaspiSMS a pu transmettre la demande d’envoi, mais aucune autre information n’est disponible, le SMS peut aussi bien : Avoir été reçu sans accusé de réception ; Être en attente d’envoi ou de réception ; Avoir échoué sans suivi du statut d’envoi.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />

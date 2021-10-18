@@ -42,7 +42,7 @@ Lors du déclenchement d'un webhook, la requête HTTP contient certains paramèt
      - Signature du webhook. Il s'agit d'une signature ``HMAC SHA-256`` du ``webhook_random_id``, signé avec votre clé API. Vous pouvez utiliser cette signature pour vérifier l'authenticité du webhook reçu.
 
    * - webhook_type
-     - Type de webhook, ``receive_sms`` ou ``send_sms``, ``inbound_call``
+     - Type de webhook, ``receive_sms`` ou ``send_sms``, ``send_sms_status_change``, ``inbound_call``
 
    * - body
      - Le corps du webhook, un objet JSON qui dépendra du type de webhook, voir `Corps des webhooks`_.
@@ -113,7 +113,7 @@ Corps des webhooks
      - ``1`` si le SMS est un MMS, ``0`` sinon.
 
    * - medias ``optional``
-     - Un tableau des médias liés au message, si aucun média n'est lié, le paramètre n'existe pas.
+     - Un tableau des médias liés au message, si aucun média n'est lié, le paramètre n'existe pas ou contient un tableau vide.
 
        .. list-table:: ``Contenu d'un média``
 
@@ -125,6 +125,30 @@ Corps des webhooks
           
           * - path
             - Chemin relatif du média depuis le dossier ``PWD_DATA`` de RaspiSMS (par défaut ``/usr/share/raspisms/data/``).
+   
+   * - originating_scheduled
+     - Identifiant unique du SMS programmé à l'origine de l'envoi. À noter qu'il est très probable que la ressource ``scheduled`` associée ait été détruite avant la réception du webhook.
+
+
+.. list-table:: Body des webhook ``send_sms_status_change``
+
+   * - id
+     - Identifiant unique du SMS
+
+   * - status
+     - Nouveau statut du SMS. Le statut est une chaine parmis les suivantes :
+
+       .. list-table:: ``Types de statuts``
+
+          * - ``failed``
+            - L'envoi du SMS a échoué. Soit RaspiSMS n'a pas pu transmettre la demande d'envoi au fournisseur télécom. Soit celui-ci à refusé l'envoi. Soit il n'a pas été possible de transmettre le message à l'utilisateur (numéro non attribué, réseau télécom indisponible, etc.).
+
+          * - ``success``
+            - Le SMS a bien été reçu par le destinataire. Cela ne signifie pas forcément que le SMS a été lu, mais au minimum qu'il a été reçu par le mobile. Pour qu'un statut ``success`` soit possible, il faut que le téléphone utilisé pour envoyer le SMS supporte le suivi d'envoi (voir la partie "Fonctionnalités supportées" de :ref:`la documentation sur les types de téléphones<adapters>`.).
+          
+          * - ``unknown``
+            - RaspiSMS a pu transmettre la demande d'envoi, mais aucune autre information n'est disponible, le SMS peut aussi bien : Avoir été reçu sans accusé de réception ; Être en attente d'envoi ou de réception ; Avoir échoué sans suivi du statut d'envoi.
+
    
 
 .. list-table:: Body des webhook ``inbound_call``
