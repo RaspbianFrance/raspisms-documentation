@@ -28,3 +28,4 @@ Types de téléphones disponibles
     octopush_virtual_number
     octopush_shortcode
     gammu
+    kannel
