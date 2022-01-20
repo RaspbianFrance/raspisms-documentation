@@ -462,7 +462,7 @@
 <h4>Liste des fonctions disponibles<a class="headerlink" href="#liste-des-fonctions-disponibles" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Seules les fonctions suivantes sont disponibles au sein de RaspiSMS.</p>
 <table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Liste des fonctions disponibles dans RaspiSMS</span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
+<caption><span class="caption-text">Liste des fonctions basiques disponibles dans RaspiSMS</span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -492,11 +492,46 @@
 <td><p>abs</p></td>
 </tr>
 <tr class="row-even"><td><p>date</p></td>
-<td><p>strtotime</p></td>
+<td><p>date_create</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_from_format</p></td>
+<td><p>date_create_from_format</p></td>
+</tr>
+<tr class="row-even"><td><p>intval</p></td>
+<td><p>intval</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolval</p></td>
+<td><p>boolval</p></td>
+</tr>
+<tr class="row-even"><td><p>count</p></td>
+<td><p>count</p></td>
 </tr>
 </tbody>
 </table>
 <p>Pour en apprendre plus sur chacune de ces fonctions, consultez <a class="reference external" href="https://www.php.net/manual/fr/intro-whatis.php">la page correspondante sur la documentation PHP</a>.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Liste des fonctions avancées disponibles dans RaspiSMS</span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom dans RaspiSMS</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Utilisation</p></th>
+<th class="head"><p>Équivalent PHP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>is_birthday</p></td>
+<td><p>Vérifie si la date du jour est un anniversaire pour une date donnée.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is_birthday(date(&quot;1892-01-03&quot;))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">isset($arg1)</span> <span class="pre">&amp;&amp;</span> <span class="pre">is_a($arg1,</span> <span class="pre">'DateTime')</span> <span class="pre">&amp;&amp;</span> <span class="pre">$arg1-&gt;format('m-d')</span> <span class="pre">==</span> <span class="pre">(new</span> <span class="pre">\DateTime())-&gt;format('m-d')</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="verifier-si-les-donnees-du-contact-existent">

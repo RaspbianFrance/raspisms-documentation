@@ -251,7 +251,7 @@ Liste des fonctions disponibles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seules les fonctions suivantes sont disponibles au sein de RaspiSMS.
 
-.. list-table:: Liste des fonctions disponibles dans RaspiSMS
+.. list-table:: Liste des fonctions basiques disponibles dans RaspiSMS
    :header-rows: 1
 
    * - Nom dans RaspiSMS
@@ -276,9 +276,34 @@ Seules les fonctions suivantes sont disponibles au sein de RaspiSMS.
      - abs
 
    * - date
-     - strtotime
+     - date_create
+
+   * - date_from_format
+     - date_create_from_format
+
+   * - intval
+     - intval
+
+   * - boolval
+     - boolval
+
+   * - count
+     - count
 
 Pour en apprendre plus sur chacune de ces fonctions, consultez `la page correspondante sur la documentation PHP`_. 
+
+.. list-table:: Liste des fonctions avancées disponibles dans RaspiSMS
+   :header-rows: 1
+
+   * - Nom dans RaspiSMS
+     - Description
+     - Utilisation
+     - Équivalent PHP
+
+   * - is_birthday
+     - Vérifie si la date du jour est un anniversaire pour une date donnée.
+     - ``is_birthday(date("1892-01-03"))``
+     - ``isset($arg1) && is_a($arg1, 'DateTime') && $arg1->format('m-d') == (new \DateTime())->format('m-d')`` 
 
 
 Vérifier si les données du contact existent
