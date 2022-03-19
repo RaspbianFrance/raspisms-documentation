@@ -155,6 +155,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -199,12 +201,8 @@
 <span id="templating"></span><h1>SMS dynamiques et templating<a class="headerlink" href="#sms-dynamiques-et-templating" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="les-sms-dynamiques-c-est-quoi">
 <h2>Les SMS dynamiques c’est quoi ?<a class="headerlink" href="#les-sms-dynamiques-c-est-quoi" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les SMS dynamiques vous permettent d’écrire un SMS dont le contenu sera adapté à chaque contact en fonction de ses données. Cela peut être exploité dans le cadre d’une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.</p>
-<p>Les SMS dynamiques exploitent les données des contacts enrichis, voir <a class="reference internal" href="../groups_and_contacts/extended_contacts.html#extended-contacts"><span class="std std-ref">la documentation des contacts enrichis</span></a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Avertissement</p>
-<p>Seul les contacts et les groupes peuvent êtres utilisés avec les SMS dynamiques. L’envoi d’un SMS dynamique à un numéro direct fonctionne, mais aucune donnée ne sera insérée, ce qui risque de créer des messages imprévisibles.</p>
-</div>
+<p>Les SMS dynamiques vous permettent d’écrire un SMS dont le contenu sera adapté à chaque contact/numéro en fonction des données qui lui sont associées. Cela peut être exploité dans le cadre d’une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.</p>
+<p>Les SMS dynamiques exploitent les données des contacts/numéros enrichis, voir <a class="reference internal" href="../groups_and_contacts/extended_contacts.html#extended-contacts"><span class="std std-ref">la documentation des contacts enrichis</span></a>.</p>
 </div>
 <div class="section" id="activer-desactiver-le-support-du-templating">
 <h2>Activer/désactiver le support du templating<a class="headerlink" href="#activer-desactiver-le-support-du-templating" title="Lien permanent vers ce titre">¶</a></h2>
@@ -213,8 +211,8 @@
 </div>
 <div class="section" id="comment-ca-fonctionne">
 <h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Lors de la rédaction de votre SMS vous pouvez utiliser une notation particulière pour indiquer à RaspiSMS que certaines parties doivent être remplacées par une valeur issue des données du contact destinataire du message.</p>
-<p>Au moment de l’envoi du SMS, RaspiSMS analysera le message à la recherche de ces notations et les remplacera par les données du contact.</p>
+<p>Lors de la rédaction de votre SMS vous pouvez utiliser une notation particulière pour indiquer à RaspiSMS que certaines parties doivent être remplacées par une valeur issue des données du contact/numéro destinataire du message.</p>
+<p>Au moment de l’envoi du SMS, RaspiSMS analysera le message à la recherche de ces notations et les remplacera par les données du contact/numéro.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Vous devriez toujours vérifier que votre template fonctionne comme prévu avant d’envoyer votre message. Pour cela, avant d’envoyer votre message, séléctionnez un des contacts cible dans la liste déroulante « Prévisualiser pour : », en bas à droite du message, et cliquez sur le bouton « Prévisualiser » à droite. Le message qui sera envoyé sera alors affiché dans un pop-in.</p>
@@ -269,7 +267,7 @@
 </pre></div>
 </div>
 <p>Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables <code class="docutils literal notranslate"><span class="pre">{{contact.firstname}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact.lastname}}</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">John</span></code> et <code class="docutils literal notranslate"><span class="pre">Doe</span></code>.</p>
-<p>Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>.</p>
+<p>Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>. Si le message est envoyé à un numéro direct plutôt qu’à un contact, seul le numéro est accessible, aucun nom n’étant associé au numéro.</p>
 </div>
 <div class="section" id="modifier-le-contenu-en-utilisant-des-conditions">
 <h3>Modifier le contenu en utilisant des conditions<a class="headerlink" href="#modifier-le-contenu-en-utilisant-des-conditions" title="Lien permanent vers ce titre">¶</a></h3>

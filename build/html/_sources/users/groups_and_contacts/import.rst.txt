@@ -81,7 +81,7 @@ Dans notre cas la première ligne servira donc à indiquer les colonnes, et les 
 
 Il est très important de respecter un certain ordre quand aux colonnes. En effet, les deux premières colonnes doivent contenir dans l'ordre, le nom du contact à créer, puis son numéro de téléphone (au format international, ``+33XXXXXXXXX``). Les colonnes suivantes contiendront les données enrichies du contacts (voir :ref:`contacts enrichies <extended_contacts>`).
 
-Le nom donné aux deux premières colonnes est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien les nommées "0" et "1", seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ce noms seront utilisé comme clé de la donnée enrichie correspondante du contact.
+Le nom donné aux deux premières colonnes est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien les nommées "0" et "1", seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ces noms seront utilisés comme clé de la donnée enrichie correspondante du contact.
 
 Exemple de fichier CSV
 '''''''''''''''''''''''

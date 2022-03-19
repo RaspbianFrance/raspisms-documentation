@@ -6,13 +6,10 @@ SMS dynamiques et templating
 
 Les SMS dynamiques c'est quoi ?
 =================================
-Les SMS dynamiques vous permettent d'écrire un SMS dont le contenu sera adapté à chaque contact en fonction de ses données. Cela peut être exploité dans le cadre d'une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.
+Les SMS dynamiques vous permettent d'écrire un SMS dont le contenu sera adapté à chaque contact/numéro en fonction des données qui lui sont associées. Cela peut être exploité dans le cadre d'une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.
 
-Les SMS dynamiques exploitent les données des contacts enrichis, voir :ref:`la documentation des contacts enrichis <extended_contacts>`.
+Les SMS dynamiques exploitent les données des contacts/numéros enrichis, voir :ref:`la documentation des contacts enrichis <extended_contacts>`.
 
-.. warning::
-    Seul les contacts et les groupes peuvent êtres utilisés avec les SMS dynamiques. L'envoi d'un SMS dynamique à un numéro direct fonctionne, mais aucune donnée ne sera insérée, ce qui risque de créer des messages imprévisibles.
-    
 
 Activer/désactiver le support du templating
 ============================================
@@ -23,9 +20,9 @@ Si vous désactivez le support du templating les messages seront considérés co
 
 Comment ça fonctionne ?
 ========================
-Lors de la rédaction de votre SMS vous pouvez utiliser une notation particulière pour indiquer à RaspiSMS que certaines parties doivent être remplacées par une valeur issue des données du contact destinataire du message.
+Lors de la rédaction de votre SMS vous pouvez utiliser une notation particulière pour indiquer à RaspiSMS que certaines parties doivent être remplacées par une valeur issue des données du contact/numéro destinataire du message.
 
-Au moment de l'envoi du SMS, RaspiSMS analysera le message à la recherche de ces notations et les remplacera par les données du contact.
+Au moment de l'envoi du SMS, RaspiSMS analysera le message à la recherche de ces notations et les remplacera par les données du contact/numéro.
 
 .. note::
     Vous devriez toujours vérifier que votre template fonctionne comme prévu avant d'envoyer votre message. Pour cela, avant d'envoyer votre message, séléctionnez un des contacts cible dans la liste déroulante "Prévisualiser pour :", en bas à droite du message, et cliquez sur le bouton "Prévisualiser" à droite. Le message qui sera envoyé sera alors affiché dans un pop-in.
@@ -80,7 +77,7 @@ Si nous voulons écrire le message précedemment vu, nous devrons donc écrire l
 
 Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables ``{{contact.firstname}}`` et ``{{contact.lastname}}`` ont été remplacées par ``John`` et ``Doe``.
 
-Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``{{contact_metas.name}}`` et ``{{contact_metas.number}}``.
+Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``{{contact_metas.name}}`` et ``{{contact_metas.number}}``. Si le message est envoyé à un numéro direct plutôt qu'à un contact, seul le numéro est accessible, aucun nom n'étant associé au numéro.
 
 Modifier le contenu en utilisant des conditions
 ''''''''''''''''''''''''''''''''''''''''''''''''

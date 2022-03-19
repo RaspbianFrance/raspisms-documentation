@@ -1,0 +1,3 @@
+0,lastname,firstname,birthdate,gender,vip
+"+33612345678",Doe,John,1990-10-22,male,1
+"+33612345679",Doe,Jane,1992-08-15,female,0

@@ -28,7 +28,7 @@
       <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Commandes par SMS" href="../commands/overview.html" />
+  <link rel="next" title="Supprimer une liste dynamique de contacts" href="conditional_delete.html" />
   <link rel="prev" title="SMS dynamiques et templating" href="../templating/overview.html" /> 
   </head>
 
@@ -144,6 +144,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="conditional_delete.html">Supprimer une liste dynamique de contacts</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="overview.html#les-groupes">Les groupes</a></li>
@@ -153,6 +154,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -182,8 +184,8 @@
        title="Chapitre précédent">← SMS dynamiques et templating</a>
   </li>
   <li class="next">
-    <a href="../commands/overview.html"
-       title="Chapitre suivant">Commandes par SMS →</a>
+    <a href="conditional_delete.html"
+       title="Chapitre suivant">Supprimer une liste dynamique de contacts →</a>
   </li>
 </ul>
   
@@ -277,7 +279,7 @@
 <p>Le format CSV (Comma-Separrated Value) est très utilisé pour le transfert de données avec des logiciels tableur. Dans un fichier CSV, chaque ligne du fichier correspond à une nouvelle entrée, et les valeures de chaque entrée, c’est à dire les colonnes du tabelau, sont séparées par des virgules. La première ligne quand à elle sert généralement à indiquer le nom de chaque colonne.</p>
 <p>Dans notre cas la première ligne servira donc à indiquer les colonnes, et les lignes suivantes seront les contacts à importer.</p>
 <p>Il est très important de respecter un certain ordre quand aux colonnes. En effet, les deux premières colonnes doivent contenir dans l’ordre, le nom du contact à créer, puis son numéro de téléphone (au format international, <code class="docutils literal notranslate"><span class="pre">+33XXXXXXXXX</span></code>). Les colonnes suivantes contiendront les données enrichies du contacts (voir <a class="reference internal" href="extended_contacts.html#extended-contacts"><span class="std std-ref">contacts enrichies</span></a>).</p>
-<p>Le nom donné aux deux premières colonnes est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien les nommées « 0 » et « 1 », seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ce noms seront utilisé comme clé de la donnée enrichie correspondante du contact.</p>
+<p>Le nom donné aux deux premières colonnes est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien les nommées « 0 » et « 1 », seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ces noms seront utilisés comme clé de la donnée enrichie correspondante du contact.</p>
 <div class="section" id="exemple-de-fichier-csv">
 <h5>Exemple de fichier CSV<a class="headerlink" href="#exemple-de-fichier-csv" title="Lien permanent vers ce titre">¶</a></h5>
 <p>Pour rendre cela plus clair, rien ne vaut au bon exemple. Voici donc un fichier CSV valide permettant d’importer les deux contacts d’exemples.</p>
@@ -350,8 +352,8 @@
        title="Chapitre précédent">← SMS dynamiques et templating</a>
   </li>
   <li class="next">
-    <a href="../commands/overview.html"
-       title="Chapitre suivant">Commandes par SMS →</a>
+    <a href="conditional_delete.html"
+       title="Chapitre suivant">Supprimer une liste dynamique de contacts →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.

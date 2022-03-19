@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Envoyer des SMS à un fichier CSV</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+      <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink/>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Envoyer des SMS à un fichier CSV</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="envoyer-des-sms-a-un-fichier-csv">
+<span id="sms-csv"></span><h1>Envoyer des SMS à un fichier CSV<a class="headerlink" href="#envoyer-des-sms-a-un-fichier-csv" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de l’envoi d’un SMS, vous pouvez uploader fichier CSV contenant une liste de numéros auxquels sera envoyé le SMS. Pour chacun des numéros vous pouvez également définir un ensemble de données associées (voir <a class="reference internal" href="../groups_and_contacts/extended_contacts.html#extended-contacts"><span class="std std-ref">contacts enrichies</span></a>) qui pourront être utilisés dans le SMS via <a class="reference internal" href="../templating/overview.html#templating"><span class="std std-ref">le système de SMS dynamiques</span></a>.</p>
+<div class="section" id="format-du-fichier-csv">
+<h3>Format du fichier CSV<a class="headerlink" href="#format-du-fichier-csv" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le format CSV (Comma-Separrated Value) est très utilisé pour le transfert de données avec des logiciels tableur. Dans un fichier CSV, chaque ligne du fichier correspond à une nouvelle entrée, et les valeures de chaque entrée, c’est à dire les colonnes du tabelau, sont séparées par des virgules. La première ligne quand à elle sert généralement à indiquer le nom de chaque colonne.</p>
+<p>Le fichier CSV utilisé pour l’envoi des messages doit respecter un format suivant :</p>
+<ul class="simple">
+<li><p>La première ligne sert à indiquer le nom des colonnes, les lignes suivantes contiennent les numéros de téléphones cibles et éventuellement les données à associer, à raison d’un numéro par ligne.</p></li>
+<li><p>La première colonne doit contenir le numéro de téléphone (au format international, <code class="docutils literal notranslate"><span class="pre">+33XXXXXXXXX</span></code>).</p></li>
+<li><p>Les colonnes suivantes peuvent contenir les données à associer au contact, ou êtres laissées vides.</p></li>
+<li><p>Le nom donné à la première colonne est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien la nommée « 0 », seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ces noms seront utilisés comme clé de la donnée associé au numéro.</p></li>
+</ul>
+<div class="section" id="exemple-de-fichier-csv">
+<h4>Exemple de fichier CSV<a class="headerlink" href="#exemple-de-fichier-csv" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Pour rendre cela plus clair, rien ne vaut au bon exemple. Voici donc un fichier CSV valide permettant d’envoyer un SMS aux deux numéros suivants :</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Le numéro de téléphone « +33 6 12 34 56 78 »</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>John</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1990-10-22</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>male</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Le numéro de téléphone « +33 6 12 34 56 79 »</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
+<th class="head"><p>Valeure de la donnée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lastname</p></td>
+<td><p>Doe</p></td>
+</tr>
+<tr class="row-odd"><td><p>firstname</p></td>
+<td><p>Jane</p></td>
+</tr>
+<tr class="row-even"><td><p>birthdate</p></td>
+<td><p>1992-08-15</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p>female</p></td>
+</tr>
+<tr class="row-even"><td><p>vip</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0,lastname,firstname,birthdate,gender,vip
+&quot;+33612345678&quot;,Doe,John,1990-10-22,male,1
+&quot;+33612345679&quot;,Doe,Jane,1992-08-15,female,0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous noterez que les caractères utilisés pour la séparation sont la virgule <code class="docutils literal notranslate"><span class="pre">,</span></code>, pour l’encadrement les doubles guillemets <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, et que ces derniers ne sont nécessaires que sur les chaînes comportant des espaces.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Attention, lors de la lecture d’un fichier CSV avec des logiciels tableur ceux-ci ont tendance à faire disparaitre le « + » au début des numéros, lequel est requis !</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
