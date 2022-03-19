@@ -63,11 +63,11 @@ Pour la suite de ce tutoriel nous allons considérer que nous envoyons un messag
 
 
 
-Insérer les données du contact dans le SMS
-''''''''''''''''''''''''''''''''''''''''''''
+Insérer les données du contact/numéro dans le SMS
+''''''''''''''''''''''''''''''''''''''''''''''''''
 Pour commencer, nous allons créer un SMS qui affiche le texte ``Bonjour John Doe, comment allez-vous aujourd'hui ?``, en utilisant les données ``lastname`` et ``firstname`` plutôt que d'écrire le nom directement.
 
-Toutes les données d'un contact sont accessibles sous le nom ``contact.nom_de_la_donnée``. Pour afficher une variable on l'entoure de ``{{`` et ``}}``. Pour afficher cette donnée vous devez donc écrire ``{{contact.nom_de_la_donnée}}`` là où vous souhaitez afficher la donnée.
+Toutes les données d'un contact/numéro sont accessibles sous le nom ``contact.nom_de_la_donnée``. Pour afficher une variable on l'entoure de ``{{`` et ``}}``. Pour afficher cette donnée vous devez donc écrire ``{{contact.nom_de_la_donnée}}`` là où vous souhaitez afficher la donnée.
 
 Si nous voulons écrire le message précedemment vu, nous devrons donc écrire le SMS suivant :
 
@@ -77,7 +77,7 @@ Si nous voulons écrire le message précedemment vu, nous devrons donc écrire l
 
 Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables ``{{contact.firstname}}`` et ``{{contact.lastname}}`` ont été remplacées par ``John`` et ``Doe``.
 
-Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``{{contact_metas.name}}`` et ``{{contact_metas.number}}``. Si le message est envoyé à un numéro direct plutôt qu'à un contact, seul le numéro est accessible, aucun nom n'étant associé au numéro.
+Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe ``{{contact_metas.name}}`` et ``{{contact_metas.number}}``. Si le message est envoyé à un numéro plutôt qu'à un contact, seul le numéro est accessible via ``{{contact_metas.number}}``, aucun nom n'étant associé au numéro la variable ``{{contact_metas.name}}`` n'existe pas.
 
 Modifier le contenu en utilisant des conditions
 ''''''''''''''''''''''''''''''''''''''''''''''''

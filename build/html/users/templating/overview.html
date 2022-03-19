@@ -128,7 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#comment-ca-fonctionne">Comment ça fonctionne ?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#les-bases-du-templating">Les bases du templating</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#notre-contact-d-exemple">Notre contact d’exemple</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#inserer-les-donnees-du-contact-dans-le-sms">Insérer les données du contact dans le SMS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inserer-les-donnees-du-contact-numero-dans-le-sms">Insérer les données du contact/numéro dans le SMS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modifier-le-contenu-en-utilisant-des-conditions">Modifier le contenu en utilisant des conditions</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#les-structures-de-controle">Les structures de contrôle</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#les-operateurs">Les opérateurs</a></li>
@@ -258,16 +258,16 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="inserer-les-donnees-du-contact-dans-le-sms">
-<h3>Insérer les données du contact dans le SMS<a class="headerlink" href="#inserer-les-donnees-du-contact-dans-le-sms" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="inserer-les-donnees-du-contact-numero-dans-le-sms">
+<h3>Insérer les données du contact/numéro dans le SMS<a class="headerlink" href="#inserer-les-donnees-du-contact-numero-dans-le-sms" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour commencer, nous allons créer un SMS qui affiche le texte <code class="docutils literal notranslate"><span class="pre">Bonjour</span> <span class="pre">John</span> <span class="pre">Doe,</span> <span class="pre">comment</span> <span class="pre">allez-vous</span> <span class="pre">aujourd'hui</span> <span class="pre">?</span></code>, en utilisant les données <code class="docutils literal notranslate"><span class="pre">lastname</span></code> et <code class="docutils literal notranslate"><span class="pre">firstname</span></code> plutôt que d’écrire le nom directement.</p>
-<p>Toutes les données d’un contact sont accessibles sous le nom <code class="docutils literal notranslate"><span class="pre">contact.nom_de_la_donnée</span></code>. Pour afficher une variable on l’entoure de <code class="docutils literal notranslate"><span class="pre">{{</span></code> et <code class="docutils literal notranslate"><span class="pre">}}</span></code>. Pour afficher cette donnée vous devez donc écrire <code class="docutils literal notranslate"><span class="pre">{{contact.nom_de_la_donnée}}</span></code> là où vous souhaitez afficher la donnée.</p>
+<p>Toutes les données d’un contact/numéro sont accessibles sous le nom <code class="docutils literal notranslate"><span class="pre">contact.nom_de_la_donnée</span></code>. Pour afficher une variable on l’entoure de <code class="docutils literal notranslate"><span class="pre">{{</span></code> et <code class="docutils literal notranslate"><span class="pre">}}</span></code>. Pour afficher cette donnée vous devez donc écrire <code class="docutils literal notranslate"><span class="pre">{{contact.nom_de_la_donnée}}</span></code> là où vous souhaitez afficher la donnée.</p>
 <p>Si nous voulons écrire le message précedemment vu, nous devrons donc écrire le SMS suivant :</p>
 <div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">Bonjour </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
 </pre></div>
 </div>
 <p>Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables <code class="docutils literal notranslate"><span class="pre">{{contact.firstname}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact.lastname}}</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">John</span></code> et <code class="docutils literal notranslate"><span class="pre">Doe</span></code>.</p>
-<p>Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>. Si le message est envoyé à un numéro direct plutôt qu’à un contact, seul le numéro est accessible, aucun nom n’étant associé au numéro.</p>
+<p>Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>. Si le message est envoyé à un numéro plutôt qu’à un contact, seul le numéro est accessible via <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>, aucun nom n’étant associé au numéro la variable <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> n’existe pas.</p>
 </div>
 <div class="section" id="modifier-le-contenu-en-utilisant-des-conditions">
 <h3>Modifier le contenu en utilisant des conditions<a class="headerlink" href="#modifier-le-contenu-en-utilisant-des-conditions" title="Lien permanent vers ce titre">¶</a></h3>
