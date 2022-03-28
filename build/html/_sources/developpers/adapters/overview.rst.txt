@@ -39,7 +39,7 @@ meta_hidden
 
 
 meta_hide_data
-    Défini si les données associées au téléphone l'adaptateur doivent êtres cachées. Si ``true`` les données seront retirée du téléphone lors du listage ou de l'affichage de celui-ci, aussi bien dans l'interface que dans l'API.
+    Défini si les données associées aux téléphones utilisant l'adaptateur doivent êtres cachées. Si ``true`` les données seront retirées des téléphones lors de leur affichage, aussi bien dans l'interface que dans l'API.
 
 
 meta_name
