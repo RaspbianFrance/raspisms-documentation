@@ -38,6 +38,10 @@ meta_hidden
     Défini si l'adaptateur doit être caché dans l'interface de création d'un téléphone. Si ``true`` il ne sera possible de créer un téléphone avec cet adaptateur que via un appel API.
 
 
+meta_hide_data
+    Défini si les données associées au téléphone l'adaptateur doivent êtres cachées. Si ``true`` les données seront retirée du téléphone lors du listage ou de l'affichage de celui-ci, aussi bien dans l'interface que dans l'API.
+
+
 meta_name
     Le nom de l'adaptateur tel qu'il sera affiché à l'utilisateur. Par exemple, si vous créez un adaptateur pour un service externe example-sms.com, vous pourriez utiliser "Example SMS".
 
