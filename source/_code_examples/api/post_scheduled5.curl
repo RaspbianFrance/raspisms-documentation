@@ -1,0 +1,1 @@
+curl -X POST https://app.raspisms.fr/api/scheduled/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d' -d 'text=Bonjour {{contact.firstname}}' -d 'numbers[0][number]=%2B33612345678' -d 'numbers[0][data]={"firstname":"John", "lastname":"Doe"}' -d 'numbers[1][number]=%2B33612345679' -d 'numbers[1][data]={"firstname":"Jane", "lastname":"Doe"}'

@@ -148,6 +148,8 @@
 <li class="toctree-l5"><a class="reference internal" href="#exemple-1">Exemple 1</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-2">Exemple 2</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-3">Exemple 3</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exemple-4">Exemple 4</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exemple-5">Exemple 5</a></li>
 </ul>
 </li>
 </ul>
@@ -408,7 +410,7 @@
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – Le texte du SMS à envoyer.</p></li>
-<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros.</p></li>
+<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros. Pour chaque numéro il est possible de passer à la place un tableau avec les clés <code class="docutils literal notranslate"><span class="pre">number</span></code> et <code class="docutils literal notranslate"><span class="pre">data</span></code>, ou <code class="docutils literal notranslate"><span class="pre">number</span></code> est le numéro cible, et <code class="docutils literal notranslate"><span class="pre">data</span></code> une chaine JSON de données au format <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">=&gt;</span> <span class="pre">valeur</span></code> (voir <cite>contacts enrichies &lt;extended_contacts&gt;</cite>) à utiliser au sein du message <cite>via le templating &lt;templating&gt;</cite>.</p></li>
 <li><p><strong>contacts</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du contact auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>conditional_groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe conditionnel auquel envoyer le SMS ou un tableau d’IDs.</p></li>
@@ -417,6 +419,7 @@
 <li><p><strong>flash</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> s’il s’agit d’un SMS flash. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 <li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si le message est un MMS. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 <li><p><strong>medias</strong> (<em>multipart-form file array | multipart-form file</em>) <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un ou plusieurs fichiers à inclure dans le MMS. Toute requête contenant des medias doit être au format <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code>. Les medias ne seront utilisés que si le paramètre <strong>mms</strong> est défini à <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>. Pour envoyer plusieurs fichiers, utilisez une série de paramètres <code class="docutils literal notranslate"><span class="pre">medias[]</span></code>.</p></li>
+<li><p><strong>numbers_csv</strong> (<em>multipart-form file</em>) <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un fichier CSV de numéros de téléphones qui auxquels seront envoyer le SMS. Le fichier doit respecter le format décrit dans la page sur <cite>l’envoi de SMS à un fichier CSV &lt;sms_csv&gt;</cite></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -478,6 +481,43 @@
    <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
    <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">39</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-4">
+<h4>Exemple 4<a class="headerlink" href="#exemple-4" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Création d’un SMS à envoyer immédiatement aux numéros listés dans le fichier CSV <strong>« sms_csv.csv »</strong> ci-dessous.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0,lastname,firstname,birthdate,gender,vip
+&quot;+33612345678&quot;,Doe,John,1990-10-22,male,1
+&quot;+33612345679&quot;,Doe,Jane,1992-08-15,female,0
+</pre></div>
+</div>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -F &#39;text=Bonjour {{contact.firstname}}&#39; -F &#39;numbers_csv=@sms_csv.csv&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">98</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-5">
+<h4>Exemple 5<a class="headerlink" href="#exemple-5" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Création d’un SMS <strong>« Bonjour {{contact.firstname}} »</strong> envoyé immédiatement aux numéro <strong>« +33612345678 »</strong> et <strong>« +33612345679 »</strong> ou <code class="docutils literal notranslate"><span class="pre">{{contact.firstname}}</span></code> sera remplacé par les données liées aux numéros, à savoir <code class="docutils literal notranslate"><span class="pre">John</span></code> et <code class="docutils literal notranslate"><span class="pre">Jane</span></code>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Bonjour {{contact.firstname}}&#39; -d &#39;numbers[0][number]=%2B33612345678&#39; -d &#39;numbers[0][data]={&quot;firstname&quot;:&quot;John&quot;, &quot;lastname&quot;:&quot;Doe&quot;}&#39; -d &#39;numbers[1][number]=%2B33612345679&#39; -d &#39;numbers[1][data]={&quot;firstname&quot;:&quot;Jane&quot;, &quot;lastname&quot;:&quot;Doe&quot;}&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">101</span>
 <span class="p">}</span>
 </pre></div>
 </div>

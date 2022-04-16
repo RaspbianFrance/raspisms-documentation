@@ -166,7 +166,7 @@ Endpoints :
 
 Arguments :
     - **text** (*str*) -- Le texte du SMS à envoyer.
-    - **numbers** (*array | str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros.
+    - **numbers** (*array | str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros. Pour chaque numéro il est possible de passer à la place un tableau avec les clés ``number`` et ``data``, ou ``number`` est le numéro cible, et ``data`` une chaine JSON de données au format ``clé => valeur`` (voir `contacts enrichies <extended_contacts>`) à utiliser au sein du message `via le templating <templating>`.
     - **contacts** (*array | int*), ``optional`` -- L'ID du contact auquel envoyer le SMS ou un tableau d'IDs.
     - **groups** (*array | int*), ``optional`` -- L'ID du groupe auquel envoyer le SMS ou un tableau d'IDs.
     - **conditional_groups** (*array | int*), ``optional`` -- L'ID du groupe conditionnel auquel envoyer le SMS ou un tableau d'IDs.
@@ -175,6 +175,7 @@ Arguments :
     - **flash** (*bool*), ``optional`` -- ``TRUE`` s'il s'agit d'un SMS flash. Si non défini ``FALSE``.
     - **mms** (*bool*), ``optional`` -- ``TRUE`` si le message est un MMS. Si non défini ``FALSE``.
     - **medias** (*multipart-form file array | multipart-form file*) ``optional`` -- Un ou plusieurs fichiers à inclure dans le MMS. Toute requête contenant des medias doit être au format ``multipart/form-data``. Les medias ne seront utilisés que si le paramètre **mms** est défini à ``TRUE``. Pour envoyer plusieurs fichiers, utilisez une série de paramètres ``medias[]``.
+    - **numbers_csv** (*multipart-form file*) ``optional`` -- Un fichier CSV de numéros de téléphones qui auxquels seront envoyer le SMS. Le fichier doit respecter le format décrit dans la page sur `l'envoi de SMS à un fichier CSV <sms_csv>`
 
     .. note::
         Les arguments ``numbers``, ``contacts``, ``groups`` et ``conditional_groups`` sont tous optionnels individuellement, mais vous devez nécessairement renseigner **au moins** un de ces arguments.
@@ -223,6 +224,29 @@ Création d'un MMS **"Mon MMS d'exemple"** à envoyer immédiatement au **"+3361
     :language: curl
 
 .. literalinclude:: /_code_examples/api/post_scheduled3_response.json
+    :language: json
+
+Exemple 4
+~~~~~~~~~
+Création d'un SMS à envoyer immédiatement aux numéros listés dans le fichier CSV **"sms_csv.csv"** ci-dessous.
+
+.. literalinclude:: /_code_examples/sms/sms_csv.csv
+    :language: none
+
+.. literalinclude:: /_code_examples/api/post_scheduled4.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/post_scheduled4_response.json
+    :language: json
+
+Exemple 5
+~~~~~~~~~
+Création d'un SMS **"Bonjour {{contact.firstname}}"** envoyé immédiatement aux numéro **"+33612345678"** et **"+33612345679"** ou ``{{contact.firstname}}`` sera remplacé par les données liées aux numéros, à savoir ``John`` et ``Jane``.
+
+.. literalinclude:: /_code_examples/api/post_scheduled5.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/post_scheduled5_response.json
     :language: json
 
 
