@@ -216,7 +216,15 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <li><p><strong>title</strong> (<em>str</em>) –  Le titre qui sera affiché au-dessus de l’input.</p></li>
 <li><p><strong>description</strong> (<em>str</em>) – La description qui sera affichée à l’utilisateur avant l’input. Cette description devrait permettre à l’utilisateur de comprendre l’utilité du réglage.</p></li>
 <li><p><strong>required</strong> (<em>bool</em>) – Défini si le champs est obligatoire. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> l’utilisateur devra obligatoirement remplir le champ pour pouvoir créer un téléphone avec cet adaptateur.</p></li>
-<li><p><strong>number</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">false</span></code> – Défini si le champs est un numéro de téléphone nécessitant l’utilisation d’un input dédié avec internationalisation des numéros.</p></li>
+<li><dl class="simple">
+<dt><strong>type</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">null</span></code> – Défini le type de champs. Actuellement les valeures suivantes sont supportées :</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone_number</span></code>, le champs est un numéro de téléphone nécessitant l’utilisation d’un input dédié avec internationalisation des numéros</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code>, le champs est une checkbox décochée par défaut et dont la valeure est 1. Si <code class="docutils literal notranslate"><span class="pre">default</span></code> est défini, alors la checkbox est cochée par défaut et sa valeure est celle contenue dans <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>default</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">null</span></code> – Défini la valeure par défaut du champs.</p></li>
 </ul>
 </dd>
 <dt>meta_support_read</dt><dd><p>Booléen définissant si l’adaptateur supporte la lecture directe des SMS reçus, par exemple via un appel à une API, par opposition à la lecture des SMS par appel d’une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_reception</span></code> doit obligatoirement être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>

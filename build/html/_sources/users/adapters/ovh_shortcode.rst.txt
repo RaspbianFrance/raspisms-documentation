@@ -83,7 +83,12 @@ Cliquez sur **"Create keys"** pour créer vos identifiants API OVH.
 
 Vous arrivez alors sur une page vous affichant les identifiants API créés. Il vous suffit de recopier les valeurs dans **"Application Key"**, **"Application Secret"** et **"Consumer Key"** dans les champs correspondant dans RaspiSMS.
 
+.. note::
+    Si vous utilisez un expéditeur nommé, OVH ajoutera automatiquement une clause STOP SMS à la fin de vos message. Si vous souhaitez retirer cette clause vous pouvez cochez la case **"Désactiver la clause 'STOP SMS' automatique"**. 
+
 Retournez sur RaspiSMS et cliquez sur le bouton **"Enregistrer le téléphone"**.
+
+
 
 4. Activer le suivi du statut des SMS
 ''''''''''''''''''''''''''''''''''''''

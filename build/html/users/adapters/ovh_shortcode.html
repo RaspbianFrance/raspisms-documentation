@@ -123,6 +123,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone OVH SMS Shortcode</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
@@ -148,6 +149,7 @@
 <li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
 </ul>
 </li>
 </ul>
@@ -155,6 +157,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -292,6 +296,10 @@ Copiez la valeur présente dans la colonne <strong>« Nom »</strong> de la li
 <p>Si vous avez l’erreur <strong>« An application with that name already exists »</strong>, modifiez <strong>« Script Name »</strong>, vous pouvez y mettre la valeur de votre choix, c’est sans importance.</p>
 </div>
 <p>Vous arrivez alors sur une page vous affichant les identifiants API créés. Il vous suffit de recopier les valeurs dans <strong>« Application Key »</strong>, <strong>« Application Secret »</strong> et <strong>« Consumer Key »</strong> dans les champs correspondant dans RaspiSMS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si vous utilisez un expéditeur nommé, OVH ajoutera automatiquement une clause STOP SMS à la fin de vos message. Si vous souhaitez retirer cette clause vous pouvez cochez la case <strong>« Désactiver la clause “STOP SMS” automatique »</strong>.</p>
+</div>
 <p>Retournez sur RaspiSMS et cliquez sur le bouton <strong>« Enregistrer le téléphone »</strong>.</p>
 </div>
 </div>

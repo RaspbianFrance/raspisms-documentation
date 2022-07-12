@@ -61,7 +61,10 @@ meta_data_fields
     - **title** (*str*) --  Le titre qui sera affiché au-dessus de l'input.
     - **description** (*str*) -- La description qui sera affichée à l'utilisateur avant l'input. Cette description devrait permettre à l'utilisateur de comprendre l'utilité du réglage.
     - **required** (*bool*) -- Défini si le champs est obligatoire. Si ``TRUE`` l'utilisateur devra obligatoirement remplir le champ pour pouvoir créer un téléphone avec cet adaptateur.
-    - **number** (*bool*), ``false`` -- Défini si le champs est un numéro de téléphone nécessitant l'utilisation d'un input dédié avec internationalisation des numéros.
+    - **type** (*str*), ``null`` -- Défini le type de champs. Actuellement les valeures suivantes sont supportées : 
+        - ``phone_number``, le champs est un numéro de téléphone nécessitant l'utilisation d'un input dédié avec internationalisation des numéros
+        - ``boolean``, le champs est une checkbox décochée par défaut et dont la valeure est 1. Si ``default`` est défini, alors la checkbox est cochée par défaut et sa valeure est celle contenue dans ``default``.
+    - **default** (*str*), ``null`` -- Défini la valeure par défaut du champs.
 
 
 meta_support_read
