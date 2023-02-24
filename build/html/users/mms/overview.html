@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Envoyer des MMS</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,10 +28,9 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Documentation pour les développeurs" href="../../developpers/overview.html" />
+  <link rel="next" title="Envoyer des SMS à un fichier CSV" href="../sms/csv.html" />
   <link rel="prev" title="Commandes par SMS" href="../commands/overview.html" /> 
   </head>
 
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,12 +117,12 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
@@ -133,6 +135,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -160,8 +163,8 @@
        title="Chapitre précédent">← Commandes par SMS</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Documentation pour les développeurs →</a>
+    <a href="../sms/csv.html"
+       title="Chapitre suivant">Envoyer des SMS à un fichier CSV →</a>
   </li>
 </ul>
   
@@ -169,36 +172,36 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="envoyer-des-mms">
-<span id="mms"></span><h1>Envoyer des MMS<a class="headerlink" href="#envoyer-des-mms" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="quels-telephones-peuvent-envoyer-recevoir-des-mms">
-<h2>Quels téléphones peuvent envoyer/recevoir des MMS ?<a class="headerlink" href="#quels-telephones-peuvent-envoyer-recevoir-des-mms" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="envoyer-des-mms">
+<span id="mms"></span><h1>Envoyer des MMS<a class="headerlink" href="#envoyer-des-mms" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="quels-telephones-peuvent-envoyer-recevoir-des-mms">
+<h2>Quels téléphones peuvent envoyer/recevoir des MMS ?<a class="headerlink" href="#quels-telephones-peuvent-envoyer-recevoir-des-mms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Tous les téléphones ne sont pas en mesure d’envoyer ou de recevoir des MMS. Pour savoir si un téléphone supporte ou nous l’envoi et/ou la réception de MMS, repportez vous à l’entrée dédiée au téléphone dans <a class="reference internal" href="../adapters/overview.html#adapters"><span class="std std-ref">la liste des téléphones</span></a>.</p>
-</div>
-<div class="section" id="activer-desactiver-le-support-des-mms">
-<h2>Activer/désactiver le support des MMS<a class="headerlink" href="#activer-desactiver-le-support-des-mms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="activer-desactiver-le-support-des-mms">
+<h2>Activer/désactiver le support des MMS<a class="headerlink" href="#activer-desactiver-le-support-des-mms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Le support des MMS peut être activé/désactivé. Pour cela, rendez-vous dans la partie « Réglages » de RaspiSMS, modifiez la valeur dans le champ « Support des MMS » et cliquez sur « Mettre à jour les données ».</p>
 <p>Si vous désactivez le support des MMS il sera toujours possible de recevoir des MMS, mais plus d’en envoyer.</p>
-</div>
-<div class="section" id="comment-ca-fonctionne">
-<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Si les MMS sont activés, lors de la rédaction de votre SMS vous pouvez sélectionner un ou plusieurs fichiers à inclure dans votre SMS. Si vous incluez des fichiers dans un SMS, celui-ci deviens automatiquement un MMS.</p>
 <p>Si vous ne choisissez pas un téléphone en particulier pour envoyer le message, RaspiSMS utilisera en priorité les téléphones supportant les MMS, si aucun téléphone ne supporte les MMS il utilisera un téléphone au hasard.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>RaspiSMS n’impose pas de règles particulières quand aux types, poids ou nombres des fichiers qui peuvent êtres inclus dans un MMS. Néanmoins, selon les téléphones et les opérateurs, de telles restrictions peuvent exister. Pour cette raison nous vous conseillons de ne pas envoyer de fichiers trop volumineux, et autant que possible de vous limiter à un seul fichier par MMS.</p>
 </div>
-<div class="section" id="que-se-passe-t-il-si-le-telephone-ne-supporte-pas-les-mms">
-<h3>Que se passe-t-il si le téléphone ne supporte pas les MMS ?<a class="headerlink" href="#que-se-passe-t-il-si-le-telephone-ne-supporte-pas-les-mms" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="que-se-passe-t-il-si-le-telephone-ne-supporte-pas-les-mms">
+<h3>Que se passe-t-il si le téléphone ne supporte pas les MMS ?<a class="headerlink" href="#que-se-passe-t-il-si-le-telephone-ne-supporte-pas-les-mms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Si vous recevez un MMS sur un téléphone qui ne supporte pas la réception des MMS, le message ne sera pas reçu.</p>
 <p>Si vous envoyez un MMS depuis un téléphone qui ne supporte pas l’envoi des MMS, le message sera envoyé sous forme d’un ou plusieurs SMS, et les médias à inclures dans le MMS (photos, vidéos, etc.) seront ajoutés au corps du SMS sous forme d’adresses URL pointant vers les fichiers sur le serveur RaspiSMS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Lors de l’envoi d’un SMS contenant une plusieures adresse(s) URL vers le(s) média(s) associé(s) au SMS, la taille du SMS peut être amenée à augmenter rapidement, ce qui peut provoquer des consommations importantes de crédit.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -209,13 +212,13 @@
        title="Chapitre précédent">← Commandes par SMS</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Documentation pour les développeurs →</a>
+    <a href="../sms/csv.html"
+       title="Chapitre suivant">Envoyer des SMS à un fichier CSV →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Commencer à utiliser RaspiSMS avec un téléphone Android.</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Commencer à utiliser RaspiSMS avec OVH" href="starting_with_ovh.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,7 +117,7 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commencer à utiliser RaspiSMS avec un téléphone Android.</a><ul>
@@ -135,11 +137,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -176,8 +179,8 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="commencer-a-utiliser-raspisms-avec-un-telephone-android">
-<span id="starting-with-raspisms-relay-guide"></span><h1>Commencer à utiliser RaspiSMS avec un téléphone Android.<a class="headerlink" href="#commencer-a-utiliser-raspisms-avec-un-telephone-android" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="commencer-a-utiliser-raspisms-avec-un-telephone-android">
+<span id="starting-with-raspisms-relay-guide"></span><h1>Commencer à utiliser RaspiSMS avec un téléphone Android.<a class="headerlink" href="#commencer-a-utiliser-raspisms-avec-un-telephone-android" title="Lien permanent vers cette rubrique">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>L’utilisation d’un téléphone Android et de l’application RaspiSMS Relay n’est possible qu’en mode SaaS. Cette fonctionnalitée n’est pas disponible en auto-hébergement.</p>
@@ -186,49 +189,49 @@
 <p>
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4qvuUmk28JE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-<div class="section" id="utiliser-un-telephone-android-dans-raspisms-comment-ca-fonctionne">
-<h2>1. Utiliser un téléphone Android dans RaspiSMS, comment ça fonctionne ?<a class="headerlink" href="#utiliser-un-telephone-android-dans-raspisms-comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="utiliser-un-telephone-android-dans-raspisms-comment-ca-fonctionne">
+<h2>1. Utiliser un téléphone Android dans RaspiSMS, comment ça fonctionne ?<a class="headerlink" href="#utiliser-un-telephone-android-dans-raspisms-comment-ca-fonctionne" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>En utilisant l’offre SaaS de RaspiSMS et l’application RaspiSMS Relay, vous pouvez configurer un téléphone Android afin d’utiliser un abonnement mobile classique pour l’envoi et la réception des SMS.</p>
 <p>L’application web RaspiSMS vous permet de créer vos SMS en ligne en profitant de nombreuses fonctionnalités, comme la gestion de contacts et les listes de diffusion. Puis l’application mobile RaspiSMS Relay reçoit la demande d’envoi du serveur et utilise la carte SIM du téléphone le réseau mobile opérateur pour envoyer le message au destinataire.</p>
 <a class="reference internal image-reference" href="../../_images/chart-raspisms-relay-horizontal.svg"><img alt="Schéma du fonctionnement de RaspiSMS Relay." src="../../_images/chart-raspisms-relay-horizontal.svg" width="800" /></a>
-</div>
-<div class="section" id="installez-l-application-raspisms-relay-sur-votre-telephone">
-<h2>2. Installez l’application RaspiSMS Relay sur votre téléphone.<a class="headerlink" href="#installez-l-application-raspisms-relay-sur-votre-telephone" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="installez-l-application-raspisms-relay-sur-votre-telephone">
+<h2>2. Installez l’application RaspiSMS Relay sur votre téléphone.<a class="headerlink" href="#installez-l-application-raspisms-relay-sur-votre-telephone" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Rendez-vous sur <a class="reference external" href="https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay">la page playstore de l’application RaspiSMS Relay</a> et téléchargez l’application.</p>
-</div>
-<div class="section" id="configurez-le-relais-raspisms">
-<h2>3. Configurez le relais RaspiSMS.<a class="headerlink" href="#configurez-le-relais-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="configurez-le-relais-raspisms">
+<h2>3. Configurez le relais RaspiSMS.<a class="headerlink" href="#configurez-le-relais-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Lancez l’application RaspiSMS Relay, validez les demandes d’autorisation pour la lecture et l’envoi des SMS. Ces autorisations sont nécessaires au fonctionnement de l’application.</p>
 <p>Une fois les autorisations données, cliquez sur « Configurer le relais », puis suivez les instructions de l’application.</p>
-<div class="section" id="connectez-vous-a-votre-compte-raspisms">
-<h3>3.1. Connectez-vous à votre compte RaspiSMS.<a class="headerlink" href="#connectez-vous-a-votre-compte-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="connectez-vous-a-votre-compte-raspisms">
+<h3>3.1. Connectez-vous à votre compte RaspiSMS.<a class="headerlink" href="#connectez-vous-a-votre-compte-raspisms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Connectez-vous à votre compte RaspiSMS, et rendez-vous dans votre compte pour trouvez votre clé API. Une fois votre clé API trouvée, recopiez là dans l’application RaspiSMS Relay puis cliquez sur le bouton « Continuer ».</p>
-</div>
-<div class="section" id="definissez-le-nom-du-telephone-a-creer-dans-raspisms">
-<h3>3.2. Définissez le nom du téléphone à créer dans RaspiSMS.<a class="headerlink" href="#definissez-le-nom-du-telephone-a-creer-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="definissez-le-nom-du-telephone-a-creer-dans-raspisms">
+<h3>3.2. Définissez le nom du téléphone à créer dans RaspiSMS.<a class="headerlink" href="#definissez-le-nom-du-telephone-a-creer-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Dans l’application RaspiSMS Relay, rentrez un nom personnalisé pour le téléphone à créer dans RaspiSMS, ou bien utilisez le nom par défaut, puis cliquez sur le bouton « Continuer ».</p>
-</div>
-<div class="section" id="choisissez-si-le-telephone-doit-relayer-les-sms-recus">
-<h3>3.3. Choisissez si le téléphone doit relayer les SMS reçus.<a class="headerlink" href="#choisissez-si-le-telephone-doit-relayer-les-sms-recus" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="choisissez-si-le-telephone-doit-relayer-les-sms-recus">
+<h3>3.3. Choisissez si le téléphone doit relayer les SMS reçus.<a class="headerlink" href="#choisissez-si-le-telephone-doit-relayer-les-sms-recus" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Choisissez si le téléphone doit relayer au serveur les SMS qu’il a reçu. Si vous choisissez de relayer les SMS reçus, tous les messages qui seront reçus par le téléphones seront transférés au serveur. Cliquez sur le bouton « Continuer ».</p>
-</div>
-</div>
-<div class="section" id="envoyez-votre-premier-sms-depuis-raspisms">
-<h2>4. Envoyez votre premier SMS depuis RaspiSMS.<a class="headerlink" href="#envoyez-votre-premier-sms-depuis-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="envoyez-votre-premier-sms-depuis-raspisms">
+<h2>4. Envoyez votre premier SMS depuis RaspiSMS.<a class="headerlink" href="#envoyez-votre-premier-sms-depuis-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Maintenant que vous avez configuré le relais RaspiSMS, il ne vous reste plus qu’à envoyer votre premier SMS. Pour cela, rendez-vous dans la partie « SMS », « Nouveau SMS » et cliquez sur le bouton « Créer un nouveau SMS ».</p>
 <p>Tapez le texte du SMS que vous souhaitez envoyer dans la partie <strong>« Texte du SMS »</strong>.</p>
 <p>Laissez la date d’envoi inchangée pour envoyer le SMS immédiatement.</p>
 <p>Dans le champs <strong>« Numéros cibles »</strong>, renseignez le numéro auquel vous souhaitez envoyer le SMS. Il est possible d’ajouter d’autres numéros en cliquant sur le « + » au-dessous du champs.</p>
 <p>Enfin, dans le champs <strong>« Numéro à employer »</strong>, séléctionnez le nom du téléphone que vous avez choisi lors de la configuration du relais. Si vous laisser le champs à sa valeur par défaut « N’importe lequel », un téléphone sera choisi au hasard parmi ceux que vous avez créés (avec un seul téléphone cela n’a donc pas d’importance).</p>
 <p>Il ne vous reste plus qu’à cliquer sur le bouton <strong>« Enregistrer le SMS »</strong>.</p>
-</div>
-<div class="section" id="verifier-le-statut-du-sms">
-<h2>5. Vérifier le statut du SMS.<a class="headerlink" href="#verifier-le-statut-du-sms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="verifier-le-statut-du-sms">
+<h2>5. Vérifier le statut du SMS.<a class="headerlink" href="#verifier-le-statut-du-sms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Vous pouvez maintenant vérifier si le SMS a bien été envoyé et éventuellement reçu par le destinataire, en vous rendant sur l’inteface en ligne, dans la partie <strong>« SMS »</strong>, <strong>« SMS Envoyés »</strong>.</p>
 <p>Si vous avez configuré le relais pour relayer les SMS reçus, vous pouvez vérifier son bon fonctionnement en vous envoyant un SMS à vous même, et en vous rendant dans l’interface de RaspiSMS, dans la partie <strong>« SMS »</strong>, <strong>« SMS Reçus »</strong>.</p>
-</div>
-<div class="section" id="verifier-le-statut-du-relais">
-<h2>6. Vérifier le statut du relais.<a class="headerlink" href="#verifier-le-statut-du-relais" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="verifier-le-statut-du-relais">
+<h2>6. Vérifier le statut du relais.<a class="headerlink" href="#verifier-le-statut-du-relais" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Depuis le téléphone équipé de l’application, vous pouvez également voir le statut du relais en démarrant l’application.</p>
 <p>La page principale affiche le statut du relais ainsi que les derniers messages relayés (depuis le cloud vers un destinataire et depuis un mobile vers le cloud) et leur statut.</p>
 <p>Vous pouvez quitter l’application RaspiSMS Relay sans risques, les messages continuerons d’êtres relayés. Le seul pré-requis est qu’un réseau mobile soit disponible pour envoyer et recevoir les messages, et qu’un réseau internet soit disponible pour synchroniser les données avec le serveur centrale de RaspiSMS.</p>
@@ -239,22 +242,22 @@
 <p>Pour plus d’informations : <a class="reference external" href="https://dontkillmyapp.com/">https://dontkillmyapp.com/</a></p>
 </div>
 <p>En cas de perte de réseau, les messages à envoyer sont mis en attente. En cas d’echec lors des tentatives d’envoi ou de synchronisation, jusqu’à cinq tentatives seront effectuées, à des intervales de plus en plus grands. En cas d’echec définitif, le statut du message est mis à jour localement et sur le serveur dès que possible.</p>
-</div>
-<div class="section" id="desactiver-les-limites-de-sms-sur-android">
-<h2>7. Désactiver les limites de SMS sur Android.<a class="headerlink" href="#desactiver-les-limites-de-sms-sur-android" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="desactiver-les-limites-de-sms-sur-android">
+<h2>7. Désactiver les limites de SMS sur Android.<a class="headerlink" href="#desactiver-les-limites-de-sms-sur-android" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Android intègre nativement une limitation du nombre de SMS qu’une application peut envoyer sur une période donnée. Par défaut cette limite est fixée à 30 SMS sur une période de 30 minutes. Selon le constructeur et le modèle du téléphone, cette limite peut varier.</p>
 <p>Si vous devez envoyer plus de 30 SMS en 30 minutes, vous devez donc désactiver cette limite. Certains constructeurs peuvent intégrer une option dans les réglages générals du téléphone pour vous permettre de désactiver ou modifier cette limite, mais cela reste rare. En l’absence d’une telle option la seule solution est alors d’activer <a class="reference external" href="https://developer.android.com/studio/debug/dev-options">le déboggage USB du téléphone</a>, de le connecter à un ordinateur équipé du logiciel <a class="reference external" href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge</a> et de lancer la ligne de commande ci-dessous :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb shell settings put global sms_outgoing_check_max_count <span class="m">100000</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span>settings<span class="w"> </span>put<span class="w"> </span>global<span class="w"> </span>sms_outgoing_check_max_count<span class="w"> </span><span class="m">100000</span>
 </pre></div>
 </div>
 <p>Cette commande va modifier la limite de SMS envoyés à 1000000 toutes les 30 minutes.</p>
 <p>En cas d’erreur, assurez-vous que l’option « Débogage USB (Paramètres de sécurité) » est bien activée.</p>
-</div>
-<div class="section" id="aller-plus-loin">
-<h2>8. Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="aller-plus-loin">
+<h2>8. Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>RaspiSMS propose de nombreuses fonctionnalités, pour en savoir plus, reportez-vous à <a class="reference internal" href="../overview.html#users"><span class="std std-ref">la documentation utilisateur</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -271,7 +274,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

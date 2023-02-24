@@ -18,7 +18,7 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
     :maxdepth: 1
     :caption: Les guides avancés
 
-    adapters/overview
+    phones/overview
     groups_and_contacts/overview
     templating/overview
     commands/overview

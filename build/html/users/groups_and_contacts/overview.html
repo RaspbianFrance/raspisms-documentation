@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Groupes et contacts</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,18 +28,17 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Les contacts enrichis" href="extended_contacts.html" />
-  <link rel="prev" title="Téléphone Kannel" href="../adapters/kannel.html" /> 
+  <link rel="prev" title="Les téléphones" href="../phones/overview.html" /> 
   </head>
 
   <body>
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,12 +117,12 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Groupes et contacts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#objectif-des-groupes-et-des-contacts">Objectif des groupes et des contacts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#les-contacts">Les contacts</a><ul>
@@ -140,6 +142,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -163,8 +166,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../adapters/kannel.html"
-       title="Chapitre précédent">← Téléphone Kannel</a>
+    <a href="../phones/overview.html"
+       title="Chapitre précédent">← Les téléphones</a>
   </li>
   <li class="next">
     <a href="extended_contacts.html"
@@ -176,13 +179,13 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="groupes-et-contacts">
-<h1>Groupes et contacts<a class="headerlink" href="#groupes-et-contacts" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="objectif-des-groupes-et-des-contacts">
-<h2>Objectif des groupes et des contacts<a class="headerlink" href="#objectif-des-groupes-et-des-contacts" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="groupes-et-contacts">
+<h1>Groupes et contacts<a class="headerlink" href="#groupes-et-contacts" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="objectif-des-groupes-et-des-contacts">
+<h2>Objectif des groupes et des contacts<a class="headerlink" href="#objectif-des-groupes-et-des-contacts" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les groupes et les contacts ont pour objectif de vous permettre d’organiser les destinataires de vos messages pour simplifier l’envoie et la réception de SMS.</p>
-<div class="section" id="les-contacts">
-<h3>Les contacts<a class="headerlink" href="#les-contacts" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="les-contacts">
+<h3>Les contacts<a class="headerlink" href="#les-contacts" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Les contacts vous permettent d’associer un numéro de téléphone et un nom d’utilisateur.</p>
 <p>Vous pouvez également enrichir les contacts avec des données supplémentaires afin de créer des groupes ou des messages dynamiques.</p>
 <div class="toctree-wrapper compound">
@@ -192,9 +195,9 @@
 <li class="toctree-l1"><a class="reference internal" href="conditional_delete.html">Supprimer une liste dynamique de contacts</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="les-groupes">
-<h3>Les groupes<a class="headerlink" href="#les-groupes" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="les-groupes">
+<h3>Les groupes<a class="headerlink" href="#les-groupes" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Les groupes vous permettent de regrouper différents contacts au sein d’une liste de diffusion à laquelle il sera possible d’envoyer un message plus facilement qu’en rentrant chaque contact individuellement.</p>
 <p>Il est possibles de créer des groupes statiques en rentrant les contacts du groupe à la main, ou des groupes dynamiques dont les membres dépendent de règles basées sur les données enrichies des contacts.</p>
 <div class="toctree-wrapper compound">
@@ -202,17 +205,17 @@
 <li class="toctree-l1"><a class="reference internal" href="conditionnals_groups.html">Groupes conditionnels</a></li>
 </ul>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../adapters/kannel.html"
-       title="Chapitre précédent">← Téléphone Kannel</a>
+    <a href="../phones/overview.html"
+       title="Chapitre précédent">← Les téléphones</a>
   </li>
   <li class="next">
     <a href="extended_contacts.html"
@@ -221,7 +224,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

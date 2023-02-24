@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Utiliser l’API HTTP</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Créer un nouveau type de téléphone" href="../adapters/overview.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,7 +117,7 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
@@ -135,7 +137,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#transmettre-la-cle-api">Transmettre la clé API</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#lister-des-ressources-get">Lister des ressources – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lister-des-ressources-get">Lister des ressources – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtenir-le-nombre-de-sms-envoyes-get">Obtenir le nombre de SMS envoyés – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exemple-de-requete-curl">Exemple de requête CURL</a></li>
 </ul>
 </li>
@@ -162,8 +165,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">Exemple de requêtes CURL</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#id4">Exemple 1</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id5">Exemple 2</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id6">Exemple 3</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mettre-a-jour-le-status-d-un-telephone-post">Mettre à jour le status d’un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Exemple de requêtes CURL</a></li>
 </ul>
 </li>
 </ul>
@@ -206,16 +214,16 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="utiliser-l-api-http">
-<span id="api"></span><h1>Utiliser l’API HTTP<a class="headerlink" href="#utiliser-l-api-http" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="a-quoi-ca-sert">
-<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="utiliser-l-api-http">
+<span id="api"></span><h1>Utiliser l’API HTTP<a class="headerlink" href="#utiliser-l-api-http" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>L’API HTTP de RaspiSMS vous permet d’intégrer facilement les fonctionnalitées d’envoi et de récéption de SMS de RaspiSMS au sein d’une autre application. Vous pouvez par exemple utiliser l’API de RaspiSMS afin d’envoyer des SMS de confirmation ou d’alerte depuis une application tierce.</p>
-</div>
-<div class="section" id="organisation-de-l-api">
-<h2>Organisation de l’API<a class="headerlink" href="#organisation-de-l-api" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="fonctionnalites">
-<h3>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="organisation-de-l-api">
+<h2>Organisation de l’API<a class="headerlink" href="#organisation-de-l-api" title="Lien permanent vers cette rubrique">¶</a></h2>
+<section id="fonctionnalites">
+<h3>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>L’API de RaspiSMS est découpée en trois principales fonctionnalités, chacune d’entre elle correspondant à un verbe HTTP dédié :</p>
 <ul class="simple">
 <li><p>Lister des ressources (sms envoyés, reçus et programmés, contacts, etc.), verbe HTTP <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
@@ -226,16 +234,12 @@
 <p class="admonition-title">Note</p>
 <p>Actuellement seul les SMS programmés et les téléphones peuvent être créés et supprimés via l’API.</p>
 </div>
-</div>
-<div class="section" id="format-des-reponses">
-<h3>Format des réponses<a class="headerlink" href="#format-des-reponses" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="format-des-reponses">
+<h3>Format des réponses<a class="headerlink" href="#format-des-reponses" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Toutes les réponses des API sont un tableau associatif au format JSON. Les réponses respectent toutes le format ci-dessous.</p>
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id8" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Clé</p></th>
 <th class="head"><p>Description</p></th>
@@ -259,15 +263,11 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="codes-d-erreurs">
-<h4>Codes d’erreurs<a class="headerlink" href="#codes-d-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="codes-d-erreurs">
+<h4>Codes d’erreurs<a class="headerlink" href="#codes-d-erreurs" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>L’API utilise les codes d’erreurs suivants.</p>
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Code</p></th>
 <th class="head"><p>Description</p></th>
@@ -297,32 +297,32 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="pagination">
-<h4>Pagination<a class="headerlink" href="#pagination" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="pagination">
+<h4>Pagination<a class="headerlink" href="#pagination" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Pour les requêtes susceptibles d’employer de la pagination (c’est-à-dire les requêtes de type liste), les résultats sont renvoyés par groupe de 25. Si des résultats supplémentaires sont disponibles un champ <code class="docutils literal notranslate"><span class="pre">next</span></code> avec l’URL à intérroger pour obtenir les résultats suivants est indiqué dans la réponse. Sinon le champ est défini à <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="obtenir-et-utiliser-une-cle-api">
-<h2>Obtenir et utiliser une clé API<a class="headerlink" href="#obtenir-et-utiliser-une-cle-api" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="obtenir-et-utiliser-une-cle-api">
+<h2>Obtenir et utiliser une clé API<a class="headerlink" href="#obtenir-et-utiliser-une-cle-api" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour effectuer une requête sur l’API, vous devez fournir une clé unique permettant de vous authentifier.</p>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Votre clé API est un identifiant à part entière, vous ne devez en aucun cas la rendre publique !</p>
 <p>Si cette clé a été rendue publique vous devriez l’invalider et en générer une nouvelle via le bouton « Générer une nouvelle clef API » dans la partie « Mon profil » de RaspiSMS.</p>
 </div>
-<div class="section" id="trouver-la-cle-api">
-<h3>Trouver la clé API<a class="headerlink" href="#trouver-la-cle-api" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="trouver-la-cle-api">
+<h3>Trouver la clé API<a class="headerlink" href="#trouver-la-cle-api" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Vous pouvez trouver votre clé API dans la partie « Mon profil » de RaspiSMS, dans l’encadré « Mes données ».</p>
-</div>
-<div class="section" id="transmettre-la-cle-api">
-<h3>Transmettre la clé API<a class="headerlink" href="#transmettre-la-cle-api" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="transmettre-la-cle-api">
+<h3>Transmettre la clé API<a class="headerlink" href="#transmettre-la-cle-api" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Vous devez transmettre votre clé API avec chaque requête sans quoi celle-ci sera rejetée. Pour cela il vous suffit de renseigner votre clé API sous la forme d’un paramètre de <code class="docutils literal notranslate"><span class="pre">GET</span></code> ou <code class="docutils literal notranslate"><span class="pre">POST</span></code> nommé <code class="docutils literal notranslate"><span class="pre">api_key</span></code>, ou bien d’un header HTTP nommé <code class="docutils literal notranslate"><span class="pre">X-Api-Key</span></code>.</p>
-</div>
-</div>
-<div class="section" id="lister-des-ressources-get">
-<h2>Lister des ressources – <code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#lister-des-ressources-get" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="lister-des-ressources-get">
+<h2>Lister des ressources – <code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#lister-des-ressources-get" title="Lien permanent vers cette rubrique">¶</a></h2>
 <dl class="simple">
 <dt>Endpoints :</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/api/list/{entry_type}/</span></code></p></li>
@@ -330,7 +330,7 @@
 </ul>
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
-<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code> ou <code class="docutils literal notranslate"><span class="pre">media</span></code>).</p></li>
+<li><p><strong>entry_type</strong> (<em>str</em>) – Le type de ressource à lister (<code class="docutils literal notranslate"><span class="pre">sended</span></code>, <code class="docutils literal notranslate"><span class="pre">received</span></code>, <code class="docutils literal notranslate"><span class="pre">scheduled</span></code>, <code class="docutils literal notranslate"><span class="pre">contact</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">conditional_group</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code>, <code class="docutils literal notranslate"><span class="pre">phone_group</span></code> ou <code class="docutils literal notranslate"><span class="pre">media</span></code>).</p></li>
 <li><p><strong>page</strong> (<em>int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Numéro de page à utiliser, si non défini <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ul>
 </dd>
@@ -342,40 +342,55 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="exemple-de-requete-curl">
-<h3>Exemple de requête CURL<a class="headerlink" href="#exemple-de-requete-curl" title="Lien permanent vers ce titre">¶</a></h3>
-<p>On va lister les 25 premiers contacts.</p>
-<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl https://app.raspisms.fr/api/list/contact/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
+</section>
+<section id="obtenir-le-nombre-de-sms-envoyes-get">
+<h2>Obtenir le nombre de SMS envoyés – <code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#obtenir-le-nombre-de-sms-envoyes-get" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="simple">
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/usage</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – La date à patir de laquelle lire le nombre de SMS envoyés, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si non défini pas de date de début.</p></li>
+<li><p><strong>end</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – La date jusqu’à laquelle lire le nombre de SMS envoyés, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si non défini pas de date de fin.</p></li>
+<li><p><strong>tag</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Filtre les SMS pour garder uniquement les SMS envoyés avec un tag correspondant. Le tag sera comparé via une requête SQL <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>. Vous pouvez donc cherchez des tags partiels en utilisant les caractères <code class="docutils literal notranslate"><span class="pre">%</span></code> et <code class="docutils literal notranslate"><span class="pre">_</span></code>. Si non défini tous les tags seront conservés.</p></li>
+</ul>
+</dd>
+<dt>Réponse :</dt><dd><p>Un objet JSON avec le nombre total de SMS et le nombre de SMS par téléphone avec en clé l’ID du téléphone.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">404</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<section id="exemple-de-requete-curl">
+<h3>Exemple de requête CURL<a class="headerlink" href="#exemple-de-requete-curl" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>On va récupérer le nombre de SMS envoyés entre le 1 février 2023 et le 28 février 2023, avec un tag commençant par <code class="docutils literal notranslate"><span class="pre">campaign</span></code>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl &#39;https://app.raspisms.fr/api/usage/?start=2023-02-01+00:00:00&amp;end=2023-02-28+00:00:00&amp;tag=campaign%&#39; -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span><span class="p">:[</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;id_user&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345679&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;Jane\&quot;,\&quot;birthdate\&quot;:\&quot;1992-08-15\&quot;,\&quot;gender\&quot;:\&quot;female\&quot;,\&quot;vip\&quot;:\&quot;0\&quot;}&quot;</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;id_user&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="s2">&quot;+33612345678&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;lastname\&quot;:\&quot;Doe\&quot;,\&quot;firstname\&quot;:\&quot;John\&quot;,\&quot;birthdate\&quot;:\&quot;1990-10-22\&quot;,\&quot;gender\&quot;:\&quot;male\&quot;,\&quot;vip\&quot;:\&quot;1\&quot;}&quot;</span>
-      <span class="p">}</span>
-   <span class="p">],</span>
-   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;phones_volumes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;43&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;46&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;50&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nt">&quot;total&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="supprimer-un-sms-programme-delete">
-<h2>Supprimer un SMS programmé – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code><a class="headerlink" href="#supprimer-un-sms-programme-delete" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="supprimer-un-sms-programme-delete">
+<h2>Supprimer un SMS programmé – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code><a class="headerlink" href="#supprimer-un-sms-programme-delete" title="Lien permanent vers cette rubrique">¶</a></h2>
 <dl class="simple">
 <dt>Endpoints :</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/api/scheduled/{id}/</span></code></p></li>
@@ -393,16 +408,16 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="id1">
-<h3>Exemple de requête CURL<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="id1">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On va supprimer le SMS programmé avec l’id <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X DELETE https://app.raspisms.fr/api/scheduled/13 -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="creer-un-sms-programme-post">
-<h2>Créer un SMS programmé – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#creer-un-sms-programme-post" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="creer-un-sms-programme-post">
+<h2>Créer un SMS programmé – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#creer-un-sms-programme-post" title="Lien permanent vers cette rubrique">¶</a></h2>
 <dl>
 <dt>Endpoints :</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/api/scheduled/</span></code></p></li>
@@ -410,14 +425,16 @@
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
 <li><p><strong>text</strong> (<em>str</em>) – Le texte du SMS à envoyer.</p></li>
-<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros. Pour chaque numéro il est possible de passer à la place un tableau avec les clés <code class="docutils literal notranslate"><span class="pre">number</span></code> et <code class="docutils literal notranslate"><span class="pre">data</span></code>, ou <code class="docutils literal notranslate"><span class="pre">number</span></code> est le numéro cible, et <code class="docutils literal notranslate"><span class="pre">data</span></code> une chaine JSON de données au format <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">=&gt;</span> <span class="pre">valeur</span></code> (voir <cite>contacts enrichies &lt;extended_contacts&gt;</cite>) à utiliser au sein du message <cite>via le templating &lt;templating&gt;</cite>.</p></li>
+<li><p><strong>numbers</strong> (<em>array | str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS ou un tableau de numéros. Pour chaque numéro il est possible de passer à la place un tableau avec les clés <code class="docutils literal notranslate"><span class="pre">number</span></code> et <code class="docutils literal notranslate"><span class="pre">data</span></code>, où <code class="docutils literal notranslate"><span class="pre">number</span></code> est le numéro cible, et <code class="docutils literal notranslate"><span class="pre">data</span></code> une chaine JSON de données au format <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">=&gt;</span> <span class="pre">valeur</span></code> (voir <cite>contacts enrichies &lt;extended_contacts&gt;</cite>) à utiliser au sein du message <cite>via le templating &lt;templating&gt;</cite>.</p></li>
 <li><p><strong>contacts</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du contact auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>conditional_groups</strong> (<em>array | int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – L’ID du groupe conditionnel auquel envoyer le SMS ou un tableau d’IDs.</p></li>
 <li><p><strong>at</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Date à laquelle envoyer le SMS au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code>. Si non défini utilise la date actuelle.</p></li>
-<li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.</p></li>
+<li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du téléphone avec lequel envoyer le SMS. Si non défini et que <code class="docutils literal notranslate"><span class="pre">id_phone_group</span></code> est aussi non défini, utilise un téléphone au hasard.</p></li>
+<li><p><strong>id_phone_group</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du groupe de téléphone avec lequel envoyer le SMS.Si non défini et que <code class="docutils literal notranslate"><span class="pre">id_phone</span></code> est aussi non défini,  utilise un téléphone au hasard.</p></li>
 <li><p><strong>flash</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> s’il s’agit d’un SMS flash. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
 <li><p><strong>mms</strong> (<em>bool</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> si le message est un MMS. Si non défini <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p></li>
+<li><p><strong>tag</strong> (<em>string</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un tag qui sera associé à tous les SMS. Utile pour associer une campagne à un identifiant unique de votre système. Si non défini <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
 <li><p><strong>medias</strong> (<em>multipart-form file array | multipart-form file</em>) <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un ou plusieurs fichiers à inclure dans le MMS. Toute requête contenant des medias doit être au format <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code>. Les medias ne seront utilisés que si le paramètre <strong>mms</strong> est défini à <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>. Pour envoyer plusieurs fichiers, utilisez une série de paramètres <code class="docutils literal notranslate"><span class="pre">medias[]</span></code>.</p></li>
 <li><p><strong>numbers_csv</strong> (<em>multipart-form file</em>) <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un fichier CSV de numéros de téléphones qui auxquels seront envoyer le SMS. Le fichier doit respecter le format décrit dans la page sur <cite>l’envoi de SMS à un fichier CSV &lt;sms_csv&gt;</cite></p></li>
 </ul>
@@ -435,58 +452,58 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="exemple-de-requetes-curl">
-<h3>Exemple de requêtes CURL<a class="headerlink" href="#exemple-de-requetes-curl" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="exemple-1">
-<h4>Exemple 1<a class="headerlink" href="#exemple-1" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="exemple-de-requetes-curl">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#exemple-de-requetes-curl" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="exemple-1">
+<h4>Exemple 1<a class="headerlink" href="#exemple-1" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> envoyé immédiatement au numéro <strong>« +33612345678 »</strong>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Mon%20SMS%20d%27exemple&#39; -d &#39;numbers=%2B33612345678&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exemple-2">
-<h4>Exemple 2<a class="headerlink" href="#exemple-2" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exemple-2">
+<h4>Exemple 2<a class="headerlink" href="#exemple-2" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> à envoyer le <strong>« Jeudi 17 juin 2020 à 15 heures, 30 minutes, 25 secondes »</strong>, aux contacts avec l’ID <code class="docutils literal notranslate"><span class="pre">11</span></code> et <code class="docutils literal notranslate"><span class="pre">12</span></code>, avec le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Mon%20SMS%20d%27exemple&#39; -d contacts[]=11&#39; -d &#39;contacts[]=12&#39; -d &#39;id_phone=3&#39; -d &#39;at=2020-06-17 17:30:25&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exemple-3">
-<h4>Exemple 3<a class="headerlink" href="#exemple-3" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exemple-3">
+<h4>Exemple 3<a class="headerlink" href="#exemple-3" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un MMS <strong>« Mon MMS d’exemple »</strong> à envoyer immédiatement au <strong>« +33612345678 »</strong> avec les fichiers <strong>« example1.png »</strong> et <strong>« example2.png »</strong>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -F &quot;text=Mon SMS d&#39;exemple&quot; -F &#39;numbers=+33612345678&#39; -F &#39;mms=1&#39; -F &#39;medias[]=@example1.png&#39; -F &#39;medias[]=@example2.png&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">39</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">39</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exemple-4">
-<h4>Exemple 4<a class="headerlink" href="#exemple-4" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exemple-4">
+<h4>Exemple 4<a class="headerlink" href="#exemple-4" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un SMS à envoyer immédiatement aux numéros listés dans le fichier CSV <strong>« sms_csv.csv »</strong> ci-dessous.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0,lastname,firstname,birthdate,gender,vip
 &quot;+33612345678&quot;,Doe,John,1990-10-22,male,1
@@ -497,35 +514,35 @@
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">98</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">98</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exemple-5">
-<h4>Exemple 5<a class="headerlink" href="#exemple-5" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exemple-5">
+<h4>Exemple 5<a class="headerlink" href="#exemple-5" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un SMS <strong>« Bonjour {{contact.firstname}} »</strong> envoyé immédiatement aux numéro <strong>« +33612345678 »</strong> et <strong>« +33612345679 »</strong> ou <code class="docutils literal notranslate"><span class="pre">{{contact.firstname}}</span></code> sera remplacé par les données liées aux numéros, à savoir <code class="docutils literal notranslate"><span class="pre">John</span></code> et <code class="docutils literal notranslate"><span class="pre">Jane</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Bonjour {{contact.firstname}}&#39; -d &#39;numbers[0][number]=%2B33612345678&#39; -d &#39;numbers[0][data]={&quot;firstname&quot;:&quot;John&quot;, &quot;lastname&quot;:&quot;Doe&quot;}&#39; -d &#39;numbers[1][number]=%2B33612345679&#39; -d &#39;numbers[1][data]={&quot;firstname&quot;:&quot;Jane&quot;, &quot;lastname&quot;:&quot;Doe&quot;}&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span> <span class="p">:</span> <span class="mi">101</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">101</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="supprimer-un-telephone-delete">
-<h2>Supprimer un téléphone – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code><a class="headerlink" href="#supprimer-un-telephone-delete" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="supprimer-un-telephone-delete">
+<h2>Supprimer un téléphone – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code><a class="headerlink" href="#supprimer-un-telephone-delete" title="Lien permanent vers cette rubrique">¶</a></h2>
 <dl class="simple">
 <dt>Endpoints :</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/api/phone/{id}/</span></code></p></li>
@@ -543,16 +560,16 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="id2">
-<h3>Exemple de requête CURL<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="id2">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On va supprimer le téléphone avec l’id <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X DELETE https://app.raspisms.fr/api/phone/42 -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="creer-un-telephone-post">
-<h2>Créer un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#creer-un-telephone-post" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="creer-un-telephone-post">
+<h2>Créer un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#creer-un-telephone-post" title="Lien permanent vers cette rubrique">¶</a></h2>
 <dl>
 <dt>Endpoints :</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/api/phone/</span></code></p></li>
@@ -560,6 +577,13 @@
 </dd>
 <dt>Arguments :</dt><dd><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Le nom du téléphone (doit être unique).</p></li>
+<li><p><strong>priority</strong> (<em>int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – La priorité d’utilisation du téléphone (<a class="reference internal" href="../../users/phones/priority.html#users-phones-priority"><span class="std std-ref">voir</span></a>). Si non défini <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>limits</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Les limites d’envois pour le téléphone (<a class="reference internal" href="../../users/phones/limits.html#users-phones-limits"><span class="std std-ref">voir</span></a>). Si non défini <code class="docutils literal notranslate"><span class="pre">[]</span></code>. C’est un tableau de limites, ou chaque limite est représentée par un tableau avec les clés :</p>
+<ul>
+<li><p><strong>volume</strong> (<em>int</em>) – Le nombre de SMS max sur la période.</p></li>
+<li><p><strong>startpoint</strong> (<em>str</em>) – Une chaine de caractère représentant <a class="reference external" href="https://www.php.net/manual/en/datetime.formats.relative.php">une date relative PHP</a> qui sera utilisée comme date de début à partir de laquelle calculer le nombre de SMS envoyés par rapport à la limite (valeures conseillées : <code class="docutils literal notranslate"><span class="pre">today</span></code>, <code class="docutils literal notranslate"><span class="pre">-24</span> <span class="pre">hours</span></code>, <code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">week</span> <span class="pre">midnight</span></code>, <code class="docutils literal notranslate"><span class="pre">-7</span> <span class="pre">days</span></code>, <code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">week</span> <span class="pre">midnight</span> <span class="pre">-1</span> <span class="pre">week</span></code>, <code class="docutils literal notranslate"><span class="pre">-14</span> <span class="pre">days</span></code>, <code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">month</span> <span class="pre">midnight</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">-28</span> <span class="pre">days</span></code>, <code class="docutils literal notranslate"><span class="pre">-30</span> <span class="pre">days</span></code>, <code class="docutils literal notranslate"><span class="pre">-31</span> <span class="pre">days</span></code>).</p></li>
+</ul>
+</li>
 <li><p><strong>adapter</strong> (<em>str</em>) – Le nom de l’adaptateur logiciel du téléphone. C’est la classe PHP de l’adaptateur, avec son espace de nom.</p></li>
 <li><p><strong>adapter_data</strong> (<em>array</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l’adaptateur logiciel du téléphone (voir <cite>la fonction meta_data_fields &lt;developpers_adapters_overview&gt;</cite>).</p></li>
 </ul>
@@ -576,43 +600,96 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="id3">
-<h3>Exemple de requêtes CURL<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="id4">
-<h4>Exemple 1<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="id3">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id3" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id4">
+<h4>Exemple 1<a class="headerlink" href="#id4" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un téléphone <strong>« Test phone »</strong> avec l’adaptateur <strong>Test</strong>. Aucune configuration supplémentaire n’est nécessaire pour ce type d’adaptateur.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=Test phone&#39; -d &#39;adapter=adapters\TestAdapter&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h4>Exemple 2<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="id5">
+<h4>Exemple 2<a class="headerlink" href="#id5" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un téléphone <strong>« My Octopush Phone » »</strong> avec l’adaptateur <strong>« `Octopush Shortcode &lt;users_adapters_octopush_shortcode&gt;` »</strong>. Cet adaptateur nécessite de configurer le <code class="docutils literal notranslate"><span class="pre">login</span></code> et l”<code class="docutils literal notranslate"><span class="pre">api_key</span></code> du compte Octopush à utiliser.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST http://127.0.0.1/raspisms/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=My Octopush Phone&#39; -d &#39;adapter=adapters\OctopushShortcodeAdapter&#39; -d &#39;adapter_data[login]=mail@example.com&#39; -d &#39;adapter_data[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F&#39;
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-   <span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
-   <span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
-   <span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="id6">
+<h4>Exemple 3<a class="headerlink" href="#id6" title="Lien permanent vers cette rubrique">¶</a></h4>
+<p>Création d’un téléphone <strong>« Test phone »</strong> avec l’adaptateur <strong>Test</strong>, une priorité de <code class="docutils literal notranslate"><span class="pre">2</span></code>, une limite de <code class="docutils literal notranslate"><span class="pre">100</span></code> sms par jour et une deuxième limite de <code class="docutils literal notranslate"><span class="pre">500</span></code> sms dans la semaine.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=Test phone&#39; -d &#39;adapter=adapters\TestAdapter&#39; -d &quot;priority=2&quot; -d &#39;limits[0][volume]=100&#39; -d &#39;limits[0][startpoint]=today&#39; -d &#39;limits[1][volume]=500&#39; -d &#39;limits[1][startpoint]=this week midnight&#39;
+</pre></div>
 </div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+</section>
+</section>
+</section>
+<section id="mettre-a-jour-le-status-d-un-telephone-post">
+<h2>Mettre à jour le status d’un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code><a class="headerlink" href="#mettre-a-jour-le-status-d-un-telephone-post" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Cette requête un peu particulière vous permet de forcer la vérification et la mise à jour du status d’un téléphone.</p>
+<dl class="simple">
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/phone/{id}/status/</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – L’identifiant du téléphone dont on veut mettre à jour le status.</p></li>
+</ul>
+</dd>
+<dt>Réponse :</dt><dd><p>Le nouveau status du téléphone parmis <code class="docutils literal notranslate"><span class="pre">available</span></code>, <code class="docutils literal notranslate"><span class="pre">unavailable</span></code>, <code class="docutils literal notranslate"><span class="pre">no_credit</span></code>.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">400</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<section id="id7">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id7" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>Mise à jour du status du téléphone avec l’id <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/50/status -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
+</pre></div>
 </div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;available&quot;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -629,7 +706,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

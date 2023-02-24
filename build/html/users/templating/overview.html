@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>SMS dynamiques et templating</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Importer et exporter des contacts" href="../groups_and_contacts/import.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,12 +117,12 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SMS dynamiques et templating</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#les-sms-dynamiques-c-est-quoi">Les SMS dynamiques c’est quoi ?</a></li>
@@ -197,43 +199,39 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="sms-dynamiques-et-templating">
-<span id="templating"></span><h1>SMS dynamiques et templating<a class="headerlink" href="#sms-dynamiques-et-templating" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="les-sms-dynamiques-c-est-quoi">
-<h2>Les SMS dynamiques c’est quoi ?<a class="headerlink" href="#les-sms-dynamiques-c-est-quoi" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="sms-dynamiques-et-templating">
+<span id="templating"></span><h1>SMS dynamiques et templating<a class="headerlink" href="#sms-dynamiques-et-templating" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="les-sms-dynamiques-c-est-quoi">
+<h2>Les SMS dynamiques c’est quoi ?<a class="headerlink" href="#les-sms-dynamiques-c-est-quoi" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les SMS dynamiques vous permettent d’écrire un SMS dont le contenu sera adapté à chaque contact/numéro en fonction des données qui lui sont associées. Cela peut être exploité dans le cadre d’une campagne de communication pour envoyer un SMS personnalisé à chaque utilisateur.</p>
 <p>Les SMS dynamiques exploitent les données des contacts/numéros enrichis, voir <a class="reference internal" href="../groups_and_contacts/extended_contacts.html#extended-contacts"><span class="std std-ref">la documentation des contacts enrichis</span></a>.</p>
-</div>
-<div class="section" id="activer-desactiver-le-support-du-templating">
-<h2>Activer/désactiver le support du templating<a class="headerlink" href="#activer-desactiver-le-support-du-templating" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="activer-desactiver-le-support-du-templating">
+<h2>Activer/désactiver le support du templating<a class="headerlink" href="#activer-desactiver-le-support-du-templating" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Le support du templating peut être activé/désactivé. Pour cela, rendez-vous dans la partie « Réglages » de RaspiSMS, modifiez la valeur dans le champ « Support du templating » et cliquez sur « Mettre à jour les données ».</p>
 <p>Si vous désactivez le support du templating les messages seront considérés comme de simples chaînes de texte et aucune information ne sera remplacée.</p>
-</div>
-<div class="section" id="comment-ca-fonctionne">
-<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Lors de la rédaction de votre SMS vous pouvez utiliser une notation particulière pour indiquer à RaspiSMS que certaines parties doivent être remplacées par une valeur issue des données du contact/numéro destinataire du message.</p>
 <p>Au moment de l’envoi du SMS, RaspiSMS analysera le message à la recherche de ces notations et les remplacera par les données du contact/numéro.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Vous devriez toujours vérifier que votre template fonctionne comme prévu avant d’envoyer votre message. Pour cela, avant d’envoyer votre message, séléctionnez un des contacts cible dans la liste déroulante « Prévisualiser pour : », en bas à droite du message, et cliquez sur le bouton « Prévisualiser » à droite. Le message qui sera envoyé sera alors affiché dans un pop-in.</p>
 </div>
-</div>
-<div class="section" id="les-bases-du-templating">
-<h2>Les bases du templating<a class="headerlink" href="#les-bases-du-templating" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="les-bases-du-templating">
+<h2>Les bases du templating<a class="headerlink" href="#les-bases-du-templating" title="Lien permanent vers cette rubrique">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>N’hésitez pas à tester vous-même les exemples qui suivent pour pleinement prendre en main le templating. Utilisez la fonctionnalité de prévisualisation de l’envoi de SMS pour voir le message généré.</p>
 </div>
 <p>Le système de templating s’apparente à un langage de programmation simplifié et permet d’aller assez loin techniquement. Pour commencer, nous allons voir comment insérer les données d’un contact à l’intérieur d’un SMS pour créer un message personnalisé.</p>
-<div class="section" id="notre-contact-d-exemple">
-<h3>Notre contact d’exemple<a class="headerlink" href="#notre-contact-d-exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="notre-contact-d-exemple">
+<h3>Notre contact d’exemple<a class="headerlink" href="#notre-contact-d-exemple" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour la suite de ce tutoriel nous allons considérer que nous envoyons un message à un contact nommé « John Doe » et qui possède les données enrichies suivantes :</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Données de John Doe</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
 <th class="head"><p>Valeur de la donnée</p></th>
@@ -257,9 +255,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="inserer-les-donnees-du-contact-numero-dans-le-sms">
-<h3>Insérer les données du contact/numéro dans le SMS<a class="headerlink" href="#inserer-les-donnees-du-contact-numero-dans-le-sms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="inserer-les-donnees-du-contact-numero-dans-le-sms">
+<h3>Insérer les données du contact/numéro dans le SMS<a class="headerlink" href="#inserer-les-donnees-du-contact-numero-dans-le-sms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour commencer, nous allons créer un SMS qui affiche le texte <code class="docutils literal notranslate"><span class="pre">Bonjour</span> <span class="pre">John</span> <span class="pre">Doe,</span> <span class="pre">comment</span> <span class="pre">allez-vous</span> <span class="pre">aujourd'hui</span> <span class="pre">?</span></code>, en utilisant les données <code class="docutils literal notranslate"><span class="pre">lastname</span></code> et <code class="docutils literal notranslate"><span class="pre">firstname</span></code> plutôt que d’écrire le nom directement.</p>
 <p>Toutes les données d’un contact/numéro sont accessibles sous le nom <code class="docutils literal notranslate"><span class="pre">contact.nom_de_la_donnée</span></code>. Pour afficher une variable on l’entoure de <code class="docutils literal notranslate"><span class="pre">{{</span></code> et <code class="docutils literal notranslate"><span class="pre">}}</span></code>. Pour afficher cette donnée vous devez donc écrire <code class="docutils literal notranslate"><span class="pre">{{contact.nom_de_la_donnée}}</span></code> là où vous souhaitez afficher la donnée.</p>
 <p>Si nous voulons écrire le message précedemment vu, nous devrons donc écrire le SMS suivant :</p>
@@ -268,24 +266,24 @@
 </div>
 <p>Comme vous pouvez le constatez en utilisant la fonction de prévisualisation, les variables <code class="docutils literal notranslate"><span class="pre">{{contact.firstname}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact.lastname}}</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">John</span></code> et <code class="docutils literal notranslate"><span class="pre">Doe</span></code>.</p>
 <p>Vous pouvez également accéder aux métas données du contact, tel que le nom que vous lui avez donner, ou son numéro de téléphone, avec la syntaxe <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> et <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>. Si le message est envoyé à un numéro plutôt qu’à un contact, seul le numéro est accessible via <code class="docutils literal notranslate"><span class="pre">{{contact_metas.number}}</span></code>, aucun nom n’étant associé au numéro la variable <code class="docutils literal notranslate"><span class="pre">{{contact_metas.name}}</span></code> n’existe pas.</p>
-</div>
-<div class="section" id="modifier-le-contenu-en-utilisant-des-conditions">
-<h3>Modifier le contenu en utilisant des conditions<a class="headerlink" href="#modifier-le-contenu-en-utilisant-des-conditions" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="modifier-le-contenu-en-utilisant-des-conditions">
+<h3>Modifier le contenu en utilisant des conditions<a class="headerlink" href="#modifier-le-contenu-en-utilisant-des-conditions" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour l’instant nous avons vu comment insérer des données à l’intérieur d’un message, mais il est possible d’aller plus loin. Par exemple, imaginons que nous voulions écrire <code class="docutils literal notranslate"><span class="pre">M.</span></code> ou <code class="docutils literal notranslate"><span class="pre">Mme</span></code> avant le prénom du contact, selon qu’il s’agit d’un homme ou d’une femme. Dans notre exemple le sexe du contact est stocké dans la donnée <code class="docutils literal notranslate"><span class="pre">gender</span></code>. Seulement, elle stocke <code class="docutils literal notranslate"><span class="pre">male</span></code> ou <code class="docutils literal notranslate"><span class="pre">female</span></code> plutôt que la civilité. Il nous faudrait donc un moyen de modifier le contenu du message <strong>selon</strong> la valeur d’une donnée plutôt que de simplement afficher cette donnée.</p>
 <p>Pour cela nous allons utiliser des conditions (on parle de <strong>« structure de contrôle »</strong>). Il s’agit d’une notation particulière qui va indiquer à RaspiSMS qu’il doit afficher un message ou un autre selon une condition.</p>
 <p>Pour utiliser une structure, on utilise son nom et une condition, c’est-à-dire une comparaison qui peut être vraie ou fausse. Ceci est fait en utilisant la notation <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">nom_structure</span> <span class="pre">condition</span> <span class="pre">%}</span></code>.</p>
-<div class="section" id="les-structures-de-controle">
-<h4>Les structures de contrôle<a class="headerlink" href="#les-structures-de-controle" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="les-structures-de-controle">
+<h4>Les structures de contrôle<a class="headerlink" href="#les-structures-de-controle" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Il existe trois structures principales, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> et <code class="docutils literal notranslate"><span class="pre">elseif</span></code>, qui correspondent à <code class="docutils literal notranslate"><span class="pre">SI</span></code>, <code class="docutils literal notranslate"><span class="pre">SINON</span></code> et <code class="docutils literal notranslate"><span class="pre">SINON</span> <span class="pre">SI</span></code>. <code class="docutils literal notranslate"><span class="pre">if</span></code> s’utilise toujours en premier, <code class="docutils literal notranslate"><span class="pre">else</span></code> toujours en dernier, et <code class="docutils literal notranslate"><span class="pre">elseif</span></code> forcément après <code class="docutils literal notranslate"><span class="pre">if</span></code> et avant <code class="docutils literal notranslate"><span class="pre">else</span></code> si <code class="docutils literal notranslate"><span class="pre">else</span></code> est utilisé. Enfin, pour indiquer que nous avons atteint la fin du texte conditionnel, on écrit <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endif</span> <span class="pre">%}</span></code> !</p>
-</div>
-<div class="section" id="les-operateurs">
-<h4>Les opérateurs<a class="headerlink" href="#les-operateurs" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="les-operateurs">
+<h4>Les opérateurs<a class="headerlink" href="#les-operateurs" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Pour exprimer la condition on dispose d’opérateurs permettant d’effectuer des comparaisons. On compare alors deux opérandes, comme ceci <code class="docutils literal notranslate"><span class="pre">opérande_1</span> <span class="pre">opérateur</span> <span class="pre">opérande_2</span></code>. Voici la liste des principaux opérateurs de comparaison.</p>
-<table class="colwidths-given docutils align-default" id="id2">
+<table class="docutils align-default" id="id2">
 <caption><span class="caption-text">Les opérateurs de comparaison</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Opérateur</p></th>
@@ -314,11 +312,11 @@
 </tbody>
 </table>
 <p>Vous pouvez également combiner plusieurs conditions en utilisant les opérateurs logiques, en faisant <code class="docutils literal notranslate"><span class="pre">condition</span> <span class="pre">opérateur</span> <span class="pre">condition</span></code>.</p>
-<table class="colwidths-given docutils align-default" id="id3">
+<table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Les opérateurs logiques</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Opérateur</p></th>
@@ -337,9 +335,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="comparer-a-une-chaine-de-caracteres">
-<h4>Comparer à une chaîne de caractères<a class="headerlink" href="#comparer-a-une-chaine-de-caracteres" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="comparer-a-une-chaine-de-caracteres">
+<h4>Comparer à une chaîne de caractères<a class="headerlink" href="#comparer-a-une-chaine-de-caracteres" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Il est possible de comparer à la fois à des chiffres et à du texte. Cependant, si vous voulez faire une comparaison avec du texte, vous devrez entourer celui-ci avec des guillemets simples (<code class="docutils literal notranslate"><span class="pre">'</span></code>). On parle alors d’une chaîne de caractères.</p>
 <p>Par exemple, si vous voulez vérifier que le sexe de l’utilisateur est <code class="docutils literal notranslate"><span class="pre">male</span></code>, vous utiliserez la condition <code class="docutils literal notranslate"><span class="pre">contact.gender</span> <span class="pre">==</span> <span class="pre">'male'</span></code>.</p>
 <div class="admonition note">
@@ -347,45 +345,45 @@
 <p>Et si vous devez écrire un guillement simple, par exemple pour faire une apostrophe, comment faire ? Eh bien il vous suffit de <strong>« l’échapper »</strong>, c’est-à-dire d’indiquer qu’il s’agit d’un simple caractère et pas d’un caractère spécial. Pour cela il vous suffit d’écrire un <code class="docutils literal notranslate"><span class="pre">\</span></code> devant le <code class="docutils literal notranslate"><span class="pre">'</span></code>. Par exemple, pour afficher <code class="docutils literal notranslate"><span class="pre">aujourd'hui</span></code>, vous écrirez <code class="docutils literal notranslate"><span class="pre">'aujourd\'hui'</span></code>.</p>
 <p>Vous devrez d’ailleurs faire pareil pour afficher un <code class="docutils literal notranslate"><span class="pre">\</span></code>, vous devrez alors écrire <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
 </div>
-</div>
-<div class="section" id="notre-sms-dynamique">
-<h4>Notre SMS dynamique<a class="headerlink" href="#notre-sms-dynamique" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="notre-sms-dynamique">
+<h4>Notre SMS dynamique<a class="headerlink" href="#notre-sms-dynamique" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>C’est un peu dense, mais vous devriez commencer à comprendre comment nous pouvons faire varier notre SMS selon le sexe du contact. Puisque nous souhaitons modifier notre SMS selon la variable <code class="docutils literal notranslate"><span class="pre">contact.gender</span></code>, nous pouvons écrire le message suivant :</p>
-<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span>
 <span class="x">Bonjour M. </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
 <span class="x">Bonjour Mme. </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
 <p>En utilisant la prévisualisation vous pouvez constater que vous obtenez bien le message <code class="docutils literal notranslate"><span class="pre">Bonjour</span> <span class="pre">M.</span> <span class="pre">John</span> <span class="pre">Doe,</span> <span class="pre">comment</span> <span class="pre">allez-vous</span> <span class="pre">aujourd'hui</span> <span class="pre">?</span></code>.</p>
-</div>
-<div class="section" id="ameliorons-notre-message">
-<h4>Améliorons notre message<a class="headerlink" href="#ameliorons-notre-message" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="ameliorons-notre-message">
+<h4>Améliorons notre message<a class="headerlink" href="#ameliorons-notre-message" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Nous pouvons allez encore plus loin, par exemple pour gérer le cas où nous ne connaîtrions pas le sexe de l’utilisateur.</p>
-<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span>
 <span class="x">Bonjour M. </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span>
 <span class="x">Bonjour Mme. </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
 <span class="x">Bonjour M./Mme. </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
 <p>Autre piste d’amélioration, plutôt que de ré-écrire le message complet pour chaque condition, nous pourrions simplement changer la civilité.</p>
 <div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="verifier-si-les-donnees-du-contact-existent">
-<h3>Vérifier si les données du contact existent<a class="headerlink" href="#verifier-si-les-donnees-du-contact-existent" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="verifier-si-les-donnees-du-contact-existent">
+<h3>Vérifier si les données du contact existent<a class="headerlink" href="#verifier-si-les-donnees-du-contact-existent" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Comme les données du contact sont entièrement définies par l’utilisateur et ne sont pas obligatoires, elles peuvent varier d’un utilisateur à l’autre. Hélas, si un message est envoyé à un utilisateur et utilise des données qui n’existent pas chez cet utilisateur, cela risque d’entraîner des comportements incohérents, notamment des messages avec des variables remplacées par des chaines vides.</p>
 <p>Pour éviter ce genre de comportement, une bonne solution est de vérifier en amont si toutes les variables utilisées sont disponibles. Pour cela, il vous suffit d’entourer votre message d’un block <code class="docutils literal notranslate"><span class="pre">if</span></code> vérifiant que les variables sont définies avec <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">defined</span></code>.</p>
 <p>Dans notre cas, nous devrions donc modifier notre message comme ceci :</p>
-<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="k">is</span> <span class="nf">defined</span> <span class="k">and</span> <span class="nv">contact.firstname</span> <span class="k">is</span> <span class="nf">defined</span> <span class="k">and</span> <span class="nv">contact.lastname</span> <span class="k">is</span> <span class="nf">defined</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="k">is</span> <span class="nf">defined</span> <span class="k">and</span> <span class="nv">contact.firstname</span> <span class="k">is</span> <span class="nf">defined</span> <span class="k">and</span> <span class="nv">contact.lastname</span> <span class="k">is</span> <span class="nf">defined</span> <span class="cp">%}</span>
 <span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
 <p>Si une variable n’est pas définie, alors le SMS sera vide et ne sera pas envoyé !</p>
@@ -393,17 +391,17 @@
 <p class="admonition-title">Note</p>
 <p>Pour la suite de ce tutoriel, nous n’incluerons pas cette vérification à chaque fois pour des raisons de lisibilité, mais nous vous encourageons vivement à l’utiliser systématiquement !</p>
 </div>
-</div>
-</div>
-<div class="section" id="aller-plus-loin-avec-le-templating">
-<h2>Aller plus loin avec le templating<a class="headerlink" href="#aller-plus-loin-avec-le-templating" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="aller-plus-loin-avec-le-templating">
+<h2>Aller plus loin avec le templating<a class="headerlink" href="#aller-plus-loin-avec-le-templating" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Le templating est un outil très puissant qui vous permet d’aller très loin. Il s’agit en fait d’un véritable petit langage de programmation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Pour proposer autant de fonctionnalités, RaspiSMS utilise le moteur de templating libre Twig (version 3.x). Si vous souhaitez aller encore plus loin avec le moteur de templating de RaspiSMS, nous vous invitons à vous reporter à <a class="reference external" href="https://twig.symfony.com/doc/3.x/templates.html">la documentation de Twig</a>. Vous y trouverez de nombreuses informations.</p>
 </div>
-<div class="section" id="modifier-les-donnees-avec-les-filtres">
-<h3>Modifier les données avec les filtres<a class="headerlink" href="#modifier-les-donnees-avec-les-filtres" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="modifier-les-donnees-avec-les-filtres">
+<h3>Modifier les données avec les filtres<a class="headerlink" href="#modifier-les-donnees-avec-les-filtres" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Parfois, on doit modifier les données à afficher, par exemple modifier leur format. Pour cela on peut utiliser les <strong>« filtres »</strong>. Il s’agit d’un moyen simple de modifier une donnée.</p>
 <p>Pour utiliser un filtre, il suffit d’écrire <code class="docutils literal notranslate"><span class="pre">votre_donnée|nom_du_filte</span></code>. Certains filtres peuvent également prendre des arguments qui modifient leur comportement. Dans ce cas on utilise la notation <code class="docutils literal notranslate"><span class="pre">votre_donnée|nom_du_filtre(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code>.</p>
 <p>Un exemple d’utilisation de filtre pourrait être d’écrire le nom de l’utilisateur entièrement en majuscules. Ça tombe bien, un filtre existe pour ça, <code class="docutils literal notranslate"><span class="pre">upper</span></code>. Il nous suffit donc de modifier le message précedent en :</p>
@@ -411,28 +409,21 @@
 </pre></div>
 </div>
 <p>On pourrait aussi utiliser les filtres pour vérifier si c’est l’anniversaire de notre contact :</p>
-<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="o">|</span><span class="nf">upper</span><span class="cp">}}</span><span class="x">, comment allez-vous ? Aujourd&#39;hui nous faisons -5% dans notre boutique ! </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.birthdate</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%m&#39;</span><span class="o">)</span> <span class="o">==</span> <span class="s1">&#39;now&#39;</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%m&#39;</span><span class="o">)</span> <span class="k">and</span> <span class="nv">contact.birthdate</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%d&#39;</span><span class="o">)</span> <span class="o">==</span> <span class="s1">&#39;now&#39;</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%d&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x">Mais, c&#39;est votre anniversaire ! Pour vous aujourd&#39;hui ce sera donc -15% dans notre boutique à la place !</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="o">|</span><span class="nf">upper</span><span class="cp">}}</span><span class="x">, comment allez-vous ? Aujourd&#39;hui nous faisons -5% dans notre boutique ! </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.birthdate</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%m&#39;</span><span class="o">)</span> <span class="o">==</span> <span class="s1">&#39;now&#39;</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%m&#39;</span><span class="o">)</span> <span class="k">and</span> <span class="nv">contact.birthdate</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%d&#39;</span><span class="o">)</span> <span class="o">==</span> <span class="s1">&#39;now&#39;</span><span class="o">|</span><span class="nf">date</span><span class="o">(</span><span class="s1">&#39;%d&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x">Mais, c&#39;est votre anniversaire ! Pour vous aujourd&#39;hui ce sera donc -15% dans notre boutique à la place !</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<div class="section" id="utiliser-un-filtre-sur-un-bloc-de-texte">
-<h4>Utiliser un filtre sur un bloc de texte<a class="headerlink" href="#utiliser-un-filtre-sur-un-bloc-de-texte" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="utiliser-un-filtre-sur-un-bloc-de-texte">
+<h4>Utiliser un filtre sur un bloc de texte<a class="headerlink" href="#utiliser-un-filtre-sur-un-bloc-de-texte" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Il est même possible d’appliquer un filtre à tout un bloc de texte plutôt qu’à une donnée. Pour cela vous devrez utiliser la structure <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">apply</span> <span class="pre">filtre</span> <span class="pre">%}{%</span> <span class="pre">endapply</span> <span class="pre">%}</span></code>. Par exemple, pour mettre tout le SMS précédent en majuscules :</p>
-<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">apply</span> <span class="nv">upper</span> <span class="cp">%}</span><span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span><span class="cp">{%</span> <span class="k">endapply</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">apply</span> <span class="nv">upper</span> <span class="cp">%}</span><span class="x">Bonjour </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="cp">%}</span><span class="x">M.</span><span class="cp">{%</span> <span class="k">elseif</span> <span class="nv">contact.gender</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span> <span class="cp">%}</span><span class="x">Mme.</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x">M./Mme.</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.firstname</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="nv">contact.lastname</span><span class="cp">}}</span><span class="x">, comment allez-vous aujourd&#39;hui ?</span><span class="cp">{%</span> <span class="k">endapply</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="liste-des-filtres-disponibles">
-<h4>Liste des filtres disponibles<a class="headerlink" href="#liste-des-filtres-disponibles" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="liste-des-filtres-disponibles">
+<h4>Liste des filtres disponibles<a class="headerlink" href="#liste-des-filtres-disponibles" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>De nombreux filtres sont disponibles au sein de RaspiSMS.</p>
 <table class="docutils align-default" id="id4">
 <caption><span class="caption-text">Liste des filtres disponibles dans RaspiSMS</span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>abs</p></td>
 <td><p>capitalize</p></td>
@@ -480,26 +471,19 @@
 </table>
 <p>Pour en apprendre plus sur chacun de ces filtres, consultez <a class="reference external" href="https://twig.symfony.com/doc/3.x/filters/index.html">la page des filtres de la documentation de Twig</a>.</p>
 <p>Pour en apprendre plus sur les filtres de façon générale, repportez-vous à <a class="reference external" href="https://twig.symfony.com/doc/3.x/templates.html#filters">cette page de la documentation Twig</a>.</p>
-</div>
-</div>
-<div class="section" id="generer-des-donnees-avec-fonctions">
-<h3>Générer des données avec fonctions<a class="headerlink" href="#generer-des-donnees-avec-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="generer-des-donnees-avec-fonctions">
+<h3>Générer des données avec fonctions<a class="headerlink" href="#generer-des-donnees-avec-fonctions" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>En plus de permettre la modification des données avec les filtres, le moteur de templating vous permet de générer des données avec les fonctions. Par exemple, nous pouvons utiliser les fonctions <code class="docutils literal notranslate"><span class="pre">random</span></code> et <code class="docutils literal notranslate"><span class="pre">range</span></code> avec l’opérateur de boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> afin de générer un message avec un identifiant aléatoire que l’utilisateur devra présenter lors d’un rendez-vous.</p>
 <div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">Bonjour, vous êtes convoqué demain à 14h00 en salle B3, veuillez présenter ce code : </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">char</span> <span class="k">in</span> <span class="nv">range</span><span class="o">(</span><span class="m">1</span><span class="o">,</span> <span class="m">8</span><span class="o">)</span> <span class="cp">%}{{</span> <span class="nv">random</span><span class="o">(</span><span class="nv">range</span><span class="o">(</span><span class="s1">&#39;a&#39;</span><span class="o">,</span> <span class="s1">&#39;z&#39;</span><span class="o">))|</span><span class="nf">upper</span> <span class="cp">}}{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x">.</span>
 </pre></div>
 </div>
-<div class="section" id="liste-des-fonctions-disponibles">
-<h4>Liste des fonctions disponibles<a class="headerlink" href="#liste-des-fonctions-disponibles" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="liste-des-fonctions-disponibles">
+<h4>Liste des fonctions disponibles<a class="headerlink" href="#liste-des-fonctions-disponibles" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Seules quelques fonctions sont disponibles au sein de RaspiSMS.</p>
 <table class="docutils align-default" id="id5">
 <caption><span class="caption-text">Liste des fonctions disponibles dans RaspiSMS</span><a class="headerlink" href="#id5" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>date</p></td>
 <td><p>max</p></td>
@@ -510,10 +494,10 @@
 </tbody>
 </table>
 <p>Pour en apprendre plus sur chacune de ces fonctions, consultez <a class="reference external" href="https://twig.symfony.com/doc/3.x/functions/index.html">la page des fonctions de la documentation de Twig</a>.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -530,7 +514,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

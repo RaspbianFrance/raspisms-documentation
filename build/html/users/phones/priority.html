@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+      <title>Utiliser en priorité certains téléphones.</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Groupes et contacts" href="../groups_and_contacts/overview.html" />
+  <link rel="prev" title="Limiter le nombre de SMS par téléphone." href="limits.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <span class="site-name">RaspiSMS</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="limits.html">Limiter le nombre de SMS par téléphone.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Utiliser en priorité certains téléphones.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activer-desactiver-le-support-des-telephones-prioritaires">Activer/désactiver le support des téléphones prioritaires</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#definir-les-telephones-prioritaires">Définir les téléphones prioritaires</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#quand-utiliser-des-telephones-prioritaires">Quand utiliser des téléphones prioritaires ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Les téléphones</a> &raquo;</li>
+    
+    <li>Utiliser en priorité certains téléphones.</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="limits.html"
+       title="Chapitre précédent">← Limiter le nombre de SMS par téléphone.</a>
+  </li>
+  <li class="next">
+    <a href="../groups_and_contacts/overview.html"
+       title="Chapitre suivant">Groupes et contacts →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="utiliser-en-priorite-certains-telephones">
+<span id="users-phones-priority"></span><h1>Utiliser en priorité certains téléphones.<a class="headerlink" href="#utiliser-en-priorite-certains-telephones" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="activer-desactiver-le-support-des-telephones-prioritaires">
+<h2>Activer/désactiver le support des téléphones prioritaires<a class="headerlink" href="#activer-desactiver-le-support-des-telephones-prioritaires" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Le support des téléphones prioritaires peut être activé/désactivé. Pour cela, rendez-vous dans la partie « Réglages » de RaspiSMS, modifiez la valeur dans le champ « Support des téléphones prioritaires » et cliquez sur « Mettre à jour les données ».</p>
+<p>Si vous désactivez le support des téléphones prioritaires, tous les téléphones seront traités comme ayant la même priorité, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</section>
+<section id="definir-les-telephones-prioritaires">
+<h2>Définir les téléphones prioritaires<a class="headerlink" href="#definir-les-telephones-prioritaires" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Lors de la création d’un téléphone vous pouvez définir sa priorité dans la partie « Priorité d’utilisation du téléphone ».</p>
+<p>Quand vous créez un SMS sans définir le téléphone a utilisé, un téléphone sera choisi au hasard parmi les téléphones disponibles avec la plus haute priorité.</p>
+<p>Concrétement, lors de l’envoi du SMS RapiSMS choisira le téléphone à utiliser en effectuant les étapes suivantes :
+#. Retrait des téléphones non disponibles.
+#. Retrait des téléphones ayant déjà atteint leur limite d’envoi (<a class="reference internal" href="limits.html#users-phones-limits"><span class="std std-ref">voir la documentation sur la limite d’envoi de SMS par téléphone</span></a>).
+#. Retrait des téléphones avec une priorité inférieure à la priorité maximal.
+#. Choix d’un téléphone au hasard parmis les téléphones restants.</p>
+<p>La priorité minimum d’un téléphone est de <code class="docutils literal notranslate"><span class="pre">0</span></code>, c’est aussi la priorité par défaut.</p>
+</section>
+<section id="quand-utiliser-des-telephones-prioritaires">
+<h2>Quand utiliser des téléphones prioritaires ?<a class="headerlink" href="#quand-utiliser-des-telephones-prioritaires" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Pour la pluspart des utilisateurs la notion de priorité sur les téléphones n’est pas utile, et vous pouvez laisser tous vos téléphones avec la priorité par défaut.</p>
+<p>Les téléphones prioritaires sont principalement utiles si vous mélangez plusieurs fournisseurs de SMS, et que vous souhaitez utiliser en priorité certains fournisseurs (par example parcequ’il sont moins chers), tout en conservant la possibilité de vous rabattre sur un autre fournisseur si le fournisseur prioritéraire n’est plus disponible ou que vous avez épuisé vos limites d’envoi sur ce fournisseur.
+Dans ce cas, vous pouvez définir un score plus élevé pour vos téléphones prioritaires (par exemple <code class="docutils literal notranslate"><span class="pre">1</span></code>) et créer votre téléphone de secours avec une priorité de <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="limits.html"
+       title="Chapitre précédent">← Limiter le nombre de SMS par téléphone.</a>
+  </li>
+  <li class="next">
+    <a href="../groups_and_contacts/overview.html"
+       title="Chapitre suivant">Groupes et contacts →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

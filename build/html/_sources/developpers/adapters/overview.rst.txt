@@ -72,6 +72,8 @@ meta_support_read
 
     À vous de choisir selon les capacités du service implémenté la solution la plus adaptée entre callback HTTP et lecture directe, les deux ayant leurs avantages et leurs inconvénients.
 
+meta_support_phone_status
+    Booléen définissant si l'adaptateur supporte la vérification du status du téléphone. La vérification du status permet à RaspiSMS de vérifier si un téléphone est disponible (càd joignable et capable d'émettre sur le réseau GSM) afin d'ignorer de ne pas utiliser les téléphones qui ne seraient pas disponibles lors de l'envoi de SMS.
 
 meta_support_reception
     Booléen définissant si l'adaptateur supporte la réception de SMS par appel à une callback HTTP. Si ``TRUE`` alors ``meta_support_read`` doit être à ``FALSE``.
@@ -124,6 +126,22 @@ Au moment où un utilisateur valide la création d'un téléphone utilisant l'ad
 La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l'API.
 
 La méthode doit retourner ``TRUE`` en cas de succès et ``FALSE`` en cas d'échec, auquel cas l'utilisateur se verra indiqué que la configuration fournie n'est pas valide.
+
+
+Vérification du status d'un téléphone
+''''''''''''''''''''''''''''''''''''''''
+.. code-block::
+
+    public function check_phone_status (): string
+
+Si un téléphone supporte la mise à jour de son status (``meta_support_phone_status``), l'utilisateur peut à tout moment déclencher une vérification du status d'un téléphone afin de vérifier si celui-ci est toujours disponible.
+
+La fonction doit retourner un status sous forme de chaine de caractère, ce status doit-être l'une des trois chaines suivantes :
+ - **available** : Le téléphone est disponible et fonctionnel.
+ - **unavailable** : Le téléphone n'est pas disponible ou n'est pas joignable.
+ - **no_credit** : Le téléphone est disponible et joignable mais n'a plus de crédit associé.
+
+Si votre téléphone ne supporte pas la mise à jour de son status, retournez systématiquement ``available``.
 
 
 Les méthodes d'envoi et de lecture

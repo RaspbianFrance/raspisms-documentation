@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Commandes par SMS</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,18 +28,17 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Documentation pour les développeurs" href="../../developpers/overview.html" />
-  <link rel="prev" title="Importer et exporter des contacts" href="../groups_and_contacts/import.html" /> 
+  <link rel="next" title="Envoyer des MMS" href="../mms/overview.html" />
+  <link rel="prev" title="Supprimer une liste dynamique de contacts" href="../groups_and_contacts/conditional_delete.html" /> 
   </head>
 
   <body>
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,12 +117,12 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commandes par SMS</a><ul>
@@ -135,6 +137,8 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -158,12 +162,12 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../groups_and_contacts/import.html"
-       title="Chapitre précédent">← Importer et exporter des contacts</a>
+    <a href="../groups_and_contacts/conditional_delete.html"
+       title="Chapitre précédent">← Supprimer une liste dynamique de contacts</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Documentation pour les développeurs →</a>
+    <a href="../mms/overview.html"
+       title="Chapitre suivant">Envoyer des MMS →</a>
   </li>
 </ul>
   
@@ -171,24 +175,24 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="commandes-par-sms">
-<span id="commands"></span><h1>Commandes par SMS<a class="headerlink" href="#commandes-par-sms" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="commandes-par-sms">
+<span id="commands"></span><h1>Commandes par SMS<a class="headerlink" href="#commandes-par-sms" title="Lien permanent vers cette rubrique">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Pour des raisons de sécurité les commandes par SMS ne sont disponibles qu’en auto-hébergement. Ce service n’est pas accessible en mode SaaS.</p>
 </div>
-<div class="section" id="les-commandes-par-sms-c-est-quoi">
-<h2>Les commandes par SMS c’est quoi ?<a class="headerlink" href="#les-commandes-par-sms-c-est-quoi" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="les-commandes-par-sms-c-est-quoi">
+<h2>Les commandes par SMS c’est quoi ?<a class="headerlink" href="#les-commandes-par-sms-c-est-quoi" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les commandes par SMS sont un moyen de déclencher l’execution de commandes système par SMS.</p>
 <p>Cette fonctionnalité peut être utilisée par exemple pour contrôler une machine distante n’ayant pas d’accès à internet.</p>
-</div>
-<div class="section" id="activer-desactiver-le-support-des-commandes-par-sms">
-<h2>Activer/désactiver le support des commandes par SMS<a class="headerlink" href="#activer-desactiver-le-support-des-commandes-par-sms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="activer-desactiver-le-support-des-commandes-par-sms">
+<h2>Activer/désactiver le support des commandes par SMS<a class="headerlink" href="#activer-desactiver-le-support-des-commandes-par-sms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Le support des commandes par SMS peut être activé/désactivé en modifiant le fichier d’environnement global de l’application (par défaut <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/env.php</span></code>).</p>
 <p>Dans le fichier de configuration, passez <code class="docutils literal notranslate"><span class="pre">ENABLE_COMMAND</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code> pour activer les commandes, ou à <code class="docutils literal notranslate"><span class="pre">false</span></code> pour les désactiver (réglage par défaut). Une fois la modification effectuée, redémarrez les démons RaspiSMS avec la commande <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">raspisms</span> <span class="pre">restart</span></code>.</p>
-</div>
-<div class="section" id="creer-une-commande-par-sms">
-<h2>Créer une commande par SMS<a class="headerlink" href="#creer-une-commande-par-sms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="creer-une-commande-par-sms">
+<h2>Créer une commande par SMS<a class="headerlink" href="#creer-une-commande-par-sms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour créer une commande executable par SMS vous devez dans un premier temps créer le script qui devra être lancé à la réception de la commande et le placer dans le dossier des scripts de RaspiSMS (par défaut <code class="docutils literal notranslate"><span class="pre">/usr/share/raspisms/scripts/</span></code>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
@@ -198,16 +202,12 @@
 <p>Renseignez le nom de la commande, celui-ci sera utilisé dans le SMS de déclenchement. Renseignez également le nom de fichier du script à déclencher (il sera appelée depuis le chemin du dossier des scripts de RaspiSMS).</p>
 <p>Choisissez si le niveau administrateur est requis pour exécuter la commande. Si le niveau administrateur est requis la commande ne pourra être lancée que si le compte RaspiSMS est administrateur.</p>
 <p>Il ne vous reste plus qu’à valider en cliquant sur « Enregistrer la commande ».</p>
-</div>
-<div class="section" id="declencher-une-commande">
-<h2>Déclencher une commande<a class="headerlink" href="#declencher-une-commande" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="declencher-une-commande">
+<h2>Déclencher une commande<a class="headerlink" href="#declencher-une-commande" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour déclencher une commande précedemment créée vous devez envoyer un SMS dont le corps est un message au format JSON tel que décrit ci-dessous.</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Description du SMS de déclenchement d’une commande</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Clé</p></th>
 <th class="head"><p>Description</p></th>
@@ -228,9 +228,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="exemple-de-commande">
-<h2>Exemple de commande<a class="headerlink" href="#exemple-de-commande" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exemple-de-commande">
+<h2>Exemple de commande<a class="headerlink" href="#exemple-de-commande" title="Lien permanent vers cette rubrique">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Pour des raisons de sécurité, votre mot de passe sera supprimé du SMS reçu lors de son enregistrement en base de données. Vous devriez cependant penser à supprimer le SMS envoyé de votre téléphone.</p>
@@ -239,8 +239,8 @@
 <p>Dans cet exemple, nous allons envoyer un SMS à RaspiSMS afin de commander l’allumage ou l’extinction d’une lumière.</p>
 <p>La gestion de la lampe se fait à travers le script <code class="docutils literal notranslate"><span class="pre">allumerEteindreLampe.sh</span></code>, lequel est identifié dans RaspiSMS par la commande <code class="docutils literal notranslate"><span class="pre">lampe</span></code>. Ce script peut être appelé sans paramètre, auquel cas il se contentera d’inverser la position de la lampe, ou avec un paramètre, <code class="docutils literal notranslate"><span class="pre">--on</span></code> ou <code class="docutils literal notranslate"><span class="pre">--off</span></code>, permettant de définir si l’on souhaite allumer ou éteindre la lampe.</p>
 <p>Dans cet exemple, nous allons utiliser le compte RaspiSMS <code class="docutils literal notranslate"><span class="pre">documentation&#64;raspisms.fr</span></code> dont le mot de passe est <code class="docutils literal notranslate"><span class="pre">p4ssw0rd</span></code>.</p>
-<div class="section" id="commande-avec-argument">
-<h3>Commande avec argument<a class="headerlink" href="#commande-avec-argument" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="commande-avec-argument">
+<h3>Commande avec argument<a class="headerlink" href="#commande-avec-argument" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Afin d’allumer la lampe via les commandes RaspiSMS, vous devrez donc envoyer le SMS suivant :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;login&quot;</span><span class="p">:</span><span class="s2">&quot;documentation@raspisms.fr&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;p4ssw0rd&quot;</span><span class="p">,</span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="s2">&quot;lampe&quot;</span><span class="p">,</span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="s2">&quot;--on&quot;</span><span class="p">}</span>
 </pre></div>
@@ -249,33 +249,33 @@
 <p class="admonition-title">Note</p>
 <p>Les paramètres supplémentaires passés à la commande sont échappés via la fonction <code class="docutils literal notranslate"><span class="pre">escapeshellcmd()</span></code> de php. Vous pouvez donc utiliser ces paramètres pour passer des arguments comme <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&quot;du</span> <span class="pre">texte&quot;</span> <span class="pre">-l</span> <span class="pre">10</span></code>, mais pas pour exécuter des opérations comme par exemple <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span> <span class="pre">reboot</span></code>.</p>
 </div>
-</div>
-<div class="section" id="commande-sans-argument">
-<h3>Commande sans argument<a class="headerlink" href="#commande-sans-argument" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="commande-sans-argument">
+<h3>Commande sans argument<a class="headerlink" href="#commande-sans-argument" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Afin de simplement inverser la position de la lampe (l’allumer si elle est éteinte, l’éteindre si elle est allumée), vous devrez envoyer le SMS suivant.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;login&quot;</span><span class="p">:</span><span class="s2">&quot;documentation@raspisms.fr&quot;</span><span class="p">,</span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;p4ssw0rd&quot;</span><span class="p">,</span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="s2">&quot;lampe&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../groups_and_contacts/import.html"
-       title="Chapitre précédent">← Importer et exporter des contacts</a>
+    <a href="../groups_and_contacts/conditional_delete.html"
+       title="Chapitre précédent">← Supprimer une liste dynamique de contacts</a>
   </li>
   <li class="next">
-    <a href="../../developpers/overview.html"
-       title="Chapitre suivant">Documentation pour les développeurs →</a>
+    <a href="../mms/overview.html"
+       title="Chapitre suivant">Envoyer des MMS →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

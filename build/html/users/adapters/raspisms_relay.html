@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Téléphone Android</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Téléphone OVH SMS Numéro Virtuel" href="ovh_virtual_number.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,25 +117,36 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Android</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-android-comme-relais-raspisms">1. Configurer un téléphone Android comme relais RaspiSMS</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../phones/overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../phones/overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Téléphone Android</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#configurer-un-telephone-android-comme-relais-raspisms">1. Configurer un téléphone Android comme relais RaspiSMS</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="odyssey_messaging.html">Téléphone Odyssey Messaging</a></li>
+<li class="toctree-l6"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/limits.html">Limiter le nombre de SMS par téléphone.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/priority.html">Utiliser en priorité certains téléphones.</a></li>
 </ul>
 </li>
 </ul>
@@ -142,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -158,6 +172,8 @@
     <li><a href="../../index.html">Docs</a> &raquo;</li>
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="../phones/overview.html">Les téléphones</a> &raquo;</li>
     
       <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
@@ -180,8 +196,8 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="telephone-android">
-<h1>Téléphone Android<a class="headerlink" href="#telephone-android" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="telephone-android">
+<h1>Téléphone Android<a class="headerlink" href="#telephone-android" title="Lien permanent vers cette rubrique">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>L’utilisation d’un téléphone Android comme gateway entre RaspiSMS et votre opérateur n’est disponible qu’en mode SaaS.</p>
@@ -189,13 +205,9 @@
 <p>Il est possible d’utiliser <a class="reference external" href="https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay">l’application RaspiSMS Relay</a> pour tranformer votre téléphone Android en une passerelle (gateway) qui sera utilisé par RaspiSMS pour envoyer et recevoir des messages.</p>
 <p>Cette méthode permet d’utiliser un forfait téléphonique classique avec RaspiSMS afin d’envoyer et de recevoir des messages, sans avoir à installer et maintenir une version locale de RaspiSMS et sans gérer des équipements compliqués comme des modem GSM USB, etc.</p>
 <p>C’est une solution idéale pour la mise en place simple et rapide d’un système dédié à l’envoi de petits volumes de messages, de messages transactionnels (non commerciaux) ou le prototypage.</p>
-<div class="section" id="fonctionnalites-supportees">
-<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="fonctionnalites-supportees">
+<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers cette rubrique">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 78%" />
-<col style="width: 23%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fonctionnalité</p></th>
 <th class="head"><p>Support</p></th>
@@ -208,32 +220,35 @@
 <tr class="row-odd"><td><p>Réception de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-even"><td><p>Envoi de MMS</p></td>
-<td><p>Oui</p></td>
-</tr>
-<tr class="row-odd"><td><p>Réception de MMS</p></td>
-<td><p>Oui</p></td>
-</tr>
-<tr class="row-even"><td><p>Suivi de l’envoi</p></td>
-<td><p>Oui</p></td>
-</tr>
-<tr class="row-odd"><td><p>SMS Flash</p></td>
+<tr class="row-even"><td><p>Status du téléphone</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Alerte sur réception d’un appel</p></td>
+<tr class="row-odd"><td><p>Envoi de MMS</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td><p>Alerte sur fin d’un appel</p></td>
+<tr class="row-even"><td><p>Réception de MMS</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-odd"><td><p>Suivi de l’envoi</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-even"><td><p>SMS Flash</p></td>
+<td><p>Non</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alerte sur réception d’un appel</p></td>
+<td><p>Oui</p></td>
+</tr>
+<tr class="row-even"><td><p>Alerte sur fin d’un appel</p></td>
 <td><p>Non</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="configurer-un-telephone-android-comme-relais-raspisms">
-<h2>1. Configurer un téléphone Android comme relais RaspiSMS<a class="headerlink" href="#configurer-un-telephone-android-comme-relais-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="configurer-un-telephone-android-comme-relais-raspisms">
+<h2>1. Configurer un téléphone Android comme relais RaspiSMS<a class="headerlink" href="#configurer-un-telephone-android-comme-relais-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour savoir comment configurer un téléphone Android pour pouvoir l’utiliser au sein de RaspiSMS pour envoyer et recevoir des messages, reportez-vous au guide <a class="reference internal" href="../guides/starting_with_raspisms_relay.html#starting-with-raspisms-relay-guide"><span class="std std-ref">Commencer à utiliser RaspiSMS avec un téléphone Android.</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -250,7 +265,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

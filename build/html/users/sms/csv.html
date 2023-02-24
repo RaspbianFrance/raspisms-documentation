@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Envoyer des SMS à un fichier CSV</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Documentation pour les développeurs" href="../../developpers/overview.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,12 +117,12 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
@@ -171,13 +173,13 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="envoyer-des-sms-a-un-fichier-csv">
-<span id="sms-csv"></span><h1>Envoyer des SMS à un fichier CSV<a class="headerlink" href="#envoyer-des-sms-a-un-fichier-csv" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="comment-ca-fonctionne">
-<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="envoyer-des-sms-a-un-fichier-csv">
+<span id="sms-csv"></span><h1>Envoyer des SMS à un fichier CSV<a class="headerlink" href="#envoyer-des-sms-a-un-fichier-csv" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Lors de l’envoi d’un SMS, vous pouvez uploader fichier CSV contenant une liste de numéros auxquels sera envoyé le SMS. Pour chacun des numéros vous pouvez également définir un ensemble de données associées (voir <a class="reference internal" href="../groups_and_contacts/extended_contacts.html#extended-contacts"><span class="std std-ref">contacts enrichies</span></a>) qui pourront être utilisés dans le SMS via <a class="reference internal" href="../templating/overview.html#templating"><span class="std std-ref">le système de SMS dynamiques</span></a>.</p>
-<div class="section" id="format-du-fichier-csv">
-<h3>Format du fichier CSV<a class="headerlink" href="#format-du-fichier-csv" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="format-du-fichier-csv">
+<h3>Format du fichier CSV<a class="headerlink" href="#format-du-fichier-csv" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Le format CSV (Comma-Separrated Value) est très utilisé pour le transfert de données avec des logiciels tableur. Dans un fichier CSV, chaque ligne du fichier correspond à une nouvelle entrée, et les valeures de chaque entrée, c’est à dire les colonnes du tabelau, sont séparées par des virgules. La première ligne quand à elle sert généralement à indiquer le nom de chaque colonne.</p>
 <p>Le fichier CSV utilisé pour l’envoi des messages doit respecter un format suivant :</p>
 <ul class="simple">
@@ -186,15 +188,11 @@
 <li><p>Les colonnes suivantes peuvent contenir les données à associer au contact, ou êtres laissées vides.</p></li>
 <li><p>Le nom donné à la première colonne est sans importance, il sera automatiquement écrasé par RaspiSMS, par conséquent, vous pouvez très bien la nommée « 0 », seul impératif ce nom ne peux plus être ré-utilisé pour une autre colonne. Le nom des colonnes suivantes ne doit-être constitué que de caractères alphanumériques, tirets et underscore. Ces noms seront utilisés comme clé de la donnée associé au numéro.</p></li>
 </ul>
-<div class="section" id="exemple-de-fichier-csv">
-<h4>Exemple de fichier CSV<a class="headerlink" href="#exemple-de-fichier-csv" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="exemple-de-fichier-csv">
+<h4>Exemple de fichier CSV<a class="headerlink" href="#exemple-de-fichier-csv" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Pour rendre cela plus clair, rien ne vaut au bon exemple. Voici donc un fichier CSV valide permettant d’envoyer un SMS aux deux numéros suivants :</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Le numéro de téléphone « +33 6 12 34 56 78 »</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
 <th class="head"><p>Valeure de la donnée</p></th>
@@ -220,10 +218,6 @@
 </table>
 <table class="docutils align-default" id="id2">
 <caption><span class="caption-text">Le numéro de téléphone « +33 6 12 34 56 79 »</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Nom de la donnée</p></th>
 <th class="head"><p>Valeure de la donnée</p></th>
@@ -260,10 +254,10 @@
 <p class="admonition-title">Avertissement</p>
 <p>Attention, lors de la lecture d’un fichier CSV avec des logiciels tableur ceux-ci ont tendance à faire disparaitre le « + » au début des numéros, lequel est requis !</p>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -280,7 +274,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

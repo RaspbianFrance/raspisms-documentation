@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html  lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+      <title>Limiter le nombre de SMS par téléphone.</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Utiliser en priorité certains téléphones." href="priority.html" />
+  <link rel="prev" title="Créer des groupes de téléphones" href="groups.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <span class="site-name">RaspiSMS</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="_static/documentation_before_3_0.html"
+        class="nav-link external">
+          Ancienne documentation <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://raspisms.fr"
+        class="nav-link external">
+          Site du projet <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="https://github.com/RaspbianFrance/RaspiSMS"
+        class="nav-link external">
+          Github <outboundlink></outboundlink>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Recherche rapide</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Recherche" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+    <div class="sidebar-group">
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Limiter le nombre de SMS par téléphone.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activer-desactiver-le-support-des-limites-d-envoi-par-telephone">Activer/désactiver le support des limites d’envoi par téléphone</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#limiter-le-nombre-de-sms-qu-un-telephone-peut-envoyer">Limiter le nombre de SMS qu’un téléphone peut envoyer.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#les-differentes-periodes-applicables">Les différentes périodes applicables.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="priority.html">Utiliser en priorité certains téléphones.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
+</ul>
+
+    </div>
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Les téléphones</a> &raquo;</li>
+    
+    <li>Limiter le nombre de SMS par téléphone.</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="groups.html"
+       title="Chapitre précédent">← Créer des groupes de téléphones</a>
+  </li>
+  <li class="next">
+    <a href="priority.html"
+       title="Chapitre suivant">Utiliser en priorité certains téléphones. →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="limiter-le-nombre-de-sms-par-telephone">
+<span id="users-phones-limits"></span><h1>Limiter le nombre de SMS par téléphone.<a class="headerlink" href="#limiter-le-nombre-de-sms-par-telephone" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="activer-desactiver-le-support-des-limites-d-envoi-par-telephone">
+<h2>Activer/désactiver le support des limites d’envoi par téléphone<a class="headerlink" href="#activer-desactiver-le-support-des-limites-d-envoi-par-telephone" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Le support des limites d’envoi de SMS par téléphone peut être activé/désactivé. Pour cela, rendez-vous dans la partie « Réglages » de RaspiSMS, modifiez la valeur dans le champ « Support des limites d’envoi par téléphones » et cliquez sur « Mettre à jour les données ».</p>
+<p>Si vous désactivez le support des limites d’envoi par téléphone, toutes les limites déjà enregistrées seront ignorées.</p>
+</section>
+<section id="limiter-le-nombre-de-sms-qu-un-telephone-peut-envoyer">
+<h2>Limiter le nombre de SMS qu’un téléphone peut envoyer.<a class="headerlink" href="#limiter-le-nombre-de-sms-qu-un-telephone-peut-envoyer" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Lors de la création d’un téléphone dans la partie « Limites des volumes d’envoi du téléphone » vous pouvez définir une ou plusieures limites d’envoi sur différentes périodes de temps.
+Ce réglage est particulièrement utile si vous souhaitez vous assurer de ne pas dépasser certains volumes d’envoi, par exemple pour limiter les risques de sûr-facturation.</p>
+<p>Lors de l’envoi d’un SMS avec ce téléphone, si celui-ci a dépassé sa ou ses limites d’envoi pour la période donnée, RaspiSMS ne transmettra pas la demande d’envoi au téléphone et le SMS sera directement marqué en échec.
+Si le téléphone a utiliser pour l’envoi d’un SMS n’a pas été défini et qu’il doit être choisi au hasard, les téléphones dont les limites d’envoi sont déjà atteintes seront automatiquement ignorés.</p>
+<p>Si aucune limite n’est définie, RaspiSMS ne bloquera jamais l’envoi sur le téléphone.
+Si plusieures limites sont définies, la première limite atteinte bloquera le téléphone.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>RaspiSMS utilise l’historique des SMS envoyés pour déterminer si un téléphone a atteint ou non ses limites. Si vous supprimez des SMS envoyés, le calcul des limites sera donc faussé.</p>
+</div>
+</section>
+<section id="les-differentes-periodes-applicables">
+<h2>Les différentes périodes applicables.<a class="headerlink" href="#les-differentes-periodes-applicables" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Les limites d’envoi sont appliquées sur des périodes de temps (un jour, une semaine, etc.). Ainsi vous pouvez jouer avec ces périodes pour régler très finement le comportement du téléphone.</p>
+<p>Ces différentes limites peuvent êtres exprimées sous formes glissantes, ou sous forme fixe, pour mieux comprendre, voici les dates à partir desquelles le nombre de SMS envoyés sera compté pour ces différentes périodes.
+En considérant que nous essayons d’envoyez un SMS le Jeudi 4 Août 2022 à 14h30 (2022-08-04 14:30:00).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Période</p></th>
+<th class="head"><p>Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Par jour</p></td>
+<td><p>2022-08-04 00:00:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>24 heures glissantes</p></td>
+<td><p>2022-08-03 14:30:00</p></td>
+</tr>
+<tr class="row-even"><td><p>Cette semaine</p></td>
+<td><p>2022-08-01 00:00:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>7 jours glissants</p></td>
+<td><p>2022-07-28 14:30:00</p></td>
+</tr>
+<tr class="row-even"><td><p>Ces deux dernières semaines</p></td>
+<td><p>2022-07-25 00:00:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>14 jours glissants</p></td>
+<td><p>2022-07-21 14:30:00</p></td>
+</tr>
+<tr class="row-even"><td><p>Ce mois</p></td>
+<td><p>2022-08-01 00:00:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>1 mois glissant</p></td>
+<td><p>2022-07-04 14:30:00</p></td>
+</tr>
+<tr class="row-even"><td><p>28 jours glissants</p></td>
+<td><p>2022-07-07 14:30:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>30 jours glissants</p></td>
+<td><p>2022-07-05 14:30:00</p></td>
+</tr>
+<tr class="row-even"><td><p>31 jours glissants</p></td>
+<td><p>2022-07-04 14:30:00</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="groups.html"
+       title="Chapitre précédent">← Créer des groupes de téléphones</a>
+  </li>
+  <li class="next">
+    <a href="priority.html"
+       title="Chapitre suivant">Utiliser en priorité certains téléphones. →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, OsaAjani.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

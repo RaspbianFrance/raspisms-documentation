@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Téléphone Octopush Shortcode</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,10 +28,9 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Téléphone Gammu" href="gammu.html" />
+  <link rel="next" title="Téléphone Odyssey Messaging" href="odyssey_messaging.html" />
   <link rel="prev" title="Téléphone Octopush Numéro Virtuel" href="octopush_virtual_number.html" /> 
   </head>
 
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,35 +117,47 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Octopush Shortcode</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-un-telephone-octopush-shortcode">Configurer un téléphone Octopush Shortcode</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#souscrire-a-une-offre-chez-octopush">1. Souscrire à une offre chez Octopush</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#ajouter-le-telephone-dans-raspisms">2. Ajouter le téléphone dans RaspiSMS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#le-nom-du-telephone">3.1 Le nom du téléphone</a></li>
-<li class="toctree-l7"><a class="reference internal" href="#recuperer-les-identifiants-api-octopush">3.2 Récupérer les identifiants API Octopush</a></li>
-<li class="toctree-l7"><a class="reference internal" href="#definir-le-nom-d-expediteur">3.3 Définir le nom d’expéditeur</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../phones/overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../phones/overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Téléphone Octopush Shortcode</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#configurer-un-telephone-octopush-shortcode">Configurer un téléphone Octopush Shortcode</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#souscrire-a-une-offre-chez-octopush">1. Souscrire à une offre chez Octopush</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#ajouter-le-telephone-dans-raspisms">2. Ajouter le téléphone dans RaspiSMS</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#le-nom-du-telephone">3.1 Le nom du téléphone</a></li>
+<li class="toctree-l9"><a class="reference internal" href="#recuperer-les-identifiants-api-octopush">3.2 Récupérer les identifiants API Octopush</a></li>
+<li class="toctree-l9"><a class="reference internal" href="#definir-le-nom-d-expediteur">3.3 Définir le nom d’expéditeur</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="#activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms">4. Activer la réception de messages et le suivi du statut des SMS</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms">4. Activer la réception de messages et le suivi du statut des SMS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6"><a class="reference internal" href="odyssey_messaging.html">Téléphone Odyssey Messaging</a></li>
+<li class="toctree-l6"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/limits.html">Limiter le nombre de SMS par téléphone.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/priority.html">Utiliser en priorité certains téléphones.</a></li>
 </ul>
 </li>
 </ul>
@@ -152,6 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -169,6 +184,8 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
+      <li><a href="../phones/overview.html">Les téléphones</a> &raquo;</li>
+    
       <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
     <li>Téléphone Octopush Shortcode</li>
@@ -181,8 +198,8 @@
        title="Chapitre précédent">← Téléphone Octopush Numéro Virtuel</a>
   </li>
   <li class="next">
-    <a href="gammu.html"
-       title="Chapitre suivant">Téléphone Gammu →</a>
+    <a href="odyssey_messaging.html"
+       title="Chapitre suivant">Téléphone Odyssey Messaging →</a>
   </li>
 </ul>
   
@@ -190,21 +207,17 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="telephone-octopush-shortcode">
-<span id="users-adapters-octopush-shortcode"></span><h1>Téléphone Octopush Shortcode<a class="headerlink" href="#telephone-octopush-shortcode" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="telephone-octopush-shortcode">
+<span id="users-adapters-octopush-shortcode"></span><h1>Téléphone Octopush Shortcode<a class="headerlink" href="#telephone-octopush-shortcode" title="Lien permanent vers cette rubrique">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Actuellement l’offre d’Octopush nous semble moins aboutie que celles d’autres fournisseurs comme OVH ou Twilio, nous vous recommandons donc de privilégier ces derniers.</p>
 </div>
 <p>Le téléphone Octopush Shortcode permet l’utilisation de la plateforme Octopush avec RaspiSMS en se basant sur l’utilisation de l’API et un numéro court aléatoire.</p>
 <p>L’utilisation d’un numéro court aléatoire vous permet d’envoyer un message à vos utilisateurs mais pas de recevoir des réponses. Vous pouvez aussi utiliser un nom alphanumérique à la place du numéro.</p>
-<div class="section" id="fonctionnalites-supportees">
-<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="fonctionnalites-supportees">
+<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers cette rubrique">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 78%" />
-<col style="width: 23%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fonctionnalité</p></th>
 <th class="head"><p>Support</p></th>
@@ -217,72 +230,75 @@
 <tr class="row-odd"><td><p>Réception de SMS</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Envoi de MMS</p></td>
+<tr class="row-even"><td><p>Status du téléphone</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-odd"><td><p>Réception de MMS</p></td>
+<tr class="row-odd"><td><p>Envoi de MMS</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Suivi de l’envoi</p></td>
+<tr class="row-even"><td><p>Réception de MMS</p></td>
+<td><p>Non</p></td>
+</tr>
+<tr class="row-odd"><td><p>Suivi de l’envoi</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td><p>SMS Flash</p></td>
+<tr class="row-even"><td><p>SMS Flash</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Alerte sur réception d’un appel</p></td>
+<tr class="row-odd"><td><p>Alerte sur réception d’un appel</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-odd"><td><p>Alerte sur fin d’un appel</p></td>
+<tr class="row-even"><td><p>Alerte sur fin d’un appel</p></td>
 <td><p>Non</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="configurer-un-telephone-octopush-shortcode">
-<h2>Configurer un téléphone Octopush Shortcode<a class="headerlink" href="#configurer-un-telephone-octopush-shortcode" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="configurer-un-telephone-octopush-shortcode">
+<h2>Configurer un téléphone Octopush Shortcode<a class="headerlink" href="#configurer-un-telephone-octopush-shortcode" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Dans cette partie nous allons voir comment configurer un téléphone Octopush Shortcode pour lier RaspiSMS et Octopush.</p>
-<div class="section" id="souscrire-a-une-offre-chez-octopush">
-<h3>1. Souscrire à une offre chez Octopush<a class="headerlink" href="#souscrire-a-une-offre-chez-octopush" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="souscrire-a-une-offre-chez-octopush">
+<h3>1. Souscrire à une offre chez Octopush<a class="headerlink" href="#souscrire-a-une-offre-chez-octopush" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour utiliser un téléphone Octopush vous devez prendre un abonnement adapté chez Octopush.</p>
 <p>Pour cela, rendez-vous sur <a class="reference external" href="https://www.octopush.com/">Le site d’octopush</a>.</p>
-</div>
-<div class="section" id="ajouter-le-telephone-dans-raspisms">
-<h3>2. Ajouter le téléphone dans RaspiSMS<a class="headerlink" href="#ajouter-le-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="ajouter-le-telephone-dans-raspisms">
+<h3>2. Ajouter le téléphone dans RaspiSMS<a class="headerlink" href="#ajouter-le-telephone-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Type de téléphone »</strong> choisissez <strong>« Octopush Shortcode »</strong>.</p>
-</div>
-<div class="section" id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
-<h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms">
+<h3>3. Récupérer les informations nécessaires à la configuration du téléphone dans RaspiSMS<a class="headerlink" href="#recuperer-les-informations-necessaires-a-la-configuration-du-telephone-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour configurer le téléphone dans RaspiSMS nous allons avoir besoin de quelques informations qui se trouvent dans votre compte Octopush.</p>
-<div class="section" id="le-nom-du-telephone">
-<h4>3.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="le-nom-du-telephone">
+<h4>3.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Dans le champ <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparaît que pour vous, jamais pour les destinataires du message.</p>
-</div>
-<div class="section" id="recuperer-les-identifiants-api-octopush">
-<h4>3.2 Récupérer les identifiants API Octopush<a class="headerlink" href="#recuperer-les-identifiants-api-octopush" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="recuperer-les-identifiants-api-octopush">
+<h4>3.2 Récupérer les identifiants API Octopush<a class="headerlink" href="#recuperer-les-identifiants-api-octopush" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Rendez-vous sur <a class="reference external" href="https://www.octopush.com/">le site d’octopush</a>, connectez-vous à votre compte et rendez-vous dans la partie <a class="reference external" href="https://www.octopush-dm.com/api-logins">identifiants API</a> d’Octopush.
 Copiez la valeur dans le cadre « Login » dans le champ <strong>« Octopush Login »</strong> de RaspiSMS, et la valeur dans le cadre « Clé API » dans le champ <strong>« API Key »</strong> de RaspiSMS.</p>
-</div>
-<div class="section" id="definir-le-nom-d-expediteur">
-<h4>3.3 Définir le nom d’expéditeur<a class="headerlink" href="#definir-le-nom-d-expediteur" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="definir-le-nom-d-expediteur">
+<h4>3.3 Définir le nom d’expéditeur<a class="headerlink" href="#definir-le-nom-d-expediteur" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>Si vous ne souhaitez pas utiliser d’expéditeur personnalisé, laissez le champ vide.</p>
 </div>
 <p>Si vous le souhaitez vous pouvez utiliser un nom d’expéditeur qui sera affiché au destinataire à la place du numéro de téléphone.
 Pour cela, entrez le nom que vous souhaitez utiliser dans le champ <strong>« Nom de l’expéditeur »</strong> dans RaspiSMS.</p>
-</div>
-</div>
-<div class="section" id="activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms">
-<h3>4. Activer la réception de messages et le suivi du statut des SMS<a class="headerlink" href="#activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms">
+<h3>4. Activer la réception de messages et le suivi du statut des SMS<a class="headerlink" href="#activer-la-reception-de-messages-et-le-suivi-du-statut-des-sms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Au point où nous en sommes nous avons un téléphone Octopush capable d’envoyer des SMS depuis RaspiSMS, mais celui-ci n’est pas encore capable de suivre le statut des SMS envoyés ou de recevoir des messages.
 Pour activer le suivi de statut d’un SMS et la réception de messages vous devez transmettre à Octopush les adresses URL que leurs serveurs devront contacter pour transmettre l’information à RaspiSMS.</p>
 <p>Pour cela, vous devez envoyer un mail à Octopush en leur transmettant ces adresses dites de <cite>callback</cite>. Vous pouvez trouver ces adresses en vous rendant sur la liste de vos téléphones dans RaspiSMS ; vous devriez voir celui que vous venez de créer. Copiez l’adresse URL affichée sous le label <strong>« Changement de statut d’un SMS »</strong> dans la colonne <strong>« Callbacks »</strong> correspondant au téléphone que vous venez de créer.</p>
 <p>Le suivi du statut d’un SMS se fait par une <cite>callback</cite>, c’est-à-dire une adresse URL qui sera appelée par le fournisseur (dans notre cas Octopush) quand le statut d’un SMS évolue.</p>
 <p>En vous rendant sur la liste de vos téléphones dans RaspiSMS, vous devriez voir celui que vous venez de créer. Dans la colonne <strong>« Callbacks »</strong> vous trouverez les deux adresses à transmettre à Octopush.</p>
 <p>Et voilà, vous pouvez maintenant envoyer et recevoir des SMS via Octopush avec RaspiSMS !</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -293,13 +309,13 @@ Pour activer le suivi de statut d’un SMS et la réception de messages vous dev
        title="Chapitre précédent">← Téléphone Octopush Numéro Virtuel</a>
   </li>
   <li class="next">
-    <a href="gammu.html"
-       title="Chapitre suivant">Téléphone Gammu →</a>
+    <a href="odyssey_messaging.html"
+       title="Chapitre suivant">Téléphone Odyssey Messaging →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

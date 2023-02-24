@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Téléphone Kannel</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,10 +28,9 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Groupes et contacts" href="../groups_and_contacts/overview.html" />
+  <link rel="next" title="Créer des groupes de téléphones" href="../phones/groups.html" />
   <link rel="prev" title="Téléphone Gammu" href="gammu.html" /> 
   </head>
 
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,47 +117,57 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Téléphone Kannel</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#configurer-le-serveur-kannel">1. Configurer le serveur Kannel</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#comment-configurer-kannel">1.1 Comment configurer Kannel ?</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#configuration-specifique-des-groupes-kannel-pour-relier-raspisms">1.2.1 Configuration spécifique des groupes Kannel pour relier RaspiSMS</a><ul>
-<li class="toctree-l8"><a class="reference internal" href="#groupe-sendsms-user">1.2.1.1 Groupe <code class="docutils literal notranslate"><span class="pre">sendsms-user</span></code></a></li>
-<li class="toctree-l8"><a class="reference internal" href="#groupe-sms-service">1.2.1.2 Groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../phones/overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../phones/overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html">Les types de téléphones</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="overview.html#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="overview.html#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="odyssey_messaging.html">Téléphone Odyssey Messaging</a></li>
+<li class="toctree-l6"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Téléphone Kannel</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#fonctionnalites-supportees">Fonctionnalités supportées</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#configurer-le-serveur-kannel">1. Configurer le serveur Kannel</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#comment-configurer-kannel">1.1 Comment configurer Kannel ?</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#configuration-specifique-des-groupes-kannel-pour-relier-raspisms">1.2.1 Configuration spécifique des groupes Kannel pour relier RaspiSMS</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="#groupe-sendsms-user">1.2.1.1 Groupe <code class="docutils literal notranslate"><span class="pre">sendsms-user</span></code></a></li>
+<li class="toctree-l10"><a class="reference internal" href="#groupe-sms-service">1.2.1.2 Groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l7"><a class="reference internal" href="#exemple-de-fichier-de-configuration">1.2.2 Exemple de fichier de configuration</a></li>
+<li class="toctree-l9"><a class="reference internal" href="#exemple-de-fichier-de-configuration">1.2.2 Exemple de fichier de configuration</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="#ajouter-un-telephone-dans-raspisms">2. Ajouter un téléphone dans RaspiSMS</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#le-nom-du-telephone">2.1 Le nom du téléphone</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#definir-l-adresse-du-script-d-envoi-de-kannel">2.2 Définir l’adresse du script d’envoi de Kannel</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#definir-l-utilisateur-kannel-pour-l-envoi-des-sms">2.3 Définir l’utilisateur Kannel pour l’envoi des SMS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#definir-le-numero-de-telephone-nom-transmis-un-destinataire">2.4 Définir le numéro de téléphone/nom transmis un destinataire</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#activer-le-suivi-du-statut-d-un-sms">2.5 Activer le suivi du statut d’un SMS</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone">2.6 Définir le SMSC à utiliser pour envoyer les SMS avec ce téléphone</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#ajouter-un-telephone-dans-raspisms">2. Ajouter un téléphone dans RaspiSMS</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#le-nom-du-telephone">2.1 Le nom du téléphone</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#definir-l-adresse-du-script-d-envoi-de-kannel">2.2 Définir l’adresse du script d’envoi de Kannel</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#definir-l-utilisateur-kannel-pour-l-envoi-des-sms">2.3 Définir l’utilisateur Kannel pour l’envoi des SMS</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#definir-le-numero-de-telephone-nom-transmis-un-destinataire">2.4 Définir le numéro de téléphone/nom transmis un destinataire</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#activer-le-suivi-du-statut-d-un-sms">2.5 Activer le suivi du statut d’un SMS</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone">2.6 Définir le SMSC à utiliser pour envoyer les SMS avec ce téléphone</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="#modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms">3. Modifier la configuration du seveur Kannel pour transmettre les SMS reçus à RaspiSMS</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms">3. Modifier la configuration du seveur Kannel pour transmettre les SMS reçus à RaspiSMS</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/limits.html">Limiter le nombre de SMS par téléphone.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/priority.html">Utiliser en priorité certains téléphones.</a></li>
 </ul>
 </li>
 </ul>
@@ -164,6 +176,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -181,6 +194,8 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
+      <li><a href="../phones/overview.html">Les téléphones</a> &raquo;</li>
+    
       <li><a href="overview.html">Les types de téléphones</a> &raquo;</li>
     
     <li>Téléphone Kannel</li>
@@ -193,8 +208,8 @@
        title="Chapitre précédent">← Téléphone Gammu</a>
   </li>
   <li class="next">
-    <a href="../groups_and_contacts/overview.html"
-       title="Chapitre suivant">Groupes et contacts →</a>
+    <a href="../phones/groups.html"
+       title="Chapitre suivant">Créer des groupes de téléphones →</a>
   </li>
 </ul>
   
@@ -202,18 +217,14 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="telephone-kannel">
-<h1>Téléphone Kannel<a class="headerlink" href="#telephone-kannel" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="telephone-kannel">
+<h1>Téléphone Kannel<a class="headerlink" href="#telephone-kannel" title="Lien permanent vers cette rubrique">¶</a></h1>
 <p>Le téléphone Kannel permet de connecter RaspiSMS à une instance du logiciel <a class="reference external" href="https://www.kannel.org/">Kannel</a>. Kannel est un logiciel de passerelle SMS vous permettant aussi bien d’utiliser un modem GSM équipé d’une carte SIM, que de vous brancher directement au SMSC d’un opérateur.</p>
 <p>Grâce au téléphone Kannel, vous profitez de l’interface utilisateur et des fonctionnalités avancées de RaspiSMS, tout en vous appuyant sur la puissance de Kannel, un standard de l’industrie des télécoms.</p>
 <p>Cette méthode vous permet donc aussi bien d’utiliser un forfait téléphonique classique avec RaspiSMS, que de vous connecter directement au SMS Center d’un opérateur, ou bien d’utiliser u n groupe SMPP.</p>
-<div class="section" id="fonctionnalites-supportees">
-<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="fonctionnalites-supportees">
+<h2>Fonctionnalités supportées<a class="headerlink" href="#fonctionnalites-supportees" title="Lien permanent vers cette rubrique">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 78%" />
-<col style="width: 23%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Fonctionnalité</p></th>
 <th class="head"><p>Support</p></th>
@@ -226,32 +237,35 @@
 <tr class="row-odd"><td><p>Réception de SMS</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-even"><td><p>Envoi de MMS</p></td>
+<tr class="row-even"><td><p>Status du téléphone</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-odd"><td><p>Réception de MMS</p></td>
+<tr class="row-odd"><td><p>Envoi de MMS</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Suivi de l’envoi</p></td>
+<tr class="row-even"><td><p>Réception de MMS</p></td>
+<td><p>Non</p></td>
+</tr>
+<tr class="row-odd"><td><p>Suivi de l’envoi</p></td>
 <td><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td><p>SMS Flash</p></td>
+<tr class="row-even"><td><p>SMS Flash</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-even"><td><p>Alerte sur réception d’un appel</p></td>
+<tr class="row-odd"><td><p>Alerte sur réception d’un appel</p></td>
 <td><p>Non</p></td>
 </tr>
-<tr class="row-odd"><td><p>Alerte sur fin d’un appel</p></td>
+<tr class="row-even"><td><p>Alerte sur fin d’un appel</p></td>
 <td><p>Non</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="configurer-le-serveur-kannel">
-<h2>1. Configurer le serveur Kannel<a class="headerlink" href="#configurer-le-serveur-kannel" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="configurer-le-serveur-kannel">
+<h2>1. Configurer le serveur Kannel<a class="headerlink" href="#configurer-le-serveur-kannel" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Avant de pouvoir créer un téléphone Kannel dans RaspiSMS, vous devrez avoir installer et configurer le logiciel Kannel sur un serveur disposant d’une IP public, laquelle sera ensuite renseignée dans RaspiSMS.</p>
-<div class="section" id="comment-configurer-kannel">
-<h3>1.1 Comment configurer Kannel ?<a class="headerlink" href="#comment-configurer-kannel" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="comment-configurer-kannel">
+<h3>1.1 Comment configurer Kannel ?<a class="headerlink" href="#comment-configurer-kannel" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour permettre l’utilisation de Kannel avec RaspiSMS, vous devrez configurer les groupes suivants :</p>
 <ul class="simple">
 <li><p>Un groupe <code class="docutils literal notranslate"><span class="pre">sms-box</span></code> pour activer les fonctionnalités SMS de Kannel.</p></li>
@@ -261,19 +275,19 @@
 <li><p>Un groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code> pour transmettre les SMS reçus par Kanel à RaspiSMS.</p></li>
 </ul>
 <p>Pour plus d’informations sur la configuration de ces différents groupes, reportez-vous à la configuration de Kannel, <a class="reference external" href="https://www.kannel.org/download/kannel-userguide-snapshot/userguide.html">la documentation de Kannel</a>.</p>
-<div class="section" id="configuration-specifique-des-groupes-kannel-pour-relier-raspisms">
-<h4>1.2.1 Configuration spécifique des groupes Kannel pour relier RaspiSMS<a class="headerlink" href="#configuration-specifique-des-groupes-kannel-pour-relier-raspisms" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="configuration-specifique-des-groupes-kannel-pour-relier-raspisms">
+<h4>1.2.1 Configuration spécifique des groupes Kannel pour relier RaspiSMS<a class="headerlink" href="#configuration-specifique-des-groupes-kannel-pour-relier-raspisms" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Pour pleinement relier RaspiSMS à Kannel, vous devrez adapter la configuration de certains groupes Kannel.</p>
-<div class="section" id="groupe-sendsms-user">
-<h5>1.2.1.1 Groupe <code class="docutils literal notranslate"><span class="pre">sendsms-user</span></code><a class="headerlink" href="#groupe-sendsms-user" title="Lien permanent vers ce titre">¶</a></h5>
+<section id="groupe-sendsms-user">
+<h5>1.2.1.1 Groupe <code class="docutils literal notranslate"><span class="pre">sendsms-user</span></code><a class="headerlink" href="#groupe-sendsms-user" title="Lien permanent vers cette rubrique">¶</a></h5>
 <p>Vous devez définir un groupe <code class="docutils literal notranslate"><span class="pre">sendsms-user</span></code>, avec un nom d’utilisateur et un mot de passe pour le groupe. Vous devrez aussi :</p>
 <ul class="simple">
 <li><p>Définir l’option <code class="docutils literal notranslate"><span class="pre">max-messages</span></code> à <code class="docutils literal notranslate"><span class="pre">10</span></code> ou plus pour vous assurez que les SMS longs envoyés depuis RaspiSMS ne seront pas coupés par Kannel.</p></li>
 <li><p>Si vous voulez que les SMS longs soient envoyés en un seul message, définir l’option <code class="docutils literal notranslate"><span class="pre">concatenation</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="groupe-sms-service">
-<h5>1.2.1.2 Groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code><a class="headerlink" href="#groupe-sms-service" title="Lien permanent vers ce titre">¶</a></h5>
+</section>
+<section id="groupe-sms-service">
+<h5>1.2.1.2 Groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code><a class="headerlink" href="#groupe-sms-service" title="Lien permanent vers cette rubrique">¶</a></h5>
 <p>Vous devez définir un groupe <code class="docutils literal notranslate"><span class="pre">sms-service</span></code>, avec :</p>
 <ul class="simple">
 <li><p>L’option <code class="docutils literal notranslate"><span class="pre">keyword</span></code> à <code class="docutils literal notranslate"><span class="pre">default</span></code> pour que le groupe se déclenche sur tous les messages.</p></li>
@@ -281,10 +295,10 @@
 <li><p>L’option <code class="docutils literal notranslate"><span class="pre">concatenation</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code> pour que Kannel ré-assemble automatiquement les longs SMS en un seul.</p></li>
 <li><p>L’option <code class="docutils literal notranslate"><span class="pre">post-url</span></code>. Une fois le téléphone Kannel créé dans RaspiSMS, en vous rendant sur la liste des téléphones créés, dans la colonne « Callbacks » du téléphone Kannel que vous venez de créer, vous trouverez l’adresse URL à utiliser pour l’option <code class="docutils literal notranslate"><span class="pre">post-url</span></code> sous l’entrée « Réception d’un SMS ».</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exemple-de-fichier-de-configuration">
-<h4>1.2.2 Exemple de fichier de configuration<a class="headerlink" href="#exemple-de-fichier-de-configuration" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+</section>
+<section id="exemple-de-fichier-de-configuration">
+<h4>1.2.2 Exemple de fichier de configuration<a class="headerlink" href="#exemple-de-fichier-de-configuration" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Le fichier de configuration <code class="docutils literal notranslate"><span class="pre">/etc/kannel/kannel.conf</span></code> ci-dessous vous offre un exemple de serveur Kannel avec un SMSC <code class="docutils literal notranslate"><span class="pre">FAKE</span></code> (un SMSC Fake est utilisé uniquement à des fins de tests) et configuré de façon à pouvoir être utilisé avec RaspiSMS.</p>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
@@ -298,102 +312,102 @@
 <span class="c1"># HTTP administration is disabled by default. Make sure you set the</span>
 <span class="c1"># password if you enable it.</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">core</span>
-<span class="na">admin-port</span> <span class="o">=</span> <span class="s">13000</span>
-<span class="na">admin-password</span> <span class="o">=</span> <span class="s">$SOME_ADMIN_PASSWORD</span>
-<span class="na">admin-deny-ip</span> <span class="o">=</span> <span class="s">&quot;*.*.*.*&quot;</span>
-<span class="na">wapbox-port</span> <span class="o">=</span> <span class="s">13002</span>
-<span class="na">wdp-interface-name</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
-<span class="na">log-file</span> <span class="o">=</span> <span class="s">&quot;/var/log/kannel/bearerbox.log&quot;</span>
-<span class="na">box-deny-ip</span> <span class="o">=</span> <span class="s">&quot;*.*.*.*&quot;</span>
-<span class="na">box-allow-ip</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
-<span class="na">dlr-storage</span> <span class="o">=</span> <span class="s">internal</span>
-<span class="na">log-level</span> <span class="o">=</span> <span class="s">0</span>
-<span class="na">smsbox-port</span> <span class="o">=</span> <span class="s">13003</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">core</span>
+<span class="na">admin-port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13000</span>
+<span class="na">admin-password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$SOME_ADMIN_PASSWORD</span>
+<span class="na">admin-deny-ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*.*.*.*&quot;</span>
+<span class="na">wapbox-port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13002</span>
+<span class="na">wdp-interface-name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
+<span class="na">log-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/var/log/kannel/bearerbox.log&quot;</span>
+<span class="na">box-deny-ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*.*.*.*&quot;</span>
+<span class="na">box-allow-ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span>
+<span class="na">dlr-storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">internal</span>
+<span class="na">log-level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<span class="na">smsbox-port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13003</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">wapbox</span>
-<span class="na">bearerbox-host</span> <span class="o">=</span> <span class="s">localhost</span>
-<span class="na">log-file</span> <span class="o">=</span> <span class="s">&quot;/var/log/kannel/wapbox.log&quot;</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">wapbox</span>
+<span class="na">bearerbox-host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">localhost</span>
+<span class="na">log-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/var/log/kannel/wapbox.log&quot;</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">smsbox</span>
-<span class="na">smsbox-id</span> <span class="o">=</span> <span class="s">mysmsbox</span>
-<span class="na">bearerbox-host</span> <span class="o">=</span> <span class="s">localhost</span>
-<span class="na">sendsms-port</span> <span class="o">=</span> <span class="s">13013</span>
-<span class="na">log-level</span> <span class="o">=</span> <span class="s">0</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">smsbox</span>
+<span class="na">smsbox-id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mysmsbox</span>
+<span class="na">bearerbox-host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">localhost</span>
+<span class="na">sendsms-port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13013</span>
+<span class="na">log-level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">sendsms-user</span>
-<span class="na">username</span> <span class="o">=</span> <span class="s">$SOME_USERNAME</span>
-<span class="na">password</span> <span class="o">=</span> <span class="s">$SOME_PASSWORD</span>
-<span class="na">max-messages</span> <span class="o">=</span> <span class="s">20</span>
-<span class="na">concatenation</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sendsms-user</span>
+<span class="na">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$SOME_USERNAME</span>
+<span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$SOME_PASSWORD</span>
+<span class="na">max-messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">20</span>
+<span class="na">concatenation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">smsc</span>
-<span class="na">smsc</span> <span class="o">=</span> <span class="s">fake</span>
-<span class="na">smsc-id</span> <span class="o">=</span> <span class="s">FAKE</span>
-<span class="na">port</span> <span class="o">=</span> <span class="s">10000</span>
-<span class="na">log-level</span> <span class="o">=</span> <span class="s">0</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">smsc</span>
+<span class="na">smsc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fake</span>
+<span class="na">smsc-id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">FAKE</span>
+<span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
+<span class="na">log-level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">smsbox-route</span>
-<span class="na">smsbox-id</span> <span class="o">=</span> <span class="s">mysmsbox</span>
-<span class="na">smsc-id</span> <span class="o">=</span> <span class="s">FAKE</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">smsbox-route</span>
+<span class="na">smsbox-id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mysmsbox</span>
+<span class="na">smsc-id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">FAKE</span>
 
-<span class="na">group</span> <span class="o">=</span> <span class="s">sms-service</span>
-<span class="na">keyword</span> <span class="o">=</span> <span class="s">default</span>
-<span class="na">post-url</span> <span class="o">=</span> <span class="s">https://app.raspisms.fr/raspisms/callback/reception/kannel_adapter/27/?api_key=2321afb7b3d8d764a8b5d86ba70936e9</span>
-<span class="na">concatenation</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">max-messages</span> <span class="o">=</span> <span class="s">0</span>
+<span class="na">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sms-service</span>
+<span class="na">keyword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">default</span>
+<span class="na">post-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://app.raspisms.fr/raspisms/callback/reception/kannel_adapter/27/?api_key=2321afb7b3d8d764a8b5d86ba70936e9</span>
+<span class="na">concatenation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">max-messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="ajouter-un-telephone-dans-raspisms">
-<h2>2. Ajouter un téléphone dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-dans-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="ajouter-un-telephone-dans-raspisms">
+<h2>2. Ajouter un téléphone dans RaspiSMS<a class="headerlink" href="#ajouter-un-telephone-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Dans RaspiSMS, rendez-vous dans la partie <strong>« Téléphones »</strong>, <strong>« Ajouter un téléphone »</strong> et dans la liste <strong>« Type de téléphone »</strong> choisissez <strong>« Kannel »</strong>.</p>
-<div class="section" id="le-nom-du-telephone">
-<h3>2.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="le-nom-du-telephone">
+<h3>2.1 Le nom du téléphone<a class="headerlink" href="#le-nom-du-telephone" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Dans le champ <strong>« Nom »</strong> donnez un nom unique au téléphone que vous allez créer. Ce nom n’apparaît que pour vous, jamais pour les destinataires du message.</p>
-</div>
-<div class="section" id="definir-l-adresse-du-script-d-envoi-de-kannel">
-<h3>2.2 Définir l’adresse du script d’envoi de Kannel<a class="headerlink" href="#definir-l-adresse-du-script-d-envoi-de-kannel" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="definir-l-adresse-du-script-d-envoi-de-kannel">
+<h3>2.2 Définir l’adresse du script d’envoi de Kannel<a class="headerlink" href="#definir-l-adresse-du-script-d-envoi-de-kannel" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Dans le champ <strong>« Adresse URL du groupe kannel sendsms »</strong>, vous devez renseignez l’adresse URL du groupe <code class="docutils literal notranslate"><span class="pre">send-sms</span></code> de Kannel qui sera utilisé par RaspiSMS pour déclencher l’envoi d’un SMS par Kannel.</p>
 <p>Si vous utilisez le fichier de configuration de Kannel précédemment indiqué, cette adresse devrait être de la forme <code class="docutils literal notranslate"><span class="pre">http://IP_OU_URL_DE_VOTRE_SERVEUR_KANNEL:13013/cgi-bin/sendsms</span></code>.</p>
-</div>
-<div class="section" id="definir-l-utilisateur-kannel-pour-l-envoi-des-sms">
-<h3>2.3 Définir l’utilisateur Kannel pour l’envoi des SMS<a class="headerlink" href="#definir-l-utilisateur-kannel-pour-l-envoi-des-sms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="definir-l-utilisateur-kannel-pour-l-envoi-des-sms">
+<h3>2.3 Définir l’utilisateur Kannel pour l’envoi des SMS<a class="headerlink" href="#definir-l-utilisateur-kannel-pour-l-envoi-des-sms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Pour envoyer un message, Kannel demande les identifiants de l’utilisateur lié au groupe <code class="docutils literal notranslate"><span class="pre">send-sms</span></code> de Kannel.</p>
 <p>Copiez-vous la valeure de l’option <code class="docutils literal notranslate"><span class="pre">username</span></code> du groupe <code class="docutils literal notranslate"><span class="pre">send-sms</span></code> et collez-le dans le champ <strong>« Nom de l’utilisateur »</strong>. Faites de même pour l’option <code class="docutils literal notranslate"><span class="pre">username</span></code> avec le champ <strong>« Mot de passe de l’utilisateur »</strong>.</p>
-</div>
-<div class="section" id="definir-le-numero-de-telephone-nom-transmis-un-destinataire">
-<h3>2.4 Définir le numéro de téléphone/nom transmis un destinataire<a class="headerlink" href="#definir-le-numero-de-telephone-nom-transmis-un-destinataire" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="definir-le-numero-de-telephone-nom-transmis-un-destinataire">
+<h3>2.4 Définir le numéro de téléphone/nom transmis un destinataire<a class="headerlink" href="#definir-le-numero-de-telephone-nom-transmis-un-destinataire" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Kannel permet (voir nécessite) de définir le numéro de téléphone ou le nom qui sera transmis au destinataire du SMS.</p>
 <p>Même si ce paramètre est considéré comme obligatoire par Kannel (paramètre <code class="docutils literal notranslate"><span class="pre">from</span></code>), dans la très vaste majorité des cas, ce numéro ou ce nom sera remplacé par un numéro/nom qui vous aura été attribué par l’opérateur mobile gérant le SMSC auquel vous vous connectez. Dans certains cas néanmoins, il se pourrait qu’il s’agisse du nom/numéro qui sera affiché au destinataire lors de la réception d’un SMS.</p>
 <p>Vous devez donc renseigner ce numéro de téléphone ou nom dans le champ <strong>« Numéro de téléphone émetteur ou nom de l’émetteur »</strong>. Si vous renseigner un nom, sa longueur devrat être comprise entre 3 et 11 caractères.</p>
-</div>
-<div class="section" id="activer-le-suivi-du-statut-d-un-sms">
-<h3>2.5 Activer le suivi du statut d’un SMS<a class="headerlink" href="#activer-le-suivi-du-statut-d-un-sms" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="activer-le-suivi-du-statut-d-un-sms">
+<h3>2.5 Activer le suivi du statut d’un SMS<a class="headerlink" href="#activer-le-suivi-du-statut-d-un-sms" title="Lien permanent vers cette rubrique">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
 <p>La modification de ce champs est réservée à des usages spécifiques et des utilisateurs avancés.</p>
 </div>
 <p>Lors du déclenchement de l’envoi d’un SMS, il est possible de spécifier à Kannel une adresse URL à laquelle sera transmise une requête HTTP lors de certains évènements au cours de la vie du SMS (refus par l’opérateur, réception par le téléphone final, échec de livraison, etc.).</p>
 <p>Pour cela et par défaut, le champs <strong>« Adresse URL de livraison du Delivery Report du SMS »</strong> est pré-rempli avec l’adresse de base utilisée par RaspiSMS pour recevoir la mise à jour du statut d’un SMS et vous ne devriez pas la modifier. Néanmoins, si vous utilisez RaspiSMS et Kannel sur des sous-réseaux internes, vous pourriez vouloir modifier la partie <code class="docutils literal notranslate"><span class="pre">domaine</span></code> de cette adresse pour utiliser un domaine ou une IP interne.</p>
-</div>
-<div class="section" id="definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone">
-<h3>2.6 Définir le SMSC à utiliser pour envoyer les SMS avec ce téléphone<a class="headerlink" href="#definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone">
+<h3>2.6 Définir le SMSC à utiliser pour envoyer les SMS avec ce téléphone<a class="headerlink" href="#definir-le-smsc-a-utiliser-pour-envoyer-les-sms-avec-ce-telephone" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Si vous utilisez plusieurs SMSC au sein de Kannel et un seul service <code class="docutils literal notranslate"><span class="pre">send-sms</span></code>, vous pouvez définir dans le champs <strong>« Identifiant unique du SMSC »</strong> l’identifiant du SMSC à utiliser pour envoyer les SMS avec ce téléphone Kannel.</p>
 <p>Si vous ne utilisez un seul SMSC, ou bien si vous préférez Kannel s’occuper lui même du routage, laissez simplement ce champs vide.</p>
 <p>Enfin, cliquez sur le bouton <strong>« Enregistrer le téléphone »</strong>.</p>
-</div>
-</div>
-<div class="section" id="modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms">
-<h2>3. Modifier la configuration du seveur Kannel pour transmettre les SMS reçus à RaspiSMS<a class="headerlink" href="#modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms">
+<h2>3. Modifier la configuration du seveur Kannel pour transmettre les SMS reçus à RaspiSMS<a class="headerlink" href="#modifier-la-configuration-du-seveur-kannel-pour-transmettre-les-sms-recus-a-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Maintenant que le téléphone a été créé au sein de RaspiSMS, la dernière chose à faire est de configurer Kannel pour que celui-ci transmette à RaspiSMS les SMS qu’il reçoit.</p>
 <p>Pour cela, rendez-vous dans l’interface listant les téléphones au sein de RaspiSMS. Dans cette liste, cherchez le téléphone que vous venez de créer etopiez l’adresse URL apparaissant sous la partie <strong>« Réception d’un SMS »</strong> dans la colonne <strong>« Callbacks »</strong>.</p>
 <p>Enfin, sur le serveur Kannel, modifiez le fichier de configuration <code class="docutils literal notranslate"><span class="pre">/etc/kannel/kannel.conf</span></code>, et remplacez/ajoutez la valeure de l’option <code class="docutils literal notranslate"><span class="pre">post-url</span></code> par l’adresse URL précedemment copiée.</p>
 <p>Et voilà, vous pouvez désormais envoyer et recevoir des SMS depuis RaspiSMS en passant par Kannel !</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -404,13 +418,13 @@
        title="Chapitre précédent">← Téléphone Gammu</a>
   </li>
   <li class="next">
-    <a href="../groups_and_contacts/overview.html"
-       title="Chapitre suivant">Groupes et contacts →</a>
+    <a href="../phones/groups.html"
+       title="Chapitre suivant">Créer des groupes de téléphones →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

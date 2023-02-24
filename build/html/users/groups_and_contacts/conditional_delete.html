@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Supprimer une liste dynamique de contacts</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,16 +28,17 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
-  <link rel="search" title="Recherche" href="../../search.html" /> 
+  <link rel="search" title="Recherche" href="../../search.html" />
+  <link rel="next" title="Commandes par SMS" href="../commands/overview.html" />
+  <link rel="prev" title="Importer et exporter des contacts" href="import.html" /> 
   </head>
 
   <body>
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -45,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -80,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -113,9 +117,36 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a></li>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Groupes et contacts</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#objectif-des-groupes-et-des-contacts">Objectif des groupes et des contacts</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="overview.html#les-contacts">Les contacts</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="extended_contacts.html">Les contacts enrichis</a></li>
+<li class="toctree-l5"><a class="reference internal" href="import.html">Importer et exporter des contacts</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">Supprimer une liste dynamique de contacts</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#a-quoi-ca-sert">À quoi ça sert ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#comment-ca-fonctionne">Comment ça fonctionne ?</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#comment-ecrire-une-regle-pour-supprimer-des-contacts">Comment écrire une règle pour supprimer des contacts ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="overview.html#les-groupes">Les groupes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
 </ul>
 
@@ -129,45 +160,65 @@
   <ul class="breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
     
+      <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
+    
+      <li><a href="overview.html">Groupes et contacts</a> &raquo;</li>
+    
     <li>Supprimer une liste dynamique de contacts</li>
   </ul>
   
 
   <ul class="page-nav">
+  <li class="prev">
+    <a href="import.html"
+       title="Chapitre précédent">← Importer et exporter des contacts</a>
+  </li>
+  <li class="next">
+    <a href="../commands/overview.html"
+       title="Chapitre suivant">Commandes par SMS →</a>
+  </li>
 </ul>
   
 </div>
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="supprimer-une-liste-dynamique-de-contacts">
-<span id="contacts-conditional-delete"></span><h1>Supprimer une liste dynamique de contacts<a class="headerlink" href="#supprimer-une-liste-dynamique-de-contacts" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="a-quoi-ca-sert">
-<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="supprimer-une-liste-dynamique-de-contacts">
+<span id="contacts-conditional-delete"></span><h1>Supprimer une liste dynamique de contacts<a class="headerlink" href="#supprimer-une-liste-dynamique-de-contacts" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>La suppression d’une liste dynamique de contacts vous permet de facilement supprimer de nombreux contacts en fonction <a class="reference internal" href="extended_contacts.html#extended-contacts"><span class="std std-ref">des données enrichis des contacts</span></a>.</p>
-</div>
-<div class="section" id="comment-ca-fonctionne">
-<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="comment-ca-fonctionne">
+<h2>Comment ça fonctionne ?<a class="headerlink" href="#comment-ca-fonctionne" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Lors de la suppression d’une liste dynamique de contacts, au lieu de sélectionner une liste fixe de contact à supprimer, vous écrivez une règle qui sera évaluée pour chaque contact avec les données de celui-ci. Si la règle est évaluée comme <code class="docutils literal notranslate"><span class="pre">VRAIE</span></code>, alors le contact est supprimé, sinon il est ignoré.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Avant de valider la suppression d’une liste dynamique de contact, vous pouvez prévisualiser la liste des contacts qui seront supprimés en cliquant sur le bouton « Prévisualiser les contacts qui seront supprimés ».</p>
 </div>
-</div>
-<div class="section" id="comment-ecrire-une-regle-pour-supprimer-des-contacts">
-<h2>Comment écrire une règle pour supprimer des contacts ?<a class="headerlink" href="#comment-ecrire-une-regle-pour-supprimer-des-contacts" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="comment-ecrire-une-regle-pour-supprimer-des-contacts">
+<h2>Comment écrire une règle pour supprimer des contacts ?<a class="headerlink" href="#comment-ecrire-une-regle-pour-supprimer-des-contacts" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Le système de règles pour supprimer des contacts est le même que pour la création de groupes conditionnels. Pour plus d’information sur l’écriture de ces règles, repportez vous à <a class="reference internal" href="conditionnals_groups.html#conditionnals-groups"><span class="std std-ref">la documention sur les groupes conditionnels.</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="import.html"
+       title="Chapitre précédent">← Importer et exporter des contacts</a>
+  </li>
+  <li class="next">
+    <a href="../commands/overview.html"
+       title="Chapitre suivant">Commandes par SMS →</a>
+  </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

@@ -1,0 +1,1 @@
+curl -X POST https://app.raspisms.fr/api/phone/ -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d' -d 'name=Test phone' -d 'adapter=adapters\TestAdapter' -d "priority=2" -d 'limits[0][volume]=100' -d 'limits[0][startpoint]=today' -d 'limits[1][volume]=500' -d 'limits[1][startpoint]=this week midnight'

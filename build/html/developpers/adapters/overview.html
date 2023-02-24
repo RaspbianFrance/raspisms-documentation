@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Créer un nouveau type de téléphone</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Les Webhooks" href="../webhooks/overview.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,7 +117,7 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
@@ -126,6 +128,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-meta">Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#le-constructeur-de-l-adaptateur">Le constructeur de l’adaptateur</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#validation-des-donnees-de-configuration">Validation des données de configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verification-du-status-d-un-telephone">Vérification du status d’un téléphone</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#les-methodes-d-envoi-et-de-lecture">Les méthodes d’envoi et de lecture</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#envoi-d-un-sms">Envoi d’un SMS</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#lecture-d-un-sms">Lecture d’un SMS</a></li>
@@ -179,20 +182,20 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="creer-un-nouveau-type-de-telephone">
-<span id="developpers-adapters-overview"></span><h1>Créer un nouveau type de téléphone<a class="headerlink" href="#creer-un-nouveau-type-de-telephone" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="objectif-des-differents-types-de-telephones">
-<h2>Objectif des différents types de téléphones<a class="headerlink" href="#objectif-des-differents-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="creer-un-nouveau-type-de-telephone">
+<span id="developpers-adapters-overview"></span><h1>Créer un nouveau type de téléphone<a class="headerlink" href="#creer-un-nouveau-type-de-telephone" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="objectif-des-differents-types-de-telephones">
+<h2>Objectif des différents types de téléphones<a class="headerlink" href="#objectif-des-differents-types-de-telephones" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d’envoi.
 Pour cela, les types de téléphones offrent une interface standardisée entre le code de RaspiSMS et le code des fournisseurs, lequel change d’un fournisseur à un autre, à l’aide d’une mécanique appelée les « adaptateurs ».</p>
 <p>En tant qu’utilisateur, le support de différents types de téléphones, et donc de différents fournisseurs de SMS vous permet d’utiliser RaspiSMS avec l’offre commerciale la plus adaptée à vos besoins. Par ailleurs, l’intégration unifiée au sein de RaspiSMS vous permet de ne pas être prisonnier d’un seul vendeur de SMS, et de pouvoir changer facilement sans avoir à modifier vos habitudes ou votre système d’information.</p>
 <p>Grâce à cette organisation il est facile d’ajouter le support de nouveaux fournisseurs de SMS, puisqu’il suffit de créer un nouvel adaptateur et qu’il n’est pas nécessaire de toucher aux autres parties de RaspiSMS.</p>
 <p>Si vous souhaitez ajouter un nouvel adaptateur vous devez donc implémenter l’interface <code class="docutils literal notranslate"><span class="pre">adapters/AdapterInterface</span></code>, laquelle impose un certain nombre de méthodes que nous allons voir ci-dessous.</p>
-</div>
-<div class="section" id="les-methodes-de-la-classe-adapterinterface-et-leurs-roles">
-<h2>Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles<a class="headerlink" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="les-methodes-meta">
-<h3>Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code><a class="headerlink" href="#les-methodes-meta" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="les-methodes-de-la-classe-adapterinterface-et-leurs-roles">
+<h2>Les méthodes de la classe <code class="docutils literal notranslate"><span class="pre">AdapterInterface</span></code> et leurs rôles<a class="headerlink" href="#les-methodes-de-la-classe-adapterinterface-et-leurs-roles" title="Lien permanent vers cette rubrique">¶</a></h2>
+<section id="les-methodes-meta">
+<h3>Les méthodes <code class="docutils literal notranslate"><span class="pre">meta_*</span></code><a class="headerlink" href="#les-methodes-meta" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Les méthodes commençant par <code class="docutils literal notranslate"><span class="pre">meta_</span></code> permettent de définir les capacités et les informations relatives à l’adaptateur, tel que son nom, les champs supplémentaires permettant la configuration de l’adaptateur, ou encore les fonctionnalités disponibles.</p>
 <p>Pour cela ces fonctions doivent retourner des chaînes de caractères ou des tableaux. Ces méthodes doivent être envisagées comme de simples propriétés et à ce titre sont toutes statiques. L’objectif est de forcer l’implémentation des méthodes par les classes implémentant l’interface, car PHP ne supporte pas les propriétés abstraites.</p>
 <dl>
@@ -230,6 +233,8 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <dt>meta_support_read</dt><dd><p>Booléen définissant si l’adaptateur supporte la lecture directe des SMS reçus, par exemple via un appel à une API, par opposition à la lecture des SMS par appel d’une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_reception</span></code> doit obligatoirement être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
 <p>À vous de choisir selon les capacités du service implémenté la solution la plus adaptée entre callback HTTP et lecture directe, les deux ayant leurs avantages et leurs inconvénients.</p>
 </dd>
+<dt>meta_support_phone_status</dt><dd><p>Booléen définissant si l’adaptateur supporte la vérification du status du téléphone. La vérification du status permet à RaspiSMS de vérifier si un téléphone est disponible (càd joignable et capable d’émettre sur le réseau GSM) afin d’ignorer de ne pas utiliser les téléphones qui ne seraient pas disponibles lors de l’envoi de SMS.</p>
+</dd>
 <dt>meta_support_reception</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception de SMS par appel à une callback HTTP. Si <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> alors <code class="docutils literal notranslate"><span class="pre">meta_support_read</span></code> doit être à <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
 </dd>
 <dt>meta_support_status_change</dt><dd><p>Booléen définissant si l’adaptateur supporte la mise à jour du statut d’un SMS par l’appel à une callback HTTP.</p>
@@ -245,29 +250,45 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 <dt>meta_support_end_call_callback</dt><dd><p>Booléen définissant si l’adaptateur supporte la réception via une callback d’un avertissement lors de la fin d’un appel.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="le-constructeur-de-l-adaptateur">
-<h3>Le constructeur de l’adaptateur<a class="headerlink" href="#le-constructeur-de-l-adaptateur" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="le-constructeur-de-l-adaptateur">
+<h3>Le constructeur de l’adaptateur<a class="headerlink" href="#le-constructeur-de-l-adaptateur" title="Lien permanent vers cette rubrique">¶</a></h3>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function __construct(string $data)</span>
 </pre></div>
 </div>
 <p>La fonctions prend en argument une chaine de caractères <code class="docutils literal notranslate"><span class="pre">$data</span></code> qui est une chaîne JSON contenant les données de configuration de l’adaptateur. Il s’agit des données indiquées via les champs générés en utilisant <code class="docutils literal notranslate"><span class="pre">meta_data_fields</span></code>.</p>
 <p>À vous de décoder ces données et de les utiliser pour générer un client API, un fichier de configuration ou autre.</p>
-</div>
-<div class="section" id="validation-des-donnees-de-configuration">
-<h3>Validation des données de configuration<a class="headerlink" href="#validation-des-donnees-de-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="validation-des-donnees-de-configuration">
+<h3>Validation des données de configuration<a class="headerlink" href="#validation-des-donnees-de-configuration" title="Lien permanent vers cette rubrique">¶</a></h3>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function test (): bool</span>
 </pre></div>
 </div>
 <p>Au moment où un utilisateur valide la création d’un téléphone utilisant l’adaptateur, la classe est instanciée et la méthode <code class="docutils literal notranslate"><span class="pre">test()</span></code> est appelée.</p>
 <p>La méthode devrait alors vérifier que les données de configuration transmises sont valides, par exemple vérifier que les identifiants API fournis permettent bien se connecter à l’API.</p>
 <p>La méthode doit retourner <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> en cas de succès et <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> en cas d’échec, auquel cas l’utilisateur se verra indiqué que la configuration fournie n’est pas valide.</p>
+</section>
+<section id="verification-du-status-d-un-telephone">
+<h3>Vérification du status d’un téléphone<a class="headerlink" href="#verification-du-status-d-un-telephone" title="Lien permanent vers cette rubrique">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function check_phone_status (): string</span>
+</pre></div>
 </div>
-<div class="section" id="les-methodes-d-envoi-et-de-lecture">
-<h3>Les méthodes d’envoi et de lecture<a class="headerlink" href="#les-methodes-d-envoi-et-de-lecture" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Si un téléphone supporte la mise à jour de son status (<code class="docutils literal notranslate"><span class="pre">meta_support_phone_status</span></code>), l’utilisateur peut à tout moment déclencher une vérification du status d’un téléphone afin de vérifier si celui-ci est toujours disponible.</p>
+<dl class="simple">
+<dt>La fonction doit retourner un status sous forme de chaine de caractère, ce status doit-être l’une des trois chaines suivantes :</dt><dd><ul class="simple">
+<li><p><strong>available</strong> : Le téléphone est disponible et fonctionnel.</p></li>
+<li><p><strong>unavailable</strong> : Le téléphone n’est pas disponible ou n’est pas joignable.</p></li>
+<li><p><strong>no_credit</strong> : Le téléphone est disponible et joignable mais n’a plus de crédit associé.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Si votre téléphone ne supporte pas la mise à jour de son status, retournez systématiquement <code class="docutils literal notranslate"><span class="pre">available</span></code>.</p>
+</section>
+<section id="les-methodes-d-envoi-et-de-lecture">
+<h3>Les méthodes d’envoi et de lecture<a class="headerlink" href="#les-methodes-d-envoi-et-de-lecture" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Ces méthodes permettent l’envoi de SMS et la lecture des SMS reçus.</p>
-<div class="section" id="envoi-d-un-sms">
-<h4>Envoi d’un SMS<a class="headerlink" href="#envoi-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="envoi-d-un-sms">
+<h4>Envoi d’un SMS<a class="headerlink" href="#envoi-d-un-sms" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function send (string $destination, string $text, bool $flash = false, bool $mms = false, array $medias = [])</span>
 </pre></div>
 </div>
@@ -292,9 +313,9 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="lecture-d-un-sms">
-<h4>Lecture d’un SMS<a class="headerlink" href="#lecture-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="lecture-d-un-sms">
+<h4>Lecture d’un SMS<a class="headerlink" href="#lecture-d-un-sms" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function read (): array</span>
 </pre></div>
 </div>
@@ -324,13 +345,13 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="les-methodes-de-callback">
-<h3>Les méthodes de callback<a class="headerlink" href="#les-methodes-de-callback" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="les-methodes-de-callback">
+<h3>Les méthodes de callback<a class="headerlink" href="#les-methodes-de-callback" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Ces méthodes sont appelées par RaspiSMS lors de la réception d’une requête HTTP de callback concernant cet adaptateur.</p>
-<div class="section" id="mise-a-jour-du-statut-d-un-sms">
-<h4>Mise à jour du statut d’un SMS<a class="headerlink" href="#mise-a-jour-du-statut-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="mise-a-jour-du-statut-d-un-sms">
+<h4>Mise à jour du statut d’un SMS<a class="headerlink" href="#mise-a-jour-du-statut-d-un-sms" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function status_change_callback()</span>
 </pre></div>
 </div>
@@ -342,9 +363,9 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="reception-d-un-sms">
-<h4>Réception d’un SMS<a class="headerlink" href="#reception-d-un-sms" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="reception-d-un-sms">
+<h4>Réception d’un SMS<a class="headerlink" href="#reception-d-un-sms" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function reception_callback() : array</span>
 </pre></div>
 </div>
@@ -374,9 +395,9 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="reception-d-un-appel-telephonique">
-<h4>Réception d’un appel téléphonique<a class="headerlink" href="#reception-d-un-appel-telephonique" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="reception-d-un-appel-telephonique">
+<h4>Réception d’un appel téléphonique<a class="headerlink" href="#reception-d-un-appel-telephonique" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function inbound_call_callback() : array</span>
 </pre></div>
 </div>
@@ -396,9 +417,9 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="fin-d-un-appel-telephonique">
-<h4>Fin d’un appel téléphonique<a class="headerlink" href="#fin-d-un-appel-telephonique" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="fin-d-un-appel-telephonique">
+<h4>Fin d’un appel téléphonique<a class="headerlink" href="#fin-d-un-appel-telephonique" title="Lien permanent vers cette rubrique">¶</a></h4>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public static function end_call_callback() : array</span>
 </pre></div>
 </div>
@@ -416,10 +437,10 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul>
 </dd>
 </dl>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -436,7 +457,7 @@ Pour cela, les types de téléphones offrent une interface standardisée entre l
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

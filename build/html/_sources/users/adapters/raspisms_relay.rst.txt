@@ -17,6 +17,7 @@ Fonctionnalités supportées
 =============================== =========
 Envoi de SMS                    Oui
 Réception de SMS                Oui
+Status du téléphone             Non
 Envoi de MMS                    Oui
 Réception de MMS                Oui
 Suivi de l'envoi                Oui

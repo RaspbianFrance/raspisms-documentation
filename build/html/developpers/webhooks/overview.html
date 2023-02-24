@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Les Webhooks</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,7 +28,6 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Système de fichier de RaspiSMS" href="../filesystem/overview.html" />
@@ -36,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,7 +117,7 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../users/overview.html">Documentation pour les utilisateurs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les développeurs</a><ul class="current">
@@ -166,27 +168,23 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="les-webhooks">
-<span id="webhooks"></span><h1>Les Webhooks<a class="headerlink" href="#les-webhooks" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="a-quoi-ca-sert">
-<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="les-webhooks">
+<span id="webhooks"></span><h1>Les Webhooks<a class="headerlink" href="#les-webhooks" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="a-quoi-ca-sert">
+<h2>À quoi ça sert ?<a class="headerlink" href="#a-quoi-ca-sert" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les webhooks sont un moyen de signaler un évènement à une application tierce sans que celle-ci ait besoin d’intérroger l’application qui émet l’évènement.</p>
 <p>Pour cela, lorsqu’un évènement donné se produit, l’application émetrice émet une requête HTTP vers une URL définie et appartenant à l’application réceptrice, laquelle peut alors analyser la requête reçue et adapter son comportement en conséquence.</p>
-</div>
-<div class="section" id="creer-un-webhook">
-<h2>Créer un Webhook<a class="headerlink" href="#creer-un-webhook" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="creer-un-webhook">
+<h2>Créer un Webhook<a class="headerlink" href="#creer-un-webhook" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Pour créer un Webhook il vous suffit de vous rendre dans la partie « Webhooks », et de cliquer sur le bouton « Ajouter un webhook » pour accéder au formulaire de création des webhooks.</p>
 <p>Vous devrez alors définir l’adresse URL à appeler lors du déclenchement du webhook. Il doit obligatoirement s’agir d’une adresse en <code class="docutils literal notranslate"><span class="pre">http://</span></code> ou <code class="docutils literal notranslate"><span class="pre">https://</span></code>. Vous devrez également choisir le type de webhook à créer, c’est-à-dire le type d’évènement qui déclenchera le webhook.</p>
-</div>
-<div class="section" id="contenu-de-la-requete">
-<h2>Contenu de la requête<a class="headerlink" href="#contenu-de-la-requete" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="contenu-de-la-requete">
+<h2>Contenu de la requête<a class="headerlink" href="#contenu-de-la-requete" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Lors du déclenchement d’un webhook, la requête HTTP contient certains paramètres décrivant l’évènement survenu.</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Protocole de la requête</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Verbe HTTP</p></td>
 <td><p>POST</p></td>
@@ -195,10 +193,6 @@
 </table>
 <table class="docutils align-default" id="id2">
 <caption><span class="caption-text">Paramètres de la requête</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Nom du paramètre</p></th>
 <th class="head"><p>Description</p></th>
@@ -222,14 +216,10 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="corps-des-webhooks">
-<h3>Corps des webhooks<a class="headerlink" href="#corps-des-webhooks" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="corps-des-webhooks">
+<h3>Corps des webhooks<a class="headerlink" href="#corps-des-webhooks" title="Lien permanent vers cette rubrique">¶</a></h3>
 <table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">receive_sms</span></code></span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Identifiant unique du SMS</p></td>
@@ -253,10 +243,6 @@
 <td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas.</p>
 <table class="docutils align-default" id="id4">
 <caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Id du média</p></td>
@@ -275,10 +261,6 @@
 </table>
 <table class="docutils align-default" id="id5">
 <caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">send_sms</span></code></span><a class="headerlink" href="#id5" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Identifiant unique du SMS</p></td>
@@ -308,10 +290,6 @@
 <td><p>Un tableau des médias liés au message, si aucun média n’est lié, le paramètre n’existe pas ou contient un tableau vide.</p>
 <table class="docutils align-default" id="id6">
 <caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Contenu</span> <span class="pre">d'un</span> <span class="pre">média</span></code></span><a class="headerlink" href="#id6" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Id du média</p></td>
@@ -326,17 +304,13 @@
 </table>
 </td>
 </tr>
-<tr class="row-even"><td><p>originating_scheduled</p></td>
+<tr class="row-odd"><td><p>originating_scheduled</p></td>
 <td><p>Identifiant unique du SMS programmé à l’origine de l’envoi. À noter qu’il est très probable que la ressource <code class="docutils literal notranslate"><span class="pre">scheduled</span></code> associée ait été détruite avant la réception du webhook.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default" id="id7">
 <caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">send_sms_status_change</span></code></span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Identifiant unique du SMS</p></td>
@@ -345,10 +319,6 @@
 <td><p>Nouveau statut du SMS. Le statut est une chaine parmis les suivantes :</p>
 <table class="docutils align-default" id="id8">
 <caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Types</span> <span class="pre">de</span> <span class="pre">statuts</span></code></span><a class="headerlink" href="#id8" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">failed</span></code></p></td>
 <td><p>L’envoi du SMS a échoué. Soit RaspiSMS n’a pas pu transmettre la demande d’envoi au fournisseur télécom. Soit celui-ci à refusé l’envoi. Soit il n’a pas été possible de transmettre le message à l’utilisateur (numéro non attribué, réseau télécom indisponible, etc.).</p></td>
@@ -367,10 +337,6 @@
 </table>
 <table class="docutils align-default" id="id9">
 <caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">inbound_call</span></code></span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>Identifiant unique de l’appel.</p></td>
@@ -401,9 +367,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -420,7 +386,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

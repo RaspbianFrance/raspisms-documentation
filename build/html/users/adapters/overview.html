@@ -2,21 +2,24 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
       <title>Les types de téléphones</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
       <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
           <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -25,18 +28,17 @@
       <script src="../../_static/theme-vendors.js"></script>
       <script src="../../_static/theme.js" defer></script>
     
-      <link rel="shortcut icon" href="../../_static/favicon.png"/>
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
   <link rel="next" title="Téléphone Android" href="raspisms_relay.html" />
-  <link rel="prev" title="Commencer à utiliser RaspiSMS avec OVH" href="../guides/starting_with_ovh.html" /> 
+  <link rel="prev" title="Les téléphones" href="../phones/overview.html" /> 
   </head>
 
   <body>
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <img class="logo" src="../../_static/logo.png" alt="doit logo"/>
+      <span class="site-name">RaspiSMS</span>
     
   </router-link>
 
@@ -47,21 +49,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -82,21 +84,21 @@
     <div class="nav-item">
       <a href="_static/documentation_before_3_0.html"
         class="nav-link external">
-          Ancienne documentation <outboundlink/>
+          Ancienne documentation <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://raspisms.fr"
         class="nav-link external">
-          Site du projet <outboundlink/>
+          Site du projet <outboundlink></outboundlink>
       </a>
     </div>
   
     <div class="nav-item">
       <a href="https://github.com/RaspbianFrance/RaspiSMS"
         class="nav-link external">
-          Github <outboundlink/>
+          Github <outboundlink></outboundlink>
       </a>
     </div>
   
@@ -115,22 +117,32 @@
   </div>
 </div><div class="sidebar-links" role="navigation" aria-label="main navigation">
     <div class="sidebar-group">
-        <p class="caption"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
+        <p class="caption" role="heading"><span class="caption-text">Quelle partie de la documentation vous intéresse ?</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les types de téléphones</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../phones/overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../phones/overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Les types de téléphones</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#pourquoi-plusieurs-types-de-telephones">Pourquoi plusieurs types de téléphones ?</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#types-de-telephones-disponibles">Types de téléphones disponibles</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_virtual_number.html">Téléphone OVH SMS Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="ovh_shortcode.html">Téléphone OVH SMS Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
+<li class="toctree-l6"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l6"><a class="reference internal" href="odyssey_messaging.html">Téléphone Odyssey Messaging</a></li>
+<li class="toctree-l6"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
+<li class="toctree-l6"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/groups.html">Créer des groupes de téléphones</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/limits.html">Limiter le nombre de SMS par téléphone.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../phones/priority.html">Utiliser en priorité certains téléphones.</a></li>
 </ul>
 </li>
 </ul>
@@ -157,14 +169,16 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
+      <li><a href="../phones/overview.html">Les téléphones</a> &raquo;</li>
+    
     <li>Les types de téléphones</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="../phones/overview.html"
+       title="Chapitre précédent">← Les téléphones</a>
   </li>
   <li class="next">
     <a href="raspisms_relay.html"
@@ -176,18 +190,18 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <div class="section" id="les-types-de-telephones">
-<span id="adapters"></span><h1>Les types de téléphones<a class="headerlink" href="#les-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="pourquoi-plusieurs-types-de-telephones">
-<h2>Pourquoi plusieurs types de téléphones ?<a class="headerlink" href="#pourquoi-plusieurs-types-de-telephones" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="les-types-de-telephones">
+<span id="adapters"></span><h1>Les types de téléphones<a class="headerlink" href="#les-types-de-telephones" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="pourquoi-plusieurs-types-de-telephones">
+<h2>Pourquoi plusieurs types de téléphones ?<a class="headerlink" href="#pourquoi-plusieurs-types-de-telephones" title="Lien permanent vers cette rubrique">¶</a></h2>
 <p>Les différents types de téléphones ont pour objectif de permettre la prise en charge simple de nombreux fournisseurs de SMS et modes d’envoi.</p>
 <p>En tant qu’utilisateur, le support de différents types de téléphones, et donc de différents fournisseurs de SMS vous permet d’utiliser RaspiSMS avec l’offre commerciale la plus adaptée à vos besoins.</p>
 <p>Par ailleurs, en proposant une intégration unifiée au sein de l’application de différents fournisseurs de SMS, RaspiSMS vous permet de ne pas être dépendant d’un seul vendeur de SMS et de pouvoir changer de solution d’envoi facilement, sans avoir à modifier vos habitudes ou votre système d’information.</p>
 <p>Si vous êtes développeur, vous pouvez trouvez plus d’information sur la création d’un nouveau type dé téléphone dans <a class="reference internal" href="../../developpers/adapters/overview.html#developpers-adapters-overview"><span class="std std-ref">la partie « Créer un nouveau type de téléphone »</span></a>.</p>
 <p>Actuellement les types de téléphones disponibles sont les suivants :</p>
-</div>
-<div class="section" id="types-de-telephones-disponibles">
-<h2>Types de téléphones disponibles<a class="headerlink" href="#types-de-telephones-disponibles" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="types-de-telephones-disponibles">
+<h2>Types de téléphones disponibles<a class="headerlink" href="#types-de-telephones-disponibles" title="Lien permanent vers cette rubrique">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="raspisms_relay.html">Téléphone Android</a></li>
@@ -196,20 +210,21 @@
 <li class="toctree-l1"><a class="reference internal" href="twilio_virtual_number.html">Téléphone Twilio Numéro Virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="octopush_virtual_number.html">Téléphone Octopush Numéro Virtuel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="octopush_shortcode.html">Téléphone Octopush Shortcode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odyssey_messaging.html">Téléphone Odyssey Messaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gammu.html">Téléphone Gammu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kannel.html">Téléphone Kannel</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="../phones/overview.html"
+       title="Chapitre précédent">← Les téléphones</a>
   </li>
   <li class="next">
     <a href="raspisms_relay.html"
@@ -218,7 +233,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

@@ -27,5 +27,6 @@ Types de téléphones disponibles
     twilio_virtual_number
     octopush_virtual_number
     octopush_shortcode
+    odyssey_messaging
     gammu
     kannel

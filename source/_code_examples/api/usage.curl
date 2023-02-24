@@ -1,0 +1,1 @@
+curl 'https://app.raspisms.fr/api/usage/?start=2023-02-01+00:00:00&end=2023-02-28+00:00:00&tag=campaign%' -H 'X-Api-Key: ac122e8d46faac0615c181b93d07612d'
