@@ -303,13 +303,13 @@ Endpoints :
 
 Arguments :
     - **name** (*str*) -- Le nom du téléphone (doit être unique).
+    - **adapter** (*str*) -- Le nom de l'adaptateur logiciel du téléphone. C'est la classe PHP de l'adaptateur, avec son espace de nom.
     - **priority** (*int*), ``optional`` -- La priorité d'utilisation du téléphone (:ref:`voir <users_phones_priority>`). Si non défini ``0``.
     - **limits** (*array*), ``optional`` -- Les limites d'envois pour le téléphone (:ref:`voir <users_phones_limits>`). Si non défini ``[]``. C'est un tableau de limites, ou chaque limite est représentée par un tableau avec les clés : 
     
       - **volume** (*int*) -- Le nombre de SMS max sur la période.
       - **startpoint** (*str*) -- Une chaine de caractère représentant `une date relative PHP <https://www.php.net/manual/en/datetime.formats.relative.php>`_ qui sera utilisée comme date de début à partir de laquelle calculer le nombre de SMS envoyés par rapport à la limite (valeures conseillées : ``today``, ``-24 hours``, ``this week midnight``, ``-7 days``, ``this week midnight -1 week``, ``-14 days``, ``this month midnight``, ``-1 month``, ``-28 days``, ``-30 days``, ``-31 days``).
     
-    - **adapter** (*str*) -- Le nom de l'adaptateur logiciel du téléphone. C'est la classe PHP de l'adaptateur, avec son espace de nom.
     - **adapter_data** (*array*), ``optional`` -- Les données de configuration nécessaires pour le téléphone (clés API, fichier de conf, etc.). Le contenu change selon l'adaptateur logiciel du téléphone (voir `la fonction meta_data_fields <developpers_adapters_overview>`).
 
     .. note::
