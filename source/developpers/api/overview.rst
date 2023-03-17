@@ -374,7 +374,7 @@ Arguments :
 
 
 Réponse :
-    Le nouveau status du téléphone parmis ``available``, ``unavailable``, ``no_credit``.
+    Le nouveau status du téléphone parmis ``available``, ``unavailable``, ``no_credit``, ``limit_reached``.
 
 HTTP Code :
     - Success : ``200``
