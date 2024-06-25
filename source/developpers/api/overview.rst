@@ -391,3 +391,33 @@ Mise à jour du status du téléphone avec l'id ``50``.
 
 .. literalinclude:: /_code_examples/api/update_phone_status_response.json
     :language: json
+
+
+Obtenir le nombre de SMS envoyés par un téléphone et leur status -- `GET`
+=========================================================================
+
+Endpoints :
+    - ``/api/stats/sms-status``
+
+Arguments :
+    - **start** (*str*) -- La date à patir de laquelle lire le nombre de SMS envoyés, au format ``Y-m-d H:i:s`` (inclus).
+    - **end** (*str*) -- La date jusqu'à laquelle lire le nombre de SMS envoyés, au format ``Y-m-d H:i:s`` (non inclus).
+    - **id_phone** (*int*), ``optional`` -- Si présent retourne uniquement les infos sur le SMS envoyés par ce téléphone. Si non défini tous les téléphones seront inclus.
+
+Réponse :
+    Un objet JSON avec les SMS envoyés groupés par date, status et ID du téléphone.
+
+HTTP Code :
+    - Success : ``200``
+    - Error : ``404``
+
+Exemple de requête CURL
+#################################
+On va récupérer le nombre de SMS envoyés entre le 1 février 2023 et le 2 février 2023 pour le téléphone avec l'ID ``1``.
+
+.. literalinclude:: /_code_examples/api/sms_status.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/sms_status_response.json
+    :language: json
+

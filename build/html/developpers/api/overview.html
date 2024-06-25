@@ -2,7 +2,7 @@
 <html  lang="fr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
       <title>Utiliser l’API HTTP</title>
     
@@ -38,7 +38,7 @@
     <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../../index.html" class="home-link">
     
-      <span class="site-name">RaspiSMS</span>
+      <img class="logo" src="../../../../_static/logo.png" alt="logo"/>
     
   </router-link>
 
@@ -174,6 +174,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#id7">Exemple de requêtes CURL</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#obtenir-le-nombre-de-sms-envoyes-par-un-telephone-et-leur-status-get">Obtenir le nombre de SMS envoyés par un téléphone et leur status – <cite>GET</cite></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Exemple de requête CURL</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../adapters/overview.html">Créer un nouveau type de téléphone</a></li>
@@ -238,8 +242,8 @@
 <section id="format-des-reponses">
 <h3>Format des réponses<a class="headerlink" href="#format-des-reponses" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Toutes les réponses des API sont un tableau associatif au format JSON. Les réponses respectent toutes le format ci-dessous.</p>
-<table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id8" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Clé</p></th>
 <th class="head"><p>Description</p></th>
@@ -266,8 +270,8 @@
 <section id="codes-d-erreurs">
 <h4>Codes d’erreurs<a class="headerlink" href="#codes-d-erreurs" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>L’API utilise les codes d’erreurs suivants.</p>
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id10" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Code</p></th>
 <th class="head"><p>Description</p></th>
@@ -689,6 +693,63 @@
 </div>
 </section>
 </section>
+<section id="obtenir-le-nombre-de-sms-envoyes-par-un-telephone-et-leur-status-get">
+<h2>Obtenir le nombre de SMS envoyés par un téléphone et leur status – <cite>GET</cite><a class="headerlink" href="#obtenir-le-nombre-de-sms-envoyes-par-un-telephone-et-leur-status-get" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl class="simple">
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/stats/sms-status</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>) – La date à patir de laquelle lire le nombre de SMS envoyés, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code> (inclus).</p></li>
+<li><p><strong>end</strong> (<em>str</em>) – La date jusqu’à laquelle lire le nombre de SMS envoyés, au format <code class="docutils literal notranslate"><span class="pre">Y-m-d</span> <span class="pre">H:i:s</span></code> (non inclus).</p></li>
+<li><p><strong>id_phone</strong> (<em>int</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Si présent retourne uniquement les infos sur le SMS envoyés par ce téléphone. Si non défini tous les téléphones seront inclus.</p></li>
+</ul>
+</dd>
+<dt>Réponse :</dt><dd><p>Un objet JSON avec les SMS envoyés groupés par date, status et ID du téléphone.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">404</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<section id="id8">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id8" title="Lien permanent vers cette rubrique">¶</a></h3>
+<p>On va récupérer le nombre de SMS envoyés entre le 1 février 2023 et le 2 février 2023 pour le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl &#39;https://app.raspisms.fr/api/stats/sms-status/?start=2023-05-01&amp;end=2023-05-02&amp;id_phone=1&#39; -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;at_ymd&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-05-01&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;id_phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;nb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;status&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unknown&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;at_ymd&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-05-01&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;id_phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;nb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;status&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;delivered&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;at_ymd&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-05-01&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;id_phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;nb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;status&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -706,7 +767,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.1.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.9.1.
 </div>
             </div>
           </div>
