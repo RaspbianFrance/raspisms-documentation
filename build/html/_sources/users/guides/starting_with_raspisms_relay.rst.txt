@@ -26,7 +26,19 @@ L'application web RaspiSMS vous permet de créer vos SMS en ligne en profitant d
 2. Installez l'application RaspiSMS Relay sur votre téléphone.
 ================================================================
 
-Rendez-vous sur `la page playstore de l'application RaspiSMS Relay <https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay>`_ et téléchargez l'application.
+Rendez-vous sur `la page playstore de l'application RaspiSMS Relay <https://play.google.com/store/apps/details?id=fr.raspisms.raspismsrelay>`_ et téléchargez l'application, ou bien téléchargez directement `le fichier APK de l'application <https://raspisms.fr/assets/apk/raspisms-relay/latest.apk>`_.
+
+.. note::
+    Si vous utilisez le fichier APK, vous devrez au préalable autorisé l'installation des applications inconnues. La procédure peut varier selon les constructeurs, pour les principaux :
+    
+     - Android générique : Paramètres > Sécurité ou Applications (selon la version d'Android) > Installer des applications inconnues.
+     - Samsung (One UI) : Paramètres > Biométrie et sécurité > Installer des applications inconnues.
+     - Huawei (EMUI) : Paramètres > Sécurité et confidentialité > Plus de paramètres > Installer des applications inconnues.
+     - Xiaomi (MIUI) : Paramètres > Mots de passe et sécurité > Confidentialité > Installer des applications inconnues.
+     - OnePlus (OxygenOS) : Paramètres > Applications et notifications > Accès spécial aux applications > Installer des applications inconnues.
+     - Sony (Xperia) : Paramètres > Applications et notifications > Accès spécial > Installer des applications inconnues.
+
+    Ces étapes peuvent varier légèrement selon les constructeurs et les versions, mais la logique globale reste la même, vous devrez autoriser l'installation d'application inconnues, soit de manière globale, soit spécifiquement pour cet APK.
 
 
 3. Configurez le relais RaspiSMS.
