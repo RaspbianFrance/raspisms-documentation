@@ -128,6 +128,9 @@ Corps des webhooks
    
    * - originating_scheduled
      - Identifiant unique du SMS programmé à l'origine de l'envoi. À noter qu'il est très probable que la ressource ``scheduled`` associée ait été détruite avant la réception du webhook.
+   
+   * - tag
+     - Tag associé au SMS programmé à l'origine de l'envoi. Ce champ peut être vide si aucun tag n'a été associé au moment de la création du SMS programmé.
 
 
 .. list-table:: Body des webhook ``send_sms_status_change``
