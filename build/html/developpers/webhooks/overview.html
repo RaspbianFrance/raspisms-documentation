@@ -370,6 +370,29 @@
 </tr>
 </tbody>
 </table>
+<span id="webhook-phone-reliability"></span><table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Body des webhook <code class="docutils literal notranslate"><span class="pre">phone_reliability</span></code></span><a class="headerlink" href="#id10" title="Lien permanent vers ce tableau">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p>reliability_type</p></td>
+<td><p>Type d’évènements à l’origine de l’alerte de fiabilité. Soit <code class="docutils literal notranslate"><span class="pre">failed</span></code> pour des SMS échoués, soit <code class="docutils literal notranslate"><span class="pre">unknown</span></code> pour des SMS aux status inconnus.</p></td>
+</tr>
+<tr class="row-even"><td><p>id_phone</p></td>
+<td><p>Identifiant unique du téléphone pour lequel l’alerte de fiabilité est émise.</p></td>
+</tr>
+<tr class="row-odd"><td><p>period</p></td>
+<td><p>Durée configurée pour l’alerte de fiabilité.</p></td>
+</tr>
+<tr class="row-even"><td><p>total</p></td>
+<td><p>Volume total de SMS envoyés par le téléphone sur la période.</p></td>
+</tr>
+<tr class="row-odd"><td><p>unreliable</p></td>
+<td><p>Nombre de SMS échoués ou inconnus (selon le type d’alerte) pour le téléphone sur la période.</p></td>
+</tr>
+<tr class="row-even"><td><p>rate</p></td>
+<td><p>Taux de SMS échoués ou inconnus par rapport au volume total sur la période (taux représenté par un flottant entre 0 et 1).</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 </section>

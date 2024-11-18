@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-      <title>Les téléphones</title>
+      <title>Télécharger les numéros invalides</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -30,8 +30,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Les types de téléphones" href="../adapters/overview.html" />
-  <link rel="prev" title="Commencer à utiliser RaspiSMS avec OVH" href="../guides/starting_with_ovh.html" /> 
+  <link rel="next" title="Documentation pour les développeurs" href="../../developpers/overview.html" />
+  <link rel="prev" title="Envoyer des SMS à un fichier CSV" href="../sms/csv.html" /> 
   </head>
 
   <body>
@@ -122,23 +122,19 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les téléphones</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
-<li class="toctree-l4"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
-<li class="toctree-l4"><a class="reference internal" href="limits.html">Limiter le nombre de SMS par téléphone.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="priority.html">Utiliser en priorité certains téléphones.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reliability.html">Surveillance de la fiabilité des téléphones</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../phones/overview.html">Les téléphones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../groups_and_contacts/overview.html">Groupes et contacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../templating/overview.html">SMS dynamiques et templating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands/overview.html">Commandes par SMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mms/overview.html">Envoyer des MMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sms/csv.html">Envoyer des SMS à un fichier CSV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../invalid_numbers/overview.html">Télécharger les numéros invalides</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Télécharger les numéros invalides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#acces-a-la-fonctionnalite">Accès à la fonctionnalité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criteres-de-selection">Critères de sélection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement">Fonctionnement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemple-de-fichier-csv-obtenu">Exemple de fichier CSV obtenu</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developpers/overview.html">Documentation pour les développeurs</a></li>
@@ -156,18 +152,18 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
-    <li>Les téléphones</li>
+    <li>Télécharger les numéros invalides</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="../sms/csv.html"
+       title="Chapitre précédent">← Envoyer des SMS à un fichier CSV</a>
   </li>
   <li class="next">
-    <a href="../adapters/overview.html"
-       title="Chapitre suivant">Les types de téléphones →</a>
+    <a href="../../developpers/overview.html"
+       title="Chapitre suivant">Documentation pour les développeurs →</a>
   </li>
 </ul>
   
@@ -175,19 +171,36 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <section id="les-telephones">
-<span id="phones"></span><h1>Les téléphones<a class="headerlink" href="#les-telephones" title="Lien permanent vers cette rubrique">¶</a></h1>
-<section id="les-telephones-dans-raspisms">
-<h2>Les téléphones dans RaspiSMS<a class="headerlink" href="#les-telephones-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
-<p>RaspiSMS vous permet de créer un ou plusieurs téléphones par utilisateur. Lors de l’envoi d’un SMS, vous pourrez définir si vous souhaiter utiliser un téléphone en particulier, ou bien si vous souhaitez laisser RaspiSMS choisir un téléphone au hasard.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limits.html">Limiter le nombre de SMS par téléphone.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="priority.html">Utiliser en priorité certains téléphones.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reliability.html">Surveillance de la fiabilité des téléphones</a></li>
-</ul>
+  <section id="telecharger-les-numeros-invalides">
+<h1>Télécharger les numéros invalides<a class="headerlink" href="#telecharger-les-numeros-invalides" title="Lien permanent vers cette rubrique">¶</a></h1>
+<p>Cette fonctionnalité vous permet de télécharger une liste des numéros de téléphone considérés comme invalides. Un numéro est défini comme invalide si les SMS envoyés à ce numéro atteignent un certain taux d’échecs ou d’inconnus, selon les critères que vous définissez.</p>
+<section id="acces-a-la-fonctionnalite">
+<h2>Accès à la fonctionnalité<a class="headerlink" href="#acces-a-la-fonctionnalite" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Vous pouvez accéder à cette option depuis l’interface « SMS Envoyés », via le bouton « Télécharger les numéros invalides ».</p>
+</section>
+<section id="criteres-de-selection">
+<h2>Critères de sélection<a class="headerlink" href="#criteres-de-selection" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>L’interface vous permet de personnaliser les critères utilisés pour déterminer si un numéro est invalide.</p>
+<ol class="arabic simple">
+<li><p><strong>Volume minimum de SMS envoyés</strong> : Ce paramètre détermine le nombre minimum de messages qui doivent avoir été envoyés au numéro. Cette valeur permet d’éviter la sélection de numéros avec un taux d’échec basé sur une faible quantité de messages.</p></li>
+<li><p><strong>Taux d’échecs</strong> : Vous pouvez spécifier un pourcentage minimal de SMS échoués pour qu’un numéro soit considéré comme invalide.</p></li>
+<li><p><strong>Taux d’inconnus</strong> : De la même manière, vous pouvez définir un pourcentage minimal de SMS marqués comme « inconnus ».</p></li>
+</ol>
+<p><strong>Note</strong> : Vous pouvez fixer un des taux à 0 % pour désactiver son effet, se basant alors uniquement sur l’autre taux.</p>
+</section>
+<section id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Lorsque vous cliquez sur « Télécharger les numéros invalides », le système génère un fichier CSV contenant la liste des numéros qui répondent aux critères que vous avez sélectionnés. Ce fichier est ensuite téléchargé pour un usage ultérieur, par exemple pour nettoyer les listes de diffusion.</p>
+</section>
+<section id="exemple-de-fichier-csv-obtenu">
+<h2>Exemple de fichier CSV obtenu<a class="headerlink" href="#exemple-de-fichier-csv-obtenu" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Voici un exemple de fichier CSV avec la liste des numéros de téléphones invalides :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Destination,Total SMS Sent,Failed Percentage,Unknown Percentage
++12022933187,20,1,0.10
++12088279423,12,0.12,0.05
++12163561114,43,0.1,0.00
++12238842265,10,0.20,0.00
+</pre></div>
 </div>
 </section>
 </section>
@@ -197,12 +210,12 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="../sms/csv.html"
+       title="Chapitre précédent">← Envoyer des SMS à un fichier CSV</a>
   </li>
   <li class="next">
-    <a href="../adapters/overview.html"
-       title="Chapitre suivant">Les types de téléphones →</a>
+    <a href="../../developpers/overview.html"
+       title="Chapitre suivant">Documentation pour les développeurs →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.

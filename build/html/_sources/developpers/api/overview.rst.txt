@@ -124,6 +124,43 @@ HTTP Code :
     - Error : ``404``
 
 
+Envoyer un SMS à un seul numéro -- ``GET``
+============================================
+
+Endpoints :
+    - ``/api/send-sms/``
+
+Arguments :
+    - **text** (*str*) -- Le texte du SMS à envoyer.
+    - **to** (*str*), ``optional`` -- Un numéro de téléphone au format international auquel envoyer le SMS.
+    - **id_phone** (*str*), ``optional`` -- Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.
+    
+    .. note::
+        Cette méthode est la façon la plus simple d'envoyer un SMS, mais elle limite les fonctionnalités. Pour une utilisation plus avancée, reportez-vous à la `création d'un SMS programmé <#creer-un-sms-programme-post>`_.
+
+
+Réponse :
+    L'ID du SMS programmé créé.
+
+HTTP Code :
+    - Success : ``200``
+    - Error : ``400``
+
+
+Exemple de requêtes CURL
+##################################
+
+Exemple 1
+~~~~~~~~~
+Création d'un SMS **"Mon SMS d'exemple"** envoyé immédiatement au numéro **"+33612345678"**.
+
+.. literalinclude:: /_code_examples/api/get_send-sms.curl
+    :language: curl
+
+.. literalinclude:: /_code_examples/api/get_send-sms.json
+    :language: json
+
+
 Obtenir le nombre de SMS envoyés -- ``GET``
 ============================================
 

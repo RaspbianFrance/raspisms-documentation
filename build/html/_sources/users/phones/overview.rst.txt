@@ -16,3 +16,4 @@ RaspiSMS vous permet de créer un ou plusieurs téléphones par utilisateur. Lor
     groups
     limits
     priority
+    reliability

@@ -24,4 +24,5 @@ Cette partie de la documentation est destinée aux utilisateurs et propose princ
     commands/overview
     mms/overview
     sms/csv
+    invalid_numbers/overview
 

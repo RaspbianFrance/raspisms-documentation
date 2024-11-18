@@ -183,4 +183,24 @@ Corps des webhooks
    * - destination ``optional``
      - Numéro de téléphone qui a reçu l'appel si c'est un appel sortant, sinon ``NULL``.
 
+.. _webhook_phone_reliability:
 
+.. list-table:: Body des webhook ``phone_reliability``
+
+   * - reliability_type
+     - Type d'évènements à l'origine de l'alerte de fiabilité. Soit ``failed`` pour des SMS échoués, soit ``unknown`` pour des SMS aux status inconnus.
+   
+   * - id_phone
+     - Identifiant unique du téléphone pour lequel l'alerte de fiabilité est émise.
+   
+   * - period
+     - Durée configurée pour l'alerte de fiabilité.
+   
+   * - total
+     - Volume total de SMS envoyés par le téléphone sur la période.
+
+   * - unreliable
+     - Nombre de SMS échoués ou inconnus (selon le type d'alerte) pour le téléphone sur la période.
+   
+   * - rate
+     - Taux de SMS échoués ou inconnus par rapport au volume total sur la période (taux représenté par un flottant entre 0 et 1).

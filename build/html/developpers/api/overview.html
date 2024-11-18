@@ -138,6 +138,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#lister-des-ressources-get">Lister des ressources – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#envoyer-un-sms-a-un-seul-numero-get">Envoyer un SMS à un seul numéro – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-requetes-curl">Exemple de requêtes CURL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#exemple-1">Exemple 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#obtenir-le-nombre-de-sms-envoyes-get">Obtenir le nombre de SMS envoyés – <code class="docutils literal notranslate"><span class="pre">GET</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exemple-de-requete-curl">Exemple de requête CURL</a></li>
 </ul>
@@ -147,8 +154,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#creer-un-sms-programme-post">Créer un SMS programmé – <code class="docutils literal notranslate"><span class="pre">POST</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#exemple-de-requetes-curl">Exemple de requêtes CURL</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#exemple-1">Exemple 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Exemple de requêtes CURL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id3">Exemple 1</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-2">Exemple 2</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-3">Exemple 3</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#exemple-4">Exemple 4</a></li>
@@ -158,24 +165,24 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#supprimer-un-telephone-delete">Supprimer un téléphone – <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Exemple de requête CURL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Exemple de requête CURL</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#creer-un-telephone-post">Créer un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Exemple de requêtes CURL</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id4">Exemple 1</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id5">Exemple 2</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id6">Exemple 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Exemple de requêtes CURL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id6">Exemple 1</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id7">Exemple 2</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id8">Exemple 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#mettre-a-jour-le-status-d-un-telephone-post">Mettre à jour le status d’un téléphone – <code class="docutils literal notranslate"><span class="pre">POST</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id7">Exemple de requêtes CURL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Exemple de requêtes CURL</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#obtenir-le-nombre-de-sms-envoyes-par-un-telephone-et-leur-status-get">Obtenir le nombre de SMS envoyés par un téléphone et leur status – <cite>GET</cite></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id8">Exemple de requête CURL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Exemple de requête CURL</a></li>
 </ul>
 </li>
 </ul>
@@ -242,8 +249,8 @@
 <section id="format-des-reponses">
 <h3>Format des réponses<a class="headerlink" href="#format-des-reponses" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Toutes les réponses des API sont un tableau associatif au format JSON. Les réponses respectent toutes le format ci-dessous.</p>
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id9" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id11" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Clé</p></th>
 <th class="head"><p>Description</p></th>
@@ -270,8 +277,8 @@
 <section id="codes-d-erreurs">
 <h4>Codes d’erreurs<a class="headerlink" href="#codes-d-erreurs" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>L’API utilise les codes d’erreurs suivants.</p>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id10" title="Lien permanent vers ce tableau">¶</a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Format des réponses</span><a class="headerlink" href="#id12" title="Lien permanent vers ce tableau">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Code</p></th>
 <th class="head"><p>Description</p></th>
@@ -346,6 +353,51 @@
 </ul>
 </dd>
 </dl>
+</section>
+<section id="envoyer-un-sms-a-un-seul-numero-get">
+<h2>Envoyer un SMS à un seul numéro – <code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#envoyer-un-sms-a-un-seul-numero-get" title="Lien permanent vers cette rubrique">¶</a></h2>
+<dl>
+<dt>Endpoints :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/api/send-sms/</span></code></p></li>
+</ul>
+</dd>
+<dt>Arguments :</dt><dd><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – Le texte du SMS à envoyer.</p></li>
+<li><p><strong>to</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Un numéro de téléphone au format international auquel envoyer le SMS.</p></li>
+<li><p><strong>id_phone</strong> (<em>str</em>), <code class="docutils literal notranslate"><span class="pre">optional</span></code> – Identifiant du téléphone avec lequel envoyer le SMS. Si non défini utilise un téléphone au hasard.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cette méthode est la façon la plus simple d’envoyer un SMS, mais elle limite les fonctionnalités. Pour une utilisation plus avancée, reportez-vous à la <a class="reference external" href="#creer-un-sms-programme-post">création d’un SMS programmé</a>.</p>
+</div>
+</dd>
+<dt>Réponse :</dt><dd><p>L’ID du SMS programmé créé.</p>
+</dd>
+<dt>HTTP Code :</dt><dd><ul class="simple">
+<li><p>Success : <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Error : <code class="docutils literal notranslate"><span class="pre">400</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<section id="exemple-de-requetes-curl">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#exemple-de-requetes-curl" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="exemple-1">
+<h4>Exemple 1<a class="headerlink" href="#exemple-1" title="Lien permanent vers cette rubrique">¶</a></h4>
+<p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> envoyé immédiatement au numéro <strong>« +33612345678 »</strong>.</p>
+<div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X GET &quot;https://raspisms.fr/api/send-sms/?api_key=ac122e8d46faac0615c181b93d07612d&amp;text=Mon%20SMS%20d%27exemple&amp;to=%2B33612345678&quot;
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="obtenir-le-nombre-de-sms-envoyes-get">
 <h2>Obtenir le nombre de SMS envoyés – <code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#obtenir-le-nombre-de-sms-envoyes-get" title="Lien permanent vers cette rubrique">¶</a></h2>
@@ -456,10 +508,10 @@
 </ul>
 </dd>
 </dl>
-<section id="exemple-de-requetes-curl">
-<h3>Exemple de requêtes CURL<a class="headerlink" href="#exemple-de-requetes-curl" title="Lien permanent vers cette rubrique">¶</a></h3>
-<section id="exemple-1">
-<h4>Exemple 1<a class="headerlink" href="#exemple-1" title="Lien permanent vers cette rubrique">¶</a></h4>
+<section id="id2">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id3">
+<h4>Exemple 1<a class="headerlink" href="#id3" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un SMS <strong>« Mon SMS d’exemple »</strong> envoyé immédiatement au numéro <strong>« +33612345678 »</strong>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/scheduled/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;text=Mon%20SMS%20d%27exemple&#39; -d &#39;numbers=%2B33612345678&#39;
 </pre></div>
@@ -564,8 +616,8 @@
 </ul>
 </dd>
 </dl>
-<section id="id2">
-<h3>Exemple de requête CURL<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id4">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id4" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On va supprimer le téléphone avec l’id <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X DELETE https://app.raspisms.fr/api/phone/42 -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>
@@ -604,10 +656,10 @@
 </ul>
 </dd>
 </dl>
-<section id="id3">
-<h3>Exemple de requêtes CURL<a class="headerlink" href="#id3" title="Lien permanent vers cette rubrique">¶</a></h3>
-<section id="id4">
-<h4>Exemple 1<a class="headerlink" href="#id4" title="Lien permanent vers cette rubrique">¶</a></h4>
+<section id="id5">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id5" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id6">
+<h4>Exemple 1<a class="headerlink" href="#id6" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un téléphone <strong>« Test phone »</strong> avec l’adaptateur <strong>Test</strong>. Aucune configuration supplémentaire n’est nécessaire pour ce type d’adaptateur.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=Test phone&#39; -d &#39;adapter=adapters\TestAdapter&#39;
 </pre></div>
@@ -622,8 +674,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h4>Exemple 2<a class="headerlink" href="#id5" title="Lien permanent vers cette rubrique">¶</a></h4>
+<section id="id7">
+<h4>Exemple 2<a class="headerlink" href="#id7" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un téléphone <strong>« My Octopush Phone » »</strong> avec l’adaptateur <strong>« `Octopush Shortcode &lt;users_adapters_octopush_shortcode&gt;` »</strong>. Cet adaptateur nécessite de configurer le <code class="docutils literal notranslate"><span class="pre">login</span></code> et l”<code class="docutils literal notranslate"><span class="pre">api_key</span></code> du compte Octopush à utiliser.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST http://127.0.0.1/raspisms/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=My Octopush Phone&#39; -d &#39;adapter=adapters\OctopushShortcodeAdapter&#39; -d &#39;adapter_data[login]=mail@example.com&#39; -d &#39;adapter_data[api_key]=4Vnc9rDqFcJxp6ywBMtIydtFEsQ0J13RXG8Ms96F&#39;
 </pre></div>
@@ -638,8 +690,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h4>Exemple 3<a class="headerlink" href="#id6" title="Lien permanent vers cette rubrique">¶</a></h4>
+<section id="id8">
+<h4>Exemple 3<a class="headerlink" href="#id8" title="Lien permanent vers cette rubrique">¶</a></h4>
 <p>Création d’un téléphone <strong>« Test phone »</strong> avec l’adaptateur <strong>Test</strong>, une priorité de <code class="docutils literal notranslate"><span class="pre">2</span></code>, une limite de <code class="docutils literal notranslate"><span class="pre">100</span></code> sms par jour et une deuxième limite de <code class="docutils literal notranslate"><span class="pre">500</span></code> sms dans la semaine.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/ -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39; -d &#39;name=Test phone&#39; -d &#39;adapter=adapters\TestAdapter&#39; -d &quot;priority=2&quot; -d &#39;limits[0][volume]=100&#39; -d &#39;limits[0][startpoint]=today&#39; -d &#39;limits[1][volume]=500&#39; -d &#39;limits[1][startpoint]=this week midnight&#39;
 </pre></div>
@@ -676,8 +728,8 @@
 </ul>
 </dd>
 </dl>
-<section id="id7">
-<h3>Exemple de requêtes CURL<a class="headerlink" href="#id7" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id9">
+<h3>Exemple de requêtes CURL<a class="headerlink" href="#id9" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>Mise à jour du status du téléphone avec l’id <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl -X POST https://app.raspisms.fr/api/phone/50/status -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>
@@ -714,8 +766,8 @@
 </ul>
 </dd>
 </dl>
-<section id="id8">
-<h3>Exemple de requête CURL<a class="headerlink" href="#id8" title="Lien permanent vers cette rubrique">¶</a></h3>
+<section id="id10">
+<h3>Exemple de requête CURL<a class="headerlink" href="#id10" title="Lien permanent vers cette rubrique">¶</a></h3>
 <p>On va récupérer le nombre de SMS envoyés entre le 1 février 2023 et le 2 février 2023 pour le téléphone avec l’ID <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <div class="highlight-curl notranslate"><div class="highlight"><pre><span></span>curl &#39;https://app.raspisms.fr/api/stats/sms-status/?start=2023-05-01&amp;end=2023-05-02&amp;id_phone=1&#39; -H &#39;X-Api-Key: ac122e8d46faac0615c181b93d07612d&#39;
 </pre></div>

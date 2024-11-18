@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-      <title>Les téléphones</title>
+      <title>Surveillance de la fiabilité des téléphones</title>
     
       <link rel="stylesheet" href="../../_static/pygments.css">
       <link rel="stylesheet" href="../../_static/theme.css">
@@ -30,8 +30,8 @@
     
   <link rel="index" title="Index" href="../../genindex.html" />
   <link rel="search" title="Recherche" href="../../search.html" />
-  <link rel="next" title="Les types de téléphones" href="../adapters/overview.html" />
-  <link rel="prev" title="Commencer à utiliser RaspiSMS avec OVH" href="../guides/starting_with_ovh.html" /> 
+  <link rel="next" title="Groupes et contacts" href="../groups_and_contacts/overview.html" />
+  <link rel="prev" title="Utiliser en priorité certains téléphones." href="priority.html" /> 
   </head>
 
   <body>
@@ -122,13 +122,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../overview.html">Documentation pour les utilisateurs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_raspisms_relay.html">Commencer à utiliser RaspiSMS avec un téléphone Android.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/starting_with_ovh.html">Commencer à utiliser RaspiSMS avec OVH</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Les téléphones</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Les téléphones</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="overview.html#les-telephones-dans-raspisms">Les téléphones dans RaspiSMS</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
 <li class="toctree-l4"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
 <li class="toctree-l4"><a class="reference internal" href="limits.html">Limiter le nombre de SMS par téléphone.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="priority.html">Utiliser en priorité certains téléphones.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="reliability.html">Surveillance de la fiabilité des téléphones</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Surveillance de la fiabilité des téléphones</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#configuration-de-la-surveillance">Configuration de la Surveillance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#alertes-et-actions">Alertes et Actions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -156,18 +160,20 @@
     
       <li><a href="../overview.html">Documentation pour les utilisateurs</a> &raquo;</li>
     
-    <li>Les téléphones</li>
+      <li><a href="overview.html">Les téléphones</a> &raquo;</li>
+    
+    <li>Surveillance de la fiabilité des téléphones</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="priority.html"
+       title="Chapitre précédent">← Utiliser en priorité certains téléphones.</a>
   </li>
   <li class="next">
-    <a href="../adapters/overview.html"
-       title="Chapitre suivant">Les types de téléphones →</a>
+    <a href="../groups_and_contacts/overview.html"
+       title="Chapitre suivant">Groupes et contacts →</a>
   </li>
 </ul>
   
@@ -175,20 +181,38 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <section id="les-telephones">
-<span id="phones"></span><h1>Les téléphones<a class="headerlink" href="#les-telephones" title="Lien permanent vers cette rubrique">¶</a></h1>
-<section id="les-telephones-dans-raspisms">
-<h2>Les téléphones dans RaspiSMS<a class="headerlink" href="#les-telephones-dans-raspisms" title="Lien permanent vers cette rubrique">¶</a></h2>
-<p>RaspiSMS vous permet de créer un ou plusieurs téléphones par utilisateur. Lors de l’envoi d’un SMS, vous pourrez définir si vous souhaiter utiliser un téléphone en particulier, ou bien si vous souhaitez laisser RaspiSMS choisir un téléphone au hasard.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../adapters/overview.html">Les types de téléphones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="groups.html">Créer des groupes de téléphones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="limits.html">Limiter le nombre de SMS par téléphone.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="priority.html">Utiliser en priorité certains téléphones.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reliability.html">Surveillance de la fiabilité des téléphones</a></li>
-</ul>
+  <section id="surveillance-de-la-fiabilite-des-telephones">
+<h1>Surveillance de la fiabilité des téléphones<a class="headerlink" href="#surveillance-de-la-fiabilite-des-telephones" title="Lien permanent vers cette rubrique">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le calcul de la fiabilité des téléphones n’a pas lieu en temps réel mais est effectué automatiquement par le système toutes les 15 minutes.</p>
 </div>
+<p>La fonctionnalité de surveillance de la fiabilité des téléphones permet d’alerter l’utilisateur lorsque l’un de ses téléphones atteint un certain taux de SMS avec un statut d’échec ou inconnu.</p>
+<p>Vous pouvez configurer des alertes par e-mail ou via le déclenchement d’un webhook HTTP (<a class="reference internal" href="../../developpers/webhooks/overview.html#webhook-phone-reliability"><span class="std std-ref">voir</span></a>). La fonctionnalité offre également la possibilité de désactiver automatiquement le téléphone concerné en cas d’alerte.</p>
+<p>Cette fonctionnalité de surveillance permet de maintenir un haut niveau de fiabilité des services SMS en identifiant rapidement les téléphones potentiellement défaillants, pour prendre des mesures correctives en temps opportun.</p>
+<section id="configuration-de-la-surveillance">
+<h2>Configuration de la Surveillance<a class="headerlink" href="#configuration-de-la-surveillance" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Pour activer et configurer la surveillance de la fiabilité des téléphones :</p>
+<ul class="simple">
+<li><p>Rendez-vous dans la section <strong>« Réglages »</strong>.</p></li>
+<li><p>Dans l’encadré <strong>« Supervision des téléphones »</strong>, activez la fonctionnalité pour les statuts <strong>« Échec »</strong> et/ou <strong>« Inconnu »</strong>.</p></li>
+</ul>
+<p>Pour chaque type de statut, vous pouvez définir les paramètres suivants :</p>
+<ul class="simple">
+<li><p><strong>Taux de SMS échoués/inconnus :</strong> seuil de pourcentage au-delà duquel un téléphone est considéré comme non fiable.</p></li>
+<li><p><strong>Volume minimum de SMS :</strong> nombre minimum de SMS envoyés pour valider la statistique. Cela assure que les alertes ne se déclenchent pas sur un échantillon trop faible ou à cause d’une erreur ponctuelle.</p></li>
+<li><p><strong>Période de surveillance (en minutes) :</strong> période de temps sur laquelle le taux d’échec est calculé. Par exemple, une période de 120 minutes signifie que les statistiques se baseront sur les deux dernières heures.</p></li>
+<li><p><strong>Durée d’ignorance des SMS récents :</strong> période pendant laquelle les SMS récents sont exclus du calcul, permettant aux statuts d’être mis à jour avant d’être pris en compte dans l’analyse.</p></li>
+</ul>
+</section>
+<section id="alertes-et-actions">
+<h2>Alertes et Actions<a class="headerlink" href="#alertes-et-actions" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Dans la section des réglages de l’alerte, configurez les options suivantes :</p>
+<ul class="simple">
+<li><p><strong>Recevoir un e-mail :</strong> cochez cette option pour être averti par e-mail dès qu’un téléphone dépasse le seuil de fiabilité.</p></li>
+<li><p><strong>Déclencher un webhook :</strong> activez cette option pour recevoir une alerte via un webhook lorsque le seuil est atteint.</p></li>
+<li><p><strong>Désactiver automatiquement le téléphone :</strong> si activée, cette option désactive automatiquement le téléphone concerné lorsqu’une alerte est émise.</p></li>
+</ul>
 </section>
 </section>
 
@@ -197,12 +221,12 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../guides/starting_with_ovh.html"
-       title="Chapitre précédent">← Commencer à utiliser RaspiSMS avec OVH</a>
+    <a href="priority.html"
+       title="Chapitre précédent">← Utiliser en priorité certains téléphones.</a>
   </li>
   <li class="next">
-    <a href="../adapters/overview.html"
-       title="Chapitre suivant">Les types de téléphones →</a>
+    <a href="../groups_and_contacts/overview.html"
+       title="Chapitre suivant">Groupes et contacts →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, OsaAjani.
