@@ -111,10 +111,15 @@ Lister des ressources -- ``GET``
 Endpoints :
     - ``/api/list/{entry_type}/``
     - ``/api/list/{entry_type}/{page}/``
+    - ``/api/list/{entry_type}/after/{after_id}/``
+    - ``/api/list/{entry_type}/before/{before_id}/``
 
 Arguments :
     - **entry_type** (*str*) -- Le type de ressource à lister (``sended``, ``received``, ``scheduled``, ``contact``, ``group``, ``conditional_group``, ``phone``, ``phone_group`` ou ``media``).
     - **page** (*int*), ``optional`` -- Numéro de page à utiliser, si non défini ``0``.
+    - **after_id** (*int*), ``optional`` -- Récupère uniquement les entrées avec un ID > after_id, alternative au paramètre page et offrant de meilleures performances.
+    - **before_id** (*int*), ``optional`` -- Récupère uniquement les entrées avec un ID < before_id, alternative au paramètre page et offrant de meilleures performances.
+    
 
 Réponse :
     Une collection JSON des ressources demandées.
