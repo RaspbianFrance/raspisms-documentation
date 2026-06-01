@@ -84,6 +84,7 @@ Corps des webhooks
           
           * - path
             - Chemin relatif du média depuis le dossier ``PWD_DATA`` de RaspiSMS (par défaut ``/usr/share/raspisms/data/``).
+              Pour accéder au chemin public utilisez ``https://url/data/public/<path>``.
    
 .. list-table:: Body des webhook ``send_sms``
 
